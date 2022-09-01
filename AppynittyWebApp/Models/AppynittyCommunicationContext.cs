@@ -27,6 +27,7 @@ namespace AppynittyWebApp.Models
         public virtual DbSet<Blog> Blogs { get; set; }
         public virtual DbSet<LoginInfo> LoginInfos { get; set; }
         public virtual DbSet<News> News { get; set; }
+        public virtual DbSet<News> Test { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
