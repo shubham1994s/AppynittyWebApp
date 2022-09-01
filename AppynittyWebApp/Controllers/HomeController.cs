@@ -20,7 +20,8 @@ namespace AppynittyWebApp.Controllers
 
         public IActionResult Index()
         {
-            return View();
+
+           return Redirect("Identity/Account/Login");
         }
 
         public IActionResult Privacy()
