@@ -1,5 +1,6 @@
 ﻿using AppynittyWebApp.Models;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -21,19 +22,22 @@ namespace AppynittyWebApp.Controllers
 
             return View();
         }
-        public  IActionResult Details(string Email)
+     
+
+
+        public async Task<IActionResult> Details(string Email)
         {
-           
             if (Email == null)
             {
                 return NotFound();
             }
-            var employee =  _context.AspNetUsers.FirstOrDefault(m => m.Email == Email);
+            var employee = await _context.AspNetUsers.FirstOrDefaultAsync(m => m.Email == Email);
             if (employee == null)
             {
                 return NotFound();
             }
             return View(employee);
         }
+
     }
 }
