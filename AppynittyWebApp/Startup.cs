@@ -1,6 +1,8 @@
+using AppynittyWebApp.Models;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -23,6 +25,10 @@ namespace AppynittyWebApp
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            var connectionString = Configuration.GetConnectionString("AppynittyCommunication");
+            services.AddEntityFrameworkSqlServer();
+            services.AddDbContextPool<AppynittyCommunicationContext>(option =>
+            option.UseSqlServer(connectionString));
             services.AddControllersWithViews();
         }
 
