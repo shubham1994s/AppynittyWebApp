@@ -4,6 +4,7 @@ using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Claims;
 using System.Threading.Tasks;
 
 namespace AppynittyWebApp.Controllers
@@ -25,8 +26,10 @@ namespace AppynittyWebApp.Controllers
      
 
 
-        public async Task<IActionResult> Details(string Email)
+        public async Task<IActionResult> Details()
         {
+            var Email = User.FindFirstValue(ClaimTypes.Email);
+          //  string Email= HttpContext.Session.Id;
             if (Email == null)
             {
                 return NotFound();

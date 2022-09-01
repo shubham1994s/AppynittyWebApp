@@ -12,6 +12,7 @@ using Microsoft.AspNetCore.Identity.UI.Services;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.Extensions.Logging;
+using Microsoft.AspNetCore.Http;
 
 namespace AppynittyWebApp.Areas.Identity.Pages.Account
 {
@@ -21,7 +22,7 @@ namespace AppynittyWebApp.Areas.Identity.Pages.Account
         private readonly UserManager<AppynittyWebAppUser> _userManager;
         private readonly SignInManager<AppynittyWebAppUser> _signInManager;
         private readonly ILogger<LoginModel> _logger;
-
+        const string SessionName = "_Name";
         public LoginModel(SignInManager<AppynittyWebAppUser> signInManager, 
             ILogger<LoginModel> logger,
             UserManager<AppynittyWebAppUser> userManager)
@@ -86,8 +87,8 @@ namespace AppynittyWebApp.Areas.Identity.Pages.Account
                 if (result.Succeeded)
                 {
                     _logger.LogInformation("User logged in.");
-                   
-                    return LocalRedirect("/Account/Details?Email=" + Input.Email);
+                 //   HttpContext.Session.SetString(SessionName,Input.Email);
+                    return LocalRedirect("/Account/Details");
                 }
                 if (result.RequiresTwoFactor)
                 {
