@@ -24,6 +24,7 @@ namespace AppynittyWebApp.Models
         public virtual DbSet<AspNetUserLogin> AspNetUserLogins { get; set; }
         public virtual DbSet<AspNetUserRole> AspNetUserRoles { get; set; }
         public virtual DbSet<AspNetUserToken> AspNetUserTokens { get; set; }
+        public virtual DbSet<Blog> Blogs { get; set; }
         public virtual DbSet<LoginInfo> LoginInfos { get; set; }
         public virtual DbSet<News> News { get; set; }
 
@@ -141,6 +142,19 @@ namespace AppynittyWebApp.Models
                     .HasForeignKey(d => d.UserId);
             });
 
+            modelBuilder.Entity<Blog>(entity =>
+            {
+                entity.HasNoKey();
+
+                entity.Property(e => e.BlogsDate).HasColumnType("datetime");
+
+                entity.Property(e => e.BlogsTitle).HasMaxLength(500);
+
+                entity.Property(e => e.Id).ValueGeneratedOnAdd();
+
+                entity.Property(e => e.IsActive).HasColumnName("isActive");
+            });
+
             modelBuilder.Entity<LoginInfo>(entity =>
             {
                 entity.HasNoKey();
@@ -179,10 +193,6 @@ namespace AppynittyWebApp.Models
                 entity.Property(e => e.IsActive).HasColumnName("isActive");
 
                 entity.Property(e => e.NewsDate).HasColumnType("datetime");
-
-                entity.Property(e => e.NewsEng).HasMaxLength(200);
-
-                entity.Property(e => e.NewsMar).HasMaxLength(100);
 
                 entity.Property(e => e.NewsTitle).HasMaxLength(500);
             });
