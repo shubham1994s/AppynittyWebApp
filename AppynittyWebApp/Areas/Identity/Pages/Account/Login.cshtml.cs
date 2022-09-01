@@ -86,6 +86,7 @@ namespace AppynittyWebApp.Areas.Identity.Pages.Account
                 if (result.Succeeded)
                 {
                     _logger.LogInformation("User logged in.");
+                   
                     return LocalRedirect("/Account/Details?Email=" + Input.Email);
                 }
                 if (result.RequiresTwoFactor)
