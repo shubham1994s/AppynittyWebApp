@@ -12,6 +12,6 @@ namespace AppynittyWebApp.Models
         public string NewsTitle { get; set; }
         public string NewsEng { get; set; }
         public string NewsMar { get; set; }
-        public bool? IsActive { get; set; }
+        public bool IsActive { get; set; }
     }
 }

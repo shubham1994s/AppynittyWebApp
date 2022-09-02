@@ -55,7 +55,7 @@ namespace AppynittyWebApp.Controllers
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> AddOrEdit(int Id,
-            [Bind("Id,NewsDate,NewsTitle,NewsEng,NewsMar")] News NewsData)
+            [Bind("Id,NewsDate,NewsTitle,NewsEng,NewsMar,IsActive")] News NewsData)
         {
             bool IsnewsExist = false;
             if(NewsData.IsActive == null)
