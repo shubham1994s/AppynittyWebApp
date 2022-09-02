@@ -1,0 +1,299 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Oct 19, 2016, 3:40:08 PM
+    Author     : User-2
+*/
+
+.a-head .header-right{
+    background: #FFFFFF;
+} 
+.a-head .item-box .item .icon{
+    color:#3CBABA;
+}
+.home-first-section{
+    
+}
+.home-first-section .home-flex-section{    
+    position: relative;
+    /*cursor : none;*/
+}
+.home-first-section .home-flex{
+    display:-webkit-box;
+    display:-webkit-flex;
+    display:-ms-flexbox;
+    display:flex;
+    height: 100%;
+    min-height: 90vh;
+    height: 100%;
+}
+.home-first-section .half{
+    -webkit-box-flex:1;
+    -webkit-flex:1;
+        -ms-flex:1;
+            flex:1;
+   
+}
+.home-first-section .l-box{
+    justify-content:flex-end;
+}
+.home-first-section .l-box{
+    height: 100%;    
+    position: relative;
+    z-index: 1000;
+    display: -webkit-box;    
+}
+.home-first-section .r-box{
+    height: 100%;    
+    position: relative;
+    z-index: 1000;
+    display: -webkit-box;    
+}
+.home-first-section .r-box-section{
+    justify-content:flex-end;
+}
+.home-first-section .r-box-section,
+.home-first-section .l-box-section{
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    height: 100%;
+    width: 100%;
+    /*max-width: 685px;*/    
+    align-items:center;    
+}
+.home-first-section .r-box-section .text,
+.home-first-section .l-box-section .text{
+    font-size: 55px;
+    line-height: 125%;
+    padding: 0 15px;
+}
+.home-first-section .r-box-section .text{
+    text-align: right;
+    color:#FFFFFF;
+    -webkit-transition: color 2s;
+    transition: color 2s;
+    margin-right: 80px;
+}
+.home-first-section .l-box-section .text{
+   margin-left: 106px;
+}
+.home-first-section .home-flex.right-white .r-box-section .text{
+    color:black;
+}
+.home-first-section .home-flex.left-white .l-box-section .text{
+    color:#FFFFFF;
+}
+
+
+
+.home-first-section .color-section{
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    width:100%;
+     height: 100%;
+}
+.home-first-section .color{
+     position: relative;
+     width:100%;
+     height: 100%;
+}
+.home-first-section .left,
+.home-first-section .right{
+    height: 100%;
+    width: 50%;   
+    position: absolute;    
+    background: transparent;
+    -webkit-transition: width 0s;
+    transition: width 0s;
+    
+}
+.home-first-section .left{
+     left:0;
+     background: #FFFFFF;
+    
+}
+.home-first-section .right{
+    right:0;
+    background: #3CBABA;
+}
+
+.home-first-section .mobile-section{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width:100%;
+    height: 100%;
+}
+.home-first-section .mobile-box{
+    display:-webkit-box;
+    display:-webkit-flex;
+    display:-ms-flexbox;
+    display:flex;
+    width:100%;
+    height: 100%;
+    -webkit-box-pack:center;
+    -webkit-justify-content:center;
+        -ms-flex-pack:center;
+            justify-content:center;
+    -webkit-box-align:center;
+    -webkit-align-items:center;
+        -ms-flex-align:center;
+            align-items:center;
+}
+.home-first-section .mobile{
+    position: relative;
+    z-index: 4; 
+    overflow: hidden;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+
+.home-first-section .screen img{
+    width: 100%;
+}
+.home-first-section .screen{
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    overflow: hidden;
+    top: 60px;
+    left: 15px;
+    width: 88%;
+    height: 77.32%;
+    z-index: -1;
+}
+
+@media (min-width:1920px){
+    .home-first-section .r-box-section .text, .home-first-section .l-box-section .text {
+    font-size: 50px !important;
+    line-height: 125%;
+    /*padding: 0px 0px;*/
+}
+.hoverable .hover {
+     
+      font-size: 50px !important;
+    }
+.home-first-section .r-box-section,
+.home-first-section .l-box-section{
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    height: 100%;
+    width: 100%;
+      
+    align-items:center;    
+}
+}
+@media (max-width:1400px){
+    .home-first-section .r-box-section .text, 
+    .home-first-section .l-box-section .text {
+        font-size: 50px;
+    }
+}
+@media(max-width: 1366px){
+    .hoverable .hover {
+     
+      font-size: 35px !important;
+    }
+    .home-first-section .r-box-section .text, .home-first-section .l-box-section .text {
+    font-size: 35px !important;
+   /* line-height: 125%;*/
+    /*padding: 0px 0px;*/
+}
+}
+@media (max-width:1199px){
+    .home-first-section .r-box-section .text, 
+    .home-first-section .l-box-section .text {
+        font-size: 30px;
+        
+    }
+}
+/*@media (min-width: 1024px){
+    .hoverable {
+    cursor: default;
+    color: #000;
+    text-decoration: none;
+    height: 500px;
+     width: 600px; 
+}*/
+}
+@media (max-width:991px){
+    .home-first-section .r-box-section .text, 
+    .home-first-section .l-box-section .text {
+        font-size: 25px;
+    }
+    .home-first-section .screen {
+        top: 50px;
+        left: 13px;
+    }
+}
+@media (max-width:768px){
+    .home-first-section .home-flex {
+        flex-direction: column;     
+        align-items: center;
+        min-height: auto;
+        width: 100%;
+        display: block;
+        margin-top: 40px;
+        margin-bottom: 0px;
+    }
+    .color-section .color{
+        display: none;
+    }
+    .home-first-section .mobile-section ,
+    .home-first-section .color-section {
+        position: static;
+        height: auto;
+        
+    }
+    .home-first-section .home-flex-section {     
+        display: flex;
+        flex-direction: column-reverse;
+        padding: 50px 0;
+    }
+    .home-first-section .r-box-section .text {     
+        color: #1B2D39;
+    }
+    .home-first-section .r-box-section, .home-first-section .l-box-section{
+        max-width: 100%;
+    }
+    .home-first-section .r-box-section .text .l-b, .home-first-section .l-box-section .text .l-b{
+        display:none;
+    }
+    .home-first-section .l-box-section ,
+    .home-first-section .r-box-section {
+        justify-content: center;
+    }
+    .home-first-section .screen{
+        z-index: 0;
+    }
+    .home-first-section .r-box-section .text, 
+    .home-first-section .l-box-section .text {
+        font-size: 28px;
+        text-align: center;
+    }
+    .home-first-section .l-box-section .text {
+        color:#3CBABA;
+        
+    }
+    .home-flex div{
+        outline: none;
+    }
+  }
+@media(max-width: 480px){
+    .home-first-section .screen img {
+    width: 97%;
+    height: 297px;
+    }
+    .clients-box .review-section {
+    padding: 0 22px;
+   }
+}

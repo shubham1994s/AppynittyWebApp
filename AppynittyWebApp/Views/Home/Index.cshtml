@@ -2,7 +2,233 @@
     ViewData["Title"] = "Home Page";
 }
 @*umesh*@
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+<script src="https://code.jquery.com/jquery-3.6.1.slim.js"
+        integrity="sha256-tXm+sa1uzsbFnbXt8GJqsgi2Tw+m4BLGDof6eUPjbtk="
+        crossorigin="anonymous"></script>
+
+<script src="https://code.jquery.com/jquery-1.9.1.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js" integrity="sha512-XtmMtDEcNz2j7ekrtHvOVR4iwwaD6o/FUJe6+Zq+HgcCsk3kj4uSQQR8weQ2QVj1o0Pk6PwYLohm206ZzNfubg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<link href="~/css/first.css" rel="stylesheet" />
+<link href="~/css/slick.css" rel="stylesheet" />
+<link href="~/css/slick-theme.css" rel="stylesheet" />
+<link href="~/css/index.css" rel="stylesheet" />
+<style>
+    .hoverable {
+        cursor: default;
+        color: #000;
+        text-decoration: none;
+        height: 500px;
+        width: 600px;
+    }
+
+        .hoverable .hover {
+            display: none;
+            font-size: 50px;
+        }
+
+        .hoverable:hover .normal {
+            display: none;
+        }
+
+        .hoverable:hover .hover {
+            display: inline; /* CHANGE IF FOR BLOCK ELEMENTS */
+        }
+</style>
+<div class="home-first-section">
+    <div class="home-flex-section">
+
+        <div class="home-flex right-white">
+
+            <div class="half ">
+                <div class="l-box">
+
+                    <div class="l-box-section ">
+
+                        <a href="javascript://" class="hoverable" style="text-decoration:none">
+                            <div class="text">
+                                <span class="normal"><br><br><br>	Your Digital <br>Marketing Strategist…<br>	<br></span>
+                            </div>
+
+                            <div class="text ">
+                                <span class="hover">
+                                    <br><br><br> 	We are App Experts across <br>All Verticals…<br>
+                                    <!-- Creating Apps that Add<br> Real Value to your Business -->
+                                </span>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="half">
+                <div class="r-box">
+                    <div class="r-box-section">
+
+                        <a href="javascript://" class="hoverable" style="text-decoration:none">
+                            <div class="text">
+                                <span class="normal"><br><br><br>Creating Apps that Add<br> Real Value to your Business </span>
+                            </div>
+
+                            <div class="text ">
+                                <span class="hover"><br><br><br> Simplifying Digital Marketing<br> Challenges for You<br>	</span>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="color-section">
+            <div class="color">
+                <div class="left">
+                </div>
+                <div class="right ">
+                </div>
+            </div>
+            <div class="mobile-section">
+                <div class="mobile-box">
+                    <div class="mobile">
+                        <picture>
+                            <source media="(max-width: 991px)" srcset="assets/home/img/top/home_phone@991.png">
+
+                            <img src="~/Assets/Images/Index/img/top/home_phone.png" />
+                        </picture>
+                        <div class="screen">
+                            <div class="sliderExample">
+                                <div><img src="~/Assets/Images/Index/img/top/home_digitalsolution.png"></div>
+                                <div><img src="~/Assets/Images/Index/img/top/home_mobileapp.png"></div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
+
+@*Second Part*@
+
+<div class="container py-3 mt-3">
+    <div class="separator py-4">
+        <div class="line"></div>
+        <h2>
+            Who We Are?
+        </h2>
+        <div class="line"></div>
+    </div>
+    <div class="d-flex justify-content-between">
+        <div>
+            <picture>
+                <source media="(max-width: 480px)" srcset="~/Assets/Images/Index/img/who/whoweare.gif">
+                <source media="(max-width: 991px)" srcset="~/Assets/Images/Index/img/who/whoweare.gif">
+                <source media="(max-width: 1199px)" srcset="~/Assets/Images/Index/img/who/whoweare.gif">
+                <img class="img img-responsive" src="~/Assets/Images/Index/img/who/whoweare.gif" alt="Mobile Apps Development Company">
+            </picture>
+        </div>
+        <div class="p-4 ml-5">
+            <div class="appy-text">
+
+                We are a leading Mobile App Development and
+                Digital Marketing Services Company. We
+                provide a wide range of cutting edge digital
+                solutions to start-ups, SMEs as well as MNC and
+                help them grow into smarter businesses of the
+                future!
+
+            </div>
+            <div class="know-more mt-5">
+
+                <button class="btn px-3 py-2" href="https://www.appynitty.com/about-us/" style="background: #3cbaba;color:#fff;font-size:16px;font-weight:500">About Us</button>
+
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <div class="separator py-4 pt-3 mt-3">
+        <div class="line"></div>
+        <h2>
+            Mobile App
+            Development Services
+        </h2>
+        <div class="line"></div>
+    </div>
+    <div class="d-flex justify-content-between">
+
+        <div class="p-4 mr-5">
+            <div class="appy-text">
+
+                We specialize in developing high quality native
+                mobile apps for Android and iOS platforms. We
+                work closely with businesses to develop
+                customized mobile marketing solutions.
+                Moreover, we are the only company in India to
+                come up with sector specific mobile apps and to
+                integrate them with cloud telephony systems.
+
+            </div>
+            <div class="know-more mt-5">
+
+                <button class="btn px-3 py-2" href="https://www.appynitty.com/about-us/" style="background: #3cbaba; color: #fff; font-size: 16px; font-weight: 500; text-align: end;">Know More</button>
+
+            </div>
+        </div>
+        <div>
+            <picture>
+                
+                <source media="(max-width: 480px)" srcset="~/Assets/Images/Index/img/app_development.gif">
+                <source media="(max-width: 991px)" srcset="~/Assets/Images/Index/img/app_development.gif">
+                <source media="(max-width: 1199px)" srcset="~/Assets/Images/Index/img/app_development.gif">
+                <img class="img img-responsive" src="~/Assets/Images/Index/img/app_development.gif" alt="Mobile Apps Development Company">
+            </picture>
+        </div>
+    </div>
+
+
+
+
+
+    <div class="separator py-4  pt-3 mt-3">
+        <div class="line" style="background: #c09020"></div>
+        <h2 style="color: #c09020">
+            Lead Generation
+            Campaigns
+        </h2>
+        <div class="line" style="background: #c09020"></div>
+    </div>
+    <div class="d-flex justify-content-between">
+        <div>
+            <picture>
+                <source media="(max-width: 480px)" srcset="~/Assets/Images/Index/img/lead_generation.gif">
+                <source media="(max-width: 991px)" srcset="~/Assets/Images/Index/img/lead_generation.gif">
+                <source media="(max-width: 1199px)" srcset="~/Assets/Images/Index/img/lead_generation.gif">
+                <img class="img img-responsive" src="~/Assets/Images/Index/img/lead_generation.gif" alt="Mobile Apps Development Company">
+            </picture>
+        </div>
+        <div class="p-4 ml-5">
+            <div class="appy-text">
+
+                Investing in the right mix of various options
+                available for online and offline lead generation
+                to grow your business can be very challenging.
+                So we have our team of expert researchers and
+                marketers to ensure maximum ROI for your lead
+                generation campaigns by providing services
+                tailored to suit your business requirements.
+
+            </div>
+            <div class="know-more mt-5">
+
+                <button class="btn px-3 py-2" href="https://www.appynitty.com/about-us/" style="background: #c09020; color: #fff; font-size: 16px; font-weight: 500">Know More</button>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script src="~/Assets/js/first.js"></script>
+<script src="~/js/slick.js"></script>
+<script src="~/js/jquery.min.js"></script>

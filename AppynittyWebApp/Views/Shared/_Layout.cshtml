@@ -6,40 +6,215 @@
     <title>@ViewData["Title"] - AppynittyWebApp</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
     <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow">
             <div class="container">
-                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">AppynittyWebApp</a>
+                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">
+
+                    <img src="~/Assets/Images/appynitty-logo.png" alt="logo" />
+                </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
                         aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
-                    <ul class="navbar-nav flex-grow-1">
+                <div class="collapse d-sm-inline-flex justify-content-between ">
+                    <ul class="navbar-nav flex-grow-1 ml-auto">
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+                            <a class="nav-link text-dark px-5" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+                            <a class="nav-link text-dark px-5" asp-area="" asp-controller="Home" asp-action="Privacy">About Us</a>
                         </li>
                     </ul>
                 </div>
             </div>
+
+        </nav>
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow p-0">
+            @*<div class="container">*@
+             
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse d-sm-inline-flex justify-content-between ">
+                    <ul class="navbar-nav flex-grow-1 s-nav">
+                        <li class="nav-item">
+                            <a class="nav-link text-dark  px-4" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark   px-4" asp-area="" asp-controller="Home" asp-action="Privacy">Mobile Apps</a>
+                        </li>
+                        <li class="nav-item px-4">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Customized Apps</a>
+                        </li>
+                        <li class="nav-item  px-4">
+                            <a class="nav-link text-dark px-3" asp-area="" asp-controller="Home" asp-action="Privacy">Our Apps</a>
+                        </li>
+                        <li class="nav-item  px-4">
+                            <a class="nav-link text-dark px-3" asp-area="" asp-controller="Home" asp-action="Index">Lead Genration</a>
+                        </li>
+                        <li class="nav-item  px-4">
+                            <a class="nav-link text-dark px-3" asp-area="" asp-controller="Home" asp-action="Privacy">Lead Mangement Service</a>
+                        </li>
+                        <li class="nav-item  px-4">
+                            <a class="nav-link text-dark  px-3" asp-area="" asp-controller="Home" asp-action="Index">Sales Intelligence Paas</a>
+                        </li>
+                        <li class="nav-item  px-4">
+                            <a class="nav-link text-dark  px-3" asp-area="" asp-controller="Home" asp-action="Privacy">Contact Us</a>
+                        </li>
+                    </ul>
+                </div>
+            @*</div>*@
+
         </nav>
     </header>
-    <div class="container">
+    @*<div class="container">*@
         <main role="main" class="pb-3">
             @RenderBody()
         </main>
-    </div>
+    @*</div>*@
 
-    <footer class="border-top footer text-muted">
-        <div class="container">
-            &copy; 2022 - AppynittyWebApp - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+<footer class="border-top footer text-muted footer-box">
+    <div class="container">
+        <div class="d-flex justify-content-between">
+            <div style="border-right: 2px solid #9d9999b0; padding-right: 3%;" class="mx-3">
+                <h5 class="text-uppercase"><a href="https://www.appynitty.com/about-us/" title="About Us">About Us</a></h5>
+
+
+                <ul class="list-unstyled">
+                    <li>
+                        <a href="https://www.appynitty.com/about-us#company" title="Company Profile">Company Profile</a>
+                    </li>
+                    <li>
+                        <a href="https://www.appynitty.com/about-us#founders" title="Our Founders">Our Founders</a>
+                    </li>
+                    <li>
+                        <a href="https://www.appynitty.com/about-us#careers" title="Careers">Careers</a>
+                    </li>
+
+                </ul>
+            </div>
+            <div style="border-right: 2px solid #9d9999b0; padding-right: 3%;" class="mx-3">
+                <h5 class="text-uppercase"><a href="https://www.appynitty.com/about-us/" title="About Us">Mobile Apps</a></h5>
+
+
+                <ul class="list-unstyled">
+                    <li>
+                        <a href="https://www.appynitty.com/about-us#company" title="Company Profile">Customized Apps</a>
+                    </li>
+                    <li>
+                        <a href="https://www.appynitty.com/about-us#founders" title="Our Founders">Our Apps</a>
+                    </li>
+
+                </ul>
+            </div>
+            <div style="border-right: 2px solid #9d9999b0; padding-right: 3%;" class="mx-3">
+                <h5 class="text-uppercase"><a href="https://www.appynitty.com/about-us/" title="About Us">Solution</a></h5>
+
+
+                <ul class="list-unstyled">
+                    <li>
+                        <a href="https://www.appynitty.com/about-us#company" title="Company Profile">Lead Generation</a>
+                    </li>
+
+
+                </ul>
+            </div>
+            <div style="border-right: 2px solid #9d9999b0; padding-right: 3%;" class="mx-3">
+                <h5 class="text-uppercase"><a href="https://www.appynitty.com/about-us/" title="About Us">Resources</a></h5>
+
+
+                <ul class="list-unstyled">
+                    <li>
+                        <a href="https://www.appynitty.com/about-us#company" title="Company Profile">Blog</a>
+                    </li>
+                    <li>
+                        <a href="https://www.appynitty.com/about-us#founders" title="Our Founders">News</a>
+                    </li>
+
+                </ul>
+            </div>
+            <div style="border-right: 2px solid #9d9999b0; padding-right: 3%;" class="mx-3">
+                <h5 class="text-uppercase"><a href="https://www.appynitty.com/about-us/" title="About Us">Partner With Us</a></h5>
+
+
+                <ul class="list-unstyled">
+                    <li>
+                        <a href="https://www.appynitty.com/about-us#company" title="Company Profile">Why Appynitty?</a>
+                    </li>
+                    <li>
+                        <a href="https://www.appynitty.com/about-us#founders" title="Our Founders">FAQs</a>
+                    </li>
+
+
+                </ul>
+            </div>
+            <div style="padding-right: 3%;" class="mx-3">
+                <h5 class="text-uppercase"><a href="https://www.appynitty.com/about-us/" title="About Us">Contact Us</a></h5>
+
+
+                <ul class="list-unstyled">
+                    <li>
+                        <a href="https://www.appynitty.com/about-us#company" title="Company Profile">info@appynitty.com</a>
+                    </li>
+                    <li>
+                        <a href="https://www.appynitty.com/about-us#founders" title="Our Founders">+91 9209 100 900</a>
+                    </li>
+
+
+                </ul>
+            </div>
         </div>
-    </footer>
+        <div class="d-flex justify-content-between mt-4">
+
+            <div class="f-menu">
+                <h5 class="title text-white">follow us on</h5>
+                <a href="https://www.facebook.com/Appynitty/" target="_blank"> <i class="fa-brands fa-facebook-f"></i></a>
+                <a href="https://www.facebook.com/Appynitty/" target="_blank"> <i class="fa-brands fa-twitter"></i></a>
+                <a href="https://www.facebook.com/Appynitty/" target="_blank"> <i class="fa-brands fa-linkedin"></i></a>
+                <a href="https://www.facebook.com/Appynitty/" target="_blank"> <i class="fa-brands fa-google-plus-g"></i></a>
+                <a href="https://www.facebook.com/Appynitty/" target="_blank"> <i class="fa-brands fa-youtube"></i></a>
+                <a href="https://www.facebook.com/Appynitty/" target="_blank"> <i class="fa-brands fa-pinterest"></i></a>
+                <style>
+                    .f-menu a i {
+                        color: #3cbaba;
+                    }
+
+                        .f-menu a i :hover {
+                            color: white;
+                        }
+                </style>
+
+            </div>
+
+                <div class="f-menu f-title pl-5">
+                    <h2 class="title text-center" style="color: #3cbaba ">Join the Appyness!</h2>
+                    <div class="text-white"> 2016 All rights reserved. <a href="https://www.appynitty.com/" class="text-white"title="Appynitty Communications">Appynitty Communications</a></div>
+                    <div class="f-term text-center text-white">
+                        <a href="https://www.appynitty.com/terms-and-condition/" title="Terms & Condition" class="text-white">Terms & Condition</a>
+                    </div>
+                </div>
+
+                <div class="f-menu">
+                    <h4 class="title text-white">Subscribe Newsletter</h4>
+                    <div class="">
+                        <div class="appy-res"></div>
+                        <div class="sub-newsletter">
+                            <form action="" id="form1" method="post">
+                                <input type="email" name="email" placeholder="Enter your email id" class="a-input" id="appy-subscribe-input" />
+                                <input type="submit" onclick="subscribe();" class="btn px-3 py-2" value="Send" id="appy-subscribe" style="background:#3cbaba">
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+       
+    </div>
+</footer>
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>

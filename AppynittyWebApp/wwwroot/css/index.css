@@ -1,0 +1,15 @@
+.separator {
+    display: flex;
+    align-items: center;
+}
+
+    .separator .line {
+        height: 2px;
+        flex: 1;
+        background-color: #3cbaba;
+    }
+
+    .separator h2 {
+        padding: 0 2rem;
+        color: #3cbaba;
+    }

@@ -64,8 +64,47 @@ body {
 }
 .footer {
   position: absolute;
-  bottom: 0;
+/* // bottom: 0;*/
   width: 100%;
   white-space: nowrap;
-  line-height: 60px; /* Vertically center the text there */
+  line-height: 30px; /* Vertically center the text there */
+}
+ul li a {
+    font-size: 12px;
+    font-weight: 600
+}
+
+    ul li :hover {
+        background: #3cbaba !important;
+    }
+a.text-dark:hover {
+    color: #ffffff !important;
+}
+
+.appy-text {
+    font-size: 1.25rem;
+    font-weight:400;
+    line-height:1.8;
+    text-align:justify;
+}
+
+.footer-box {
+    background: #1B2D39;
+    color: #FFFFFF;
+    padding-top: 40px;
+    padding-bottom: 10px;
+}
+.list-unstyled a {
+    color: white;
+    text-decoration: none;
+    font-size:14px;
+}
+    .list-unstyled a:hover {
+        background: #1B2D39!important;
+    }
+footer h5 a{
+    color: white;
+}
+footer h5 a:hover {
+    color: white !important;
 }
