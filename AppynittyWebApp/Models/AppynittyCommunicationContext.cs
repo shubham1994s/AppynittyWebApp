@@ -8,9 +8,9 @@ namespace AppynittyWebApp.Models
 {
     public partial class AppynittyCommunicationContext : DbContext
     {
-        //public AppynittyCommunicationContext()
-        //{
-        //}
+        public AppynittyCommunicationContext()
+        {
+        }
 
         public AppynittyCommunicationContext(DbContextOptions<AppynittyCommunicationContext> options)
             : base(options)
@@ -27,13 +27,13 @@ namespace AppynittyWebApp.Models
         public virtual DbSet<Blog> Blogs { get; set; }
         public virtual DbSet<LoginInfo> LoginInfos { get; set; }
         public virtual DbSet<News> News { get; set; }
-        public virtual DbSet<News> Test { get; set; }
+        public virtual DbSet<Test> Tests { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             if (!optionsBuilder.IsConfigured)
             {
-//#warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see http://go.microsoft.com/fwlink/?LinkId=723263.
+#warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see http://go.microsoft.com/fwlink/?LinkId=723263.
                 optionsBuilder.UseSqlServer("Server=202.65.157.254;Initial Catalog=AppynittyCommunication;Persist Security Info=False;User ID=appynitty;Password=BigV$Telecom;MultipleActiveResultSets=False;Connection Timeout=30;");
             }
         }
@@ -154,6 +154,10 @@ namespace AppynittyWebApp.Models
                 entity.Property(e => e.Id).ValueGeneratedOnAdd();
 
                 entity.Property(e => e.IsActive).HasColumnName("isActive");
+
+                entity.Property(e => e.Urlink)
+                    .HasMaxLength(500)
+                    .HasColumnName("URLink");
             });
 
             modelBuilder.Entity<LoginInfo>(entity =>
@@ -196,6 +200,21 @@ namespace AppynittyWebApp.Models
                 entity.Property(e => e.NewsDate).HasColumnType("datetime");
 
                 entity.Property(e => e.NewsTitle).HasMaxLength(500);
+            });
+
+            modelBuilder.Entity<Test>(entity =>
+            {
+                entity.HasNoKey();
+
+                entity.ToTable("Test");
+
+                entity.Property(e => e.Id).ValueGeneratedOnAdd();
+
+                entity.Property(e => e.IsActive).HasColumnName("isActive");
+
+                entity.Property(e => e.TestDate).HasColumnType("datetime");
+
+                entity.Property(e => e.TestTitle).HasMaxLength(500);
             });
 
             OnModelCreatingPartial(modelBuilder);
