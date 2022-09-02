@@ -37,12 +37,14 @@
                 </div>
                 <div class="form-group">
                     <label asp-for="NewsEng" class="control-label"></label>
-                    <input asp-for="NewsEng" class="form-control" />
+                    @*<input asp-for="NewsEng" class="form-control" />*@
+                    <textarea id="NewsEng" asp-for="NewsEng" class="form-control" rows="10" cols="100"></textarea>
                     <span asp-validation-for="NewsEng" class="text-danger"></span>
                 </div>
                 <div class="form-group">
                     <label asp-for="NewsMar" class="control-label"></label>
-                    <input asp-for="NewsMar" class="form-control" />
+                    @*<input asp-for="NewsMar" class="form-control" />*@
+                    <textarea id="NewsMar" asp-for="NewsMar" class="form-control" rows="10" cols="100"></textarea>
                     <span asp-validation-for="NewsMar" class="text-danger"></span>
                 </div>
                 <div class="form-group">
