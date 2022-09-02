@@ -4,7 +4,15 @@
     ViewData["Title"] = "Create";
     Layout = "_AdminLayout";
 }
-
+@*<style>
+    input[type=checkbox] {
+        box-sizing: border-box;
+        padding: 0;
+        font-size: 4px;
+        margin-top: -5%;
+        margin-left: -31%;
+    }
+</style>*@
 <div class="container p-3 my-3 border">
     @*<h1> @ViewBag.PageName</h1>*@
 
@@ -39,9 +47,9 @@
                 </div>
                 <div class="form-group">
                     <label asp-for="IsActive" class="control-label"></label>
-                    @Html.CheckBox("isActive")
+                    @*@Html.CheckBox("isActive")*@
                     @*<input id="IsActive" type="checkbox" name="IsActive" value="IsActive" />*@
-                    @*<input type="checkbox" asp-for="IsActive" class="form-control" />*@
+                    <input type="checkbox" asp-for="IsActive"/>
                     @*<span asp-validation-for="IsActive" class="text-danger"></span>*@
                 </div>
                 <div class="form-group">

@@ -58,10 +58,7 @@ namespace AppynittyWebApp.Controllers
             [Bind("Id,NewsDate,NewsTitle,NewsEng,NewsMar,IsActive")] News NewsData)
         {
             bool IsnewsExist = false;
-            if(NewsData.IsActive == null)
-            {
-                NewsData.IsActive = false;
-            }
+          
             News news = await _context.News.FindAsync(Id);
 
             if (news != null)
