@@ -37,6 +37,7 @@ namespace AppynittyWebApp.Areas.Identity.Pages.Account
             }
             else
             {
+                TempData["SessionID"] = "";
                 return Redirect("Login");
                // return RedirectToPage();
             }

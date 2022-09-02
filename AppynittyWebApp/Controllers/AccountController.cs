@@ -28,18 +28,20 @@ namespace AppynittyWebApp.Controllers
 
         public async Task<IActionResult> Details()
         {
-            var Email = User.FindFirstValue(ClaimTypes.Email);
-          //  string Email= HttpContext.Session.Id;
-            if (Email == null)
-            {
+         
+                var Email = User.FindFirstValue(ClaimTypes.Email);
+                //  string Email= HttpContext.Session.Id;
+                if (Email == null)
+                {
+                return Redirect("/Identity/Account/Login");
+                }
+                var employee = await _context.AspNetUsers.FirstOrDefaultAsync(m => m.Email == Email);
+                if (employee == null)
+                {
+            
                 return NotFound();
             }
-            var employee = await _context.AspNetUsers.FirstOrDefaultAsync(m => m.Email == Email);
-            if (employee == null)
-            {
-                return NotFound();
-            }
-            return View(employee);
+           return View(employee);
         }
 
     }
