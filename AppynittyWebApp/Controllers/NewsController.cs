@@ -62,7 +62,7 @@ namespace AppynittyWebApp.Controllers
             {
                 NewsData.IsActive = false;
             }
-            News news = await _context.News.FirstOrDefaultAsync(Id);
+            News news = await _context.News.FindAsync(Id);
 
             if (news != null)
             {
