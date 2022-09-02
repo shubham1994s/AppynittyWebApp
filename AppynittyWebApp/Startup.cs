@@ -32,6 +32,11 @@ namespace AppynittyWebApp
             services.AddControllersWithViews();
             services.AddControllersWithViews();
             services.AddRazorPages();
+            services.AddDistributedMemoryCache();
+            services.AddSession(options => {
+                options.IdleTimeout = TimeSpan.FromMinutes(1);
+            });
+            services.AddMvc();
         }
 
         //public void ConfigureServices(IServiceCollection services)
@@ -57,7 +62,7 @@ namespace AppynittyWebApp
             app.UseStaticFiles();
 
             app.UseRouting();
-
+            app.UseSession();
             app.UseAuthorization();
             app.UseAuthentication();
             app.UseEndpoints(endpoints =>
