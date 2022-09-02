@@ -27,7 +27,7 @@ namespace AppynittyWebApp.Models
         public virtual DbSet<Blog> Blogs { get; set; }
         public virtual DbSet<LoginInfo> LoginInfos { get; set; }
         public virtual DbSet<News> News { get; set; }
-        public virtual DbSet<News> Test { get; set; }
+        public virtual DbSet<Test> Tests { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
@@ -154,6 +154,10 @@ namespace AppynittyWebApp.Models
                 entity.Property(e => e.Id).ValueGeneratedOnAdd();
 
                 entity.Property(e => e.IsActive).HasColumnName("isActive");
+
+                entity.Property(e => e.Urlink)
+                    .HasMaxLength(500)
+                    .HasColumnName("URLink");
             });
 
             modelBuilder.Entity<LoginInfo>(entity =>
@@ -196,6 +200,21 @@ namespace AppynittyWebApp.Models
                 entity.Property(e => e.NewsDate).HasColumnType("datetime");
 
                 entity.Property(e => e.NewsTitle).HasMaxLength(500);
+            });
+
+            modelBuilder.Entity<Test>(entity =>
+            {
+                entity.HasNoKey();
+
+                entity.ToTable("Test");
+
+                entity.Property(e => e.Id).ValueGeneratedOnAdd();
+
+                entity.Property(e => e.IsActive).HasColumnName("isActive");
+
+                entity.Property(e => e.TestDate).HasColumnType("datetime");
+
+                entity.Property(e => e.TestTitle).HasMaxLength(500);
             });
 
             OnModelCreatingPartial(modelBuilder);
