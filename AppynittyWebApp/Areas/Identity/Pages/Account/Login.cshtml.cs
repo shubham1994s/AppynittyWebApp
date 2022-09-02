@@ -87,8 +87,8 @@ namespace AppynittyWebApp.Areas.Identity.Pages.Account
                 if (result.Succeeded)
                 {
                     _logger.LogInformation("User logged in.");
-                 //   HttpContext.Session.SetString(SessionName,Input.Email);
-                     
+                  //  var _Session = HttpContext.Session.GetString(Input.Email);
+                    TempData["SessionID"] = HttpContext.Session.GetString(Input.Email);
                     return LocalRedirect("/Account/Details");
                 }
                 if (result.RequiresTwoFactor)
