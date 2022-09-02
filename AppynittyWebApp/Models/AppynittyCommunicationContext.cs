@@ -189,7 +189,7 @@ namespace AppynittyWebApp.Models
             {
                 entity.HasNoKey();
 
-                entity.Property(e => e.Id).ValueGeneratedOnAdd();
+                //entity.Property(e => e.Id).ValueGeneratedOnAdd();
 
                 entity.Property(e => e.IsActive).HasColumnName("isActive");
 

@@ -1,0 +1,56 @@
+﻿@model AppynittyWebApp.Models.News
+
+@{
+    ViewData["Title"] = "Create";
+    Layout = "_AdminLayout";
+}
+
+<div class="container p-3 my-3 border">
+    <h1> @ViewBag.PageName</h1>
+
+    <div class="row">
+        <div class="col-sm-6">
+            <hr />
+            <form asp-action="AddOrEdit">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                @if (@ViewBag.IsEdit)
+                {
+                    <input type="hidden" asp-for="Id" />
+                }
+                <div class="form-group">
+                    <label asp-for="NewsDate" class="control-label"></label>
+                    <input asp-for="NewsDate" class="form-control" />
+                    <span asp-validation-for="NewsDate" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="NewsTitle" class="control-label"></label>
+                    <input asp-for="NewsTitle" class="form-control" />
+                    <span asp-validation-for="NewsTitle" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="NewsEng" class="control-label"></label>
+                    <input asp-for="NewsEng" class="form-control" />
+                    <span asp-validation-for="NewsEng" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="NewsMar" class="control-label"></label>
+                    <input asp-for="NewsMar" class="form-control" />
+                    <span asp-validation-for="NewsMar" class="text-danger"></span>
+                </div>
+                <!--<div class="form-group">
+                    <label asp-for="IsActive" class="control-label"></label>
+                    <input id="IsActive" type="checkbox" name="IsActive" value="IsActive" />-->
+                    @*<input type="checkbox" asp-for="IsActive" class="form-control" />
+                     <span asp-validation-for="IsActive" class="text-danger"></span>*@
+                <!--</div>-->
+                <div class="form-group">
+                    <input class="btn btn-primary" type="submit" value="Save" />
+                    <a class="btn btn-danger" asp-action="Index">Back</a>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

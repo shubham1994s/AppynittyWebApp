@@ -1,0 +1,50 @@
+﻿@model AppynittyWebApp.Models.News
+@{
+    ViewData["Title"] = "Delete";
+    Layout = "_AdminLayout";
+}
+<h2>Deleting Employee</h2>
+
+<h3>Would you like to continue?</h3>
+<div class="container p-3 my-3 border">
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-3">
+            @Html.DisplayNameFor(model => model.NewsDate)
+        </dt>
+        <dd class="col-sm-9">
+            @Html.DisplayFor(model => model.NewsDate)
+        </dd>
+        <dt class="col-sm-3">
+            @Html.DisplayNameFor(model => model.NewsTitle)
+        </dt>
+        <dd class="col-sm-9">
+            @Html.DisplayFor(model => model.NewsTitle)
+        </dd>
+        <dt class="col-sm-3">
+            @Html.DisplayNameFor(model => model.NewsEng)
+        </dt>
+        <dd class="col-sm-9">
+            @Html.DisplayFor(model => model.NewsEng)
+        </dd>
+        <dt class="col-sm-3">
+            @Html.DisplayNameFor(model => model.NewsMar)
+        </dt>
+        <dd class="col-sm-9">
+            @Html.DisplayFor(model => model.NewsMar)
+        </dd>
+        <dt class="col-sm-3">
+            @Html.DisplayNameFor(model => model.IsActive)
+        </dt>
+        <dd class="col-sm-9">
+            @Html.DisplayFor(model => model.IsActive)
+        </dd>
+    </dl>
+
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="Id" />
+        <input class="btn btn-primary" type="submit" value="Yes" />
+        <a class="btn btn-danger" asp-action="Index">No</a>
+    </form>
+
+</div>
