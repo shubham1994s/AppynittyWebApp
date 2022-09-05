@@ -10,21 +10,21 @@ body {
 	font-family: 'lato', sans-serif;
 }
 
-.square-card {
-	margin-left: auto;
-	margin-right: auto;
-	max-width: 255px;
-/* 	height: 22.5rem; */
-	border-radius: 6px;
-	background: #fff;
-	text-align: left;
-	position: relative;
-	transition: box-shadow 0.3s ease, border 0.3s;
-	box-shadow: 12px 15px 20px 0px rgba(46,61,73,0.15);
-/* 	border-radius: 6px; */
-	margin-bottom: 20px;
-	margin-top: 20px;
-}
+    .square-card {
+        margin-left: auto;
+        margin-right: auto;
+        max-width: 255px;
+        /* 	height: 22.5rem; */
+        border-radius: 6px;
+        background: #26ffff;
+        text-align: left;
+        position: relative;
+        transition: box-shadow 0.3s ease, border 0.3s;
+        box-shadow: 12px 15px 20px 0px rgba(46,61,73,0.15);
+        /* 	border-radius: 6px; */
+        margin-bottom: 20px;
+        margin-top: 20px;
+    }
 .square-card:hover {
 	box-shadow: 2px 4px 8px 0px rgba(46,61,73,0.2);
 	border: none;
@@ -90,20 +90,20 @@ body {
 
 /* card-title */
 .card-title {
-/* 	padding: 24px 32px; */
-	position: relative;
+    text-align: center;
+    position: relative;
 }
 
 /* card-title > h4 */
 .card-title > h4 {
-	padding: 1em;
-	font-size: 1.25em;
-	line-height: 1.5em;
-	font-weight: 300;
-	text-transform: capitalize;
-	margin: 0;
-	color: #aa8553;
-	letter-spacing: .03em;
+    padding: 1em;
+    font-size: 1.25em;
+    line-height: 1.5em;
+    font-weight: 300;
+    text-transform: capitalize;
+    margin: 0;
+    color: #000000;
+    letter-spacing: .03em;
 }
 
 /* cta */
@@ -129,36 +129,40 @@ body {
 <h1 style="text-align: center;">Details</h1>
 <div class="container">
     <div class="row">
-        <div class="col-md-4 col-sm-12">
-            <div class="square-card">
-                <a asp-controller="News" asp-action="Index" alt="square card">
-                    <div class="card-title">
-                        <h4>cocktail fruit salad with freshness</h4>
-                    </div>
-                </a>
-            </div>
+        <div class="col-md-2">
+
         </div>
-        <div class="col-md-4 col-sm-12">
-            <div class="square-card">
-                <a href="#" alt="square card">
-                    <div class="card-title">
-                        <h4>cocktail fruit salad with freshness</h4>
-                    </div>
-                </a>
+
+            <div class="col-md-4 col-sm-12">
+                <div class="square-card">
+                    <a asp-controller="News" asp-action="Index" alt="square card">
+                        <div class="card-title">
+                            <h4>News Section</h4>
+                        </div>
+                    </a>
+                </div>
             </div>
-        </div>
-        <div class="col-md-4 col-sm-12">
-            <div class="square-card">
-                <a asp-controller="Blog" asp-action="Index" alt="square card">
-                    <div class="card-title">
-                        <h4>cocktail fruit salad with freshness</h4>
-                    </div>
-                </a>
+            <div class="col-md-4 col-sm-12">
+                <div class="square-card">
+                    <a href="#" alt="square card">
+                        <div class="card-title">
+                            <h4>Blog Section</h4>
+                        </div>
+                    </a>
+                </div>
             </div>
+            @*<div class="col-md-4 col-sm-12">
+                <div class="square-card">
+                    <a asp-controller="Blog" asp-action="Index" alt="square card">
+                        <div class="card-title">
+                            <h4>cocktail fruit salad with freshness</h4>
+                        </div>
+                    </a>
+                </div>
+            </div>*@
+
         </div>
-       
     </div>
-</div>
 <div style="display:none;">
    
     <hr />
