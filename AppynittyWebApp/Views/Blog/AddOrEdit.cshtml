@@ -1,0 +1,85 @@
+﻿@model AppynittyWebApp.Models.Blog
+
+@{
+    ViewData["Title"] = "Create";
+    Layout = "_AdminLayout";
+}
+@*<style>
+        input[type=checkbox] {
+            box-sizing: border-box;
+            padding: 0;
+            font-size: 4px;
+            margin-top: -5%;
+            margin-left: -31%;
+        }
+    </style>*@
+<div class="container p-3 my-3 border">
+    @*<h1> @ViewBag.PageName</h1>*@
+
+    <div class="row">
+        <div class="col-sm-6">
+            <hr />
+            <form enctype="multipart/form-data" asp-action="AddOrEdit">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                @if (@ViewBag.IsEdit)
+                {
+                    <input type="hidden" asp-for="Id" />
+                }
+                <div class="form-group">
+                    <label asp-for="BlogsDate" class="control-label"></label>
+                    <input asp-for="BlogsDate" class="form-control" />
+                    <span asp-validation-for="BlogsDate" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="BlogsTitle" class="control-label"></label>
+                    <input asp-for="BlogsTitle" class="form-control" />
+                    <span asp-validation-for="BlogsTitle" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="BlogsEng" class="control-label"></label>
+                    @*<input asp-for="NewsEng" class="form-control" />*@
+                    <textarea id="BlogsEng" asp-for="BlogsEng" class="form-control" rows="10" cols="100"></textarea>
+                    <span asp-validation-for="BlogsEng" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="BlogsMar" class="control-label"></label>
+                    @*<input asp-for="NewsMar" class="form-control" />*@
+                    <textarea id="BlogsMar" asp-for="BlogsMar" class="form-control" rows="10" cols="100"></textarea>
+                    <span asp-validation-for="BlogsMar" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="FileName" class="control-label"></label>
+                    <div class="custom-file">
+                        <input type="file" asp-for="FileName" class="custom-file-input" id="customFile">
+                        <label class="custom-file-label" for="customFile">Choose file</label>
+                    </div>
+                    <span asp-validation-for="FileName" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="IsActive" class="control-label"></label>
+                    @*@Html.CheckBox("isActive")*@
+                    @*<input id="IsActive" type="checkbox" name="IsActive" value="IsActive" />*@
+                    <input type="checkbox" asp-for="IsActive" />
+                    @*<span asp-validation-for="IsActive" class="text-danger"></span>*@
+                </div>
+                <div class="form-group">
+                    <input class="btn btn-primary" type="submit" value="Save" />
+                    <a class="btn btn-danger" asp-action="Index">Back</a>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+@section Scripts {
+
+    <script type="text/javascript">
+
+        // Add the following code if you want the name of the file appear on select
+        $(".custom-file-input").on("change", function () {
+            var fileName = $(this).val().split("\\").pop();
+            $(this).siblings(".custom-file-label").addClass("selected").html(fileName);
+        });
+    </script>
+
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

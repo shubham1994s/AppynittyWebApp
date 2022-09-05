@@ -1,7 +1,73 @@
-﻿@model AppynittyWebApp.Models.Blog
+﻿
+@model IEnumerable<AppynittyWebApp.Models.Blog>
 
 @{
     ViewData["Title"] = "Details";
     Layout = "_AdminLayout";
 }
+<style>
+    .danger {
+        color: red !important;
+    }
+
+    .success {
+        color: green !important;
+    }
+</style>
 <h1 style="text-align:center;">Blogs List</h1>
+
+<p style="text-align:right;margin-right:20px;">
+    <a class="btn btn-outline-primary" asp-action="AddOrEdit">Create New</a>
+</p>
+<div class="table-responsive">
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.BlogsDate)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.BlogsTitle)
+                </th>
+                <th>
+                    Status
+                </th>
+                <th>Blog Image</th>
+                <th>Edit Action</th>
+                <th>Details Action</th>
+                <th>Delete Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.BlogsDate)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.BlogsTitle)
+                </td>
+                <td>
+                    <span @(item.IsActive == true ? "class=success" : "class=danger" )>@(item.IsActive == true ? "Active" : "InActive")</span>
+                </td>
+                <td>
+                    <img src="~/BlogImages/@item.FileName"
+                         class="rounded-circle"
+                         height="40" width="40"
+                         asp-append-version="true" />
+                </td>
+                <td class="text-center">
+                    <a asp-action="AddOrEdit" class="btn btn-outline-primary" asp-route-Id="@item.Id">Edit</a>
+                </td>
+                <td class="text-center">
+                    <a asp-action="Details" class="btn btn-outline-info" asp-route-Id="@item.Id">Details</a>
+                </td>
+                <td class="text-center">
+                    <a asp-action="Delete" class="btn btn-outline-danger" asp-route-Id="@item.Id">Delete</a>
+                </td>
+            </tr>
+            }
+        </tbody>
+    </table>
+</div>

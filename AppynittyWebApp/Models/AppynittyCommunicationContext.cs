@@ -34,7 +34,7 @@ namespace AppynittyWebApp.Models
             if (!optionsBuilder.IsConfigured)
             {
 #warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see http://go.microsoft.com/fwlink/?LinkId=723263.
-                optionsBuilder.UseSqlServer("Server=202.65.157.254;Initial Catalog=AppynittyCommunication;Persist Security Info=False;User ID=appynitty;Password=BigV$Telecom;MultipleActiveResultSets=False;Connection Timeout=30;");
+                optionsBuilder.UseSqlServer("Server=202.65.157.254;Initial Catalog=AppynittyCommunication;PersistSecurityInfo=False;User ID=appynitty;Password=BigV$Telecom;MultipleActiveResultSets=False;Connection Timeout=30;");
             }
         }
 
@@ -145,13 +145,9 @@ namespace AppynittyWebApp.Models
 
             modelBuilder.Entity<Blog>(entity =>
             {
-                entity.HasNoKey();
-
                 entity.Property(e => e.BlogsDate).HasColumnType("datetime");
 
                 entity.Property(e => e.BlogsTitle).HasMaxLength(500);
-
-                entity.Property(e => e.Id).ValueGeneratedOnAdd();
 
                 entity.Property(e => e.IsActive).HasColumnName("isActive");
 
