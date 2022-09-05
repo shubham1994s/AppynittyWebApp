@@ -106,10 +106,10 @@ namespace AppynittyWebApp.Areas.Identity.Pages.Account
                     {
                         throw;
                     }
-                    return RedirectToAction(nameof(Index));
+                    return RedirectToPage("./ResetPasswordConfirmation");
                 }
 
-                return RedirectToPage("./ResetPasswordConfirmation");
+            
             }
 
             foreach (var error in result.Errors)
