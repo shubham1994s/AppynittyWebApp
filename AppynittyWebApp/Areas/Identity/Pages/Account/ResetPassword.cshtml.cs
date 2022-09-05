@@ -24,15 +24,13 @@ namespace AppynittyWebApp.Areas.Identity.Pages.Account
 
         private readonly AppynittyCommunicationContext _context;
 
-        public ResetPasswordModel(UserManager<AppynittyWebAppUser> userManager)
+        public ResetPasswordModel(UserManager<AppynittyWebAppUser> userManager, AppynittyCommunicationContext context)
         {
             _userManager = userManager;
-        }
-
-        public ResetPasswordModel(AppynittyCommunicationContext context)
-        {
             _context = context;
         }
+
+      
         [BindProperty]
         public InputModel Input { get; set; }
 
