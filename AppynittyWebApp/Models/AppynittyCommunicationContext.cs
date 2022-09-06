@@ -17,6 +17,7 @@ namespace AppynittyWebApp.Models
         {
         }
 
+        public virtual DbSet<AppliedEmp> AppliedEmps { get; set; }
         public virtual DbSet<AspNetRole> AspNetRoles { get; set; }
         public virtual DbSet<AspNetRoleClaim> AspNetRoleClaims { get; set; }
         public virtual DbSet<AspNetUser> AspNetUsers { get; set; }
@@ -25,22 +26,44 @@ namespace AppynittyWebApp.Models
         public virtual DbSet<AspNetUserRole> AspNetUserRoles { get; set; }
         public virtual DbSet<AspNetUserToken> AspNetUserTokens { get; set; }
         public virtual DbSet<Blog> Blogs { get; set; }
+        public virtual DbSet<BlogRply> BlogRplies { get; set; }
+        public virtual DbSet<Career> Careers { get; set; }
         public virtual DbSet<LoginInfo> LoginInfos { get; set; }
         public virtual DbSet<News> News { get; set; }
+        public virtual DbSet<NewsRply> NewsRplies { get; set; }
         public virtual DbSet<Test> Tests { get; set; }
+
+        public virtual DbSet<NewsReplyDetails> NewsReplyDetails { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             if (!optionsBuilder.IsConfigured)
             {
 #warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see http://go.microsoft.com/fwlink/?LinkId=723263.
-                optionsBuilder.UseSqlServer("Server=202.65.157.254;Initial Catalog=AppynittyCommunication;Persist Security Info=False;User ID=appynitty;Password=BigV$Telecom;MultipleActiveResultSets=False;Connection Timeout=30;");
+                optionsBuilder.UseSqlServer("Server=202.65.157.254;Initial Catalog=AppynittyCommunication;PersistSecurityInfo=False;User ID=appynitty;Password=BigV$Telecom;MultipleActiveResultSets=False;Connection Timeout=30;");
             }
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.HasAnnotation("Relational:Collation", "Latin1_General_CI_AI");
+
+            modelBuilder.Entity<AppliedEmp>(entity =>
+            {
+                entity.ToTable("Applied_Emp");
+
+                entity.Property(e => e.CareersId).HasColumnName("Careers_Id");
+
+                entity.Property(e => e.CurrentLocation).HasColumnName("Current_Location");
+
+                entity.Property(e => e.Date).HasColumnType("datetime");
+
+                entity.Property(e => e.MobileNo).HasColumnName("Mobile_No");
+
+                entity.Property(e => e.Tac).HasColumnName("TAC");
+
+                entity.Property(e => e.TotExp).HasColumnName("Tot_Exp");
+            });
 
             modelBuilder.Entity<AspNetRole>(entity =>
             {
@@ -145,19 +168,47 @@ namespace AppynittyWebApp.Models
 
             modelBuilder.Entity<Blog>(entity =>
             {
-                entity.HasNoKey();
-
                 entity.Property(e => e.BlogsDate).HasColumnType("datetime");
 
                 entity.Property(e => e.BlogsTitle).HasMaxLength(500);
-
-                entity.Property(e => e.Id).ValueGeneratedOnAdd();
 
                 entity.Property(e => e.IsActive).HasColumnName("isActive");
 
                 entity.Property(e => e.Urlink)
                     .HasMaxLength(500)
                     .HasColumnName("URLink");
+            });
+
+            modelBuilder.Entity<BlogRply>(entity =>
+            {
+                entity.ToTable("Blog_Rply");
+
+                entity.Property(e => e.BlogId).HasColumnName("Blog_Id");
+
+                entity.Property(e => e.Date).HasColumnType("datetime");
+
+                entity.Property(e => e.MobileNo).HasColumnName("Mobile_No");
+            });
+
+            modelBuilder.Entity<Career>(entity =>
+            {
+                entity.Property(e => e.Date).HasColumnType("datetime");
+
+                entity.Property(e => e.IsActive).HasColumnName("isActive");
+
+                entity.Property(e => e.JobDesc).HasColumnName("Job_Desc");
+
+                entity.Property(e => e.JobLocation).HasColumnName("Job_Location");
+
+                entity.Property(e => e.JobTitle).HasMaxLength(500);
+
+                entity.Property(e => e.MaxExp).HasColumnName("Max_Exp");
+
+                entity.Property(e => e.MaxSalary).HasColumnName("Max_Salary");
+
+                entity.Property(e => e.MinExp).HasColumnName("Min_Exp");
+
+                entity.Property(e => e.MinSalary).HasColumnName("Min_Salary");
             });
 
             modelBuilder.Entity<LoginInfo>(entity =>
@@ -196,6 +247,17 @@ namespace AppynittyWebApp.Models
                 entity.Property(e => e.NewsDate).HasColumnType("datetime");
 
                 entity.Property(e => e.NewsTitle).HasMaxLength(500);
+            });
+
+            modelBuilder.Entity<NewsRply>(entity =>
+            {
+                entity.ToTable("News_Rply");
+
+                entity.Property(e => e.Date).HasColumnType("datetime");
+
+                entity.Property(e => e.MobileNo).HasColumnName("Mobile_No");
+
+                entity.Property(e => e.NewsId).HasColumnName("News_Id");
             });
 
             modelBuilder.Entity<Test>(entity =>

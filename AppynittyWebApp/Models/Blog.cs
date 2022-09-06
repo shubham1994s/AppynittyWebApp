@@ -12,7 +12,8 @@ namespace AppynittyWebApp.Models
         public string BlogsTitle { get; set; }
         public string BlogsEng { get; set; }
         public string BlogsMar { get; set; }
-        public bool? IsActive { get; set; }
+        public bool IsActive { get; set; }
         public string Urlink { get; set; }
+        public string FileName { get; set; }
     }
 }

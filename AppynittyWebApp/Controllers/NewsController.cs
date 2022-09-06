@@ -1,4 +1,5 @@
 ﻿using AppynittyWebApp.Models;
+using AppynittyWebApp.ViewModels;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -58,7 +59,7 @@ namespace AppynittyWebApp.Controllers
             [Bind("Id,NewsDate,NewsTitle,NewsEng,NewsMar,IsActive")] News NewsData)
         {
             bool IsnewsExist = false;
-          
+
             News news = await _context.News.FindAsync(Id);
 
             if (news != null)
@@ -179,6 +180,87 @@ namespace AppynittyWebApp.Controllers
             await _context.SaveChangesAsync();
 
             return RedirectToAction(nameof(Index));
+        }
+        [HttpGet]
+        public async Task<IActionResult> NewSection(string Id, NewsVM model)
+        {
+          
+            News news = await _context.News.Where(o=>o.IsActive==true).OrderByDescending(o => o.Id).FirstOrDefaultAsync();
+            var snews = await _context.News.Where(o => o.IsActive == true).OrderByDescending(o => o.Id).ToListAsync();
+
+            if (news == null)
+            {
+                return NotFound();
+            }
+            int Ids = Convert.ToInt32(Id);
+            if(Ids != 0)
+            {
+                news = await _context.News.Where(o => o.IsActive == true && o.Id== Ids).FirstOrDefaultAsync();
+            }
+            ViewBag.newslist = snews;
+            ViewBag.ID = news.Id;
+            model.NewsEng = news.NewsEng;
+            model.NewsTitle = news.NewsTitle;
+            model.Id = news.Id;
+            model.NewsId = news.Id;
+            return View(model);
+        }
+      
+        
+        [HttpPost]
+        //[ValidateAntiForgeryToken]
+        public async Task<IActionResult> NewSection( NewsVM model)
+        {
+
+
+            NewsRply News = new NewsRply();
+          
+            if (ModelState.IsValid)
+            {
+                try
+                {
+                    News.Name = model.Name;
+                    News.Email = model.Email;
+                    News.MobileNo = model.MobileNo;
+                    News.Comment = model.Comment;
+                    News.NewsId = model.NewsId;
+                    News.Date = DateTime.Now;
+                                    
+                   _context.Add(News);
+                  
+                    await _context.SaveChangesAsync();
+                }
+                catch (DbUpdateConcurrencyException)
+                {
+                    throw;
+                }
+                return RedirectToAction(nameof(Index));
+            }
+            return View(model);
+        }
+
+        public IActionResult NewsReply(int Id)
+        {
+            NewsRplyVM NewsRplyDetail = new NewsRplyVM();
+            List<NewsRplyDetailsIteam> ListNewsRplyItems = new List<NewsRplyDetailsIteam>();
+            string StoredProc = "exec NewsReplyDetails " + "@Id = " + Id ;
+            var data = _context.NewsReplyDetails.FromSqlRaw(StoredProc).ToList();
+
+            if (data != null && data.Count > 0)
+            {
+                NewsRplyDetail.ListNewsRplyDetails = data.Select(x => new NewsRplyDetailsIteam()
+                {
+                    News_Id = x.News_Id,
+                    Date = x.Date,
+                    Name = x.Name,
+                    Email = x.Email,
+                    Mobile_No = x.Mobile_No,
+                    Comment = x.Comment,
+                    NewsTitle = x.NewsTitle
+                })
+               .ToList();
+            }
+                return View(NewsRplyDetail);
         }
     }
 }
