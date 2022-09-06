@@ -8,9 +8,9 @@ namespace AppynittyWebApp.Models
 {
     public partial class AppynittyCommunicationContext : DbContext
     {
-        public AppynittyCommunicationContext()
-        {
-        }
+        //public AppynittyCommunicationContext()
+        //{
+        //}
 
         public AppynittyCommunicationContext(DbContextOptions<AppynittyCommunicationContext> options)
             : base(options)
