@@ -180,5 +180,26 @@ namespace AppynittyWebApp.Controllers
 
             return RedirectToAction(nameof(Index));
         }
+
+        public async Task<IActionResult> NewSection(string Id)
+        {
+             
+            var news = await _context.News.Where(o=>o.IsActive==true).OrderByDescending(o => o.Id).FirstOrDefaultAsync();
+            var snews = await _context.News.Where(o => o.IsActive == true).OrderByDescending(o => o.Id).ToListAsync();
+
+            //if (news == null)
+            //{
+            //    return NotFound();
+            //}
+            int Ids = Convert.ToInt32(Id);
+            if(Ids != 0)
+            {
+                 news = await _context.News.Where(o => o.IsActive == true && o.Id== Ids).FirstOrDefaultAsync();
+            }
+            ViewBag.newslist = snews;
+            return View(news);
+        }
+
+       
     }
 }
