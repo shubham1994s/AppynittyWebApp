@@ -1,0 +1,403 @@
+.dm-main .appy-btn,
+.bg-appy{
+    background: #3CBABA;
+}
+.contact-main .contact-section{
+    display:flex;        
+}
+.contact-main .half{    
+    flex:1;
+}
+.contact-main .half .left{    
+    display: flex;
+    justify-content:flex-end;
+}
+.contact-main .half .right{
+    display: flex;
+    justify-content:flex-start;    
+}
+.contact-main .contact-section .section{
+    display: flex;   
+    flex-direction:column;
+    max-width:685px;
+    width: 100%;
+    min-height: 90vh;    
+    justify-content:space-around;    
+}
+.contact-main .contact-section .section .product-img .img{
+    max-width: 100%;
+    display:block;
+    margin: 0 auto;
+}
+
+.contact-main .right .section .top-text{
+    text-align: right;    
+}
+
+.contact-main  .top-text .title,
+.contact-main .top-text .sub-title{
+    color:#FFFFFF;
+}
+.contact-main  .top-text .title{
+    font-size: 55px;
+    line-height: 125%;
+}
+.contact-main  .top-text .sub-title{
+    font-size: 25px;
+    line-height: 125%;
+}
+
+
+
+
+.text-section{
+    padding-top: 50px;
+    padding-bottom: 20px;
+}
+
+.text-section .text{
+    font-size: 18px;
+    line-height: 150%;
+    text-align: justify;
+    margin-bottom: 20px;
+
+}
+
+.f-v-m-section{
+    display: flex;
+}
+
+.contact-main .f-v-m-section .section{
+    display: flex;   
+    max-width:685px;
+    width: 100%;    
+}
+
+.v-m-section{
+    padding-left:5vh;
+}
+
+.v-m-section  .title{
+    color: #FFFFFF;
+    font-size: 45px;
+    margin-bottom: 20px;
+}
+
+.v-m-section .desc{
+    font-size: 25px;
+    color: #FFFFFF;
+    line-height: 35px;
+}
+
+.top-flex  .left .section,
+.left .founders-section{
+    padding-right: 40px;
+}
+.top-flex  .right .section,
+.right .founders-section{
+    padding-left: 40px;
+}
+
+.founders-section .title{
+    color: #1B2D39;
+    font-size: 45px;
+    margin-bottom: 20px;
+}
+.founder .top{
+    display: flex;
+    align-items:center;
+    justify-content:center; 
+    padding: 20px 0;
+}
+.top .f-img{
+    margin-right:20px;
+}
+.top .f-name{    
+    margin-left:20px;
+}
+
+.top .name{
+    font-size: 40px;
+}
+.top .desig{
+    font-size: 20px;
+}
+.down .desc{
+    font-size: 18px;
+    line-height: 150%;
+}
+.left .down .desc{
+    text-align: justify;
+}
+.right .down .desc{
+    text-align: justify;
+}
+
+
+.career-section .top-content{
+    display: flex;
+}
+.career-section .top-content .title{
+    font-size: 50px;
+    line-height: 65px;
+    padding: 30px 0;    
+    margin-bottom: 25px;
+}
+.career-section .top-content .sub-title{
+    font-size: 30px;
+    line-height: 35px;
+    padding: 30px 0;
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.career-section .text{
+    font-size: 18px;
+    line-height: 150%;
+    text-align: justify;    
+}
+
+
+
+
+.top-flex{
+    display: flex;
+    padding: 50px 0;
+}
+.top-flex .half{
+    flex:1;
+}
+.top-flex .half .left{
+    display: flex;
+}
+.top-flex .half .right{
+    display: flex;
+    height: 100%;
+}
+.top-flex .section{
+    display: flex;
+    flex-direction: column;
+    max-width: 705px;
+    width: 100%;
+    justify-content: flex-end;
+    align-items: stretch;
+    height: 100%;
+}
+.top-flex  .left .section {
+    text-align: right;    
+}
+.top-flex  .left .title {
+    font-size: 50px;
+    line-height: 150%;
+}
+.top-flex  .right .title {
+    font-size: 23px;
+    line-height: 150%;
+}
+
+
+
+
+
+
+
+
+
+
+
+.form-section{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    padding: 50px 0;    
+}
+
+.form-section .f-g-s .form-control{
+    height: 40px;
+    border: 1px solid #1B2D39;
+    font-size: 20px;
+    border-radius: 0;
+    padding: 0 15px;
+    
+}
+.appy-btn{
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+    border: none;
+    display: inline-block;
+    outline: 0;		    
+    padding: 6px 20px!important;        
+    overflow: hidden;
+    text-decoration: none!important;
+    text-align: center;
+    cursor: pointer;
+    white-space: nowrap;
+}
+
+.c-f-b .appy-btn{
+    background: #3CBABA;
+    color: #FFFFFF;
+    font-size: 18px;
+    margin: 0;
+}
+
+ .f-g-s{
+    margin: 10px 20px;
+}
+
+.f-g-s .icon{
+    font-size: 90%;
+    margin-right: 15px;
+}
+.f-g-s .email,
+.f-g-s .mobile{
+    font-size: 18px;
+}
+.f-g-s .email a,
+.f-g-s .mobile a{
+    color:#1B2D39;
+}
+
+@media (max-width: 1400px){
+    .contact-main .f-v-m-section .section,
+    .contact-main .contact-section .section{
+        max-width:585px;
+    }
+    
+}
+@media (max-width: 1199px){
+    .contact-main .top-text .title {
+        font-size: 65px;
+    }
+    .contact-main .top-text .sub-title {    
+        font-size: 35px;
+    }
+    .top .name {
+        font-size: 35px;
+    }
+    .top-flex  .left .title {
+        font-size: 40px;        
+    }
+    .contact-main .contact-section .section{     
+        padding: 0 15px;
+    }
+    .contact-main .f-v-m-section .left .section {
+        padding-left: 15px;
+    }
+    .contact-main .f-v-m-section  .right .section{
+        padding-right: 15px;
+    }
+}
+@media (max-width: 991px){
+    .top-flex  .left .section,
+    .left .founders-section{
+        padding-right: 25px;
+    }
+    .top-flex  .right .section,
+    .right .founders-section{
+        padding-left: 25px;
+    }
+    .contact-main .top-text .title {
+        font-size: 55px;
+    }
+    .contact-main .top-text .sub-title {    
+        font-size: 25px;
+    }
+    .text-section .text {
+        font-size: 23px;
+    }
+    .top-flex  .left .title {
+        font-size: 35px;        
+    }
+    .top .name {
+        font-size: 30px;
+    }
+    .down .desc ,
+    .career-section .text {
+        font-size: 22px;
+    }
+    .top-flex .right .title {
+        font-size: 22px;
+    }
+    
+}
+@media (max-width: 768px){
+    .top-flex,
+    .f-v-m-section {        
+        flex-direction: column;
+    }
+    .form-section,
+    .top-flex{
+        padding-top: 30px;       
+        padding-bottom: 30px;        
+    }
+
+    .contact-main .contact-section {        
+        flex-direction: column-reverse;        
+    }
+    
+    .contact-main .f-v-m-section .section,     
+    .contact-main .contact-section .section{     
+        padding: 0 15px;        
+        max-width: 100%;
+        min-height: auto;
+        padding-top: 20px;
+        padding-bottom: 30px;
+    }
+    .contact-main .contact-section .section {
+        min-height: 50vh;
+    }
+    .contact-main .right .section .top-text {
+        text-align: center;
+    }
+    .contact-main .f-v-m-section .left .section ,
+    .contact-main .f-v-m-section .right .section {
+        padding: 0;
+    }
+    .top-flex .left .section, .left .founders-section,
+    .top-flex .right .section, .right .founders-section {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+    .top-flex .left .section ,
+    .top-flex .section {
+        text-align: center;
+        align-items: center;
+    }
+    .left .down .desc {
+        text-align: left;
+    }
+    .contact-main .top-text .sub-title .l-b,
+    .top-flex .right .title .l-b{
+        display: none;
+    }
+    .contact-main .top-text .title {
+        font-size: 40px;
+    }
+    .contact-main .top-text .sub-title {    
+        font-size: 20px;
+    }
+    .career-section .text, 
+    .text-section .text {
+        font-size: 22px;
+        text-align: left;
+    }
+    
+}
+@media (max-width: 480px){
+    .founder .top {
+        padding: 10px 0;
+        flex-direction: column;
+    }
+    .contact-main .f-v-m-section .section,     
+    .contact-main .contact-section .section{        
+        padding-top: 30px;
+        padding-bottom: 30px;
+    }
+    .top .desig {
+        text-align: center;
+    }
+    .top .f-img ,
+    .top .f-name {
+        margin: 0px;
+    }
+}

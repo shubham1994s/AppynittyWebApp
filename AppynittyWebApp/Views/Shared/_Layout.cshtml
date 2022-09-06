@@ -10,11 +10,11 @@
 </head>
 <body>
     <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow">
+        <nav class="p-0 navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow">
             <div class="container">
-                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">
+                <a class="navbar-brand p-0" asp-area="" asp-controller="Home" asp-action="Index">
 
-                    <img src="~/Assets/Images/appynitty-logo.png" alt="logo" />
+                    <img src="~/Assets/Images/appynitty-logo.png" alt="logo" style="height: 70px;"/>
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
                         aria-expanded="false" aria-label="Toggle navigation">
@@ -26,14 +26,14 @@
                             <a class="nav-link text-dark px-5" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark px-5" asp-area="" asp-controller="Home" asp-action="Privacy">About Us</a>
+                            <a class="nav-link text-dark px-5" asp-area="" asp-controller="Home" asp-action="aboutus">About Us</a>
                         </li>
                     </ul>
                 </div>
             </div>
 
         </nav>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow p-0">
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mx-4 p-0">
             @*<div class="container">*@
              
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
@@ -43,28 +43,31 @@
                 <div class="collapse d-sm-inline-flex justify-content-between ">
                     <ul class="navbar-nav flex-grow-1 s-nav">
                         <li class="nav-item">
-                            <a class="nav-link text-dark  px-4" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+                            <a class="nav-link text-dark  px-3" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark   px-4" asp-area="" asp-controller="Home" asp-action="Privacy">Mobile Apps</a>
+                            <a class="nav-link text-dark   px-3" asp-area="" asp-controller="MobileApps" asp-action="MobileApp">Mobile Apps</a>
                         </li>
-                        <li class="nav-item px-4">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Customized Apps</a>
+                        <li class="nav-item px-3">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="MobileApps" asp-action="CustomApp">Customized Apps</a>
                         </li>
-                        <li class="nav-item  px-4">
+                        <li class="nav-item  px-3">
                             <a class="nav-link text-dark px-3" asp-area="" asp-controller="Home" asp-action="Privacy">Our Apps</a>
                         </li>
                         <li class="nav-item  px-4">
-                            <a class="nav-link text-dark px-3" asp-area="" asp-controller="Home" asp-action="Index">Lead Genration</a>
+                            <a class="nav-link text-dark px-3" asp-area="" asp-controller="DigitalSolution" asp-action="leadGeneration">Lead Genration</a>
                         </li>
-                        <li class="nav-item  px-4">
-                            <a class="nav-link text-dark px-3" asp-area="" asp-controller="Home" asp-action="Privacy">Lead Mangement Service</a>
+                        <li class="nav-item  px-3">
+                            <a class="nav-link text-dark px-3" asp-area="" asp-controller="DigitalSolution" asp-action="leadMangement">Lead Mangement Service</a>
                         </li>
-                        <li class="nav-item  px-4">
-                            <a class="nav-link text-dark  px-3" asp-area="" asp-controller="Home" asp-action="Index">Sales Intelligence Paas</a>
+                        <li class="nav-item  px-3">
+                            <a class="nav-link text-dark  px-3" asp-area="" asp-controller="DigitalSolution" asp-action="EmailMangement">Email Mangement</a>
                         </li>
-                        <li class="nav-item  px-4">
-                            <a class="nav-link text-dark  px-3" asp-area="" asp-controller="Home" asp-action="Privacy">Contact Us</a>
+                        <li class="nav-item  px-3">
+                            <a class="nav-link text-dark  px-3" asp-area="" asp-controller="DigitalSolution" asp-action="SalesIntelligence">Sales Intelligence Paas</a>
+                        </li>
+                        <li class="nav-item  px-3">
+                            <a class="nav-link text-dark  px-3" asp-area="" asp-controller="Home" asp-action="ContactUs">Contact Us</a>
                         </li>
                     </ul>
                 </div>
@@ -73,27 +76,27 @@
         </nav>
     </header>
     @*<div class="container">*@
-        <main role="main" class="pb-3">
+        <main role="main">
             @RenderBody()
         </main>
     @*</div>*@
 
 <footer class="border-top footer text-muted footer-box">
     <div class="container">
-        <div class="d-flex justify-content-between">
+        <div class="d-flex justify-content-between foot">
             <div style="border-right: 2px solid #9d9999b0; padding-right: 3%;" class="mx-3">
-                <h5 class="text-uppercase"><a href="https://www.appynitty.com/about-us/" title="About Us">About Us</a></h5>
+                <h5 class="text-uppercase">About Us</h5>
 
 
                 <ul class="list-unstyled">
                     <li>
-                        <a href="https://www.appynitty.com/about-us#company" title="Company Profile">Company Profile</a>
+                        <a href="/Home/AboutUs#company" title="Company Profile">Company Profile</a>
                     </li>
-                    <li>
+                    @*<li>
                         <a href="https://www.appynitty.com/about-us#founders" title="Our Founders">Our Founders</a>
-                    </li>
+                    </li>*@
                     <li>
-                        <a href="https://www.appynitty.com/about-us#careers" title="Careers">Careers</a>
+                        <a href="/Home/aboutus#careers" title="Careers">Careers</a>
                     </li>
 
                 </ul>
@@ -104,10 +107,10 @@
 
                 <ul class="list-unstyled">
                     <li>
-                        <a href="https://www.appynitty.com/about-us#company" title="Company Profile">Customized Apps</a>
+                        <a href="/MobileApps/CustomApp" title="Company Profile">Customized Apps</a>
                     </li>
                     <li>
-                        <a href="https://www.appynitty.com/about-us#founders" title="Our Founders">Our Apps</a>
+                        <a href="#" title="Our Founders">Our Apps</a>
                     </li>
 
                 </ul>
@@ -118,7 +121,7 @@
 
                 <ul class="list-unstyled">
                     <li>
-                        <a href="https://www.appynitty.com/about-us#company" title="Company Profile">Lead Generation</a>
+                        <a href="/DigitalSolution/leadGeneration" title="Company Profile">Lead Generation</a>
                     </li>
 
 
@@ -169,7 +172,7 @@
                 </ul>
             </div>
         </div>
-        <div class="d-flex justify-content-between mt-4">
+        <div class="d-flex justify-content-between mt-4 flex-sm-row flex-column">
 
             <div class="f-menu">
                 <h5 class="title text-white">follow us on</h5>
