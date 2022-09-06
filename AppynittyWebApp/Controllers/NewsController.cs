@@ -244,17 +244,17 @@ namespace AppynittyWebApp.Controllers
             NewsRplyVM NewsRplyDetail = new NewsRplyVM();
             List<NewsRplyDetailsIteam> ListNewsRplyItems = new List<NewsRplyDetailsIteam>();
             string StoredProc = "exec NewsReplyDetails " + "@Id = " + Id ;
-            var data = _context.NewsRplies.FromSqlRaw(StoredProc).ToList();
+            var data = _context.NewsReplyDetails.FromSqlRaw(StoredProc).ToList();
 
             if (data != null && data.Count > 0)
             {
                 NewsRplyDetail.ListNewsRplyDetails = data.Select(x => new NewsRplyDetailsIteam()
                 {
-                    Id = x.Id,
+                    News_Id = x.News_Id,
                     Date = x.Date,
                     Name = x.Name,
                     Email = x.Email,
-                    Mobile_No = x.MobileNo,
+                    Mobile_No = x.Mobile_No,
                     Comment = x.Comment
                 })
                .ToList();
