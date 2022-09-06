@@ -14,7 +14,7 @@ namespace AppynittyWebApp.ViewModels
         public string NewsMar { get; set; }
         public bool IsActive { get; set; }
 
-        public string BlogId { get; set; }
+        public int? NewsId { get; set; }
         public DateTime Date { get; set; }
         public string Name { get; set; }
         public string Email { get; set; }
