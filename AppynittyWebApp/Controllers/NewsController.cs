@@ -255,7 +255,8 @@ namespace AppynittyWebApp.Controllers
                     Name = x.Name,
                     Email = x.Email,
                     Mobile_No = x.Mobile_No,
-                    Comment = x.Comment
+                    Comment = x.Comment,
+                    NewsTitle = x.NewsTitle
                 })
                .ToList();
             }
