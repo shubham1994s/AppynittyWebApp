@@ -34,6 +34,7 @@ namespace AppynittyWebApp.Controllers
         {
             ViewBag.PageName = Id == null ? "Create News" : "Edit News";
             ViewBag.IsEdit = Id == null ? false : true;
+          
             if (Id == null)
             {
                 return View();
@@ -41,7 +42,7 @@ namespace AppynittyWebApp.Controllers
             else
             {
                 var blogs = await _context.Blogs.FindAsync(Id);
-
+                ViewBag.Filename = blogs.FileName;
                 if (blogs == null)
                 {
                     return NotFound();

@@ -41,20 +41,35 @@
                     <textarea id="BlogsEng" asp-for="BlogsEng" class="form-control" rows="10" cols="100"></textarea>
                     <span asp-validation-for="BlogsEng" class="text-danger"></span>
                 </div>
-                <div class="form-group">
+                <div class="form-group" style="display:none;">
                     <label asp-for="BlogsMar" class="control-label"></label>
                     @*<input asp-for="NewsMar" class="form-control" />*@
                     <textarea id="BlogsMar" asp-for="BlogsMar" class="form-control" rows="10" cols="100"></textarea>
                     <span asp-validation-for="BlogsMar" class="text-danger"></span>
                 </div>
-                <div class="form-group">
-                    <label asp-for="FileName" class="control-label"></label>
-                    <div class="custom-file">
-                        <input type="file" asp-for="FileName" class="custom-file-input" id="customFile">
-                        <label class="custom-file-label" for="customFile">Choose file</label>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label asp-for="FileName" class="control-label"></label>
+                            <div class="custom-file">
+                                <input type="file" asp-for="FileName" class="custom-file-input" id="customFile">
+                                <label class="custom-file-label" for="customFile">Choose file</label>
+                            </div>
+                            <span asp-validation-for="FileName" class="text-danger"></span>
+                        </div>
                     </div>
-                    <span asp-validation-for="FileName" class="text-danger"></span>
-                </div>
+                    <div class="col-md-6">
+                        @if (@ViewBag.FileName != null)
+                        {
+                            <label class="control-label">Last Blog Image</label>
+                            <div class="form-group text-center" style="margin-top: 10%;">
+                                <span id="getfilename" style="display:none;">@Html.DisplayFor(model => model.FileName)</span>
+                                <img id="image" src="~/BlogImages/model.FileName" class="rounded-circle" height="60" width="60" asp-append-version="true" />
+                            </div>
+                        }
+                    </div>
+                 </div>
+
                 <div class="form-group">
                     <label asp-for="IsActive" class="control-label"></label>
                     @*@Html.CheckBox("isActive")*@
@@ -78,6 +93,15 @@
         $(".custom-file-input").on("change", function () {
             var fileName = $(this).val().split("\\").pop();
             $(this).siblings(".custom-file-label").addClass("selected").html(fileName);
+        });
+    </script>
+    <script>
+
+        $(document).ready(function () {
+            debugger;
+            var filename = document.getElementById("getfilename").innerHTML;
+
+            document.getElementById("image").src = "/BlogImages/" + filename;
         });
     </script>
 
