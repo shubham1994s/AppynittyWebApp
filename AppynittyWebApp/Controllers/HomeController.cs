@@ -24,7 +24,12 @@ namespace AppynittyWebApp.Controllers
             //return Redirect("Identity/Account/Login");
             return View();
         }
+        public IActionResult AboutUS()
+        {
 
+            //return Redirect("Identity/Account/Login");
+            return View();
+        }
         public IActionResult Privacy()
         {
             return View();

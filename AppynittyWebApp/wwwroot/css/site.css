@@ -108,3 +108,9 @@ footer h5 a{
 footer h5 a:hover {
     color: white !important;
 }
+
+@media screen and (max-width: 500px) {
+    .foot {
+        display: none !important;
+    }
+}

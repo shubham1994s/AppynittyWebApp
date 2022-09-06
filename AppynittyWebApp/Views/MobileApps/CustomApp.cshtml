@@ -1,0 +1,420 @@
+﻿
+@{
+    ViewData["Title"] = "CustomApp";
+}
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+@*<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" />*@
+
+@*<script src="https://code.jquery.com/jquery-1.9.1.js"></script>*@
+<link href="~/Assets/CSS/CustomApp.css" rel="stylesheet" />
+<link href="~/Assets/CSS/Icon.css" rel="stylesheet" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+    .tab-content > .active {
+        display: block !important;
+    }
+
+    .tab-content > .tab-pane {
+        display: none;
+    }
+    /* .fade.in {
+        opacity: 1;
+    }*/
+    .show {
+        display: none !important;
+    }
+    .icon .ai-arrow-down:hover{background:#ffffff}
+    .fade:not(.show) {
+        opacity: 1;
+    }
+</style>
+<section class="c-m-a-main">
+
+    <div class="flex">
+        <div class="half">
+            <div class="left">
+                <div class="section">
+                    <div class="top-img">
+                        <!-- <picture>
+                                                            <source media="(max-width: )" srcset="">
+                                                        <img class="img img-responsive" src="" alt="" title=""/>
+                        </picture> -->
+                        <picture>
+
+                            <source media="(max-width: 768px)" srcset="https://www.appynitty.com/assets/custom-mobile-app/img/custom_app@768.gif">
+
+                            <source media="(max-width: 1199px)" srcset="https://www.appynitty.com/assets/custom-mobile-app/img/custom_app@1199.gif">
+                            <img class="img img-responsive" src="https://www.appynitty.com/assets/custom-mobile-app/img/custom_app.gif" alt="Digital Marketing Agency" title="Digital Marketing Services">
+                        </picture>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="half">
+            <div class="right bg-appy">
+                <div class="section">
+                    <div class="top-text">
+                        <h1 class="title">Custom<br> Mobile App<br>Development</h1>
+                        <h2 class="sub-title">Get an Innovative &amp; Customized<br> Mobile App for your Business!</h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="second-section-top">
+        <div class="container">
+            <div class="content">
+                <p class="text">
+                    Whether you are a SME or large scale organization, our team of highly experienced app developers and designers along with our dedicated client servicing team will work closely with you to create an effective mobile app
+                    channel to drive your business growth and provide a seamless app experience for your clients!
+                </p>
+
+                <p class="text">We specialize in creating Native Mobile Apps for Android and iOS operating systems. Native apps are built from start to end for the required operating system using the technologies relevant to that platform.</p>
+
+                <p class="text">Native apps are known for their high quality, flawless functioning and light weight and therefore very popular among the app-users.</p>
+            </div>
+        </div>
+    </div>
+    @*<nav>
+        <div class="nav nav-tabs" id="nav-tab" role="tablist">
+            <a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab" aria-controls="nav-home" aria-selected="true">Home</a>
+            <a class="nav-item nav-link" id="nav-profile-tab" data-toggle="tab" href="#nav-profile" role="tab" aria-controls="nav-profile" aria-selected="false">Profile</a>
+            <a class="nav-item nav-link" id="nav-contact-tab" data-toggle="tab" href="#nav-contact" role="tab" aria-controls="nav-contact" aria-selected="false">Contact</a>
+        </div>
+    </nav>
+    <div class="tab-content" id="nav-tabContent">
+        <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">umesh</div>
+        <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">ntsgsg</div>
+        <div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab">jjjjjj</div>
+    </div>*@
+    <div class="third-section">
+        <ul class="os-section">
+            <li class="android-section active">
+                <div class="android" id="nav-home-tab" data-toggle="tab" href="#one" role="tab" aria-controls="nav-home" aria-selected="true">
+                    <div class="icon ai-android os-icon">&nbsp;</div>
+
+                    <h2 class="title">Android Mobile Apps</h2>
+
+                    <div class="icon ai-arrow-down">&nbsp;</div>
+                </div>
+            </li>
+            <li class="ios-section">
+                <div class="ios" data-toggle="tab" href="#two">
+                    <div class="icon ai-ios os-icon">&nbsp;</div>
+
+                    <h2 class="title">iOS Mobile Apps</h2>
+
+                    <div class="icon ai-arrow-down">&nbsp;</div>
+                </div>
+            </li>
+        </ul>
+
+        <div class="os-details tab-content">
+            <div class="container tab-pane fade in active" id="one" role="tabpanel" aria-labelledby="nav-home-tab">
+                <div class="content">
+                    <p class="text">
+                        Our Android App developing team consists of core Android developers whose expertise in Java and XML allows us to develop highly interactive and dynamic native android mobile apps to meet every business requirement.
+                    </p>
+
+                    <p class="text">
+                        Our apps are highly secure, visually appealing and at the same time functionally optimized with In-app Payment Gateway Integration, Social media integration, push messaging, device data sync, user sign-up through social
+                        authentication, live streaming automated customer database generation, insightful mobile app data analytics and convenient access to device integrated features like camera, in-app navigation through Google Maps
+                        Integration, etc.
+                    </p>
+
+                    <p class="text"><b>Customized to include and automate all possible business operations, here’s a glimpse of how we go about to Create an Unique and Robust Mobile App for Your Business</b></p>
+                </div>
+            </div>
+
+            <div class="container tab-pane fade" id="two">
+                <div class="content">
+                    <p class="text">
+                        Our iOS mobile apps run seamlessly on iPhones and iPads that are fast catching the fancy of business professionals across the world. We have dedicated team of iOS mobile app developers who are highly experienced in
+                        creating native mobile apps using Objective C technology and iOS systems frameworks.
+                    </p>
+
+                    <p class="text">
+                        Our apps are highly secure, visually appealing and at the same time functionally optimized with In-app Payment Gateway Integration, Social media integration, live streaming, push messaging, device data sync, user sign-up
+                        through social authentication, automated customer database generation, insightful mobile app data analytics and convenient access to device integrated features like camera, in-app navigation through GPS Integration, etc.
+                    </p>
+
+                    <p class="text"><b>Customized to include and automate all possible business operations, here’s a glimpse of how we go about to Create an Unique and Robust Mobile App for Your Business</b></p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="fourth-section">
+        <div class="container">
+            <div class="content">
+                <h2 class="title">Our Mobile App Development Process</h2>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="content">
+                <picture>
+                    <source media="(max-width: 480px)" srcset="https://www.appynitty.com/assets/custom-mobile-app/img/app_making_static.png" />
+                    <source media="(max-width: 768px)" srcset="https://www.appynitty.com/assets/custom-mobile-app/img/app_making_desktop@768.gif" />
+                    <source media="(max-width: 1191px)" srcset="https://www.appynitty.com/assets/custom-mobile-app/img/app_making_desktop@1199.gif" />
+                    <img alt="App Development Process" class="img img-responsive" src="https://www.appynitty.com/assets/custom-mobile-app/img/app_making_desktop.gif" title="App Development Process" />
+                </picture>
+            </div>
+        </div>
+    </div>
+    <div class="fifth-section">
+        <div class="container">
+            <div class="content">
+                <h2 class="title">Why Choose Appynitty as your Mobile App Development Partner?</h2>
+            </div>
+
+            <div class="content-list">
+                <ul class="content-list ul-list">
+                    <li class="li-item">Highest Quality Native Android and iOS Mobile Apps</li>
+                    <li class="li-item">All-encompassing Feature-rich App</li>
+                    <li class="li-item">Seamless Interface Experience that retains User Interest</li>
+                    <li class="li-item">Ensures Increased Brand Visibility</li>
+                    <li class="li-item">Industry Grade Security</li>
+                    <li class="li-item">Multiple Online Payment Channels</li>
+                    <li class="li-item">Integrated Cloud Contact Center</li>
+                    <li class="li-item">Highly customizable and lightweight</li>
+                    <li class="li-item">Automated customer database generation</li>
+                    <li class="li-item">100% CRM integration</li>
+                    <li class="li-item">Mobile App Analytics with Specialized Call Analytics</li>
+                    <li class="li-item">Easy &amp; Real-time App editing</li>
+                    <li class="li-item">Easy business integration and no technical knowledge needed</li>
+                    <li class="li-item">Trendy and Future Proof App Design</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+
+    <!--ty popoup-->
+    @*<div id="pics" style="display: block; margin-top: -228px; margin-left: -300.5px;"><img id="picOne" src="ty.jpg" /></div>*@
+    <!--ty popoup-->
+
+    <div class="second-section-bottom">
+        <div class="container">
+            <div class="content">
+                <p class="text">
+                    Let your Personalized Business Mobile App automate your brand awareness,<br />
+                    uplift customer experience, optimize your digital footprints<br />
+                    and maximize sales revenues!
+                </p>
+
+                <p class="text"><a class="appy-btn login-window" href="#login-box">Lets Connect !</a></p>
+            </div>
+        </div>
+    </div>
+
+    <style type="text/css">
+        .btn-sign {
+            width: 460px;
+            margin-bottom: 20px;
+            margin: 0 auto;
+            padding: 20px;
+            border-radius: 5px;
+            background: -moz-linear-gradient(center top, #00c6ff, #018eb6);
+            background: -webkit-gradient(linear, left top, left bottom, from(#00c6ff), to(#018eb6));
+            background: -o-linear-gradient(top, #00c6ff, #018eb6);
+            filter: progid:DXImageTransform.Microsoft.gradient(startColorStr='#00c6ff', EndColorStr='#018eb6');
+            text-align: center;
+            font-size: 36px;
+            color: #fff;
+            text-transform: uppercase;
+        }
+
+            .btn-sign a {
+                color: #fff;
+                text-shadow: 0 1px 2px #161616;
+            }
+
+        #mask {
+            display: none;
+            background: #000;
+            position: fixed;
+            left: 0;
+            top: 0;
+            z-index: 10;
+            width: 100%;
+            height: 100%;
+            opacity: 0.8;
+            z-index: 999;
+        }
+
+        .login-popup {
+            display: none;
+            background: #fff;
+            padding: 10px;
+            border: 2px solid #ddd;
+            float: left;
+            font-size: 1.2em;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            z-index: 99999;
+            border-radius: 3px 3px 3px 3px;
+            -moz-border-radius: 3px; /* Firefox */
+            -webkit-border-radius: 3px; /* Safari, Chrome */
+        }
+
+        #pics {
+            display: none;
+            /*background: #fff;
+        box-shadow: 0px 0px 20px #999;
+        border: 2px solid #ddd;
+        */
+            padding: 10px;
+            float: left;
+            font-size: 1.2em;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            z-index: 99999;
+        }
+
+        img.btn_close {
+            float: right;
+            margin: -28px -28px 0 0;
+        }
+
+        fieldset {
+            border: none;
+        }
+
+        form.signin .textbox label {
+            display: block;
+            padding-bottom: 7px;
+        }
+
+        form.signin .textbox span {
+            display: block;
+        }
+
+        form.signin p, form.signin span {
+            color: #999;
+            font-size: 11px;
+            line-height: 18px;
+        }
+
+        form.signin .textbox input {
+            background: #fff;
+            border-bottom: 1px solid #333;
+            border-left: 1px solid #000;
+            border-right: 1px solid #333;
+            border-top: 1px solid #000;
+            color: black;
+            border-radius: 3px 3px 3px 3px;
+            -moz-border-radius: 3px;
+            -webkit-border-radius: 3px;
+            font: 13px Arial, Helvetica, sans-serif;
+            padding: 6px 6px 4px;
+            width: 200px;
+        }
+
+        form.signin input:-moz-placeholder {
+            color: #bbb;
+            text-shadow: 0 0 2px #000;
+        }
+
+        form.signin input::-webkit-input-placeholder {
+            color: #bbb;
+            text-shadow: 0 0 2px #000;
+        }
+
+        .button {
+            background: -moz-linear-gradient(center top, #f3f3f3, #dddddd);
+            background: -webkit-gradient(linear, left top, left bottom, from(#3cbaba), to(#3cbaba));
+            background: -o-linear-gradient(top, #f3f3f3, #dddddd);
+            filter: progid:DXImageTransform.Microsoft.gradient(startColorStr='#f3f3f3', EndColorStr='#dddddd');
+            border-color: #000;
+            border-width: 1px;
+            border-radius: 4px 4px 4px 4px;
+            -moz-border-radius: 4px;
+            -webkit-border-radius: 4px;
+            color: #f4f4f4;
+            cursor: pointer;
+            display: inline-block;
+            padding: 6px 30px 4px;
+            margin-top: 10px;
+            font: 12px;
+            width: 130x;
+        }
+
+        .modal-footer {
+            padding-left: 83px;
+            text-align: center;
+        }
+    </style>
+    <div class="container">
+        <div id="content">
+            <div class="post">
+
+                <div id="login-box" class="login-popup moz-width">
+                    <a href="#" id="close" class="close cls"><img src="/close_pop.png" class="btn_close" title="Close Window" alt="Close" /></a>
+                    <form name="quote" method="post" class="signin" id="form" action="#" onsubmit="return validateForm(event)">
+                        <fieldset class="textbox" style="padding:15px;color: black;">
+                            <div class="modal-header" style="color: black;">
+                                <strong>Help Us Contact You!</strong>
+                            </div>
+
+                            <div class="modal-body">
+                                <div class="form-group">
+                                    <label for="dummyText" class="control-label col-xs-4">*Name</label>
+                                    <div class="input-group col-xs-7">
+                                        <input type="hidden" name="appname" value="customized-mobile-app" id="appname" class="form-control" />
+                                        <input type="text" name="name" id="name" class="form-control" />
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="dummyText" class="control-label col-xs-4">*Email</label>
+                                    <div class="input-group col-xs-7">
+                                        <input type="email" name="email" id="email" class="form-control" />
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="dummyText" class="control-label col-xs-4">*Mobile No</label>
+                                    <div class="input-group col-xs-7">
+                                        <input type="text" name="mob" id="mob" class="form-control" />
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="dummyText" class="control-label col-xs-4">Location</label>
+                                    <div class="input-group col-xs-7">
+                                        <input type="text" name="location" id="location" class="form-control" />
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="dummyText" class="control-label col-xs-4">Company Name</label>
+                                    <div class="input-group col-xs-7">
+                                        <input type="text" name="company" id="company" class="form-control" />
+                                    </div>
+                                </div>
+
+
+                            </div>
+
+                            <div class="modal-footer">
+                                <!--<button class="button btn btn-default" type="button" id="close">Cancel</button>-->
+                                <button class="button btn btn-primary" id="btnSave" type="submit">Submit</button>
+                            </div>
+
+                        </fieldset>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+@*<script>
+    var selector = '.os-section li';
+
+    $(selector).on('click', function () {
+        $(selector).removeClass('active');
+        $(this).addClass('active');
+        $(this).addClass('active');
+    });
+
+</script>*@
