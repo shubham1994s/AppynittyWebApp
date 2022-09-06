@@ -4,15 +4,11 @@
     ViewData["Title"] = "Create";
     Layout = "_AdminLayout";
 }
-@*<style>
-        input[type=checkbox] {
-            box-sizing: border-box;
-            padding: 0;
-            font-size: 4px;
-            margin-top: -5%;
-            margin-left: -31%;
-        }
-    </style>*@
+<style>
+    #addnewimage{
+        display:none;
+    }
+    </style>
 <div class="container p-3 my-3 border">
     @*<h1> @ViewBag.PageName</h1>*@
 
@@ -51,7 +47,23 @@
                     <div class="col-md-6">
                         <div class="form-group">
                             <label asp-for="FileName" class="control-label"></label>
-                            <div class="custom-file">
+                            @if (@ViewBag.FileName != null)
+                            {   <div>
+
+                                    <input asp-for="FileName" class="form-control" id="customFileName" readonly />
+                                    Change Image <input type="checkbox" id="checkbox1" />
+                                </div>
+                                <span asp-validation-for="FileName" class="text-danger"></span>
+                            }
+                            else
+                            {
+                                <div class="custom-file">
+                                    <input type="file" asp-for="FileName" class="custom-file-input" id="customFile">
+                                    <label class="custom-file-label" for="customFile">Choose file</label>
+                                </div>
+                                <span asp-validation-for="FileName" class="text-danger"></span>
+                            }
+                            <div class="custom-file" id="addnewimage">
                                 <input type="file" asp-for="FileName" class="custom-file-input" id="customFile">
                                 <label class="custom-file-label" for="customFile">Choose file</label>
                             </div>
@@ -102,6 +114,18 @@
             var filename = document.getElementById("getfilename").innerHTML;
 
             document.getElementById("image").src = "/BlogImages/" + filename;
+
+            document.getElementById("customFileName").value = filename;
+        });
+
+        $(document).ready(function () {
+            $('#checkbox1').change(function () {
+                if (this.checked)
+                    $('#addnewimage').fadeIn('slow');
+                else
+                    $('#addnewimage').fadeOut('slow');
+
+            });
         });
     </script>
 
