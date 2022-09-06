@@ -239,6 +239,27 @@ namespace AppynittyWebApp.Controllers
             return View(model);
         }
 
+        public IActionResult NewsReply(int Id)
+        {
+            NewsRplyVM NewsRplyDetail = new NewsRplyVM();
+            List<NewsRplyDetailsIteam> ListNewsRplyItems = new List<NewsRplyDetailsIteam>();
+            string StoredProc = "exec NewsReplyDetails " + "@Id = " + Id ;
+            var data = _context.NewsRplies.FromSqlRaw(StoredProc).ToList();
 
+            if (data != null && data.Count > 0)
+            {
+                NewsRplyDetail.ListNewsRplyDetails = data.Select(x => new NewsRplyDetailsIteam()
+                {
+                    Id = x.Id,
+                    Date = x.Date,
+                    Name = x.Name,
+                    Email = x.Email,
+                    Mobile_No = x.MobileNo,
+                    Comment = x.Comment
+                })
+               .ToList();
+            }
+                return View(NewsRplyDetail);
+        }
     }
 }
