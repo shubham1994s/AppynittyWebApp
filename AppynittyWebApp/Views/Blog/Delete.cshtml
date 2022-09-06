@@ -1,4 +1,4 @@
-﻿@model AppynittyWebApp.Models.News
+﻿@model AppynittyWebApp.Models.Blog
 @{
     ViewData["Title"] = "Delete";
     Layout = "_AdminLayout";
@@ -10,28 +10,28 @@
     <hr />
     <dl class="row">
         <dt class="col-sm-3">
-            @Html.DisplayNameFor(model => model.NewsDate)
+            @Html.DisplayNameFor(model => model.BlogsDate)
         </dt>
         <dd class="col-sm-9">
-            @Html.DisplayFor(model => model.NewsDate)
+            @Html.DisplayFor(model => model.BlogsDate)
         </dd>
         <dt class="col-sm-3">
-            @Html.DisplayNameFor(model => model.NewsTitle)
+            @Html.DisplayNameFor(model => model.BlogsTitle)
         </dt>
         <dd class="col-sm-9">
-            @Html.DisplayFor(model => model.NewsTitle)
+            @Html.DisplayFor(model => model.BlogsTitle)
         </dd>
         <dt class="col-sm-3">
-            @Html.DisplayNameFor(model => model.NewsEng)
+            @Html.DisplayNameFor(model => model.BlogsEng)
         </dt>
         <dd class="col-sm-9">
-            @Html.DisplayFor(model => model.NewsEng)
+            @Html.DisplayFor(model => model.BlogsEng)
         </dd>
         <dt class="col-sm-3" style="display:none;">
-            @Html.DisplayNameFor(model => model.NewsMar)
+            @Html.DisplayNameFor(model => model.BlogsMar)
         </dt>
         <dd class="col-sm-9" style="display:none;">
-            @Html.DisplayFor(model => model.NewsMar)
+            @Html.DisplayFor(model => model.BlogsMar)
         </dd>
         <dt class="col-sm-3">
             @Html.DisplayNameFor(model => model.IsActive)
