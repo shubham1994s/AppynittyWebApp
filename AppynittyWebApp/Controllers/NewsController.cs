@@ -1,4 +1,5 @@
 ﻿using AppynittyWebApp.Models;
+using AppynittyWebApp.ViewModels;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -58,7 +59,7 @@ namespace AppynittyWebApp.Controllers
             [Bind("Id,NewsDate,NewsTitle,NewsEng,NewsMar,IsActive")] News NewsData)
         {
             bool IsnewsExist = false;
-          
+
             News news = await _context.News.FindAsync(Id);
 
             if (news != null)
@@ -180,26 +181,66 @@ namespace AppynittyWebApp.Controllers
 
             return RedirectToAction(nameof(Index));
         }
-
-        public async Task<IActionResult> NewSection(string Id)
+        [HttpGet]
+        public async Task<IActionResult> NewSection(string Id, NewsVM model)
         {
-             
-            var news = await _context.News.Where(o=>o.IsActive==true).OrderByDescending(o => o.Id).FirstOrDefaultAsync();
+          
+            News news = await _context.News.Where(o=>o.IsActive==true).OrderByDescending(o => o.Id).FirstOrDefaultAsync();
             var snews = await _context.News.Where(o => o.IsActive == true).OrderByDescending(o => o.Id).ToListAsync();
 
-            //if (news == null)
-            //{
-            //    return NotFound();
-            //}
+            if (news == null)
+            {
+                return NotFound();
+            }
             int Ids = Convert.ToInt32(Id);
             if(Ids != 0)
             {
-                 news = await _context.News.Where(o => o.IsActive == true && o.Id== Ids).FirstOrDefaultAsync();
+                news = await _context.News.Where(o => o.IsActive == true && o.Id== Ids).FirstOrDefaultAsync();
             }
             ViewBag.newslist = snews;
-            return View(news);
+            ViewBag.ID = news.Id;
+            model.NewsEng = news.NewsEng;
+            model.NewsTitle = news.NewsTitle;
+            model.Id = news.Id;
+            model.NewsId = news.Id;
+            return View(model);
+        }
+      
+        
+        [HttpPost]
+        //[ValidateAntiForgeryToken]
+        public async Task<IActionResult> NewSection( NewsVM model)
+        {
+
+
+            NewsRply News = new NewsRply();
+          
+            if (ModelState.IsValid)
+            {
+                try
+                {
+
+
+                    News.Name = model.Name;
+                    News.Email = model.Email;
+                    News.MobileNo = model.MobileNo;
+                    News.Comment = model.Comment;
+                    News.NewsId = model.NewsId;
+                    News.Date = DateTime.Now;
+                                    
+                   _context.Add(News);
+                  
+                    await _context.SaveChangesAsync();
+                }
+                catch (DbUpdateConcurrencyException)
+                {
+                    throw;
+                }
+                return RedirectToAction(nameof(Index));
+            }
+            return View(model);
         }
 
-       
+
     }
 }
