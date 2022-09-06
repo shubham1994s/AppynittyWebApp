@@ -8,7 +8,7 @@ namespace AppynittyWebApp.Models
     public partial class BlogRply
     {
         public int Id { get; set; }
-        public string BlogId { get; set; }
+        public int? BlogId { get; set; }
         public DateTime Date { get; set; }
         public string Name { get; set; }
         public string Email { get; set; }
