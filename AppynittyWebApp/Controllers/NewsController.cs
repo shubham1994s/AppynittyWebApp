@@ -219,8 +219,6 @@ namespace AppynittyWebApp.Controllers
             {
                 try
                 {
-
-
                     News.Name = model.Name;
                     News.Email = model.Email;
                     News.MobileNo = model.MobileNo;
