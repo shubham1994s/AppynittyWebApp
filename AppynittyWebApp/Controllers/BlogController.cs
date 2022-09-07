@@ -206,5 +206,11 @@ namespace AppynittyWebApp.Controllers
 
             return RedirectToAction(nameof(Index));
         }
+
+
+        public async Task<IActionResult> OurBlog()
+        {
+            return View();
+        }
     }
 }
