@@ -1,0 +1,134 @@
+﻿
+@{
+    ViewData["Title"] = "Contact";
+}
+<link href="~/Assets/CSS/Contact.css" rel="stylesheet" />
+<style>
+
+    #pics {
+        display: none;
+        /*background: #fff;
+	box-shadow: 0px 0px 20px #999;
+	border: 2px solid #ddd;
+	*/
+        padding: 10px;
+        float: left;
+        font-size: 1.2em;
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        z-index: 99999;
+    }
+
+    #picOne, #picTwo {
+        position: absolute;
+        display: none;
+    }
+</style>
+<section class="contact-main">
+    <div class="contact-section">
+        <div class="half">
+            <div class="left">
+                <div class="section">
+                    <div class="product-img">
+                        <picture>
+                            <source media="(max-width: 480px)" srcset="https://www.appynitty.com/assets/contact/img/contact_us@768.gif">
+                            <source media="(max-width: 1199px)" srcset="https://www.appynitty.com/assets/contact/img/contact_us@1199.gif">
+                            <img class="img img-responsive" src="https://www.appynitty.com/assets/contact/img/contact_us.gif" alt="Mobile Apps Development Company">
+                        </picture>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <div class="half">
+            <div class="right bg-appy">
+                <div class="section">
+                    <div>
+                        <div class="top-text">
+                            <h1 class="title">Contact Us</h1>
+                            <h2 class="sub-title">One Stop Mobile App and Digital<span class="l-b"><br></span> Marketing Solutions Provider</h2>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--ty popoup-->
+    <div id="pics" style="display: block; margin-top: -228px; margin-left: -300.5px;">
+        <img src="https://www.appynitty.com/ty.jpg" id="picOne" />
+    </div>
+    <!--ty popoup-->
+
+    <div class="contact-form-section">
+        <div class="container">
+            <div class="content">
+                <!--<div class="title">Contact Form</div>-->
+            </div>
+        </div>
+        <form action="" id="form" method="post" onsubmit="return validateForm(event)" name="contact">
+            <div class="container">
+
+                <div class="form-section">
+                    <div class="f-g-s">
+                        <div class="form-group">
+                            <input class="form-control rounded" id="name" name="name" placeholder="Name" type="text">
+                        </div>
+                    </div>
+                    <div class="f-g-s">
+                        <div class="form-group">
+                            <input class="form-control rounded" id="email" name="email" placeholder="Email Id" type="email">
+                        </div>
+                    </div>
+                    <div class="f-g-s">
+                        <div class="form-group">
+                            <input class="form-control rounded" id="phone" name="phone" placeholder="Phone" type="tel">
+                        </div>
+                    </div>
+                    <div class="f-g-s">
+                        <div class="form-group">
+                            <input class="form-control rounded" name="country" placeholder="Country" type="text">
+                        </div>
+                    </div>
+                    <div class="f-g-s">
+                        <div class="form-group">
+                            <input class="form-control rounded" name="city" placeholder="City" type="text">
+                        </div>
+                    </div>
+                    <div class="f-g-s">
+                        <div class="form-group">
+                            <input class="form-control rounded" name="business" placeholder="Business" type="text">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="c-f-b">
+                    <button class="appy-btn">Let's Get in Touch</button>
+                </div>
+            </div>
+        </form>
+        <div class="container">
+            <div class="c-f-f">
+                <div class="section">
+                    <div class="email">
+                        <a href="mailto:info@appynitty.com" title="Mail Us info@appynitty.com">
+                            <span class="icon ai-email"></span>
+                            info@appynitty.com
+                        </a>
+                    </div>
+                </div>
+                <div class="section">
+                    <div class="mobile">
+                        <a href="tel:+919209100900" title="Call Us +919209 100 900">
+                            <span class="icon ai-call"></span>
+                            +91 9209 100 900
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</section>

@@ -1,0 +1,431 @@
+.franchise-main .franchise-section{
+    display:-webkit-box;
+    display:-webkit-flex;
+    display:-ms-flexbox;
+    display:flex;         
+}
+.franchise-main .half{
+    width: 100%;
+    -webkit-box-flex:1;
+    -webkit-flex:1;
+    -ms-flex:1;
+    flex:1;
+}
+.franchise-main .half .left{    
+    display: -webkit-box;    
+    display: -webkit-flex;    
+    display: -ms-flexbox;    
+    display: flex;
+    -webkit-box-pack:end;
+    -webkit-justify-content:flex-end;
+    -ms-flex-pack:end;
+    justify-content:flex-end;
+}
+.franchise-main .half .right{
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack:start;
+    -webkit-justify-content:flex-start;
+    -ms-flex-pack:start;
+    justify-content:flex-start;
+    background: #3CBABA;
+}
+.franchise-main .franchise-section .section{
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;   
+    -webkit-box-orient:vertical;   
+    -webkit-box-direction:normal;   
+    -webkit-flex-direction:column;   
+    -ms-flex-direction:column;   
+    flex-direction:column;
+    max-width:685px;
+    width: 95%;    
+    min-height: 90vh;
+    justify-content:space-around;    
+}
+
+.franchise-main .right .section .top-text{
+    text-align: right; 
+    margin-top: 65px;   
+}
+
+.franchise-main  .top-text .title,
+.franchise-main .top-text .sub-title{
+    color:#FFFFFF;
+    margin: 0;
+    margin-bottom: 20px;
+    line-height: 125%;
+}
+.franchise-main  .top-text .title{
+    font-size: 55px;
+}
+.franchise-main  .top-text .sub-title{
+    font-size: 25px;
+}
+
+
+
+
+
+.franchise-f-section{
+    padding-top: 50px;
+} 
+.franchise-main .franchise-f-section .content{
+    text-align: center;
+    padding-bottom: 50px;
+}
+.franchise-main .franchise-f-section .content .title{
+    font-size: 55px;
+    line-height: 120%;    
+    font-weight: 500;  
+}
+.franchise-main .franchise-f-section .content .sub{
+    font-size: 35px;
+    line-height: 125%;
+}
+
+
+
+
+
+.franchise-features{
+    display: flex;
+    justify-content:center; 
+    flex-wrap:wrap;       
+}
+
+.franchise-features .features{
+    width: 25%;
+}
+
+.franchise-features .features .img{
+    margin: 0 auto;
+    display: block;
+    max-width: 100%;
+}
+.franchise-features .features .title{
+    font-size: 22px;
+    line-height: 125%;
+    font-weight: 500;
+    text-align: center;     
+}
+
+
+.product-f-section{
+    padding-top: 50px;
+} 
+.franchise-form-section .content .title,
+.franchise-faq-section .content .title,
+.product-f-section .content .title{
+    font-size:28px;
+    line-height: 125%;    
+    text-align: center;
+    font-weight: 500;
+}
+.franchise-form-section .content .sub,
+.franchise-main .content .sub{
+    font-size: 20px;
+    line-height: 125%;
+    text-align: center;
+}
+
+.product-features .features a:focus,
+.product-features .features a:active,
+.product-features .features a:visited,
+.product-features .features a{
+    color: #1B2D39;
+}
+.product-features{
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack:center;
+    -webkit-justify-content:center;
+        -ms-flex-pack:center;
+            justify-content:center; 
+    -webkit-flex-wrap:wrap; 
+        -ms-flex-wrap:wrap; 
+            flex-wrap:wrap;    
+    padding-top: 60px;
+}
+.dm-main .product-flex .product-logo .img,
+.product-features .img{
+    margin: 0 auto;
+    display: block;
+    max-width: 100%;
+}
+.product-features .features{    
+    margin-bottom: 50px;
+    width: 25%;
+}
+.product-features .features .title{
+    font-size: 18px;
+    font-weight: 600;
+    margin-top: 20px;
+    text-align: center; 
+}
+
+
+
+
+.franchise-t-section{    
+    text-align: center;
+}
+.text-section .text .link{
+    color:#3CBABA;
+    font-weight: 600;
+    cursor: pointer;
+}
+.text-section .text{
+    font-size: 18px;
+    line-height: 150%;
+    margin-bottom: 20px;
+    text-align: justify;
+}
+.text-section .text:last-child{
+    margin-bottom: 0px;
+}
+
+.franchise-faq-section{
+    padding-top: 50px;
+}
+.faq-list{
+    display: flex;
+    flex-wrap:wrap;
+    padding-top: 50px;
+    justify-content: space-between;
+}
+.faq{
+    width:48%;
+    margin-bottom: 20px;    
+}
+.faq .question{
+    font-weight: 600;
+    margin-bottom: 0px;
+}
+.faq .question,
+.faq .answer{
+    font-size: 18px;
+    line-height: 125%;
+    text-align: justify;
+}
+
+
+
+
+.franchise-form-section{
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+.form-section{
+    display:flex;    
+    padding-top: 50px;
+    width: 100%;
+    flex-wrap: wrap;
+    justify-content:center;
+    
+    
+}
+.form-section .f-g-s{    
+    margin-bottom: 50px;
+    width: 30%;    
+}
+.form-section .f-g-s .form-group{
+    text-align: center;    
+}
+.form-section .f-g-s .form-control{
+    height: 45px;
+    border: 1px solid #1B2D39;
+    font-size: 20px;
+    border-radius: 0;    
+    padding: 6px 12px;
+    margin: 0 5%;
+    width:82%;
+}
+.appy-btn{
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+    border: none;
+    display: inline-block;
+    outline: 0;		    
+    padding: 10px 25px!important;        
+    overflow: hidden;
+    text-decoration: none!important;
+    text-align: center;
+    cursor: pointer;
+    white-space: nowrap;
+    margin: 0;
+}
+.c-f-b{
+    text-align: right;
+    padding-right: 60px;
+}
+.c-f-b .appy-btn{
+    background: #3CBABA;
+    color: #FFFFFF;
+    font-size:18px;
+}
+.c-f-b .ask-for-quote-btn{
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack:end;
+    -webkit-justify-content:flex-end;
+        -ms-flex-pack:end;
+            justify-content:flex-end; 
+}   
+.c-f-b .ask-for-quote-btn{
+    -webkit-box-pack: center;
+        -webkit-justify-content: center;
+            -ms-flex-pack: center;
+                justify-content: center;
+}
+.c-f-b .ask-for-quote-btn .appy-btn {
+        width: 100%;
+        font-size: 22px;
+    }
+
+@media (max-width:1199px){
+    .franchise-main .franchise-section .section {
+        -webkit-box-align:center;
+        -webkit-align-items:center;
+            -ms-flex-align:center;
+                align-items:center;
+    }
+    .franchise-main .franchise-section .top-text .title {
+        font-size: 60px;
+    }
+    .franchise-main .franchise-section .top-text .sub-title {
+        font-size: 30px;
+    }
+    
+    
+    .franchise-form-section .content .title,
+    .franchise-faq-section .content .title,
+    .product-f-section .content .title{
+        font-size: 40px;        
+    }
+    .franchise-form-section .content .sub,
+    .franchise-main .content .sub{
+        font-size: 24px;        
+    }
+    
+    .text-section .text {
+        font-size: 23px;
+    }
+    .form-section .f-g-s {
+        margin-bottom: 40px;
+    }
+}
+@media (max-width:991px){
+    .franchise-main .franchise-section .top-text .title {
+        font-size: 50px;
+    }   
+    .franchise-main .franchise-section .top-text .sub-title {
+        font-size: 23px;
+    }
+    .franchise-main .top-text .title, 
+    .franchise-main .top-text .sub-title {
+        margin-bottom: 30px;
+    }
+    
+    .franchise-form-section .content .title, .franchise-faq-section .content .title, .product-f-section .content .title {
+        font-size: 35px;
+    }
+    .franchise-form-section .content .sub, .franchise-main .content .sub {
+        font-size: 23px;
+    }
+    .product-features .features {
+        margin-bottom: 40px;
+        width: 30%;
+    }
+    .form-section .f-g-s {
+        margin-bottom: 30px;
+    }
+    
+}
+.moz-width{width: 407px;}
+@media (max-width:768px){
+    .franchise-main .franchise-section {
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: reverse;
+        -webkit-flex-direction: column-reverse;
+        -ms-flex-direction: column-reverse;
+        flex-direction: column-reverse;
+    }
+    .franchise-main .franchise-section .section {
+        max-width: 100%;
+        min-height: 50vh;
+        height: auto;
+        width: 100%;
+        padding: 30px 15px;
+    }
+    .franchise-main .franchise-section .top-text .title {
+        font-size: 40px;
+    }
+    .franchise-main .franchise-section .top-text .sub-title {
+        font-size: 20px;
+    }
+    .franchise-main .right .section .top-text {
+        text-align: center;
+    }
+    .product-features .features {
+        width: 50%;
+    }
+    .faq {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+    .franchise-form-section .content .title, 
+    .franchise-faq-section .content .title, 
+    .product-f-section .content .title {
+        font-size: 30px;
+    }
+    .product-features .features .title {
+        font-size: 20px;
+        font-weight: 500;
+    }
+    .franchise-t-section {
+        text-align: left;
+    }
+    .form-section {        
+        flex-direction: column;
+    }
+    .form-section .f-g-s {
+        width: 100%;
+    }
+    .form-section .f-g-s .form-control {
+        height: 30px; 
+        margin: 0;
+        width: 90%;
+    }
+}
+@media (max-width:560px){
+    .product-features .features {
+        width: 100%;
+    }
+    .franchise-form-section .content .title, .franchise-faq-section .content .title, .product-f-section .content .title {
+        font-size: 26px;
+    }
+    .form-section .f-g-s {
+        margin-bottom: 25px;
+    }
+}
+@media (max-width:480px){
+    .franchise-main .franchise-section .top-text .title {
+        font-size: 30px;
+    }
+    .franchise-main .franchise-section .section {        
+        min-height: 40vh;
+    }
+    .c-f-b .appy-btn {
+        width: 80%;
+    }
+}
+@media (max-width:767px){.moz-width{width: 407px;} }
+@media (max-width:640px){.moz-width{width: 100%;} }
