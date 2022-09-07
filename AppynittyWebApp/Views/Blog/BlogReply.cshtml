@@ -1,5 +1,5 @@
 ﻿
-@model AppynittyWebApp.ViewModels.NewsRplyVM
+@model AppynittyWebApp.ViewModels.BlogReplyVM
 
 @{
     ViewData["Title"] = "Details";
@@ -14,7 +14,7 @@
         color: green !important;
     }
 </style>
-<h1 style="text-align:center;">News Reply List</h1>
+<h1 style="text-align:center;">Blog Reply List</h1>
 
 
 <div class="table-responsive">
@@ -22,22 +22,22 @@
         <thead>
             <tr>
                 <th>
-                   Date
+                    Date
                 </th>
                 <th>
-                   Name
+                    Name
                 </th>
                 <th>
-                   News Title
+                    Blog Title
                 </th>
                 <th>
-                   Email
+                    Email
                 </th>
                 <th>
-                   Mobile Number
+                    Mobile Number
                 </th>
                 <th>
-                   Comment
+                    Comment
                 </th>
 
             </tr>
@@ -55,7 +55,7 @@
                             @Html.DisplayFor(modelItem => item.Name)
                         </td>
                         <td>
-                            @Html.DisplayFor(modelItem => item.NewsTitle)
+                            @Html.DisplayFor(modelItem => item.BlogTitle)
                         </td>
                         <td>
                             @Html.DisplayFor(modelItem => item.Email)

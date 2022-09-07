@@ -1,0 +1,115 @@
+﻿@*@model AppynittyWebApp.Models.Career*@
+@model AppynittyWebApp.ViewModels.CareersVM
+@*@model IEnumerable<AppynittyWebApp.Models.News>*@
+
+@{
+    ViewData["Title"] = "Open Position";
+}
+<style>
+    .newttl {
+        list-style-type: none;
+    }
+</style>
+
+
+<div class="container">
+    <h1 style="margin-left:46%">Careers Section</h1>
+
+    <form enctype="multipart/form-data" asp-action="CVSection">
+        <hr />
+
+        <div class="contact-form-section">
+
+            <div class="container">
+                @{
+                    var obj = ViewBag.Joblist;
+                }
+
+                <div class="form-section">
+                    <div class="f-g-s">
+                        <div class="form-group">
+                            <label asp-for="JobTitle" class="control-lable"></label>
+                            <select asp-for="Id" name="Careers_Id" asp-items="ViewBag.Id" class="custom-select" required>
+                                <option value="">Choose Position</option>
+                                @foreach (var item in obj)
+                                {
+                                    <option value="@item.Id">@item.JobTitle</option>
+                                }
+                            </select>
+                            <span asp-validation-for="Id" class="text-danger"></span>
+                        </div>
+                    </div>
+                    <div class="f-g-s">
+                        <div class="form-group">
+                            <label>Name</label>
+                            <input asp-for="Name" class="form-control" placeholder="Name" type="text" required/>
+                            <span asp-validation-for="Name" class="text-danger"></span>
+                        </div>
+                    </div>
+                    <div class="f-g-s">
+                        <div class="form-group">
+                            <label>Email</label>
+                            <input asp-for="Email" class="form-control" name="Email" placeholder="Enter Email Id" type="email" required>
+                        </div>
+                    </div>
+                    <div class="f-g-s">
+                        <div class="form-group">
+                            <label>Mobile Number</label>
+                            <input asp-for="MobileNo" class="form-control" name="MobileNo" placeholder="Enter Mobile Number" type="tel" required>
+                        </div>
+                    </div>
+                    <div class="f-g-s">
+                        <div class="form-group">
+                            <label>Location</label>
+                            <input asp-for="CurrentLocation" class="form-control" name="CurrentLocation" placeholder="Enter Current Location" required>
+                        </div>
+                    </div>
+                    <div class="f-g-s">
+                        <div class="form-group">
+                            <label>Total Experience</label>
+                            <select asp-for="TotExp" class="custom-select" required>
+                                <option value="">Select</option>
+                                <option value="Fresher">Fresher</option>
+                                <option value="0">0</option>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                                <option value="6">6</option>
+                                <option value="7">7</option>
+                                <option value="8">8</option>
+                                <option value="9">9</option>
+                                <option value="10">10</option>
+                                <option value="10+">10+</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="f-g-s">
+                        <label>Attach Resume/CV</label>
+                        <div class="form-group">
+                            <input type="file" asp-for="FileName" class="" id="customFile" required>
+                        </div>
+                    </div>
+                    <div class="f-g-s">
+                        <div class="form-group">
+                            <input type="checkbox" asp-for="Tac" required/>
+                            <label for="agreechkbox">I agree to the </label>
+                            <a target="_blank" href="#"> Terms and Conditions</a>
+                        </div>
+                    </div>
+                    <div class="f-g-s">
+                        <div class="c-f-b">
+                            <input class="btn btn-primary" type="submit" value="Save" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </form>
+
+</div>
+
+
+

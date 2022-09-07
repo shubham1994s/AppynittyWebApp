@@ -1,4 +1,4 @@
-﻿@model AppynittyWebApp.ViewModels.NewsVM
+﻿@model IEnumerable<AppynittyWebApp.Models.Blog>
 
 @{
     ViewData["Title"] = "OutBlog";
@@ -11,9 +11,11 @@
     </div>
 </div>
 <div class="container">
-    
 
-        <div class="row">
+
+    <div class="row">
+        @foreach (var item in Model)
+        {
             <div class="blog-box">
                 <div class="col-md-4">
                     <div class="top-section">
@@ -25,7 +27,7 @@
                             </div>
                             <div class="name-box">
                                 <div class="name">
-                                    Transform Your Boutique Business into a Fashion Brand
+                                  @item.BlogsTitle
                                 </div>
                             </div>
                         </div>
@@ -33,7 +35,7 @@
                     <div class="bottom-section">
                         <div class="bottom">
                             <div class="read-more">
-                                <div class="text"><a href="https://www.appynitty.com/Blogs/blogread/45">Read Article</a></div>
+                                <div class="text"><a asp-action="BlogSection" asp-route-id="@item.Id">>Read Article</a></div>
                             </div>
                             <div class="share">
                                 <div class="share-section">
@@ -53,86 +55,9 @@
                     </div>
                 </div>
             </div>
-            <div class="blog-box">
-                <div class="col-md-4">
-                    <div class="top-section">
-                        <div class="top">
-                            <div class="img-box">
-                                <div class="blog-image">
-                                    <!-- <img src="http://placehold.it/80x80" class="img img-circle">-->
-                                </div>
-                            </div>
-                            <div class="name-box">
-                                <div class="name">
-                                    How Mobile Apps Can Leverage Business for Travel Agencies
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="bottom-section">
-                        <div class="bottom">
-                            <div class="read-more">
-                                <div class="text"><a href="https://www.appynitty.com/Blogs/blogread/44">Read Article</a></div>
-                            </div>
-                            <div class="share">
-                                <div class="share-section">
-                                    <div class="blog-social animated slideInRight">
-                                        <div class="fb icon ai-facebook"></div>
-                                        <div class="tw icon ai-twitter"></div>
-                                        <div class="ln icon ai-linkedin"></div>
-                                        <div class="gp icon ai-google-plus"></div>
-                                        <div class="yt icon ai-youtube"></div>
-                                    </div>
-                                    <div class="blog-social-share ">
-                                        <div class="icon ai-share animated zoomIn"></div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="blog-box">
-                <div class="col-md-4">
-                    <div class="top-section">
-                        <div class="top">
-                            <div class="img-box">
-                                <div class="blog-image">
-                                    <!-- <img src="http://placehold.it/80x80" class="img img-circle">-->
-                                </div>
-                            </div>
-                            <div class="name-box">
-                                <div class="name">
-                                    21 years of internet in India and where we are headed next!
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="bottom-section">
-                        <div class="bottom">
-                            <div class="read-more">
-                                <div class="text"><a href="https://www.appynitty.com/Blogs/blogread/43">Read Article</a></div>
-                            </div>
-                            <div class="share">
-                                <div class="share-section">
-                                    <div class="blog-social animated slideInRight">
-                                        <div class="fb icon ai-facebook"></div>
-                                        <div class="tw icon ai-twitter"></div>
-                                        <div class="ln icon ai-linkedin"></div>
-                                        <div class="gp icon ai-google-plus"></div>
-                                        <div class="yt icon ai-youtube"></div>
-                                    </div>
-                                    <div class="blog-social-share ">
-                                        <div class="icon ai-share animated zoomIn"></div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+        }
         </div>
 
 
-   
-</div>
+
+    </div>

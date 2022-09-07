@@ -19,6 +19,7 @@
     <Folder Include="Views\AboutUs\" />
     <Folder Include="wwwroot\Assets\Images\" />
     <Folder Include="wwwroot\BlogImages\" />
+    <Folder Include="wwwroot\UploadedCV\" />
   </ItemGroup>
 
 </Project>
