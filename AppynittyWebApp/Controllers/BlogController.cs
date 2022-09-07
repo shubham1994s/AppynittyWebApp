@@ -210,7 +210,93 @@ namespace AppynittyWebApp.Controllers
 
         public async Task<IActionResult> OurBlog()
         {
-            return View();
+            var blogs = await _context.Blogs.Where(x=>x.IsActive==true).ToListAsync();
+            return View(blogs);
         }
+
+        [HttpGet]
+        public async Task<IActionResult> BlogSection(string Id, BlogViewModel model)
+        {
+
+            Blog Blogs = await _context.Blogs.Where(o => o.IsActive == true).OrderByDescending(o => o.Id).FirstOrDefaultAsync();
+            var SBlogs = await _context.Blogs.Where(o => o.IsActive == true).OrderByDescending(o => o.Id).ToListAsync();
+            
+            if (Blogs == null)
+            {
+                return NotFound();
+            }
+            int Ids = Convert.ToInt32(Id);
+            if (Ids != 0)
+            {
+                Blogs = await _context.Blogs.Where(o => o.IsActive == true && o.Id == Ids).FirstOrDefaultAsync();
+            }
+            ViewBag.Bloglist = SBlogs;
+            ViewBag.ID = Blogs.Id;
+            model.BlogsEng = Blogs.BlogsEng;
+            model.BlogsTitle = Blogs.BlogsTitle;
+            model.Id = Blogs.Id;
+            model.BlogId = Blogs.Id;
+            model.BFileName = Blogs.FileName;
+            return View(model);
+        }
+
+
+        [HttpPost]
+        //[ValidateAntiForgeryToken]
+        public async Task<IActionResult> BlogSection(BlogViewModel model)
+        {
+
+
+            BlogRply Blog = new BlogRply();
+
+           
+                try
+                {
+                    Blog.Name = model.Name;
+                    Blog.Email = model.Email;
+                    Blog.MobileNo = model.MobileNo;
+                    Blog.Comment = model.Comment;
+                    Blog.BlogId = model.BlogId;
+                    Blog.Date = DateTime.Now;
+
+                    _context.Add(Blog);
+
+                    await _context.SaveChangesAsync();
+                }
+                catch (DbUpdateConcurrencyException)
+                {
+                    throw;
+                }
+                return RedirectToAction(nameof(Index));
+      
+            return View(model);
+        }
+
+        public IActionResult BlogReply(int Id)
+        {
+            BlogReplyVM NewsRplyDetail = new BlogReplyVM();
+            List<BlogRplyDetailsIteam> ListNewsRplyItems = new List<BlogRplyDetailsIteam>();
+           
+            var data = _context.BlogRplies.Where(a=>a.BlogId==Id).ToList();
+
+            if (data != null && data.Count > 0)
+            {
+                NewsRplyDetail.ListNewsRplyDetails = data.Select(x => new BlogRplyDetailsIteam()
+                {
+                    Blog_Id = x.BlogId,
+                    Date = x.Date,
+                    Name = x.Name,
+                    Email = x.Email,
+                    Mobile_No = x.MobileNo,
+                    Comment = x.Comment,
+                    BlogTitle = _context.Blogs.Where(c=>c.Id==x.BlogId).Select(c=>c.BlogsTitle).FirstOrDefault()
+                })
+               .ToList();
+            }
+
+            return View(NewsRplyDetail);
+        }
+
+
     }
 }
