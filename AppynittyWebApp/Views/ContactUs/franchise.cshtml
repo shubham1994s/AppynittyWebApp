@@ -1,0 +1,285 @@
+﻿
+@{
+    ViewData["Title"] = "franchise";
+}
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
+<link rel="canonical" href="https://www.appynitty.com/franchise/" />
+
+<link href="~/Assets/CSS/franchise.css" rel="stylesheet" />
+<style>
+    #pics {
+        display: none;
+        /*background: #fff;
+	box-shadow: 0px 0px 20px #999;
+	border: 2px solid #ddd;
+	*/
+        padding: 10px;
+        float: left;
+        font-size: 1.2em;
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        z-index: 99999;
+    }
+
+    #picOne, #picTwo {
+        position: absolute;
+        display: none;
+    }
+</style>
+<section class="franchise-main">
+    <div class="franchise-section">
+
+        <div class="half">
+            <div class="left">
+                <div class="section">
+                    <div class="product-logo">
+                        &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;
+                        <!-- <picture>
+                                                            <source media="(max-width: )" srcset="">
+                                                        <img class="img img-responsive" src="" alt="" title=""/>
+                        </picture> -->
+                        <picture>
+                            <source media="(max-width: 480px)" srcset="https://www.appynitty.com/assets/franchise/img/franchise@480.gif">
+                            <source media="(max-width: 768px)" srcset="https://www.appynitty.com/assets/franchise/img/franchise@768.gif">
+                            <source media="(max-width: 991px)" srcset="https://www.appynitty.com/assets/franchise/img/franchise@991.gif">
+                            <source media="(max-width: 1199px)" srcset="https://www.appynitty.com/assets/franchise/img/franchise@1199.gif">
+                            <img class="img img-responsive" src="https://www.appynitty.com/assets/franchise/img/franchise.gif" alt="Digital Marketing Agency" title="Digital Marketing Services">
+                        </picture>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="half">
+            <div class="right">
+                <div class="section">
+
+                    <div class="top-text">
+                        <h1 class="title">Partner with Us &nbsp;  &nbsp; </h1>
+                        <h2 class="sub-title">A Rapidly Growing Technology Brand! &nbsp;  &nbsp;  &nbsp;  &nbsp; </h2>
+
+
+                        <div class="c-f-b ask-for-quote-btn">
+
+                            <a href="#login-box" class="appy-btn login-window" style="background:#4c4c4c;">Let's Get In Touch !</a>
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="product-f-section" id="why-appynitty">
+        <div class="container">
+            <div class="content">
+                <div class="title">
+                    Become our Franchisee and set up your<br />
+                    Own Business in the rising Trillion Dollar Industry!
+                </div>
+
+                <h4 class="sub">Why Choose Appynitty as your Franchise Partner?</h4>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="product-features">
+                <div class="features">
+                    <div class="icon"><img alt="Industry-wide Customizable Mobile Apps" class="img img-responsive" data-gif="https://www.appynitty.com/assets/franchise/img/features/customizableapps.gif" src="https://www.appynitty.com/assets/franchise/img/features/customizableapps.png" /></div>
+
+                    <h2 class="title">Industry-wide Customizable Mobile Apps</h2>
+                </div>
+
+                <div class="features">
+                    <div class="icon"><img alt="End to End Digital Marketing and Lead Generation Solutions" class="img img-responsive" data-gif="https://www.appynitty.com/assets/franchise/img/features/end2enddigitalmarketing.gif" src="https://www.appynitty.com/assets/franchise/img/features/end2enddigitalmarketing.png" /></div>
+
+                    <h2 class="title">End to End Digital Marketing and Lead Generation Solutions</h2>
+                </div>
+
+                <div class="features">
+                    <div class="icon"><img alt="Fast and High ROI" class="img img-responsive" data-gif="https://www.appynitty.com/assets/franchise/img/features/roi.gif" src="https://www.appynitty.com/assets/franchise/img/features/roi.png" /></div>
+
+                    <h2 class="title">Fast and High ROI</h2>
+                </div>
+
+                <div class="features">
+                    <div class="icon"><img alt="Globally Expanding Company" class="img img-responsive" data-gif="https://www.appynitty.com/assets/franchise/img/features/globallyexpandingcompany.gif" src="https://www.appynitty.com/assets/franchise/img/features/globallyexpandingcompany.png" /></div>
+
+                    <h2 class="title">Globally Expanding Company</h2>
+                </div>
+
+                <div class="features">
+                    <div class="icon"><img alt="100% Sales Training and Support" class="img img-responsive" data-gif="https://www.appynitty.com/assets/franchise/img/features/100sales.gif" src="https://www.appynitty.com/assets/franchise/img/features/100sales.png" /></div>
+
+                    <h2 class="title">100% Sales Training and Support</h2>
+                </div>
+
+                <div class="features">
+                    <div class="icon"><img alt="No Technological Background Required" class="img img-responsive" data-gif="https://www.appynitty.com/assets/franchise/img/features/notechnological.gif" src="https://www.appynitty.com/assets/franchise/img/features/notechnological.png" /></div>
+
+                    <h2 class="title">No Technological Background Required</h2>
+                </div>
+
+                <div class="features">
+                    <div class="icon"><img alt="Minimal Infrastructure &amp; Manpower Requirement" class="img img-responsive" data-gif="https://www.appynitty.com/assets/franchise/img/features/minimalinfrastructure.gif" src="https://www.appynitty.com/assets/franchise/img/features/minimalinfrastructure.png" /></div>
+
+                    <h2 class="title">Minimal Infrastructure &amp; Manpower Requirement</h2>
+
+                    <p>&nbsp;</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="franchise-t-section">
+        <div class="container">
+            <div class="text-section">
+                <p class="text">Appynitty Communications is a global product engineering and digital services company having forte in mobile application development. We are app experts across all industry verticals like automobile, real-estate, restaurants, hotels, tours and travels, education, salon &amp; spa, hospitals and many more.</p>
+
+                <p class="text">Our cutting edge mobile technology and its wide scope across all businesses ensures that our partners get fast and high return on investment with minimal infrastructure and manpower.</p>
+
+                <p class="text">We are looking forward to partner with enthusiastic entrepreneurs and professionals, passionate to work hand-in-hand with a globally expanding and highly profitable company!</p>
+
+                <p class="text">We have varied Franchise Models to suit your requirements. To Know More <span class="link"> <a class="login-window" href="#login-box"><font color="#3cbaba">Get in Touch with Us!</font></a></span></p>
+            </div>
+        </div>
+    </div>
+
+    <div class="franchise-faq-section" id="faq">
+        <div class="container">
+            <div class="content">
+                <div class="title">FAQs</div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="faq-list">
+                <div class="faq">
+                    <div class="question">What is the term for franchisee M.O.U?</div>
+
+                    <div class="answer">The initial term of franchisee M.O.U is of 3 years. At the end of the Initial Term, this M.O.U. shall automatically renew on mutually agreed terms which may include covenants regarding change or alteration in the area of operation and/or revenuesharing basis for successive periods of 2 year(s) (a &ldquo;Renewal Term&rdquo;).</div>
+                </div>
+
+                <div class="faq">
+                    <div class="question">Do I need any license to operate this business?</div>
+
+                    <div class="answer">No, you don&#39;t need any special license to operate this business however you have to obtain all the licenses, all and any permissions under any Statute or by-laws or Rules of Government etc and must be in compliance with the Local Municipal Laws.</div>
+                </div>
+
+                <div class="faq">
+                    <div class="question">What will be my responsibility as a franchisee?</div>
+
+                    <div class="answer">Appynitty Communications is looking for business partners who will take care of marketing our products in the local Market. We are looking forward to full marketing support from your end. You can either take care of marketing yourself or you can appoint couple of marketing executives. We will provide you 100% technical support and initial training to you and all concerned.</div>
+                </div>
+
+                <div class="faq">
+                    <div class="question">What kind of marketing support I would get in this relationship?</div>
+
+                    <div class="answer">Appynitty Communications is looking for business partners who will take care of marketing our products in the local Market. We are looking forward to full marketing support from your end. You can either take care of marketing yourself or you can appoint couple of marketing executives. We will provide you 100% technical support and initial training to you and all concerned.</div>
+                </div>
+
+                <div class="faq">
+                    <div class="question">What kind of technical support I would get in this relationship?</div>
+
+                    <div class="answer">Appynitty Communications will provide you with 100% technical support. So, to start our franchise business no technical experience or background in required.</div>
+                </div>
+
+                <div class="faq">
+                    <div class="question">What are the company&#39;s expectations from a franchisee?</div>
+
+                    <div class="answer">Appynitty Communications is looking for likeminded people who will drive business in their territory by appointing couple of sales executives. Appynitty Communications is not looking for mere investors but aggressive entrepreneurs who can penetrate the market.</div>
+                </div>
+
+                <div class="faq">
+                    <div class="question">Can I have support of any company representative to clarify mydoubts, clarifications to improve my business?</div>
+
+                    <div class="answer">Yes, a key account manager will be a single point of contact, for all your franchise operation queries.</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--  <div class="product-f-section" id="why-appynitty">
+         <div class="container">
+             <div class="content">
+                 <div class="title">Become our Franchisee and set up your<span class="l-b"><br></span> Own Business in the rising Trillion Dollar Industry!</div>
+                 <h4 class="sub">Why Choose Appynitty as your Franchise Partner?</h4>
+             </div>
+         </div>
+
+         <div class="container">
+             <div class="product-features">
+                                     <div class="features">
+                         <div class="icon">
+                             <img class="img img-responsive" data-gif="" src="" alt="">
+                         </div>
+                         <h2 class="title"></h2>
+                     </div>
+                             </div>
+
+         </div>
+     </div>
+
+     <div class="franchise-t-section">
+         <div class="container">
+             <div class="text-section">
+                 <p class="text">Appynitty Communications is a global product engineering and digital services company having forte in mobile
+                     application development. We are app experts across all industry verticals like automobile, real-estate, restaurants,
+                     hotels, tours and travels, education, salon & spa, hospitals and many more.</p>
+
+                 <p class="text">Our cutting edge mobile technology and its wide scope across all businesses ensures that our partners get fast and
+                     high return on investment with minimal infrastructure and manpower.</p>
+
+                 <p class="text">We are looking forward to partner with enthusiastic entrepreneurs and professionals, passionate to work
+                     hand-in-hand with a globally expanding and highly profitable company!</p>
+
+                 <p class="text">We have varied Franchise Models to suit your requirements. To Know More <span class="link">
+                 <a href="#login-box" class="login-window"><font color="#3cbaba">Get in Touch with Us!</font></a></span></p>
+
+             </div>
+         </div>
+     </div>
+
+
+     <div class="franchise-faq-section" id="faq">
+         <div class="container">
+             <div class="content">
+                 <div class="title">FAQs</div>
+             </div>
+         </div>
+         <div class="container">
+             <div class="faq-list">
+                                     <div class="faq">
+                         <div class="question"></div>
+                         <div class="answer"></div>
+                     </div>
+                             </div>
+         </div>
+
+
+     </div> -->
+    <!--ty popoup-->
+    <div id="pics" style="display: block; margin-top: -228px; margin-left: -300.5px;">
+        <img src="/ty.jpg" id="picOne" />
+    </div>
+    <!--ty popoup-->
+    <!-- <div class="franchise-form-section">
+        <div class="container">
+            <div class="c-f-b">
+
+                <a href="#login-box" class="appy-btn login-window">LET'S GET IN TOUCH</a>
+            </div>
+        </div>
+    </div> -->
+
+</section>
+
+<script>
+    $('.features img').bind('mouseenter mouseleave', function () {
+        $(this).attr({
+            src: $(this).attr('data-gif')
+            , 'data-gif': $(this).attr('src')
+        })
+    });
+</script>

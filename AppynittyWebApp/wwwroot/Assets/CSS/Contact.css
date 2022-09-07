@@ -1,0 +1,291 @@
+.contact-main .contact-section{
+    display:-webkit-box;
+    display:-webkit-flex;
+    display:-ms-flexbox;
+    display:flex;        
+}
+.contact-main .half{
+    width: 100%;
+    -webkit-box-flex:1;
+    -webkit-flex:1;
+        -ms-flex:1;
+            flex:1;
+}
+.contact-main .half .left{    
+    display: -webkit-box;    
+    display: -webkit-flex;    
+    display: -ms-flexbox;    
+    display: flex;
+    -webkit-box-pack:end;
+    -webkit-justify-content:flex-end;
+        -ms-flex-pack:end;
+            justify-content:flex-end;
+}
+.contact-main .half .left .product-img .img{    
+    max-width: 100%;
+    display: block;
+    margin: 0 auto;
+}
+.contact-main .half .right{
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack:start;
+    -webkit-justify-content:flex-start;
+        -ms-flex-pack:start;
+            justify-content:flex-start;
+    background: #3CBABA;
+}
+.contact-main .contact-section .section{
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;   
+    -webkit-box-orient:vertical;   
+    -webkit-box-direction:normal;   
+    -webkit-flex-direction:column;   
+        -ms-flex-direction:column;   
+            flex-direction:column;
+    max-width:685px;
+    width: 100%;
+    min-height: 90vh;
+    -webkit-justify-content:space-around;
+        -ms-flex-pack:distribute;
+            justify-content:space-around;        
+}
+
+.contact-main .right .section .top-text{
+    text-align: right;    
+}
+
+.contact-main  .top-text .title,
+.contact-main .top-text .sub-title{
+    color:#FFFFFF;
+}
+.contact-main  .top-text .title{
+    font-size: 55px;
+    line-height: 110%;
+    padding-bottom: 20px;
+}
+.contact-main  .top-text .sub-title{
+    font-size: 25px;
+    line-height: 135%;
+}
+
+
+
+.contact-form-section{
+    padding: 50px 0;
+}
+
+.form-section .f-g-s .form-control{
+    height: 45px;
+    border: 1px solid #1B2D39;
+    font-size: 20px;
+    border-radius: 0;    
+    padding: 6px 12px;
+    margin: 0 5%;
+    width:82%;
+}
+
+.contact-form-section .content .title{
+    font-size: 50px;
+    line-height: 125%;    
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.form-section{
+    display:-webkit-box;
+    display:-webkit-flex;
+    display:-ms-flexbox;
+    display:flex;
+    -webkit-flex-wrap:wrap;
+        -ms-flex-wrap:wrap;
+            flex-wrap:wrap;
+    -webkit-box-pack:justify;
+    -webkit-justify-content:space-between;
+        -ms-flex-pack:justify;
+            justify-content:space-between;
+}
+.form-section .f-g-s{
+    width:31%;
+    margin-bottom: 30px;
+}
+.form-section .f-g-s .form-control{
+    height: 30px;
+    border: 2px solid #1B2D39;
+    font-size: 15px;
+    border-radius: 5px;
+    
+}
+
+.c-f-b{
+    text-align: center;    
+}
+.c-f-b .appy-btn{
+    background: #3CBABA;
+    color: #FFFFFF;
+    font-size: 20px;
+    margin-top: 20px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+    border: none;
+    display: inline-block;
+    outline: 0;		    
+    padding: 10px 25px!important;        
+    overflow: hidden;
+    text-decoration: none!important;
+    text-align: center;
+    cursor: pointer;
+    white-space: nowrap;
+}
+
+/* Contact Form Footer */
+.c-f-f{
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack:end;
+     -webkit-justify-content:center;
+  /*  -webkit-justify-content:flex-end;*/
+        -ms-flex-pack:end;
+           /* justify-content:flex-end;*/
+    margin-top: 25px;
+}
+.c-f-f .section{
+    margin:15px 15px;
+}
+.c-f-f .icon{
+    font-size: 80%;
+    padding-right: 15px;
+}
+.c-f-f .email a,
+.c-f-f .mobile a{
+    color:#1B2D39;
+}
+.c-f-f .email,
+.c-f-f .mobile{
+    font-size: 20px;  
+    color:#1B2D39;
+}
+.form-section .f-g-s .rounded {
+    
+    
+     
+}
+
+
+@media(max-width:1400px){
+    .contact-main .contact-section .section{        
+        max-width:585px;
+    }
+}
+@media(max-width:1199px){
+    .contact-main .contact-section .section{        
+        padding: 0 15px;        
+    }
+    .contact-main .top-text .title {
+        font-size: 65px;
+    }
+    .contact-main .top-text .sub-title {
+        font-size: 35px;
+    }
+    .form-section .f-g-s{    
+        margin-bottom: 20px;
+    }
+}
+@media(max-width:991px){
+    
+    .contact-main .top-text .title {
+        font-size: 55px;
+    }
+    .contact-main .top-text .sub-title {
+        font-size: 30px;
+    }
+    .c-f-f .section{
+        margin:10px 10px;
+    }
+}
+@media(max-width:768px){
+    
+   .contact-main  .contact-section{
+        -webkit-box-orient:vertical;
+        -webkit-box-direction:reverse;
+        -webkit-flex-direction:column-reverse;
+        -ms-flex-direction:column-reverse;
+        flex-direction:column-reverse;
+        
+    }
+    .contact-main .contact-section .section{
+        height: auto;
+        min-height: 50vh;
+        padding: 30px 0;
+        max-width: 100%;
+        width: 100%;
+        -webkit-box-pack:center;
+        -webkit-justify-content:center;
+        -ms-flex-pack:center;
+        justify-content:center;
+    }
+    .form-section .f-g-s {
+        width: 48%;
+    }
+    .contact-main .right .section .top-text {
+         text-align: center; 
+    }
+    .contact-form-section .content .title {
+        font-size: 45px;
+    }
+    .contact-main .top-text .sub-title .l-b{
+        display: none;
+    }
+}
+@media(max-width:480px){
+    .contact-main .top-text .title {
+        font-size: 40px;
+    }
+    .contact-main .top-text .sub-title {
+        font-size: 22px;
+    }
+    .form-section .f-g-s {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+    .form-section .f-g-s .form-control {
+        height: 45px;
+        border: 1px solid #1B2D39;
+        font-size: 18px;
+    }
+    .c-f-f {
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: reverse;
+        -webkit-flex-direction: column-reverse;
+            -ms-flex-direction: column-reverse;
+                flex-direction: column-reverse;        
+    }
+    .contact-form-section{
+        padding-top:0; 
+        padding-bottom: 30px;
+    }
+    .contact-form-section .content .title {
+        font-size: 40px;
+                margin-bottom: 30px;    
+    }
+    .c-f-b .appy-btn {     
+        font-size: 22px;
+        width: 100%;
+    }
+}
+@media(max-width:480px){
+    .contact-main .top-text .title {
+        font-size: 35px;
+    }
+    .contact-main .top-text .sub-title {
+        font-size: 20px;
+    }
+    .c-f-f .email, .c-f-f .mobile {
+        font-size: 20px;
+    }
+}
