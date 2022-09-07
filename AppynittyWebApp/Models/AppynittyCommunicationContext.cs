@@ -32,8 +32,8 @@ namespace AppynittyWebApp.Models
         public virtual DbSet<News> News { get; set; }
         public virtual DbSet<NewsRply> NewsRplies { get; set; }
         public virtual DbSet<Test> Tests { get; set; }
-
         public virtual DbSet<NewsReplyDetails> NewsReplyDetails { get; set; }
+        public virtual DbSet<AppEmpCVDetails> AppEmpCVDetails { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
