@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 
 #nullable disable
 
@@ -15,6 +16,7 @@ namespace AppynittyWebApp.Models
         public string MobileNo { get; set; }
         public string CurrentLocation { get; set; }
         public string TotExp { get; set; }
+        [Required(ErrorMessage = "Please choose CV")]
         public string Filename { get; set; }
         public bool Tac { get; set; }
     }

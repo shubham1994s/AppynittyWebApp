@@ -1,0 +1,65 @@
+﻿@model AppynittyWebApp.ViewModels.CareersVM
+@*@model IEnumerable<AppynittyWebApp.Models.News>*@
+
+@{
+    ViewData["Title"] = "Open Position";
+}
+<style>
+    .newttl {
+        list-style-type: none;
+    }
+</style>
+
+
+<div class="container">
+    <h1 style="margin-left:46%">Careers Section</h1>
+
+        <div class="row">
+            @{
+                var obj = ViewBag.careerslist;
+            }
+            <div class="col-sm-8">
+                <h4>Current Opening</h4>
+                @foreach (var item in obj)
+                {
+                    <div>
+                        <heaade>
+                            <div>
+                                <h3>
+                                    @item.JobTitle
+                                </h3>
+                            </div>
+                        </heaade>
+                        <div>
+                            <span>@item.MinExp - @item.MaxExp</span>
+                            <span>@item.MinSalary - @item.MaxSalary</span>
+                            <span>@item.JobLocation</span>
+                        </div>
+                        <div>
+                            <p>@item.JobDesc</p>
+                        </div>
+                    </div>
+                }
+
+            </div>
+
+            <div class="col-sm-4">
+                <div>
+                    <div>
+                        <h3>Drop your CV here</h3>
+                        <p>We will consider your Profile for future Jobs</p>
+                    </div>
+                    <div>
+                        <a asp-action="CVSection">
+                            <span>Drop CV</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+</div>
+
+
+
