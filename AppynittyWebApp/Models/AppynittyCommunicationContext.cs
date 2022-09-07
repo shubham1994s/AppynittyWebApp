@@ -28,6 +28,7 @@ namespace AppynittyWebApp.Models
         public virtual DbSet<Blog> Blogs { get; set; }
         public virtual DbSet<BlogRply> BlogRplies { get; set; }
         public virtual DbSet<Career> Careers { get; set; }
+        public virtual DbSet<ContactU> ContactUs { get; set; }
         public virtual DbSet<LoginInfo> LoginInfos { get; set; }
         public virtual DbSet<News> News { get; set; }
         public virtual DbSet<NewsRply> NewsRplies { get; set; }
@@ -209,6 +210,13 @@ namespace AppynittyWebApp.Models
                 entity.Property(e => e.MinExp).HasColumnName("Min_Exp");
 
                 entity.Property(e => e.MinSalary).HasColumnName("Min_Salary");
+            });
+
+            modelBuilder.Entity<ContactU>(entity =>
+            {
+                entity.Property(e => e.Date).HasColumnType("datetime");
+
+                entity.Property(e => e.MobileNo).HasColumnName("Mobile_No");
             });
 
             modelBuilder.Entity<LoginInfo>(entity =>
