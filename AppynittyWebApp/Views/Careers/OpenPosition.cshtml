@@ -11,14 +11,14 @@
 </style>
 
 
-<div>
+<div class="container">
     <h1 style="margin-left:46%">Careers Section</h1>
 
-        <dl class="row">
+        <div class="row">
             @{
                 var obj = ViewBag.careerslist;
             }
-            <dd class="col-sm-8">
+            <div class="col-sm-8">
                 <h4>Current Opening</h4>
                 @foreach (var item in obj)
                 {
@@ -41,12 +41,22 @@
                     </div>
                 }
 
-            </dd>
+            </div>
 
-            <dd class="col-sm-4">
-              
-            </dd>
-        </dl>
+            <div class="col-sm-4">
+                <div>
+                    <div>
+                        <h3>Drop your CV here</h3>
+                        <p>We will consider your Profile for future Jobs</p>
+                    </div>
+                    <div>
+                        <a asp-action="CVSection">
+                            <span>Drop CV</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
 
 
 </div>

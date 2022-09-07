@@ -1,9 +1,12 @@
 ﻿using AppynittyWebApp.Models;
 using AppynittyWebApp.ViewModels;
+using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -12,10 +15,12 @@ namespace AppynittyWebApp.Controllers
     public class CareersController : Controller
     {
         private readonly AppynittyCommunicationContext _context;
+        private readonly IWebHostEnvironment webHostEnvironment;
 
-        public CareersController(AppynittyCommunicationContext context)
+        public CareersController(AppynittyCommunicationContext context, IWebHostEnvironment hostEnvironment)
         {
             _context = context;
+            webHostEnvironment = hostEnvironment;
         }
         public async Task<ActionResult> IndexAsync()
         {
@@ -144,6 +149,75 @@ namespace AppynittyWebApp.Controllers
             ViewBag.careerslist = careersData;
 
             return View(model);
+        }
+
+        [HttpGet]
+        public async Task<IActionResult> CVSection()
+        {
+            ViewData["JobList"] = new SelectList(_context.Careers, "Id", "JobTitle");
+
+            var JobListData = await _context.Careers.Where(o => o.IsActive == true).OrderByDescending(o => o.Id).ToListAsync();
+            ViewBag.Joblist = JobListData;
+            return View();
+        }
+
+        [HttpPost]
+        //[ValidateAntiForgeryToken]
+        public async Task<IActionResult> CVSection(CareersVM model)
+        {
+
+
+            AppliedEmp Job = new AppliedEmp();
+
+            if (ModelState.IsValid)
+            {
+                try
+                {
+                    string uniqueFileName = UploadedFile(model);
+
+                    Job.CareersId = model.Careers_Id;
+                    Job.Name = model.Name;
+                    Job.Email = model.Email;
+                    Job.MobileNo = model.MobileNo;
+                    Job.CurrentLocation = model.CurrentLocation;
+                    Job.TotExp = model.TotExp;
+                    Job.Filename = uniqueFileName;
+                    Job.Tac = model.Tac;
+                    Job.Date = DateTime.Now;
+
+                    _context.Add(Job);
+
+                    await _context.SaveChangesAsync();
+                }
+                catch (DbUpdateConcurrencyException)
+                {
+                    throw;
+                }
+                return RedirectToAction(nameof(OpenPosition));
+            }
+            return View(model);
+        }
+
+        private string UploadedFile(CareersVM model)
+        {
+            string uniqueFileName = null;
+
+            if (model.FileName != null)
+            {
+                string uploadsFolder = Path.Combine(webHostEnvironment.WebRootPath, "UploadedCV");
+
+                //var guid = Guid.NewGuid().ToString().Split('-');
+                //uniqueFileName = DateTime.Now.ToString("MMddyyyymmss") + "_" + guid + ".jpg";
+
+                uniqueFileName = Guid.NewGuid().ToString() + "_" + model.FileName.FileName;
+
+                string filePath = Path.Combine(uploadsFolder, uniqueFileName);
+                using (var fileStream = new FileStream(filePath, FileMode.Create))
+                {
+                    model.FileName.CopyTo(fileStream);
+                }
+            }
+            return uniqueFileName;
         }
     }
 }
