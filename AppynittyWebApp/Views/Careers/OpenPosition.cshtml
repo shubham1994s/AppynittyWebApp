@@ -1,0 +1,55 @@
+﻿@model AppynittyWebApp.ViewModels.CareersVM
+@*@model IEnumerable<AppynittyWebApp.Models.News>*@
+
+@{
+    ViewData["Title"] = "Open Position";
+}
+<style>
+    .newttl {
+        list-style-type: none;
+    }
+</style>
+
+
+<div>
+    <h1 style="margin-left:46%">Careers Section</h1>
+
+        <dl class="row">
+            @{
+                var obj = ViewBag.careerslist;
+            }
+            <dd class="col-sm-8">
+                <h4>Current Opening</h4>
+                @foreach (var item in obj)
+                {
+                    <div>
+                        <heaade>
+                            <div>
+                                <h3>
+                                    @item.JobTitle
+                                </h3>
+                            </div>
+                        </heaade>
+                        <div>
+                            <span>@item.MinExp - @item.MaxExp</span>
+                            <span>@item.MinSalary - @item.MaxSalary</span>
+                            <span>@item.JobLocation</span>
+                        </div>
+                        <div>
+                            <p>@item.JobDesc</p>
+                        </div>
+                    </div>
+                }
+
+            </dd>
+
+            <dd class="col-sm-4">
+              
+            </dd>
+        </dl>
+
+
+</div>
+
+
+

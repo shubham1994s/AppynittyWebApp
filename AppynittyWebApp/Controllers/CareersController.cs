@@ -1,4 +1,5 @@
 ﻿using AppynittyWebApp.Models;
+using AppynittyWebApp.ViewModels;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using System;
@@ -132,6 +133,17 @@ namespace AppynittyWebApp.Controllers
             await _context.SaveChangesAsync();
 
             return RedirectToAction(nameof(Index));
+        }
+
+        [HttpGet]
+        public async Task<IActionResult> OpenPosition(CareersVM model)
+        {
+
+            var careersData = await _context.Careers.Where(o => o.IsActive == true).OrderByDescending(o => o.Id).ToListAsync();
+
+            ViewBag.careerslist = careersData;
+
+            return View(model);
         }
     }
 }
