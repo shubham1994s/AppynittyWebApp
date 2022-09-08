@@ -17,5 +17,42 @@ namespace AppynittyWebApp.Controllers
         {
             return View();
         }
+        public IActionResult RealEstate()
+        {
+            return View();
+        }
+        public IActionResult Malls()
+        {
+            return View();
+        }
+        public IActionResult Restro()
+        {
+            return View();
+        }
+        public IActionResult Stayiinn()
+        {
+            return View();
+        }
+        public IActionResult Beauty()
+        {
+            return View();
+        }
+        public IActionResult VoterFirst()
+        {
+            return View();
+        }
+        public IActionResult Wheels()
+        {
+            return View();
+        }
+        public IActionResult Celeb()
+        {
+            return View();
+        }
+        public IActionResult Boutique()
+        {
+            return View();
+        }
+
     }
 }

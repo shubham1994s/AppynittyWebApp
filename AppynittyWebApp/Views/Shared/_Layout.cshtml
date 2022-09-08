@@ -7,9 +7,18 @@
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="~/Assets/CSS/header.css" rel="stylesheet" />
+    <link href="~/Assets/CSS/Icon.css" rel="stylesheet" />
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
+
+    <script type="text/javascript" src="https://www.appynitty.com/assets/js/header.js"></script>
+<style>
+    ul li{list-style:none}
+    ul{padding:0px}
+</style>
 </head>
 <body>
-    <header>
+    <!--<header>
         <nav class="p-0 navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow">
             <div class="container">
                 <a class="navbar-brand p-0" asp-area="" asp-controller="Home" asp-action="Index">
@@ -34,8 +43,8 @@
 
         </nav>
         <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mx-4 p-0">
-            @*<div class="container">*@
-             
+           <div class="container">
+
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
                         aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -45,16 +54,26 @@
                         <li class="nav-item">
                             <a class="nav-link text-dark  px-3" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark   px-3" asp-area="" asp-controller="MobileApps" asp-action="MobileApp">Mobile Apps</a>
-                        </li>
-                        <li class="nav-item px-3">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="MobileApps" asp-action="CustomApp">Customized Apps</a>
-                        </li>
-                        <li class="nav-item  px-3">
-                            <a class="nav-link text-dark px-3" asp-area="" asp-controller="Home" asp-action="Privacy">Our Apps</a>
-                        </li>
-                        <li class="nav-item  px-4">
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Mobile Apps
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item" href="/mobileApps/mobileApp">Mobile Apps</a>
+                                <a class="dropdown-item" href="/mobileApps/Customapp">Customized Apps</a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" href="/mobileApps/mobileApp">Our Apps</a>
+                            </div>-->
+    @*<li class="nav-item">
+            <a class="nav-link text-dark   px-3" asp-area="" >Mobile Apps</a>
+        </li>
+        <li class="nav-item px-3">
+            <a class="nav-link text-dark" asp-area="">Our Apps</a>
+        </li>
+        <li class="nav-item  px-3">
+            <a class="nav-link text-dark px-3" asp-area="" >Our Apps</a>
+        </li>*@
+    <!--<li class="nav-item  px-4">
                             <a class="nav-link text-dark px-3" asp-area="" asp-controller="DigitalSolution" asp-action="leadGeneration">Lead Genration</a>
                         </li>
                         <li class="nav-item  px-3">
@@ -71,132 +90,543 @@
                         </li>
                     </ul>
                 </div>
-            @*</div>*@
+            </div>
 
         </nav>
-    </header>
-    @*<div class="container">*@
-        <main role="main">
-            @RenderBody()
-        </main>
-    @*</div>*@
+    </header>-->
+    <header class="a-head">
+        <div class="header-section">
+            <div class="container">
+                <div class="header-box">
+                    <div class="header-left">
+                        <div class="left-section">
+                            <div class="section">
+                                <div class="logo">
+                                    <a href="/home/index" title="Appynitty Communications">
+                                        <img src="https://www.appynitty.com/assets/home/img/appynitty-logo.png" class="img img-responsive" style="height: 70px;">
+                                    </a>
+                                </div>
+                                <!--<div class="appy-search">
+                                    <div class="inner-addon right-addon">
+                                        <i class="icon ai-search"></i>-->
+                                        <!--<input type="text" class="form-control search" placeholder="Search" />-->
 
-<footer class="border-top footer text-muted footer-box">
-    <div class="container">
-        <div class="d-flex justify-content-between foot">
-            <div style="border-right: 2px solid #9d9999b0; padding-right: 3%;" class="mx-3">
-                <h5 class="text-uppercase">About Us</h5>
+                                        <!--<input type="text" class="form-control search" name="search" id="searchid" placeholder="Search" />
 
+                                        <div id="result"></div>
 
-                <ul class="list-unstyled">
-                    <li>
-                        <a href="/Home/AboutUs#company" title="Company Profile">Company Profile</a>
-                    </li>
-                    @*<li>
-                        <a href="https://www.appynitty.com/about-us#founders" title="Our Founders">Our Founders</a>
-                    </li>*@
-                    <li>
-                        <a href="/Home/aboutus#careers" title="Careers">Careers</a>
-                    </li>
+                                     
+                                    </div>
+                                </div>-->
+                            </div>
+                        </div>
+                    </div>
+                    <div class="header-right" style="height:10px">
+                        <div class="right-section">
+                            <div class="section">
+                                <div class="menu-section ">
+                                    <ul class="root-menu">
+                                        <li class="menu-list r-menu">
+                                            <div class="item-box">
+                                                <div class="item">
+                                                    <div class="name">MOBILE APPS</div>
+                                                    <div class="m-icon"><i class="icon ai-arrow-down"></i></div>
+                                                </div>
+                                            </div>
+                                            <div class="sub-menu">
+                                                <ul class="s-scroll">
+                                                    <li class="menu-list link c-link">
+                                                        <a href="/MobileApps/MobileApp" title="Mobile Apps">
+                                                            <div class="item">
+                                                                <div class="name">MOBILE APPS</div>
+                                                            </div>
+                                                        </a>
+                                                    </li>
+                                                    <li class="menu-list link">
+                                                        <a href="/MobileApps/CustomApp" title="Customized Apps">
+                                                            <div class="item">
+                                                                <div class="name">CUSTOMIZED APPS</div>
+                                                            </div>
+                                                        </a>
+                                                    </li>
+                                                    <li class="menu-list s-menu link">
+                                                        <div class="item">
+                                                            <div class="name">OUR APPS</div>
+                                                            <div class="m-icon"><i class="icon ai-plus-without-circle"></i></div>
+                                                        </div>
+                                                        <div class="c-sub-menu">
+                                                            <ul>
 
-                </ul>
-            </div>
-            <div style="border-right: 2px solid #9d9999b0; padding-right: 3%;" class="mx-3">
-                <h5 class="text-uppercase"><a href="https://www.appynitty.com/about-us/" title="About Us">Mobile Apps</a></h5>
+                                                                <li class="menu-list link">
+                                                                    <a href="/MobileApps/RealEstate" title="Real Estate Mobile App">
+                                                                        <div class="item">
+                                                                            <div class="name">RealEstate Appy</div>
+                                                                        </div>
+                                                                    </a>
+                                                                </li>
+                                                                <li class="menu-list link">
+                                                                    <a href="/MobileApps/Malls" title="MallsAppy Mobile App">
+                                                                        <div class="item">
+                                                                            <div class="name">Malls Appy</div>
+                                                                        </div>
+                                                                    </a>
+                                                                </li>
+                                                                <li class="menu-list link">
+                                                                    <a href="/MobileApps/Restro" title="Restro Appy ">
+                                                                        <div class="item">
+                                                                            <div class="name">Restro Appy </div>
+                                                                        </div>
+                                                                    </a>
+                                                                </li>
+                                                                <li class="menu-list link">
+                                                                    <a href="/MobileApps/Stayiinn" title="Stayiinn Appy">
+                                                                        <div class="item">
+                                                                            <div class="name">Stayiinn Appy</div>
+                                                                        </div>
+                                                                    </a>
+                                                                </li>
+                                                                <li class="menu-list link">
+                                                                    <a href="/MobileApps/Beauty" title="Beauty App">
+                                                                        <div class="item">
+                                                                            <div class="name">Beauty Appy</div>
+                                                                        </div>
+                                                                    </a>
+                                                                </li>
+                                                                <li class="menu-list link">
+                                                                    <a href="/MobileApps/Voterfirst" title="Voter First">
+                                                                        <div class="item">
+                                                                            <div class="name">Voter First</div>
+                                                                        </div>
+                                                                    </a>
+                                                                </li>
+                                                                <li class="menu-list link">
+                                                                    <a href="/MobileApps/Wheels" title="Wheels Appy">
+                                                                        <div class="item">
+                                                                            <div class="name">Wheels Appy</div>
+                                                                        </div>
+                                                                    </a>
+                                                                </li>
+                                                                <li class="menu-list link">
+                                                                    <a href="/MobileApps/Celeb" title="Celeb Appy – Innovative Fan Engagement Mobile App for Celebrities | Appynitty Communications">
+                                                                        <div class="item">
+                                                                            <div class="name">Celeb Appy</div>
+                                                                        </div>
+                                                                    </a>
+                                                                </li>
+                                                                <li class="menu-list link">
+                                                                    <a href="/MobileApps/Boutique" title="Boutique Appy">
+                                                                        <div class="item">
+                                                                            <div class="name">Boutique Appy</div>
+                                                                        </div>
+                                                                    </a>
+                                                                </li>
+                                                            </ul>
+                                                        </div>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </li>
+                                        <li class="menu-list r-menu ">
+                                            <div class="item-box">
+                                                <div class="item">
+                                                    <div class="name">DIGITAL SOLUTIONS</div>
+                                                    <div class="m-icon"><i class="icon ai-arrow-down"></i></div>
+                                                </div>
+                                            </div>
+                                            <div class="sub-menu">
+                                                <ul class="child s-scroll">
+                                                    <li class="menu-list s-menu link">
+                                                        <div class="item">
+                                                            <a href="/DigitalSolution/LeadGeneration" title="Lead Generation Campaign"><div class="name">LEAD GENERATION</div></a>
+                                                            <div class="m-icon"><i class="icon ai-plus-without-circle"></i></div>
+                                                        </div>
+                                                        <div class="c-sub-menu">
+                                                            <ul>
+                                                                <li class="menu-list link">
+                                                                    <a href="/DigitalSolution/Leadmanagement" title="Lead Management Services">
+                                                                        <div class="item">
+                                                                            <div class="name">Lead Management Services</div>
+                                                                        </div>
+                                                                    </a>
+                                                                </li>
+                                                                <li class="menu-list link">
+                                                                    <a href="/DigitalSolution/EmailManagement" title="Email Campaign Management">
+                                                                        <div class="item">
+                                                                            <div class="name">Email Campaign Management</div>
+                                                                        </div>
+                                                                    </a>
+                                                                </li>
+                                                                <li class="menu-list link">
+                                                                    <a href="/DigitalSolution/SalesIntelligence" title="Sales Intelligence PaaS">
+                                                                        <div class="item">
+                                                                            <div class="name">Sales Intelligence PaaS</div>
+                                                                        </div>
+                                                                    </a>
+                                                                </li>
+                                                            </ul>
+                                                        </div>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </li>
+                                        <li class="menu-list r-menu ">
+                                            <div class="item-box ">
+                                                <a href="/Careers/openPosition" title="Contact Us">
+                                                    <div class="item">
+                                                        <div class="name">CAREERS</div>
+                                                    </div>
+                                                </a>
+                                            </div>
+                                        </li>
+                                        <li class="menu-list r-menu ">
+                                            <div class="item-box ">
+                                                <a href="/ContactUs/Contact" title="Contact Us">
+                                                    <div class="item">
+                                                        <div class="name">CONTACT US</div>
+                                                    </div>
+                                                </a>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="menu-icon">
+                                    <div class="icon-section">
+                                        <ul class="root-menu">
+                                            <li class="menu-list i-menu">
+                                                <div class="item-box">
+                                                    <div class="item">
+                                                        <!--<div class="icon"><i class="icon ai-menu-cross"></i></div>-->
+                                                        <div class="name">MENU</div>
+                                                        <div class="m-icon"><i class="icon ai-menubar"></i></div>
+                                                    </div>
+                                                </div>
+                                                <div class="sub-menu">
+                                                    <ul class="s-scroll">
+                                                        <li class="menu-list link c-link">
+                                                            <a href="/home/Index" title="Appynitty Communications">
+                                                                <div class="item">
+                                                                    <div class="name">HOME</div>
+                                                                </div>
+                                                            </a>
+                                                        </li>
+                                                        <li class="menu-list link c-link">
+                                                            <a href="/MobileApps/MobileApp" title="Mobile Apps">
+                                                                <div class="item">
+                                                                    <div class="name">MOBILE APPS</div>
+                                                                </div>
+                                                            </a>
+                                                        </li>
+                                                        <li class="menu-list link">
+                                                            <a href="/MobileApps/Custom" title="Customized Apps">
+                                                                <div class="item">
+                                                                    <div class="name">CUSTOMIZED APPS</div>
+                                                                </div>
+                                                            </a>
+                                                        </li>
 
-
-                <ul class="list-unstyled">
-                    <li>
-                        <a href="/MobileApps/CustomApp" title="Company Profile">Customized Apps</a>
-                    </li>
-                    <li>
-                        <a href="#" title="Our Founders">Our Apps</a>
-                    </li>
-
-                </ul>
-            </div>
-            <div style="border-right: 2px solid #9d9999b0; padding-right: 3%;" class="mx-3">
-                <h5 class="text-uppercase"><a href="https://www.appynitty.com/about-us/" title="About Us">Solution</a></h5>
-
-
-                <ul class="list-unstyled">
-                    <li>
-                        <a href="/DigitalSolution/leadGeneration" title="Company Profile">Lead Generation</a>
-                    </li>
-
-
-                </ul>
-            </div>
-            <div style="border-right: 2px solid #9d9999b0; padding-right: 3%;" class="mx-3">
-                <h5 class="text-uppercase"><a href="https://www.appynitty.com/about-us/" title="About Us">Resources</a></h5>
-
-
-                <ul class="list-unstyled">
-                    <li>
-                        <a href="/Blog/OurBlog" title="Company Profile">Blog</a>
-                    </li>
-                    <li>
-                        <a href="/News/Newsection" title="Our Founders">News</a>
-                    </li>
-
-                </ul>
-            </div>
-            <div style="border-right: 2px solid #9d9999b0; padding-right: 3%;" class="mx-3">
-                <h5 class="text-uppercase"><a href="https://www.appynitty.com/about-us/" title="About Us">Partner With Us</a></h5>
-
-
-                <ul class="list-unstyled">
-                    <li>
-                        <a href="/ContactUs/franchise#why-appynitty" title="Company Profile">Why Appynitty?</a>
-                    </li>
-                    <li>
-                        <a href="/ContactUs/franchise#faq" title="Our Founders">FAQs</a>
-                    </li>
-
-
-                </ul>
-            </div>
-            <div style="padding-right: 3%;" class="mx-3">
-                <h5 class="text-uppercase"><a href="https://www.appynitty.com/about-us/" title="About Us">Contact Us</a></h5>
-
-
-                <ul class="list-unstyled">
-                    <li>
-                        <a href="mailto:info@appynitty.com" title="Company Profile">info@appynitty.com</a>
-                    </li>
-                    <li>
-                        <a href="tel:+919209100900" title="Our Founders">+91 9209 100 900</a>
-                    </li>
-
-
-                </ul>
+                                                        <li class="menu-list s-menu link">
+                                                            <div class="item ">
+                                                                <div class="name">OUR APPS</div>
+                                                                <div class="m-icon"><i class="icon ai-plus-without-circle"></i></div>
+                                                            </div>
+                                                            <div class="c-sub-menu">
+                                                                <ul>
+                                                                    <li class="menu-list link">
+                                                                        <a href="/MobileApps/RealEstate" title="Real Estate Mobile App">
+                                                                            <div class="item">
+                                                                                <div class="name">RealEstate Appy</div>
+                                                                            </div>
+                                                                        </a>
+                                                                    </li>
+                                                                    <li class="menu-list link">
+                                                                        <a href="/MobileApps/Malls" title="MallsAppy Mobile App">
+                                                                            <div class="item">
+                                                                                <div class="name">Malls Appy</div>
+                                                                            </div>
+                                                                        </a>
+                                                                    </li>
+                                                                    <li class="menu-list link">
+                                                                        <a href="/MobileApps/Restro" title="Restro Appy ">
+                                                                            <div class="item">
+                                                                                <div class="name">Restro Appy </div>
+                                                                            </div>
+                                                                        </a>
+                                                                    </li>
+                                                                    <li class="menu-list link">
+                                                                        <a href="/MobileApps/Stayiinn" title="Stayiinn Appy">
+                                                                            <div class="item">
+                                                                                <div class="name">Stayiinn Appy</div>
+                                                                            </div>
+                                                                        </a>
+                                                                    </li>
+                                                                    <li class="menu-list link">
+                                                                        <a href="/MobileApps/Beauty" title="Beauty App">
+                                                                            <div class="item">
+                                                                                <div class="name">Beauty Appy</div>
+                                                                            </div>
+                                                                        </a>
+                                                                    </li>
+                                                                    <li class="menu-list link">
+                                                                        <a href="/MobileApps/VoterFirst" title="Voter First">
+                                                                            <div class="item">
+                                                                                <div class="name">Voter First</div>
+                                                                            </div>
+                                                                        </a>
+                                                                    </li>
+                                                                    <li class="menu-list link">
+                                                                        <a href="/MobileApps/Wheels" title="Wheels Appy">
+                                                                            <div class="item">
+                                                                                <div class="name">Wheels Appy</div>
+                                                                            </div>
+                                                                        </a>
+                                                                    </li>
+                                                                    <li class="menu-list link">
+                                                                        <a href="/MobileApps/Celeb" title="Celeb Appy – Innovative Fan Engagement Mobile App for Celebrities | Appynitty Communications">
+                                                                            <div class="item">
+                                                                                <div class="name">Celeb Appy</div>
+                                                                            </div>
+                                                                        </a>
+                                                                    </li>
+                                                                    <li class="menu-list link">
+                                                                        <a href="/MobileApps/Boutique" title="Boutique Appy">
+                                                                            <div class="item">
+                                                                                <div class="name">Boutique Appy</div>
+                                                                            </div>
+                                                                        </a>
+                                                                    </li>
+                                                                </ul>
+                                                            </div>
+                                                        </li>
+                                                        <li class="menu-list c-link">
+                                                            <div class="item">
+                                                                <div class="name">DIGITAL SOLUTIONS</div>
+                                                            </div>
+                                                        </li>
+                                                        <!--  <li class="menu-list s-menu link">
+                                                              <div class="item">
+                                                                  <a href="" title=""><div class="name"></div></a>
+                                                                  <div class="m-icon"><i class="icon ai-plus-without-circle"></i></div>
+                                                              </div>
+                                                              <div class="c-sub-menu">
+                                                                  <ul>
+                                                                                                                                                  <li class="menu-list link">
+                                                                              <a href="" title="">
+                                                                              <div class="item">
+                                                                                  <div class="name"></div>
+                                                                              </div>
+                                                                              </a>
+                                                                          </li>
+                                                                                                                                          </ul>
+                                                              </div>
+                                                          </li> -->
+                                                        <li class="menu-list s-menu link">
+                                                            <div class="item">
+                                                                <a href="/DigitalSolution/LeadGeneration" title="Lead Generation Campaign"><div class="name">LEAD GENERATION</div></a>
+                                                                <div class="m-icon"><i class="icon ai-plus-without-circle"></i></div>
+                                                            </div>
+                                                            <div class="c-sub-menu">
+                                                                <ul>
+                                                                    <li class="menu-list link">
+                                                                        <a href="/DigitalSolution/LeadManagement" title="Lead Management Services">
+                                                                            <div class="item">
+                                                                                <div class="name">Lead Management Services</div>
+                                                                            </div>
+                                                                        </a>
+                                                                    </li>
+                                                                    <li class="menu-list link">
+                                                                        <a href="/DigitalSolution/EmailManagement" title="Email Campaign Management">
+                                                                            <div class="item">
+                                                                                <div class="name">Email Campaign Management</div>
+                                                                            </div>
+                                                                        </a>
+                                                                    </li>
+                                                                    <li class="menu-list link">
+                                                                        <a href="/DigitalSolution/SalesIntelligence" title="Sales Intelligence PaaS">
+                                                                            <div class="item">
+                                                                                <div class="name">Sales Intelligence PaaS</div>
+                                                                            </div>
+                                                                        </a>
+                                                                    </li>
+                                                                </ul>
+                                                            </div>
+                                                        </li>
+                                                        <li class="menu-list c-link">
+                                                            <div class="item">
+                                                                <div class="name">RESOURCES</div>
+                                                            </div>
+                                                        </li>
+                                                        <li class="menu-list link">
+                                                            <!--<a href="https://www.appynitty.com/blog/" title="Blog">-->
+                                                            <a href="/BlogImages/OurBlog" title="Blog">
+                                                                <div class="item">
+                                                                    <div class="name">BLOG</div>
+                                                                </div>
+                                                            </a>
+                                                        </li>
+                                                        <li class="menu-list link">
+                                                            <!--<a href="https://www.appynitty.com/news/" title="News">-->
+                                                            <a href="/News/NewSection" title="News">
+                                                                <div class="item">
+                                                                    <div class="name">NEWS</div>
+                                                                </div>
+                                                            </a>
+                                                        </li>
+                                                        <li class="menu-list link c-link">
+                                                            <a href="https://www.appynitty.com/franchise-business-opportunities/" title="Partner With Us">
+                                                                <div class="item">
+                                                                    <div class="name">PARTNER WITH US</div>
+                                                                </div>
+                                                            </a>
+                                                        </li>
+                                                        <li class="menu-list link c-link">
+                                                            <a href="/home/AboutUs" title="About Us">
+                                                                <div class="item">
+                                                                    <div class="name">ABOUT US</div>
+                                                                </div>
+                                                            </a>
+                                                        </li>
+                                                        <li class="menu-list link c-link">
+                                                            <a href="/ContactUs/Contact" title="Contact Us">
+                                                                <div class="item">
+                                                                    <div class="name">CONTACT US</div>
+                                                                </div>
+                                                            </a>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
-        <div class="d-flex justify-content-between mt-4 flex-sm-row flex-column">
+    </header>
+    @*<div class="container">*@
+    <main role="main">
+        @RenderBody()
+    </main>
+    @*</div>*@
 
-            <div class="f-menu">
-                <h5 class="title text-white">follow us on</h5>
-                <a href="https://www.facebook.com/Appynitty/" target="_blank"> <i class="fa-brands fa-facebook-f"></i></a>
-                <a href="https://www.facebook.com/Appynitty/" target="_blank"> <i class="fa-brands fa-twitter"></i></a>
-                <a href="https://www.facebook.com/Appynitty/" target="_blank"> <i class="fa-brands fa-linkedin"></i></a>
-                <a href="https://www.facebook.com/Appynitty/" target="_blank"> <i class="fa-brands fa-google-plus-g"></i></a>
-                <a href="https://www.facebook.com/Appynitty/" target="_blank"> <i class="fa-brands fa-youtube"></i></a>
-                <a href="https://www.facebook.com/Appynitty/" target="_blank"> <i class="fa-brands fa-pinterest"></i></a>
-                <style>
-                    .f-menu a i {
-                        color: #3cbaba;
-                    }
+    <footer class="border-top footer text-muted footer-box">
+        <div class="container">
+            <div class="d-flex justify-content-between foot">
+                <div style="border-right: 2px solid #9d9999b0; padding-right: 3%;" class="mx-3">
+                    <h5 class="text-uppercase">About Us</h5>
 
-                        .f-menu a i :hover {
-                            color: white;
-                        }
-                </style>
 
+                    <ul class="list-unstyled">
+                        <li>
+                            <a href="/Home/AboutUs#company" title="Company Profile">Company Profile</a>
+                        </li>
+                        @*<li>
+                                <a href="https://www.appynitty.com/about-us#founders" title="Our Founders">Our Founders</a>
+                            </li>*@
+                        <li>
+                            <a href="/Home/aboutus#careers" title="Careers">Careers</a>
+                        </li>
+
+                    </ul>
+                </div>
+                <div style="border-right: 2px solid #9d9999b0; padding-right: 3%;" class="mx-3">
+                    <h5 class="text-uppercase"><a href="https://www.appynitty.com/about-us/" title="About Us">Mobile Apps</a></h5>
+
+
+                    <ul class="list-unstyled">
+                        <li>
+                            <a href="/MobileApps/CustomApp" title="Company Profile">Customized Apps</a>
+                        </li>
+                        <li>
+                            <a href="#" title="Our Founders">Our Apps</a>
+                        </li>
+
+                    </ul>
+                </div>
+                <div style="border-right: 2px solid #9d9999b0; padding-right: 3%;" class="mx-3">
+                    <h5 class="text-uppercase"><a href="https://www.appynitty.com/about-us/" title="About Us">Solution</a></h5>
+
+
+                    <ul class="list-unstyled">
+                        <li>
+                            <a href="/DigitalSolution/leadGeneration" title="Company Profile">Lead Generation</a>
+                        </li>
+
+
+                    </ul>
+                </div>
+                <div style="border-right: 2px solid #9d9999b0; padding-right: 3%;" class="mx-3">
+                    <h5 class="text-uppercase"><a href="https://www.appynitty.com/about-us/" title="About Us">Resources</a></h5>
+
+
+                    <ul class="list-unstyled">
+                        <li>
+                            <a href="/Blog/OurBlog" title="Company Profile">Blog</a>
+                        </li>
+                        <li>
+                            <a href="/News/Newsection" title="Our Founders">News</a>
+                        </li>
+
+                    </ul>
+                </div>
+                <div style="border-right: 2px solid #9d9999b0; padding-right: 3%;" class="mx-3">
+                    <h5 class="text-uppercase"><a href="https://www.appynitty.com/about-us/" title="About Us">Partner With Us</a></h5>
+
+
+                    <ul class="list-unstyled">
+                        <li>
+                            <a href="/ContactUs/franchise#why-appynitty" title="Company Profile">Why Appynitty?</a>
+                        </li>
+                        <li>
+                            <a href="/ContactUs/franchise#faq" title="Our Founders">FAQs</a>
+                        </li>
+
+
+                    </ul>
+                </div>
+                <div style="padding-right: 3%;" class="mx-3">
+                    <h5 class="text-uppercase"><a href="https://www.appynitty.com/about-us/" title="About Us">Contact Us</a></h5>
+
+
+                    <ul class="list-unstyled">
+                        <li>
+                            <a href="mailto:info@appynitty.com" title="Company Profile">info@appynitty.com</a>
+                        </li>
+                        <li>
+                            <a href="tel:+919209100900" title="Our Founders">+91 9209 100 900</a>
+                        </li>
+
+
+                    </ul>
+                </div>
             </div>
+            <div class="d-flex justify-content-between mt-4 flex-sm-row flex-column">
+
+                <div class="f-menu">
+                    <h5 class="title text-white">follow us on</h5>
+                    <a href="https://www.facebook.com/Appynitty/" target="_blank"> <i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="https://www.facebook.com/Appynitty/" target="_blank"> <i class="fa-brands fa-twitter"></i></a>
+                    <a href="https://www.facebook.com/Appynitty/" target="_blank"> <i class="fa-brands fa-linkedin"></i></a>
+                    <a href="https://www.facebook.com/Appynitty/" target="_blank"> <i class="fa-brands fa-google-plus-g"></i></a>
+                    <a href="https://www.facebook.com/Appynitty/" target="_blank"> <i class="fa-brands fa-youtube"></i></a>
+                    <a href="https://www.facebook.com/Appynitty/" target="_blank"> <i class="fa-brands fa-pinterest"></i></a>
+                    <style>
+                        .f-menu a i {
+                            color: #3cbaba;
+                        }
+
+                            .f-menu a i :hover {
+                                color: white;
+                            }
+                    </style>
+
+                </div>
 
                 <div class="f-menu f-title pl-5">
                     <h2 class="title text-center" style="color: #3cbaba ">Join the Appyness!</h2>
-                    <div class="text-white"> 2016 All rights reserved. <a href="https://www.appynitty.com/" class="text-white"title="Appynitty Communications">Appynitty Communications</a></div>
+                    <div class="text-white"> 2016 All rights reserved. <a href="https://www.appynitty.com/" class="text-white" title="Appynitty Communications">Appynitty Communications</a></div>
                     <div class="f-term text-center text-white">
                         <a href="https://www.appynitty.com/terms-and-condition/" title="Terms & Condition" class="text-white">Terms & Condition</a>
                     </div>
@@ -215,9 +645,9 @@
                     </div>
                 </div>
             </div>
-       
-    </div>
-</footer>
+
+        </div>
+    </footer>
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>

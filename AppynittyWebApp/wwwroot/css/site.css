@@ -74,9 +74,9 @@ ul li a {
     font-weight: 600
 }
 
-    ul li :hover {
+   /* ul li :hover {
         background: #3cbaba !important;
-    }
+    }*/
 a.text-dark:hover {
     color: #ffffff !important;
 }

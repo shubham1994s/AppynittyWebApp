@@ -1,0 +1,1093 @@
+﻿
+@{
+    ViewData["Title"] = "RealEstate";
+}
+
+<link rel="stylesheet" type="text/css" href="https://www.appynitty.com/assets/libs/fancybox/jquery.fancybox-1.3.4.css" />
+<link rel="stylesheet" type="text/css" href="https://www.appynitty.com/assets/libs/animate/animate.min.css" />
+<link rel="stylesheet" type="text/css" href="https://www.appynitty.com/assets/libs/slick/css/slick-theme.css" />
+<link rel="stylesheet" type="text/css" href="https://www.appynitty.com/assets/libs/slick/css/slick.css" />
+<link href="~/Assets/CSS/Product.css" rel="stylesheet" />
+<link rel="stylesheet" type="text/css" href="https://www.appynitty.com/assets/css/client.css" />
+
+<link href="~/Assets/CSS/Icon.css" rel="stylesheet" />
+<script type="text/javascript" src="https://www.appynitty.com/assets/libs/jquery/1.7.2/jquery.min.js"></script>
+<script type="text/javascript" src="https://www.appynitty.com/assets/libs/fancybox/jquery.fancybox-1.3.4.pack.js"></script>
+<script type="text/javascript" src="https://www.appynitty.com/assets/realestateappy/js/realestateappy.js"></script>
+<script type="text/javascript" src="https://www.appynitty.com/assets/libs/jquery/1.9.1/jquery.min.js"></script>
+<script type="text/javascript" src="https://www.appynitty.com/assets/libs/slick/js/slick.js"></script>
+<script type="text/javascript" src="https://www.appynitty.com/assets/js/client.js"></script>
+
+<style type="text/css">
+    #pics {
+        display: none;
+        /*background: #fff;
+	box-shadow: 0px 0px 20px #999;
+	border: 2px solid #ddd;
+	*/
+        padding: 10px;
+        float: left;
+        font-size: 1.2em;
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        z-index: 99999;
+    }
+
+    #picOne, #picTwo {
+        position: absolute;
+        display: none;
+    }
+    .clients-box .bg-appy,
+.list-section .list .c-icon.active_icon,
+.list-section .list .c-icon:hover,
+.product-blog .blog .top-section,
+.view-more .appy-btn,
+.package-cover .package .package-btn .appy-btn,
+.r-m-a-main .down-btn .appy-btn,
+.bg-appy,
+.bt-clr{
+    background: #4B55C4;
+}
+.arrow-color{
+    color:#4B55C4;
+}
+.bt-clr{
+
+}
+.blog .yt, .blog .ln, .blog .gp, .blog .tw, .blog .fb,
+.list-section .list .c-icon,
+.list-section .list .c-icon,
+.package-cover .package .amt{
+    color:#4B55C4;
+}
+.list-section .list .c-icon{
+    border: 1px solid #4B55C4;
+}
+.blog-social-share{
+    background: #4B55C4;
+}
+/*.m-icon .icon{
+    color: #EEEEEE !important;
+}
+*/
+
+/*@*@media(min-width:1199px) {
+    .padd-dwn-71{
+    padding-top: 43px;
+    }
+}*/*@
+@*@media(min-width:1920px) {
+  .biderectioanlArrowA {
+    position: relative !important;
+    top: -32px;
+    left: 355px !important;
+    margin: 0 auto;
+}*@
+
+.biderectioanlArrow {
+    position: relative !important;
+    /* top: -73px; */
+    left: 294px !important;
+    margin: 0 auto;
+}
+.share1920{
+    margin: 0;
+    margin-bottom: 53px !important;
+}
+.image1920{
+   height: 296px !important;
+}
+}
+</style>
+<input type="hidden" id="product-url" data-url="https://localhost:44303/Assets/js/data.json" data-name="RealEstate Appy">
+<section class="r-m-a-main">
+    <div class="product-flex">
+
+        <div class="half ">
+            <div class="left">
+                <div class="section">
+                    <div class="product-logo">
+                        <a href="https://www.appynitty.com/mobileapps/real-Estate-mobile-app" title="Real Estate Mobile App">
+                            <img class="img img-responsive" src="https://www.appynitty.com/uploads/product/realestateappy/realestate_logo.png" alt="Real Estate Mobile App" />
+                        </a>
+                    </div>
+                    <div class="product-intro" style="margin-bottom: 46px;">
+                        <picture>
+                            <source media="(max-width: 480px)" srcset="https://www.appynitty.com/uploads/product/realestateappy/realestate@480.gif">
+                            <source media="(max-width: 768px)" srcset="https://www.appynitty.com/uploads/product/realestateappy/realestate@768.gif">
+                            <source media="(max-width: 991px)" srcset="https://www.appynitty.com/uploads/product/realestateappy/realestate@991.gif">
+                            <source media="(max-width: 1420px)" srcset="https://www.appynitty.com/uploads/product/realestateappy/realestate@1199.gif">
+                            <img class="img img-responsive image1920" src="https://www.appynitty.com/uploads/product/realestateappy/realestate.gif" alt="Real Estate Mobile App" title="Real Estate Mobile App" />
+                        </picture>
+                    </div>
+                    <div class="download">
+                        <div class="text">
+                            Click here to<span class="l-b"><br></span> download Presentation
+                        </div>
+                        <div class="down-btn">
+                            <a href="https://www.appynitty.com/uploads/product/realestateappy/realestateappy_presentation.pdf" title="Real Estate Mobile App" alt="Real Estate Mobile App" target="_blank"><button class="appy-btn">DOWNLOAD<span class="icon ai-download"></span></button></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="half">
+            <div class="right bg-appy">
+                <div class="section">
+                    <div class="share-icon-section">
+                        <!-- <a href="" title=""><div class="icon ai-share-with-circle"></div></a> -->
+                        <div class="share-icon-box">
+                            <div class="share">
+                                <div class="share-section">
+                                    <div class="blog-social animated slideInRight">
+                                        <i class="fb icon ai-facebook" data-social="fb"></i>
+                                        <i class="tw icon ai-twitter" data-social="tw"></i>
+                                        <i class="gp icon ai-google-plus" data-social="gp"></i>
+
+                                    </div>
+                                    <a class="product-link" href="https://www.appynitty.com/mobileapps/real-Estate-mobile-app" title="Real Estate Mobile App"></a>
+                                    <div class="blog-social-share ">
+                                        <div class="icon ai-share-with-circle animated zoomIn"></div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <div class="text-section">
+                        <div class="top-text">
+                            <h1 class="title"> Real Estate <span class='l-b'><br></span>Mobile App</h1>
+                            <p class="sub-title">A Mobile App<span class='l-b'><br></span>to Develop Customer Relationship<span class='l-b'><br></span>that's as Strong as your Buildings!</p>
+                        </div>
+                    </div>
+                    <div class="button-section">
+                        <div class="ask-for-quote-btn">
+                            <p class="text"><a href="#login-box" class="appy-btn login-window">Let's Get In Touch !</a></p>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--for thank you image fadein-->
+    <style>
+        #picOne, #picTwo {
+            position: absolute;
+            display: none;
+        }
+    </style>
+    <!-- ty popoup -->
+    <div id="pics" style="display: block; margin-top: -228px; margin-left: -300.5px; opacity: 1; visibility: visible;">
+        <img src="https://www.appynitty.com//ty.jpg" id="picOne" />
+    </div>
+    <!--ty popoup-->
+
+    <div class="product-f-section">
+        <div class="container">
+            <div class="content">
+                <h2 class="title">Product Features</h2>
+            </div>
+        </div>
+        <div class="container">
+            <div class="product-features">
+
+                <div class="features">
+                    <div class="icon"><img class="img img-responsive" data-gif='https://www.appynitty.com/uploads/product/realestateappy/mobileappcontactcenter.gif' src='https://www.appynitty.com/uploads/product/realestateappy/mobileappcontactcenter.png' alt='MOBILE APP + CONTACT CENTER' title="MOBILE APP + CONTACT CENTER'"></div>
+                    <h2 class="title">MOBILE APP + CONTACT CENTER</h2>
+                    <div class="desc">Self branded mobile app for your real estate business with integrated contact center.</div>
+                </div>
+                <div class="features">
+                    <div class="icon"><img class="img img-responsive" data-gif='https://www.appynitty.com/uploads/product/realestateappy/pushnotifications.gif' src='https://www.appynitty.com/uploads/product/realestateappy/pushnotifications.png' alt='PUSH NOTIFICATIONS' title="PUSH NOTIFICATIONS'"></div>
+                    <h2 class="title">PUSH NOTIFICATIONS</h2>
+                    <div class="desc">Accelerate business revenues by sending dynamic new project promotions and ongoing project updates through highly targeted and free push notifications.</div>
+                </div>
+                <div class="features">
+                    <div class="icon"><img class="img img-responsive" data-gif='https://www.appynitty.com/uploads/product/realestateappy/portfolioshowcase.gif' src='https://www.appynitty.com/uploads/product/realestateappy/portfolioshowcase.png' alt='PORTFOLIO SHOWCASE' title="PORTFOLIO SHOWCASE'"></div>
+                    <h2 class="title">PORTFOLIO SHOWCASE</h2>
+                    <div class="desc">Showcase your past, current and upcoming projects with a mesmerizing 360<sup>o</sup> view of the site through HD images and videos.</div>
+                </div>
+                <div class="features">
+                    <div class="icon"><img class="img img-responsive" data-gif='https://www.appynitty.com/uploads/product/realestateappy/googlemapsintegration.gif' src='https://www.appynitty.com/uploads/product/realestateappy/googlemapsintegration.png' alt='GOOGLE MAPS INTEGRATION' title="GOOGLE MAPS INTEGRATION'"></div>
+                    <h2 class="title">GOOGLE MAPS INTEGRATION</h2>
+                    <div class="desc">Makes it easy for clients to navigate to site locations, sales office and head office.</div>
+                </div>
+                <div class="features">
+                    <div class="icon"><img class="img img-responsive" data-gif='https://www.appynitty.com/uploads/product/realestateappy/onlinepaymentgateway.gif' src='https://www.appynitty.com/uploads/product/realestateappy/onlinepaymentgateway.png' alt='ONLINE PAYMENT GATEWAY' title="ONLINE PAYMENT GATEWAY'"></div>
+                    <h2 class="title">ONLINE PAYMENT GATEWAY</h2>
+                    <div class="desc">Seamless net banking, e-wallets and card payments integration to enable instant payment of booking token by clients.</div>
+                </div>
+                <div class="features">
+                    <div class="icon"><img class="img img-responsive" data-gif='https://www.appynitty.com/uploads/product/realestateappy/socialmediaintegration.gif' src='https://www.appynitty.com/uploads/product/realestateappy/socialmediaintegration.png' alt='SOCIAL MEDIA INTEGRATION' title="SOCIAL MEDIA INTEGRATION'"></div>
+                    <h2 class="title">SOCIAL MEDIA INTEGRATION</h2>
+                    <div class="desc">Encourage your customers to be your social media followers and enhance your social branding.</div>
+                </div>
+                <div class="features">
+                    <div class="icon"><img class="img img-responsive" data-gif='https://www.appynitty.com/uploads/product/realestateappy/offlineavailability.gif' src='https://www.appynitty.com/uploads/product/realestateappy/offlineavailability.png' alt='OFFLINE AVAILABILITY' title="OFFLINE AVAILABILITY'"></div>
+                    <h2 class="title">OFFLINE AVAILABILITY</h2>
+                    <div class="desc">Provide static information for users which is accessible even on offline mode.</div>
+                </div>
+                <div class="features">
+                    <div class="icon"><img class="img img-responsive" data-gif='https://www.appynitty.com/uploads/product/realestateappy/emicalculator.gif' src='https://www.appynitty.com/uploads/product/realestateappy/emicalculator.png' alt='IN-APP EMI CALCULATOR' title="IN-APP EMI CALCULATOR'"></div>
+                    <h2 class="title">IN-APP EMI CALCULATOR</h2>
+                    <div class="desc">Assist clients in making buying decision by providing personalized EMI calculations.</div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="product-app-section">
+        <div class="container">
+            <div class="product-app">
+                <div class="app-sec-1">
+                    <div class="list-section leftlist"></div>
+                </div>
+                <div class="app-sec-2">
+                    <div class="app-screen">
+                        <div class="left-arrow">
+                            <div class="icon ai-arrow-left"></div>
+                        </div>
+                        <div class="screen">
+                            <img src="https://www.appynitty.com/uploads/product/mobile.png" class="img img-responsive">
+                            <div class="app-img">
+                                <div class="sliderExample">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="right-arrow">
+                            <div class="icon ai-arrow-right"></div>
+                        </div>
+                        <div class="list-section rightlistt"></div>
+                    </div>
+                </div>
+                <div class="app-sec-3">
+                    <div class="list-section right rightlist "></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="product-video-section bg-appy">
+        <div class="container">
+            <div class="content">
+                <h2 class="title">RealEstate Appy Introduction Video</h2>
+            </div>
+        </div>
+        <div class="container">
+            <div class="video-section">
+                <div class="body">
+                    <div class="video-cover">
+                        <a class="fancybox iframe" href="https://www.youtube.com/embed/va2qNMjXH68?autoplay=1" allowfullscreen="allowfullscreen">
+                            <div class="video">
+                                <div class="icon ai-play icon-video"></div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <style type="text/css">
+        #fancybox-content {
+            width: 100% !important;
+            height: 80vh !important;
+        }
+
+        video {
+            width: 100% !important;
+        }
+
+        #fancybox-wrap {
+            width: 100% !important;
+            left: 0 !important;
+            padding-left: 0 !important;
+        }
+    </style>
+    <!--.........-----banner------.......-->
+    <div class="ma-main">
+        <div class="m-6-flex">
+            <p class="get-quote">
+
+                Want RealEstate Appy Personalized for Your Business?  <br><br><a href="#login-box" class="appy-btn-new bt login-window">Ask For a Quote !</a>
+            </p>
+
+
+
+            <!-- <div class="half">
+                <div class="left">
+                    <div class="section">
+                        <div class="content">
+                             <div class="title">
+                                Looking for a<span class="l-b"><br></span> Customized Mobile App?
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="half">
+                <div class="right">
+                    <div class="section">
+                        <div class="content">
+                        <p class="text"><a href="#login-box" class="appy-btn bt login-window">Ask For a Quote !</a></p>
+
+                        </div>
+                    </div>
+                </div>
+            </div> -->
+        </div>
+    </div>
+    <!--.........-----banner------.......-->
+    <style>
+        .appy-btn-new {
+            font-size: 25px;
+            color: #FFFFFF;
+            background: #4B55C4;
+            height: 42px;
+            margin-top: 79px !important;
+            padding: 4px 15px;
+            margin: 0 auto;
+        }
+
+        .ma-main .m-6-flex {
+            display: -webkit-box;
+            display: -webkit-flex;
+            display: -ms-flexbox;
+            display: flex;
+            height: 230px;
+            background: #1B2D39;
+            /* padding-bottom: 50px;
+        padding-top: 50px;*/
+        }
+
+        .ma-main .half {
+            width: 100%;
+            -webkit-box-flex: 1;
+            -webkit-flex: 1;
+            -ms-flex: 1;
+            flex: 1;
+        }
+
+        .m-6-flex .left {
+            text-align: right;
+            padding-right: 50px;
+        }
+
+        .ma-main .left {
+            display: -webkit-box;
+            display: -webkit-flex;
+            display: -ms-flexbox;
+            display: flex;
+            -webkit-box-pack: end;
+            -webkit-justify-content: flex-end;
+            -ms-flex-pack: end;
+            justify-content: flex-end;
+        }
+
+        .m-6-flex .section {
+            margin-top: -198px;
+            display: -webkit-box;
+            display: -webkit-flex;
+            display: -ms-flexbox;
+            display: flex;
+            -webkit-box-orient: vertical;
+            -webkit-box-direction: normal;
+            -webkit-flex-direction: column;
+            -ms-flex-direction: column;
+            flex-direction: column;
+            max-width: 705px;
+            width: 100%;
+            -webkit-box-pack: center;
+            -webkit-justify-content: center;
+            -ms-flex-pack: center;
+            justify-content: center;
+            /* align-items: center; */
+        }
+
+        .m-6-flex .left {
+            text-align: right;
+            padding-right: 50px;
+        }
+
+            .m-6-flex .left .title {
+                font-size: 45px;
+                line-height: 125%;
+                color: #FFFFFF;
+            }
+
+        .ma-main .half {
+            width: 100%;
+            -webkit-box-flex: 1;
+            -webkit-flex: 1;
+            -ms-flex: 1;
+            flex: 1;
+        }
+
+        .m-6-flex .right {
+            height: 100%;
+        }
+
+        .m-6-flex .right {
+            padding-left: 50px;
+        }
+
+        .ma-main .right {
+            display: -webkit-box;
+            display: -webkit-flex;
+            display: -ms-flexbox;
+            display: flex;
+            -webkit-box-pack: start;
+            -webkit-justify-content: flex-start;
+            -ms-flex-pack: start;
+            justify-content: flex-start;
+        }
+
+        .m-6-flex .right .appy-btn {
+            font-size: 25px;
+            line-height: 125%;
+            color: #FFFFFF;
+        }
+
+        .ma-main .appy-btn, .bg-appy {
+            background: #4B55C4;
+        }
+
+        .appy-btn {
+            box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+            border: none;
+            display: inline-block;
+            outline: 0;
+            padding: 10px 25px !important;
+            overflow: hidden;
+            text-decoration: none !important;
+            text-align: center;
+            cursor: pointer;
+            white-space: nowrap;
+        }
+
+        .get-quote {
+            text-align: center;
+            width: 100%;
+            color: #fff;
+            margin-top: 53px;
+            font-size: 30px;
+        }
+    </style>
+
+    <!--     <div class="product-price-section">
+        <div class="">
+            <div class="container">
+                <div class="price-section">
+                    <div class="content">
+                        <h2 class="title">Our Pricing Models</h2>
+                    </div>
+                    <div class="body">
+                        <div class="package-cover">
+                                                        <div class="package-section">
+                                    <div class="package">
+                                        <div class="name"></div>
+                                        <div class="desc"></div>
+                                        <div class="amt"></div>
+                                        <div class="package-btn"><button class="appy-btn">INTERESTED</button></div>
+                                    </div>
+                                </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div> -->
+    <!-- <div class="product-blog-section">
+        <div class="container">
+            <div class="content">
+                <h2 class="title">Blog</h2>
+            </div>
+        </div>
+        <div class="container">
+            <div class="product-blog">
+                                <div class="blog-box">
+                    <div class="blog">
+                        <div class="top-section">
+                            <div class="top">
+                                <div class="img-box">
+                                    <div class="blog-image">
+                                       <!-- <img src="http://placehold.it/80x80" class="img img-circle">
+                                    </div>
+                                </div>
+                                <div class="name-box">
+                                    <div class="name">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="bottom-section">
+                            <div class="bottom">
+                                <div class="read-more">
+                                    <div class="text"><a href="Blogs/blogread/">Read Article</a></div>
+                                </div>
+                                <div class="share">
+                                    <div class="share-section">
+                                        <div class="blog-social animated slideInRight">
+                                            <div class="fb icon ai-facebook"></div>
+                                            <div class="tw icon ai-twitter"></div>
+                                            <div class="ln icon ai-linkedin"></div>
+                                            <div class="gp icon ai-google-plus"></div>
+                                            <div class="yt icon ai-youtube"></div>
+                                        </div>
+                                        <div class="blog-social-share ">
+                                            <div class="icon ai-share animated zoomIn"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <div class="container">
+            <div class="view-more-section">
+                <div class="view-more">
+                   <a href="Blogs/index"> <button class="appy-btn">VIEW MORE <span class="icon ai-menu-arrow"></span></button></a>
+                </div>
+            </div>
+        </div>
+    </div> -->
+    <!--  Testimonial Section -->
+
+
+
+
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <div class="clients-box">
+        <div class="half bg-appy">
+            <div class="left-section">
+                <div class="client">
+                    <div class="top">
+                        <div class="title">Client's <span class="l-b"><br></span>Review</div>
+                    </div>
+                    <div class="body">
+                        <style>
+* {box-sizing:border-box}
+
+/*.mySlides {display:none}*/
+
+/* Slideshow container */
+.slideshow-container {
+  max-width: 1000px;
+  position: relative;
+  margin: auto;
+}
+
+.client-item .des {
+    color: #FFFFFF;
+    font-size: 23px;
+    padding-right:25px;
+  text-align: justify;
+}
+/* Next & previous buttons
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  padding: 16px;
+  margin-top: -22px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+}*/
+
+
+
+
+
+/* The dots/bullets/indicators */
+.dot {
+  cursor:pointer;
+  height: 13px;
+  width: 13px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+
+  transition: background-color 0.6s ease;
+}
+
+.active, .dot:hover {
+  /*background-color: #717171;*/
+}
+
+/* Fading animation */
+.fade {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 1.5s;
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@*@-webkit-keyframes fade {
+  from {opacity: .4}
+  to {opacity: 1}
+}*@
+
+@*@keyframes fade {
+  from {opacity: .4}
+  to {opacity: 1}
+}
+
+/* On smaller screens, decrease text size */
+@media only screen and (max-width: 300px) {
+  .prev, .next,.text {font-size: 11px}
+}*@
+                        </style>
+
+
+                        <div class="slideshow-container">
+
+
+                            <div class="mySlides">
+                                <div class="numbertext">
+                                    <div class="client-item">
+                                        <div class="des">
+                                            “Our mobile app developed by Appynitty Communications provides us an apt common platform to handle varying client base by showcasing detailed floor plans, HD images and videos of plots and shops all in just a few taps. Customers can connect with our representatives directly from the app and push notifications help us share all the project updates with them in real-time. All in all our mobile app acts as an apt lead generation and relationship building medium.”
+                                        </div>
+                                        <div class="client-info">
+                                            <div class="photo">
+                                                <img src="https://www.appynitty.com/uploads/client-images/AtulBansal.jpg" class="img img-circle">
+                                            </div>
+                                            <div class="name-role">
+                                                <div class="name">Atul Bansal,</div>
+                                                <div class="role">Head-Comm., Grand Bazaar Developers</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="mySlides">
+                                <div class="numbertext">
+                                    <div class="client-item">
+                                        <div class="des">
+                                            “Our mobile app enables us to showcase multiple projects to customers on a single platform. With in-app push notifications we can keep our buyers updated on construction progress and also send them payment reminders. The mobile app has helped us streamline a lot of functionalities and improve our customer service too. Appynitty Communications has been highly efficient and professional in providing prompt services.”
+                                        </div>
+                                        <div class="client-info">
+                                            <div class="photo">
+                                                <img src="https://www.appynitty.com/uploads/client-images/AtulBansal.jpg" class="img img-circle">
+                                            </div>
+                                            <div class="name-role">
+                                                <div class="name">Atul Bansal,</div>
+                                                <div class="role">Head-Comm., Lavanya Family, Tirumala Infrastructure & Development Pvt Ltd</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div style="text-align:center">
+                                <!-- <span class="dot" onclick="currentSlide(1)"></span> -->
+                                <span class="dot" onclick="currentSlide(2)"></span>
+                                <!-- <span class="dot" onclick="currentSlide(3)"></span>  -->
+                            </div>
+
+                            <div class="biderectioanlArrow">
+                                <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+                                <div class="arrows">
+                                    <button class="prev" onclick="plusSlides(-1)" style="color: white;">
+                                        <i class="fa fa-angle-left" style="font-size: 20px;"></i>
+                                    </button>
+                                </div>
+
+                            </div>
+                            <div class="biderectioanlArrowA">
+                                <div class="arrowsA">
+                                    <button class="next" onclick="plusSlides(1)" style="color: white;">
+                                        <i class="fa fa-angle-right" style="font-size: 20px;"></i>
+                                    </button>
+                                </div>
+
+                            </div>
+
+                        </div>
+
+
+                        <script>
+                            var slideIndex = 1;
+                            showSlides(slideIndex);
+
+                            function plusSlides(n) {
+                                showSlides(slideIndex += n);
+                            }
+
+                            function currentSlide(n) {
+                                showSlides(slideIndex = n);
+                            }
+
+                            function showSlides(n) {
+                                var i;
+                                var slides = document.getElementsByClassName("mySlides");
+                                var dots = document.getElementsByClassName("dot");
+                                if (n > slides.length) { slideIndex = 1 }
+                                if (n < 1) { slideIndex = slides.length }
+                                for (i = 0; i < slides.length; i++) {
+                                    slides[i].style.display = "none";
+                                }
+                                for (i = 0; i < dots.length; i++) {
+                                    dots[i].className = dots[i].className.replace(" active", "");
+                                }
+                                slides[slideIndex - 1].style.display = "block";
+                                dots[slideIndex - 1].className += " active";
+                            }
+                        </script>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <!--arrow-->
+
+        <style>
+            .biderectioanlArrow {
+                position: relative !important;
+                /*top: -32px;*/
+                left: 242px;
+                margin: 0 auto;
+            }
+
+            .biderectioanlArrowA {
+                position: relative !important;
+                top: -40px;
+                left: 305px;
+                margin: 0 auto;
+            }
+
+            .arrows button {
+                padding: 10px;
+                background-color: #4B55C4;
+                color: white;
+                border: none;
+            }
+
+            .arrowsA button {
+                padding: 10px;
+                background-color: #4B55C4;
+                color: white;
+                border: none;
+            }
+
+            .w49 {
+                width: 49%;
+            }
+
+            .w45 {
+                width: 45%;
+            }
+
+            .dwn-link {
+                display: flex;
+                width: 49%;
+            }
+
+            .marg0-auto {
+                margin: 0 auto;
+            }
+        </style>
+        <!--arrow-->
+        <div class="half">
+            <div class="right-section">
+                <div class="review">
+                    <div class="top">
+                        <div class="title">Our Mobile <span class="l-b"><br></span>Apps</div>
+                    </div>
+                    <div class="body">
+                        <div class="review-section">
+                            <div class="apps-list">
+
+                                <div class="apps">
+                                    <div class="users">
+                                        <div class="app-feedback">
+
+                                            <div class="screen">
+                                                <img src="https://www.appynitty.com//uploads/clientapp/Grand Bazaar.jpg" class="w49 marg0-auto">
+                                            </div>
+
+                                        </div>
+                                        <div class="app-download">
+                                            <div class="dwn-link marg0-auto" style="padding: 5px;">
+                                                <div class="apple">
+                                                    <a href="https://itunes.apple.com/us/app/grand-bazaar-real-estate/id1125919633?mt=8" target="_blank"> <img src="https://www.appynitty.com//assets/app-images/appstore.png" class="img img-responsive"></a>
+                                                </div>
+                                                <div class="android">
+                                                    <a href="https://play.google.com/store/apps/details?id=com.appynitty.builder.grandbazaar&hl=en" target="_blank"><img src="https://www.appynitty.com//assets/app-images/playstore.png" class="img img-responsive"></a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                                <div class="apps">
+                                    <div class="users">
+                                        <div class="app-feedback">
+
+                                            <div class="screen">
+                                                <img src="https://www.appynitty.com//uploads/clientapp/Pristine.jpg" class="w49 marg0-auto">
+                                            </div>
+
+                                        </div>
+                                        <div class="app-download">
+                                            <div class="dwn-link marg0-auto" style="padding: 5px;">
+                                                <div class="apple">
+                                                    <a href="https://itunes.apple.com/us/app/pristine-properties/id1145307311?mt=8" target="_blank"> <img src="https://www.appynitty.com//assets/app-images/appstore.png" class="img img-responsive"></a>
+                                                </div>
+                                                <div class="android">
+                                                    <a href="https://play.google.com/store/apps/details?id=com.appynitty.pristine&hl=en" target="_blank"><img src="https://www.appynitty.com//assets/app-images/playstore.png" class="img img-responsive"></a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                                <div class="apps">
+                                    <div class="users">
+                                        <div class="app-feedback">
+
+                                            <div class="screen">
+                                                <img src="https://www.appynitty.com//uploads/clientapp/Lavanya.jpg" class="w49 marg0-auto">
+                                            </div>
+
+                                        </div>
+                                        <div class="app-download">
+                                            <div class="dwn-link marg0-auto" style="padding: 5px;">
+                                                <div class="apple">
+                                                    <a href="https://itunes.apple.com/us/app/lavanya-real-estate-orissa/id1125919639?mt=8" target="_blank"> <img src="https://www.appynitty.com//assets/app-images/appstore.png" class="img img-responsive"></a>
+                                                </div>
+                                                <div class="android">
+                                                    <a href="https://play.google.com/store/apps/details?id=com.appynitty.builder.lavanya&hl=en" target="_blank"><img src="https://www.appynitty.com//assets/app-images/playstore.png" class="img img-responsive"></a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+
+
+
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+
+
+
+
+
+
+    <!-- End Testimonials  -->
+
+
+
+
+
+    <div class="product-others-section">
+        <div class="container">
+            <div class="content">
+                <h2 class="title">Other Apps</h2>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="other-product-list">
+
+
+
+                <div class="other-name">
+                    <a href="https://www.appynitty.com/mobileapps/malls-mobile-app" title="MallsAppy Mobile App">
+                        Malls Appy                                <span>|</span>
+                    </a>
+                </div>
+
+                <div class="other-name">
+                    <a href="https://www.appynitty.com/mobileapps/restaurant-mobile-app" title="Restro Appy ">
+                        Restro Appy                                <span>|</span>
+                    </a>
+                </div>
+
+                <div class="other-name">
+                    <a href="https://www.appynitty.com/mobileapps/mobile-app-hotels-resorts" title="Stayiinn Appy">
+                        Stayiinn Appy                                <span>|</span>
+                    </a>
+                </div>
+
+                <div class="other-name">
+                    <a href="https://www.appynitty.com/mobileapps/mobile-app-salons-spa" title="Beauty App">
+                        Beauty Appy                                <span>|</span>
+                    </a>
+                </div>
+
+                <div class="other-name">
+                    <a href="https://www.appynitty.com/mobileapps/mobile-app-voter-engagement" title="Voter First">
+                        Voter First                                <span>|</span>
+                    </a>
+                </div>
+
+                <div class="other-name">
+                    <a href="https://www.appynitty.com/mobileapps/mobile-app-automobile-dealers" title="Wheels Appy">
+                        Wheels Appy                                <span>|</span>
+                    </a>
+                </div>
+
+                <div class="other-name">
+                    <a href="https://www.appynitty.com/mobileapps/celebrity-mobile-app" title="Celeb Appy – Innovative Fan Engagement Mobile App for Celebrities | Appynitty Communications">
+                        Celeb Appy                                <span>|</span>
+                    </a>
+                </div>
+
+                <div class="other-name">
+                    <a href="https://www.appynitty.com/mobileapps/boutiques-mobile-app" title="Boutique Appy">
+                        Boutique Appy                                <span>|</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+</section>
+
+
+<script type="text/javascript">
+    //import * as data from './Assets/js/data.json';
+    //const { name } = data;
+
+    //var p=fetch('https://localhost:44303/Assets/js/data.json').then(response => json = response.json())
+
+
+    //p.then(value => {
+    //    console.log(value); // 👉️ "hello"
+    //}).catch(err => {
+    //    console.log(err);
+    //});
+    //debugger
+   /* console.log(json);*/
+    $(function () {
+
+        function loadSlider() {
+          /*  console.log(json)*/
+          /*  $.post(url, { product: name },*/
+               /* function (data) {*/
+
+            var app = [{ "appId": 0, "name": "Splash Screen", "icon": "icon ai-splashscreen", "image": "https:\/\/www.appynitty.com\/uploads\/product\/realestateappy\/splashscreen.png" }, { "appId": 1, "name": "Home", "icon": "icon ai-demo-home", "image": "https:\/\/www.appynitty.com\/uploads\/product\/realestateappy\/home.png" }, { "appId": 2, "name": "Menu", "icon": "icon ai-demo-menu", "image": "https:\/\/www.appynitty.com\/uploads\/product\/realestateappy\/menu.png" }, { "appId": 3, "name": "About Us", "icon": "icon ai-demo-aboutus", "image": "https:\/\/www.appynitty.com\/uploads\/product\/realestateappy\/aboutus.png" }, { "appId": 4, "name": "Gallery", "icon": "icon ai-demo-gallery", "image": "https:\/\/www.appynitty.com\/uploads\/product\/realestateappy\/gallery.png" }, { "appId": 5, "name": "Location", "icon": "icon ai-demo-location", "image": "https:\/\/www.appynitty.com\/uploads\/product\/realestateappy\/location.png" }, { "appId": 6, "name": "News and Media", "icon": "icon ai-demo-events", "image": "https:\/\/www.appynitty.com\/uploads\/product\/realestateappy\/newsandmedia.png" }, { "appId": 7, "name": "Product Listing", "icon": "icon ai-demo-productlisting", "image": "https:\/\/www.appynitty.com\/uploads\/product\/realestateappy\/floatinginappcall.png" }, { "appId": 8, "name": "Push Notification", "icon": "icon ai-demo-pushnotification", "image": "https:\/\/www.appynitty.com\/uploads\/product\/realestateappy\/pushnotification.png" }, { "appId": 9, "name": "Online Payment Gateway", "icon": "icon ai-demo-onlinepayment", "image": "https:\/\/www.appynitty.com\/uploads\/product\/realestateappy\/onlinepayment.png" }]
+                var count = app.length;
+            var half = Math.round(count / 2);
+            console.log(app)
+            debugger
+                function init() {
+
+                    if ($(document).width() > 590) {
+                        for (i = 0; i < half; i++) {
+                            $(".leftlist").append('<div class="list" id="app' + app[i].appId + '"><div class="c-name">' + app[i].name + '</div><div class="c-icon"><div class="' + app[i].icon + '"></div></div></div>');
+                        }
+                        for (i = half; i < count; i++) {
+                            $(".rightlist").append('<div class="list" id="app' + app[i].appId + '"><div class="c-name">' + app[i].name + '</div><div class="c-icon"><div class="' + app[i].icon + '"></div></div></div>');
+                        }
+                    }
+                    else {
+                        for (i = 0; i < count; i++) {
+                            $(".rightlistt").append('<div class="list" id="app' + app[i].appId + '"><div class="c-name">' + app[i].name + '</div><div class="c-icon"><div class="' + app[i].icon + '"></div></div></div>');
+                        }
+                        $('.rightlistt').slick({
+                            dots: false,
+                            arrows: true,
+                            asNavFor: '.sliderExample',
+                        });
+                    }
+
+                }
+                ;
+                init();
+
+
+                $('.sliderExample').slick({
+                    dots: false,
+                    arrows: false,
+                    autoplay: false,
+                    autoplaySpeed: 2000,
+                });
+                for (i = 0; i < count; i++) {
+                    $('.sliderExample').slick('slickAdd', '<div><img src="' + app[i].image + '" class="img img-responsive"></div>');
+                }
+                $('.sliderExample').slick('slickGoTo', 0, false);
+                $(".left-arrow").click(function () {
+                    $('.sliderExample').slick('slickPrev');
+                });
+                $(".right-arrow").click(function () {
+                    $('.sliderExample').slick('slickNext');
+                });
+                $(".list-section .list").each(function (e, q) {
+                    $(q).click(function () {
+                        var l = $(this).prop("id");
+                        l = l.substr(3, l.length);
+                        $('.sliderExample').slick('slickGoTo', l, false);
+                    });
+                });
+
+                $('.sliderExample').on('beforeChange', function (event, slick, currentSlide, nextSlide) {
+                    $("#app" + currentSlide).find('.c-icon').removeClass('active_icon');
+                    $("#app" + nextSlide).find('.c-icon').addClass('active_icon');
+                });
+                $(".screen").hover(function () {
+                    $(".screen").addClass("animated pulse");
+                    $('.sliderExample').slick('slickPause');
+                }, function () {
+                    $(".screen").removeClass("animated pulse");
+                    $('.sliderExample').slick('slickPlay');
+                });
+
+            /*});*/
+        }
+
+        var url = $("#product-url").attr("data-url");
+        var name = $("#product-url").attr("data-name");
+        loadSlider();
+
+        $(window).resize(function () {
+            //        location.reload();
+        });
+
+
+        //    This is for product features animation overlay effects
+        $(".icon").each(function (i) {
+            var img = $(this).find('img');
+            var img_src = img.attr("data-gif");
+            var osrc;
+            if (img_src !== undefined) {
+                $(this).hover(function () {
+                    osrc = img.attr("src");
+                    img.attr("src", img_src);
+                }, function () {
+                    img.attr("src", osrc);
+                });
+            }
+        });
+
+
+    });
+</script>

@@ -12,11 +12,11 @@ namespace AppynittyWebApp.Controllers
         {
             return View();
         }
-        public IActionResult leadMangement()
+        public IActionResult leadManagement()
         {
             return View();
         }
-        public IActionResult EmailMangement()
+        public IActionResult EmailManagement()
         {
             return View();
         }

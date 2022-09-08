@@ -27,7 +27,7 @@ and open the template in the editor.
     display:-ms-flexbox;
     display:flex;
     height: 100%;
-    min-height: 85vh;
+    min-height: 100vh;
     height: 100%;
 }
 .home-first-section .half{
