@@ -15,10 +15,15 @@
 </style>
 <h1 style="text-align:center;">News List</h1>
 
+<div style="display: inline-flex;">
+    <p style="text-align: left; margin-right: 20px;">
+        <a class="btn btn-outline-danger" asp-area="Identity" asp-controller="Account" asp-action="Details">Back</a>
+    </p>
+    <p style="text-align:right;margin-right:20px;">
+        <a class="btn btn-outline-primary" asp-action="AddOrEdit">Create New</a>
+    </p>
+</div>
 
-<p style="text-align:right;margin-right:20px;">
-    <a class="btn btn-outline-primary" asp-action="AddOrEdit">Create New</a>
-</p>
 <div class="table-responsive">
     <table class="table">
         <thead>
@@ -42,7 +47,7 @@
                 <th>Edit Action</th>
                 <th>Details Action</th>
                 <th>View Reply</th>
-                <th>Delete Action</th>
+                @*<th>Delete Action</th>*@
             </tr>
         </thead>
         <tbody>
@@ -76,9 +81,9 @@
                 <td class="text-center">
                     <a asp-action="NewsReply" class="btn btn-outline-info" asp-route-Id="@item.Id">View</a>
                 </td>
-                <td class="text-center">
+                @*<td class="text-center">
                     <a asp-action="Delete" class="btn btn-outline-danger" asp-route-Id="@item.Id">Delete</a>
-                </td>
+                </td>*@
             </tr>
             }
         </tbody>

@@ -18,7 +18,7 @@ namespace AppynittyWebApp.ViewModels
         public string JobLocation { get; set; }
         public string JobDesc { get; set; }
         public bool IsActive { get; set; }
-        public string Careers_Id { get; set; }
+        public int Careers_Id { get; set; }
         public string Name { get; set; }
         public string Email { get; set; }
         public string MobileNo { get; set; }

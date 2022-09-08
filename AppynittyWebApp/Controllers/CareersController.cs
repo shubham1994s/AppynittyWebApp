@@ -219,5 +219,44 @@ namespace AppynittyWebApp.Controllers
             }
             return uniqueFileName;
         }
+
+        public IActionResult ViewCV(int Id)
+        {
+            AppliedEmpVM AppEmpCVDetail = new AppliedEmpVM();
+            List<AppEmpCVDetailsIteam> ListAppEmpCVItems = new List<AppEmpCVDetailsIteam>();
+            string StoredProc = "exec AppEmpCVDetails " + "@Id = " + Id;
+            var data = _context.AppEmpCVDetails.FromSqlRaw(StoredProc).ToList();
+
+            if (data != null && data.Count > 0)
+            {
+                AppEmpCVDetail.ListAppEmpCVDetails = data.Select(x => new AppEmpCVDetailsIteam()
+                {
+                    Careers_Id = x.Careers_Id,
+                    Date = x.Date,
+                    Name = x.Name,
+                    Email = x.Email,
+                    Mobile_No = x.Mobile_No,
+                    Current_Location = x.Current_Location,
+                    Tot_Exp = x.Tot_Exp,
+                    Filename = x.Filename,
+                    TAC = x.TAC,
+                    JobTitle = x.JobTitle
+                })
+               .ToList();
+            }
+            return View(AppEmpCVDetail);
+        }
+
+        public FileResult DownloadFile(string fileName)
+        {
+            //Build the File Path.
+            string path = Path.Combine(this.webHostEnvironment.WebRootPath, "UploadedCV/") + fileName;
+
+            //Read the File data into Byte Array.
+            byte[] bytes = System.IO.File.ReadAllBytes(path);
+
+            //Send the File to Download.
+            return File(bytes, "application/octet-stream", fileName);
+        }
     }
 }

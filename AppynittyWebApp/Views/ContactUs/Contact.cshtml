@@ -1,4 +1,4 @@
-﻿
+﻿@model AppynittyWebApp.Models.ContactU
 @{
     ViewData["Title"] = "Contact";
 }
@@ -6,11 +6,10 @@
 <style>
 
     #pics {
-        display: none;
         /*background: #fff;
-	box-shadow: 0px 0px 20px #999;
-	border: 2px solid #ddd;
-	*/
+    box-shadow: 0px 0px 20px #999;
+    border: 2px solid #ddd;
+    */
         padding: 10px;
         float: left;
         font-size: 1.2em;
@@ -55,9 +54,13 @@
             </div>
         </div>
     </div>
+
     <!--ty popoup-->
+   
+    <input type="hidden" value="@TempData["data"]" id="consubstatus" />
+    
     <div id="pics" style="display: block; margin-top: -228px; margin-left: -300.5px;">
-        <img src="https://www.appynitty.com/ty.jpg" id="picOne" />
+        <img src="https://www.appynitty.com/ty.jpg" id="picOne" style="display: none;" />
     </div>
     <!--ty popoup-->
 
@@ -67,45 +70,52 @@
                 <!--<div class="title">Contact Form</div>-->
             </div>
         </div>
-        <form action="" id="form" method="post" onsubmit="return validateForm(event)" name="contact">
+        <form asp-action="Contact" id="form" method="post" onsubmit="return validateForm(event)" name="contact">
             <div class="container">
 
                 <div class="form-section">
                     <div class="f-g-s">
                         <div class="form-group">
-                            <input class="form-control rounded" id="name" name="name" placeholder="Name" type="text">
+                            <input class="form-control rounded" id="Name" name="Name" placeholder="Name" type="text">
+                            <span asp-validation-for="Name" class="text-danger"></span>
                         </div>
                     </div>
                     <div class="f-g-s">
                         <div class="form-group">
-                            <input class="form-control rounded" id="email" name="email" placeholder="Email Id" type="email">
+                            <input class="form-control rounded" id="Email" name="Email" placeholder="Email Id" type="email">
+                            <span asp-validation-for="Email" class="text-danger"></span>
                         </div>
                     </div>
                     <div class="f-g-s">
                         <div class="form-group">
-                            <input class="form-control rounded" id="phone" name="phone" placeholder="Phone" type="tel">
+                            <input class="form-control rounded" id="MobileNo" name="MobileNo" placeholder="Phone" type="tel">
+                            <span asp-validation-for="MobileNo" class="text-danger"></span>
                         </div>
                     </div>
                     <div class="f-g-s">
                         <div class="form-group">
-                            <input class="form-control rounded" name="country" placeholder="Country" type="text">
+                            <input class="form-control rounded" name="Country" placeholder="Country" type="text">
+                            <span asp-validation-for="Country" class="text-danger"></span>
                         </div>
                     </div>
                     <div class="f-g-s">
                         <div class="form-group">
-                            <input class="form-control rounded" name="city" placeholder="City" type="text">
+                            <input class="form-control rounded" name="City" placeholder="City" type="text">
+                            <span asp-validation-for="City" class="text-danger"></span>
                         </div>
                     </div>
                     <div class="f-g-s">
                         <div class="form-group">
-                            <input class="form-control rounded" name="business" placeholder="Business" type="text">
+                            <input class="form-control rounded" name="Business" placeholder="Business" type="text">
+                            <span asp-validation-for="Business" class="text-danger"></span>
                         </div>
                     </div>
                 </div>
             </div>
             <div class="container">
                 <div class="c-f-b">
-                    <button class="appy-btn">Let's Get in Touch</button>
+                    @*<button class="appy-btn">Let's Get in Touch</button>*@
+                    <input class="appy-btn" type="submit" value="Let's Get in Touch" />
                 </div>
             </div>
         </form>
@@ -132,3 +142,16 @@
     </div>
 
 </section>
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+
+<script>
+    $(document).ready(function () {
+        debugger;
+        var x = document.getElementById('consubstatus').value
+        if (x.length > 0) {
+            $('#picOne').fadeIn('fast').delay(2000).fadeOut('fast');
+        }
+    });
+</script>
+}
