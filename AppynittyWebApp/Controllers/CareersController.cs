@@ -258,5 +258,10 @@ namespace AppynittyWebApp.Controllers
             //Send the File to Download.
             return File(bytes, "application/octet-stream", fileName);
         }
+
+        public IActionResult TermsAndConditions()
+        {
+            return View();
+        }
     }
 }
