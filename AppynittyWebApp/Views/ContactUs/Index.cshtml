@@ -1,0 +1,67 @@
+﻿
+@model IEnumerable<AppynittyWebApp.Models.ContactU>
+
+@{
+    ViewData["Title"] = "Contact";
+    Layout = "_AdminLayout";
+}
+<style>
+    .danger {
+        color: red !important;
+    }
+
+    .success {
+        color: green !important;
+    }
+</style>
+<h1 style="text-align:center;">Contact List</h1>
+
+<div style="display: inline-flex;">
+    <p style="text-align: left; margin-right: 20px;">
+        <a class="btn btn-outline-danger" asp-area="Identity" asp-controller="Account" asp-action="Details">Back</a>
+    </p>
+</div>
+
+<div class="table-responsive">
+    <table class="table">
+        <thead>
+            <tr>
+                <th> Dame </th>
+                <th> Name </th>
+                <th> Email </th>
+                <th> Mobile Number </th>
+                <th> Country </th>
+                <th> City </th>
+                <th> Business </th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Date)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Email)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.MobileNo)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Country)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.City)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Business)
+                </td>
+            </tr>
+            }
+        </tbody>
+    </table>
+</div>
