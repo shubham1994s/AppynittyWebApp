@@ -17,6 +17,12 @@ namespace AppynittyWebApp.Controllers
             _context = context;
         }
 
+        public async Task<ActionResult> IndexAsync()
+        {
+            var news = await _context.ContactUs.ToListAsync();
+            return View(news);
+        }
+
         public IActionResult Contact()
         {
             return View();
