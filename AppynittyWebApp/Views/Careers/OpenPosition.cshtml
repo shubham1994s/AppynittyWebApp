@@ -3,68 +3,134 @@
 @{
     ViewData["Title"] = "Open Position";
 }
+<link href="~/Assets/CSS/AboutUs.css" rel="stylesheet" />
 <style>
     .newttl {
         list-style-type: none;
+    }
+    body{
+        background:#e6e6e6;
+
     }
 </style>
 
 
 <div class="container pb-5">
-    <h1 class="text-center py-5">Careers Section</h1>
-
-        <div class="row">
-            @{
-                var obj = ViewBag.careerslist;
-            }
-            <div class="col-sm-8">
-                <h4>Current Opening</h4>
-                @foreach (var item in obj)
-                {
-                    <div>
-                        <heaade>
-                            <div>
-                                <h3>
-                                    @item.JobTitle
-                                </h3>
-                            </div>
-                        </heaade>
-                        <div>
-                            <span>@item.MinExp - @item.MaxExp</span>
-                           
-                            @if (@item.MinSalary != null)
-                            {
-                                <span>@item.MinSalary - @item.MaxSalary</span>
-                            }
-                            else
-                            {
-                                <span> Not disclosed</span>
-                            }
-
-                            <span>@item.JobLocation</span>
-                        </div>
-                        <div>
-                            <p class="mb-4">@item.JobDesc</p>
+    <div class="career-section" id="careers">
+        <div class="top-flex">
+            <div class="half">
+                <div class="left">
+                    <div class="section">
+                        <div class="content">
+                            <div class="title">Careers</div>
                         </div>
                     </div>
-                }
-
+                </div>
             </div>
 
-            <div class="col-sm-4">
-                <div>
-                    <div>
-                        <h3>Drop your CV here</h3>
-                        <p>We will consider your Profile for future Jobs</p>
-                    </div>
-                    <div>
-                        <a asp-action="CVSection">
-                            <span>Drop CV</span>
-                        </a>
+            <div class="half">
+                <div class="right">
+                    <div class="section">
+                        <div class="content">
+                            <div class="title">
+                                <!--You can accomplish big<span class="l-b"><br></span>things at Appynitty-->At Appynitty You Don&rsquo;t Just Do a Job,<br />
+                                You Accomplish Your Dreams!!!
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
+
+        <div class="container">
+            <div class="content">
+                <p class="text">Appynitty Communications is a rapidly expanding company and we welcome hard working and professional candidates across various departments. The growth and prosperity of our employees is of utmost importance to us and we therefore strive hard to maintain a conducive work environment and offer salary as per highest industry standards.</p>
+
+                <p class="text">&nbsp;</p>
+
+                <p class="text">Do drop in your Resume and we will <!-- <a href="#login-box" class="login-window"> -->get in touch with you!<!-- </a> --></p>
+            </div>
+        </div>
+    </div>
+
+    @*<h1 class="text-center py-5">Careers Section</h1>*@
+
+    <div class="row">
+        @{
+            var obj = ViewBag.careerslist;
+        }
+        <div class="col-sm-8 p-3">
+            <h4 class="p-3">Current Opening</h4>
+            @foreach (var item in obj)
+            {
+                <div class="p-4 mb-3" style="border: 2px solid #d5d0d0; border-radius: 20px; background: #fff">
+                    <heaade>
+                        <div>
+                            <h4>
+                                @item.JobTitle
+                            </h4>
+                        </div>
+                    </heaade>
+                    <div>
+                        <span>@item.MinExp - @item.MaxExp</span>
+                        <span>@item.MinSalary - @item.MaxSalary</span>
+                        <span>@item.JobLocation</span>
+                    </div>
+                    <div>
+                        <p class="mb-4">@item.JobDesc</p>
+                    </div>
+                </div>
+            }
+
+        </div>
+
+        <div class="col-sm-4">
+            <div>
+                <div>
+                    <h3>Drop your CV here</h3>
+                    <p>We will consider your Profile for future Jobs</p>
+                </div>
+                @*<div>
+                    <a asp-action="CVSection">
+                        <span>Drop CV</span>
+                    </a>
+                </div>*@
+            </div>
+            <div class="contact-form-section">
+                <div class="container">
+                    <div class="form-section pt-0">
+                        <div class="f-g-s">
+                            <div class="email">
+                                <a href="mailto:hr@appynitty.com" title="hr@appynitty.com">
+                                    <span class="icon ai-email"></span>
+                                    hr@appynitty.com
+                                </a>
+                            </div>
+                        </div>
+                        <div class="f-g-s">
+                            <div class="mobile">
+                                <a href="tel:+919209100900" title="Call Us +919209 100 900">
+                                    <span class="icon ai-call"></span>
+                                    +91 9209 100 900
+                                </a>
+                            </div>
+                        </div>
+                        <!-- <div class="f-g-s">
+                    <div class="form-group">
+                        <input class="form-control" placeholder="Upload your CV">
+                    </div>
+                </div>      -->
+                        <div class="f-g-s">
+                            <div class="c-f-b">
+                                <a asp-action="CVSection" class="login-window"><button class="appy-btn">Drop Your CV</button> </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
 
 
 </div>
