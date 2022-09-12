@@ -3,21 +3,21 @@
 @{
     ViewData["Title"] = "OutBlog";
 }
-
+<link href="~/Assets/CSS/Blog.css" rel="stylesheet" />
+<link rel="stylesheet" type="text/css" href="https://www.appynitty.com/assets/libs/animate/animate.min.css" />
 
 <div class="container">
     <div class="content">
-        <h2 class="title"> Our Blog</h2>
+        <h2 class="title text-center py-4"> Our Blog</h2>
     </div>
 </div>
 <div class="container">
 
-
-    <div class="row">
+    <div class="product-blog">
         @foreach (var item in Model)
         {
             <div class="blog-box">
-                <div class="col-md-4">
+                <div class="blog">
                     <div class="top-section">
                         <div class="top">
                             <div class="img-box">
@@ -27,19 +27,19 @@
                             </div>
                             <div class="name-box">
                                 <div class="name">
-                                  @item.BlogsTitle
-                                </div>
+                                    <a asp-action="BlogSection" asp-route-id="@item.Id" style="color:#fff">@item.BlogsTitle</a>
+</div>
                             </div>
                         </div>
                     </div>
                     <div class="bottom-section">
                         <div class="bottom">
                             <div class="read-more">
-                                <div class="text"><a asp-action="BlogSection" asp-route-id="@item.Id">>Read Article</a></div>
+                                <div class="text"><a asp-action="BlogSection" asp-route-id="@item.Id">Read Article</a></div>
                             </div>
                             <div class="share">
                                 <div class="share-section">
-                                    <div class="blog-social animated slideInRight">
+                                    <div class="blog-social animated">
                                         <div class="fb icon ai-facebook"></div>
                                         <div class="tw icon ai-twitter"></div>
                                         <div class="ln icon ai-linkedin"></div>
@@ -52,12 +52,13 @@
                                 </div>
                             </div>
                         </div>
+
                     </div>
                 </div>
             </div>
         }
-        </div>
-
-
-
     </div>
+
+
+
+</div>

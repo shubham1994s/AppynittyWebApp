@@ -61,10 +61,10 @@
             var obj = ViewBag.careerslist;
         }
         <div class="col-sm-8 p-3">
-            <h4 class="p-3">Current Opening</h4>
+            <h4 class="p-3" style="border-bottom: 2px solid #d5d0d0;">Current Opening</h4>
             @foreach (var item in obj)
             {
-                <div class="p-4 mb-3" style="border: 2px solid #d5d0d0; border-radius: 20px; background: #fff">
+                <div class="p-4 mb-3" style="border-bottom: 2px solid #d5d0d0;">
                     <heaade>
                         <div>
                             <h4>
@@ -73,9 +73,9 @@
                         </div>
                     </heaade>
                     <div>
-                        <span>@item.MinExp - @item.MaxExp</span>
-                        <span>@item.MinSalary - @item.MaxSalary</span>
-                        <span>@item.JobLocation</span>
+                        <span class="px-2">Exp:- @item.MinExp Year- @item.MaxExp Year</span>
+                        <span class="px-2">Salary :- ₹@item.MinSalary - ₹@item.MaxSalary</span>
+                        <span class="px-2">Location:- @item.JobLocation</span>
                     </div>
                     <div>
                         <p class="mb-4">@item.JobDesc</p>
