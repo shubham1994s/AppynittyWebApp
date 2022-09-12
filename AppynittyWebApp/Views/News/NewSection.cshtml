@@ -8,87 +8,94 @@
     .newttl {
         list-style-type: none;
     }
+    hr {
+        border-top: 1px solid rgb(82 80 80 / 52%)
+    }
 </style>
 
 
-<div>
-    <h1 style="margin-left:46%">News</h1>
-
-    <form enctype="multipart/form-data" asp-action="NewSection">
+<div  class="product-blog-section">
+    <div class="container">
+        <h2 class="text-center py-4">News</h2>
         <hr />
-        <dl class="row">
-            <dd class="col-sm-8">
-                <h4> @Html.DisplayFor(model => model.NewsTitle)</h4>
-                @Html.DisplayFor(model => model.NewsEng)
-            </dd>
-            @{
-                var obj = ViewBag.newslist;
-            }
-            <dd class="col-sm-4">
-                <h4>Other News</h4>
-                <ul>
-                    @foreach (var item in obj)
-                    {
+        <div class="main col-md-12">
+            <form enctype="multipart/form-data" asp-action="NewSection">
 
-
-                        <li class="newttl">
-                            <a asp-action="NewSection" asp-route-id="@item.Id">@item.NewsTitle</a>
-
-                        </li>
-
-
-
+                <dl class="row">
+                    <dd class="col-sm-8">
+                        <h3 style="text-align:center; margin-bottom: 20px;"> @Html.DisplayFor(model => model.NewsTitle)</h3>
+                        <p style="text-align:justify">@Html.DisplayFor(model => model.NewsEng)</p>
+                    </dd>
+                    @{
+                        var obj = ViewBag.newslist;
                     }
-                </ul>
-            </dd>
-        </dl>
+                    <dd class="col-sm-4">
+                        <h4 style="text-align:center">Other News</h4>
+                        <hr />
+                        <ul style="padding: 10px; margin-left: 20px;">
+                            @foreach (var item in obj)
+                            {
 
-        <div class="contact-form-section">
-            <div class="container">
-                <div class="content">
-                    <div class="title">
-                        <h6>LEAVE A REPLY</h6>
+
+                                <li class="newttl mb-3">
+                                    <a asp-action="NewSection" asp-route-id="@item.Id" class="h6 ">@item.NewsTitle</a>
+
+                                </li>
+
+
+
+                            }
+                        </ul>
+                    </dd>
+                </dl>
+
+                <div class="contact-form-section">
+                    <div class="container">
+                        <div class="content">
+                            <div class="title">
+                                <h6>LEAVE A REPLY</h6>
+                            </div>
+                        </div>
                     </div>
+                    <div class="container">
+
+
+                        <div class="form-section" style="width:50%">
+
+                            <div class="f-g-s">
+                                <div class="form-group">
+                                    <input asp-for="NewsId" class="form-control" name="NewsId" value="@ViewBag.ID" type="hidden">
+                                    <input asp-for="Name" class="form-control" placeholder="Name" type="text" />
+                                    <span asp-validation-for="Name" class="text-danger"></span>
+                                </div>
+                            </div>
+                            <div class="f-g-s">
+                                <div class="form-group">
+                                    <input asp-for="Email" class="form-control" name="Email" placeholder="Email Id" type="email">
+                                </div>
+                            </div>
+                            <div class="f-g-s">
+                                <div class="form-group">
+                                    <input asp-for="MobileNo" class="form-control" name="MobileNo" placeholder="Phone" type="tel">
+                                </div>
+                            </div>
+                            <div class="f-g-s" style="width: 800px;">
+                                <div class="form-group">
+                                    <textarea asp-for="Comment" class="form-control" name="comment" style="height:200px;" placeholder="Comment.."> Comment.. </textarea>
+                                </div>
+                            </div>
+                            <div class="f-g-s">
+                                <div class="c-f-b">
+                                    <input class="btn btn-primary" type="submit" value="Save" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
                 </div>
-            </div>
-            <div class="container">
-
-
-                <div class="form-section">
-
-                    <div class="f-g-s">
-                        <div class="form-group">
-                            <input asp-for="NewsId" class="form-control" name="NewsId" value="@ViewBag.ID" type="hidden">
-                            <input asp-for="Name" class="form-control" placeholder="Name" type="text" />
-                            <span asp-validation-for="Name" class="text-danger"></span>
-                        </div>
-                    </div>
-                    <div class="f-g-s">
-                        <div class="form-group">
-                            <input asp-for="Email" class="form-control" name="Email" placeholder="Email Id" type="email">
-                        </div>
-                    </div>
-                    <div class="f-g-s">
-                        <div class="form-group">
-                            <input asp-for="MobileNo" class="form-control" name="MobileNo" placeholder="Phone" type="tel">
-                        </div>
-                    </div>
-                    <div class="f-g-s" style="width: 800px;">
-                        <div class="form-group">
-                            <textarea asp-for="Comment" class="form-control" name="comment" style="height:200px;" placeholder="Comment.."> Comment.. </textarea>
-                        </div>
-                    </div>
-                    <div class="f-g-s">
-                        <div class="c-f-b">
-                            <input class="btn btn-primary" type="submit" value="Save" />
-                        </div>
-                    </div>
-                </div>
-            </div>
-
+            </form>
         </div>
-        </form>
-
+    </div>
 </div>
 	
         
