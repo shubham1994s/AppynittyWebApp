@@ -1,5 +1,4 @@
 ﻿@model AppynittyWebApp.ViewModels.CareersVM
-@*@model IEnumerable<AppynittyWebApp.Models.News>*@
 
 @{
     ViewData["Title"] = "Open Position";
@@ -73,9 +72,17 @@
                         </div>
                     </heaade>
                     <div>
-                        <span class="px-2">Exp:- @item.MinExp Year- @item.MaxExp Year</span>
-                        <span class="px-2">Salary :- ₹@item.MinSalary - ₹@item.MaxSalary</span>
-                        <span class="px-2">Location:- @item.JobLocation</span>
+                        <span>@item.MinExp - @item.MaxExp</span>
+                        @if (@item.MinSalary != null)
+                        {
+                            <span>@item.MinSalary - @item.MaxSalary</span>
+                        }
+                        else
+                        {
+                            <span>Not disclosed</span>
+                        }
+
+                        <span>@item.JobLocation</span>
                     </div>
                     <div>
                         <p class="mb-4">@item.JobDesc</p>
