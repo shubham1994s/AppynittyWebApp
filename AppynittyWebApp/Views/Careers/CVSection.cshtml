@@ -9,11 +9,12 @@
     .newttl {
         list-style-type: none;
     }
+    body{background:#e6e6e6}
 </style>
 
 
 <div class="container">
-    <h1 style="margin-left:46%">Careers Section</h1>
+    <h1 style="text-align:center;" class="py-4">Careers Section</h1>
 
     <form enctype="multipart/form-data" asp-action="CVSection">
         <hr />
@@ -25,7 +26,7 @@
                     var obj = ViewBag.Joblist;
                 }
 
-                <div class="form-section">
+                <div class="form-section" style="padding-left:20%;width:80%">
                     <div class="f-g-s">
                         <div class="form-group">
                             <label asp-for="JobTitle" class="control-lable"></label>
@@ -98,7 +99,7 @@
                             <a target="_blank" asp-action="TermsAndConditions"> Terms and Conditions</a>
                         </div>
                     </div>
-                    <div class="f-g-s">
+                    <div class="f-g-s mb-5">
                         <div class="c-f-b">
                             <input class="btn btn-primary" type="submit" value="Save" />
                         </div>
