@@ -297,3 +297,18 @@ and open the template in the editor.
     padding: 0 22px;
    }
 }
+
+@media (max-width: 1200px) {
+    .hoverable {
+        width: 515px !important;
+    }
+    .home-first-section .r-box-section .text, .home-first-section .l-box-section .text{
+        font-size:32px !important;
+        margin-right:5px;
+            
+    }
+    .home-first-section .l-box-section .text {
+        margin-left: 50px;
+    }
+ 
+}
