@@ -16,11 +16,11 @@
                         </picture> -->
 
                         <picture>
-                            <source media="(max-width: 480px)" srcset="https://www.appynitty.com/assets/lead-generation/img/lead_generation@480.gif">
-                            <source media="(max-width: 768px)" srcset="https://www.appynitty.com/assets/lead-generation/img/lead_generation@768.gif">
-                            <source media="(max-width: 991px)" srcset="https://www.appynitty.com/assets/lead-generation/img/lead_generation@991.gif">
-                            <source media="(max-width: 1199px)" srcset="https://www.appynitty.com/assets/lead-generation/img/lead_generation@1199.gif">
-                            <img class="img img-responsive" src="https://www.appynitty.com/assets/lead-generation/img/lead_generation.gif" alt="Digital Marketing Agency" title="Digital Marketing Services">
+                            <source media="(max-width: 480px)" srcset="~/Assets/Images/Index/Lead_Genration/lead_generation@480.gif">
+                            <source media="(max-width: 768px)" srcset="~/Assets/Images/Index/Lead_Genration/lead_generation@768.gif">
+                            <source media="(max-width: 991px)" srcset="~/Assets/Images/Index/Lead_Genration/lead_generation@991.gif">
+                            <source media="(max-width: 1199px)" srcset="~/Assets/Images/Index/Lead_Genration/lead_generation@1199.gif">
+                            <img class="img img-responsive" src="~/Assets/Images/Index/Lead_Genration/lead_generation.gif" alt="Digital Marketing Agency" title="Digital Marketing Services">
                         </picture>
                     </div>
 
@@ -140,11 +140,11 @@
                                                                 <img class="img img-responsive" src="" alt="" title=""/>
                             </picture>  -->
                             <picture>
-                                <source media="(max-width: 480px)" srcset="https://www.appynitty.com/assets/lead-generation/img/image0016.png">
-                                <source media="(max-width: 768px)" srcset="https://www.appynitty.com/assets/lead-generation/img/image001 (3).png">
-                                <source media="(max-width: 991px)" srcset="https://www.appynitty.com/assets/lead-generation/img/image0017.png">
-                                <source media="(max-width: 1199x)" srcset="https://www.appynitty.com/assets/lead-generation/img/image0018.png">
-                                <img class="img img-responsive" src="https://www.appynitty.com/assets/lead-generation/img/lead_generation_diagram.gif" alt="Lead Generation Campaign" title="Lead Generation Campaign">
+                                <source media="(max-width: 480px)" srcset="~/Assets/Images/Index/Lead_Genration/lead_generation_diagram@480.gif">
+                                <source media="(max-width: 768px)" srcset="~/Assets/Images/Index/Lead_Genration/lead_generation_diagram@768.gif">
+                                <source media="(max-width: 991px)" srcset="~/Assets/Images/Index/Lead_Genration/lead_generation_diagram@991.gif">
+                                <source media="(max-width: 1199x)" srcset="~/Assets/Images/Index/Lead_Genration/lead_generation_diagram@1199.gif">
+                                <img class="img img-responsive" src="~/Assets/Images/Index/Lead_Genration/lead_generation_diagram.gif" alt="Lead Generation Campaign" title="Lead Generation Campaign">
                             </picture>
                         </div>
                     </div>
@@ -164,18 +164,35 @@
         <div class="container">
             <div class="product-features">
                 <div class="features">
-                    <a href="https://www.appynitty.com/lead-management-services" title="Lead Management Services"><div class="icon"><img class="img img-responsive" data-gif="https://www.appynitty.com/assets/lead-generation/img/lead.gif" src="https://www.appynitty.com/assets/lead-generation/img/lead.png" alt="Lead Management Services" title="Lead Management Services"></div> </a>
+                    <a href="https://www.appynitty.com/lead-management-services" title="Lead Management Services"><div class="icon"><img class="img img-responsive" data-gif="/Assets/Images/Index/Lead_Genration/lead.gif" src="~/Assets/Images/Index/Lead_Genration/lead.png" alt="Lead Management Services" title="Lead Management Services"></div> </a>
                     <h2 class="title"><a href="lead-management-services" title="Lead Management Services">Lead Management Services</a></h2>
                 </div>
                 <div class="features">
-                    <a href="https://www.appynitty.com/email-marketing-solutions-companies" title="Email Campaign Management"><div class="icon"><img class="img img-responsive" data-gif="https://www.appynitty.com/assets/lead-generation/img/email.gif" src="https://www.appynitty.com/assets/lead-generation/img/email.png" alt="Email Campaign Management" title="Email Campaign Management"></div> </a>
+                    <a href="https://www.appynitty.com/email-marketing-solutions-companies" title="Email Campaign Management"><div class="icon"><img class="img img-responsive" data-gif="/Assets/Images/Index/Lead_Genration/email.gif" src="~/Assets/Images/Index/Lead_Genration/email.png" alt="Email Campaign Management" title="Email Campaign Management"></div> </a>
                     <h2 class="title"><a href="email-marketing-solutions-companies" title="Email Campaign Management">Email Campaign Management</a></h2>
                 </div>
                 <div class="features">
-                    <a href="https://www.appynitty.com/sales-intelligence-platform" title="Sales Intelligence PaaS"><div class="icon"><img class="img img-responsive" data-gif="https://www.appynitty.com/assets/lead-generation/img/paas.gif" src="https://www.appynitty.com/assets/lead-generation/img/paas.png" alt="Sales Intelligence PaaS" title="Sales Intelligence PaaS"></div> </a>
+                    <a href="https://www.appynitty.com/sales-intelligence-platform" title="Sales Intelligence PaaS"><div class="icon"><img class="img img-responsive" data-gif="/Assets/Images/Index/Lead_Genration/paas.gif" src="~/Assets/Images/Index/Lead_Genration/paas.png" alt="Sales Intelligence PaaS" title="Sales Intelligence PaaS"></div> </a>
                     <h2 class="title"><a href="sales-intelligence-platform" title="Sales Intelligence PaaS">Sales Intelligence PaaS</a></h2>
                 </div>
             </div>
         </div>
     </div>
 </section>
+<script>
+    $(function () {
+        $("a").each(function (i) {
+            var img = $(this).find('img');
+            var img_src = img.attr("data-gif");
+            var osrc;
+            if (img_src !== undefined) {
+                $(this).hover(function () {
+                    osrc = img.attr("src");
+                    img.attr("src", img_src);
+                }, function () {
+                    img.attr("src", osrc);
+                });
+            }
+        });
+    })
+</script>

@@ -37,7 +37,7 @@
 
                     <div class="icon">
                         <a href="https://www.appynitty.com/lead-management-services" title="Lead Management Services">
-                            <img class="img img-responsive" src="https://www.appynitty.com/assets/lead-generation/img/lead.png" data-gif="https://www.appynitty.com/assets/lead-generation/img/lead.gif" alt="Lead Management Services">
+                            <img class="img img-responsive" src="~/Assets/Images/Index/Lead_Genration/lead.png" data-gif="/Assets/Images/Index/Lead_Genration/lead.gif" alt="Lead Management Services">
                         </a>
                     </div>
 
@@ -46,10 +46,10 @@
                     </a>
                 </div>
                 <div class="features">
-
+                   
                     <div class="icon">
                         <a href="https://www.appynitty.com/sales-intelligence-platform" title="Sales Intelligence PaaS">
-                            <img class="img img-responsive" src="https://www.appynitty.com/assets/lead-generation/img/paas.png" data-gif="https://www.appynitty.com/assets/lead-generation/img/paas.gif" alt="Sales Intelligence PaaS">
+                            <img class="img img-responsive" src="~/Assets/Images/Index/Lead_Genration/paas.png" data-gif="/Assets/Images/Index/Lead_Genration/paas.gif" alt="Sales Intelligence PaaS">
                         </a>
                     </div>
 
@@ -61,3 +61,20 @@
         </div>
     </div>
 </section>
+<script>
+    $(function () {
+        $("a").each(function (i) {
+            var img = $(this).find('img');
+            var img_src = img.attr("data-gif");
+            var osrc;
+            if (img_src !== undefined) {
+                $(this).hover(function () {
+                    osrc = img.attr("src");
+                    img.attr("src", img_src);
+                }, function () {
+                    img.attr("src", osrc);
+                });
+            }
+        });
+    })
+</script>
