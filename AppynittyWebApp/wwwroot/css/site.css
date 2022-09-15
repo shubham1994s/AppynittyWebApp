@@ -108,9 +108,21 @@ footer h5 a{
 footer h5 a:hover {
     color: white !important;
 }
-
+.f-box {
+    border-right: 2px solid #9d9999b0;
+    padding-right: 3%;
+}
 @media screen and (max-width: 500px) {
     .foot {
         display: none !important;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .footer {
+        white-space:normal
+    }
+    .f-box{
+        padding-right:1%;
     }
 }
