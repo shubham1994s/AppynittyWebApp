@@ -732,6 +732,9 @@
     
 }
 .moz-width{width: 407px;}
+.form-group {
+    margin-bottom:0px !important
+}
 @media (max-width: 768px){
     .r-m-a-main .section {
         max-width: 100%;

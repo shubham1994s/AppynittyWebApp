@@ -12,7 +12,8 @@
 <style>
     #UserEmail {
         margin-top: 9px;
-        margin-bottom:0px;
+        margin-bottom: 0px;
+        margin-right: 15px;
     }
     .navbar-right {
         padding-left: 68%;
@@ -22,7 +23,7 @@
     <header>
         <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
             <div class="container">
-                <a class="navbar-brand" asp-area="Identity" asp-controller="Account" asp-action="Details">Appynitty Admin</a>
+                <a class="navbar-brand" asp-area="Identity" asp-controller="Account" asp-action="Details"><img src="/Assets/Images/appynitty-logo.png" class="img img-responsive" style="height: 70px;">&nbsp; Admin</a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
                         aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -44,7 +45,7 @@
                                         if (User.Identity.IsAuthenticated)
                                         {
                                             <form class="form-inline" asp-area="Identity" asp-page="/Account/Logout" method="post">
-                                                <button type="submit" class="nav-link btn btn-link text-dark">Log out<i class="fa fa-sign-out"></i></button>
+                                                <button type="submit" class="nav-link btn btn-link text-dark">Log out<i class="fa fa-sign-out"style="margin-left:5px;"></i></button>
                                             </form>
                                         }
                                         else

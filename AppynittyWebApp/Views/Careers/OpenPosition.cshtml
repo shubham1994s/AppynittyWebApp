@@ -4,6 +4,7 @@
     ViewData["Title"] = "Open Position";
 }
 <link href="~/Assets/CSS/AboutUs.css" rel="stylesheet" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 @*<link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@700&display=swap" rel="stylesheet">*@
 <style>
     .newttl {
@@ -17,21 +18,23 @@
     h4 {
         font-weight: 600;
     }
-  /*  rgb(10 108 108 / 78%),*/
+    /*  rgb(10 108 108 / 78%),*/
     #careers {
         /* background: linear-gradient(rgba(210, 71, 90, 0.5), rgba(210, 71, 90, 0.5)), url("../../Assets/Images/doors-1767563.jpg");*/
         /* background: linear-gradient(rgb(60, 186, 186, 50%), rgb(60, 186,186, 50%)), url(../../Assets/Images/doors-1767563.jpg);*/
-        background: linear-gradient(rgb(8 ,34,34 , 78%), rgb(40, 82, 82 , 50%)), url(../../Assets/Images/doors-1767563.jpg);
+        background: linear-gradient(rgb(8,34,34, 78%), rgb(40, 82, 82, 50%)), url(../../Assets/Images/doors-1767563.jpg);
         background-size: cover;
         color: #fff;
         height: 100vh;
     }
+
     .appy-btn {
         background: #3CBABA;
         color: #FFFFFF;
         font-size: 18px;
         margin: 0;
     }
+
         .appy-btn:hover {
             background: transparent;
             color: #FFFFFF;
@@ -53,49 +56,49 @@
 </div>
 @*<h1 class="text-center py-5">Careers Section</h1>*@
 <div class="container py-5">
-  
-        <div class="top-flex mt-3">
-            <div class="half">
-                <div class="left">
-                    <div class="section">
-                        <div class="content">
-                            <div class="title">Careers</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
 
-            <div class="half">
-                <div class="right">
-                    <div class="section">
-                        <div class="content">
-                            <div class="title">
-                                <!--You can accomplish big<span class="l-b"><br></span>things at Appynitty-->At Appynitty You Don&rsquo;t Just Do a Job,<br />
-                                You Accomplish Your Dreams!!!
-                            </div>
-                        </div>
+    <div class="top-flex mt-3">
+        <div class="half">
+            <div class="left">
+                <div class="section">
+                    <div class="content">
+                        <div class="title">Careers</div>
                     </div>
                 </div>
             </div>
         </div>
 
-        <div class="container">
-            <div class="content">
-                <p class="text"  id="current" name="current">Appynitty Communications is a rapidly expanding company and we welcome hard working and professional candidates across various departments. The growth and prosperity of our employees is of utmost importance to us and we therefore strive hard to maintain a conducive work environment and offer salary as per highest industry standards.</p>
-
-                <p class="text">&nbsp;</p>
-
-                <p class="text" >Do drop in your Resume and we will <!-- <a href="#login-box" class="login-window"> -->get in touch with you!<!-- </a> --></p>
+        <div class="half">
+            <div class="right">
+                <div class="section">
+                    <div class="content">
+                        <div class="title">
+                            <!--You can accomplish big<span class="l-b"><br></span>things at Appynitty-->At Appynitty You Don&rsquo;t Just Do a Job,<br />
+                            You Accomplish Your Dreams!!!
+                        </div>
+                    </div>
+                </div>
             </div>
-          
         </div>
-   
+    </div>
+
+    <div class="container">
+        <div class="content">
+            <p class="text" id="current" name="current">Appynitty Communications is a rapidly expanding company and we welcome hard working and professional candidates across various departments. The growth and prosperity of our employees is of utmost importance to us and we therefore strive hard to maintain a conducive work environment and offer salary as per highest industry standards.</p>
+
+            <p class="text">&nbsp;</p>
+
+            <p class="text">Do drop in your Resume and we will <!-- <a href="#login-box" class="login-window"> -->get in touch with you!<!-- </a> --></p>
+        </div>
+
+    </div>
+
     <div class="row">
         @{
             var obj = ViewBag.careerslist;
         }
         <div class="col-sm-8 p-3">
-            <h4 class="p-3" style="border-bottom: 2px solid #d5d0d0; color: #0d6666"  >Current Opening</h4>
+            <h4 class="p-3" style="border-bottom: 2px solid #d5d0d0; color: #0d6666">Current Opening</h4>
             @foreach (var item in obj)
             {
                 <div class="p-4 mb-3" style="border-bottom: 2px solid #d5d0d0;">
@@ -107,17 +110,21 @@
                         </div>
                     </heaade>
                     <div>
-                        <span>@item.MinExp - @item.MaxExp</span>
+                        <span>
+
+
+                            <i class="fa-regular fa-briefcase" style="color: #939797;font-weight:unset"></i> @item.MinExp - @item.MaxExp Yrs
+                        </span>
                         @if (@item.MinSalary != null)
                         {
-                            <span>@item.MinSalary - @item.MaxSalary</span>
+                            <span> ₹ @item.MinSalary - @item.MaxSalary</span>
                         }
                         else
                         {
                             <span>Not disclosed</span>
                         }
 
-                        <span>@item.JobLocation</span>
+                    <i class="fa-regular fa-location-dot" style="color: #939797;font-weight:unset"></i> <span>@item.JobLocation</span>
                     </div>
                     <div>
                         <p class="mb-4">@item.JobDesc</p>
@@ -177,7 +184,7 @@
 </div>
 
 
-    @*</div>*@
+@*</div>*@
 
 <script>
     $('a').click(function () {
