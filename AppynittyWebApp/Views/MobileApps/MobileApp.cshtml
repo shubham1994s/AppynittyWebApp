@@ -381,7 +381,7 @@
         </div>
     </div>
 
-    <div class="m-2-flex">
+    <div class="m-2-flex" id="our">
         <div class="half">
             <div class="left">
                 <div class="section">
@@ -424,7 +424,7 @@
             <div class="right">
                 <div class="section">
                     <div class="i-a-d">
-                        <div class="app-l-sec" id="products">&nbsp;</div>
+                        <div class="app-l-sec" id="products"><div class="app-list"><div class="name teaser"><a href="/mobileapps/real-Estate-mobile-app" title="RealEstate Appy">RealEstate Appy</a></div><div class="name teaser"><a href="/mobileapps/malls-mobile-app" title="Malls Appy">Malls Appy</a></div><div class="name teaser"><a href="/mobileapps/restaurant-mobile-app" title="Restro Appy">Restro Appy</a></div><div class="name teaser"><a href="/mobileapps/mobile-app-hotels-resorts" title="Stayiinn Appy">Stayiinn Appy</a></div><div class="name complete" style="display: none;"><a href="/mobileapps/mobile-app-salons-spa" title="Beauty Appy">Beauty Appy</a></div><div class="name complete" style="display: none;"><a href="/mobileapps/mobile-app-voter-engagement" title="Voter First">Voter First</a></div><div class="name complete" style="display: none;"><a href="/mobileapps/mobile-app-automobile-dealers" title="Wheels Appy">Wheels Appy</a></div><div class="name complete" style="display: none;"><a href="/mobileapps/celebrity-mobile-app" title="Celeb Appy">Celeb Appy</a></div><div class="name complete" style="display: none;"><a href="/mobileapps/boutiques-mobile-app" title="Boutique Appy">Boutique Appy</a></div><div class="icon ai-play more name"> More.. </div></div></div>
 
                         <div class="app-l-sec"><picture> <source media="(max-width: 1199px)" srcset="~/Assets/Images/Index/Mobileapps/our_apps@1199.gif" /> <img alt="App Development Services" class="img img-responsive" src="~/Assets/Images/Index/Mobileapps/mobile_demo.gif" title="App Development Services" /> </picture></div>
                     </div>
@@ -434,4 +434,26 @@
         <!-- </div> -->
     </div>
 </section>
+
+<script>
+
+    $(".more").click(function (e) {
+
+        //	$(".more").toggle();
+        if ($(".more").text() == " More..") {
+
+            $(this).text(" Less..");
+            $(".complete").show();
+        } else {
+            $(this).text(" More..");
+            $(".complete").hide();
+        }
+
+        e.preventDefault();
+        e.stopPropagation();
+        $(".more").css('style', 'display:block');
+
+
+    });
+</script>
 
