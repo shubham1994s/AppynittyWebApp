@@ -234,7 +234,7 @@ namespace AppynittyWebApp.Controllers
                 {
                     throw;
                 }
-                return RedirectToAction(nameof(Index));
+                return RedirectToAction("NewSection");
             }
             return View(model);
         }

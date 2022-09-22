@@ -267,7 +267,7 @@ namespace AppynittyWebApp.Controllers
                 {
                     throw;
                 }
-                return RedirectToAction(nameof(Index));
+                return RedirectToAction("BlogSection");
       
             return View(model);
         }

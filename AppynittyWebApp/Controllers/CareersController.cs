@@ -193,7 +193,7 @@ namespace AppynittyWebApp.Controllers
                 {
                     throw;
                 }
-                return RedirectToAction(nameof(OpenPosition));
+                return RedirectToAction("CVSection");
             }
             return View(model);
         }
