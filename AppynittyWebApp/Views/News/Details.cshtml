@@ -24,7 +24,8 @@
             @Html.DisplayNameFor(model => model.NewsEng)
         </dt>
         <dd class="col-sm-9">
-            @Html.DisplayFor(model => model.NewsEng)
+            @*@Html.DisplayFor(model => model.NewsEng)*@
+            @Html.Raw(Model.NewsEng)
         </dd>
         <dt class="col-sm-3" style="display:none;">
             @Html.DisplayNameFor(model => model.NewsMar)
@@ -40,7 +41,7 @@
         </dd>
     </dl>
     <div>
-        <a class="btn btn-primary" asp-action="AddOrEdit" asp-route-employeeId="@Model.Id">Edit</a>
+        <a class="btn btn-primary" asp-action="AddOrEdit" asp-route-Id="@Model.Id">Edit</a>
         <a class="btn btn-danger" asp-action="Index">Back</a>
     </div>
 </div>

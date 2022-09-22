@@ -132,7 +132,7 @@
                     <i class="fa-regular fa-location-dot" style="color: #939797;font-weight:unset"></i> <span>@item.JobLocation</span>
                     </div>
                     <div>
-                        <p class="mb-4">@item.JobDesc</p>
+                       @Html.Raw(@item.JobDesc)
                     </div>
                 </div>
             }

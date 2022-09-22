@@ -5,10 +5,10 @@
     Layout = "_AdminLayout";
 }
 <style>
-    #addnewimage{
-        display:none;
+    #addnewimage {
+        display: none;
     }
-    </style>
+</style>
 <div class="container p-3 my-3 border">
     @*<h1> @ViewBag.PageName</h1>*@
 
@@ -34,7 +34,7 @@
                 <div class="form-group">
                     <label asp-for="BlogsEng" class="control-label"></label>
                     @*<input asp-for="NewsEng" class="form-control" />*@
-                    <textarea id="BlogsEng" asp-for="BlogsEng" class="form-control" rows="10" cols="100"></textarea>
+                    <textarea id="BlogsEng" name="BlogsEng" asp-for="BlogsEng" class="form-control" rows="10" cols="100"></textarea>
                     <span asp-validation-for="BlogsEng" class="text-danger"></span>
                 </div>
                 <div class="form-group" style="display:none;">
@@ -48,7 +48,7 @@
                         <div class="form-group">
                             <label asp-for="FileName" class="control-label"></label>
                             @if (@ViewBag.FileName != null)
-                            {   <div>
+                            {<div>
 
                                     <input asp-for="FileName" class="form-control" id="customFileName" readonly />
                                     Change Image <input type="checkbox" id="checkbox1" />
@@ -80,7 +80,7 @@
                             </div>
                         }
                     </div>
-                 </div>
+                </div>
 
                 <div class="form-group">
                     <label asp-for="IsActive" class="control-label"></label>
@@ -130,4 +130,9 @@
     </script>
 
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+
+    <script src="https://cdn.ckeditor.com/4.19.1/standard/ckeditor.js"></script>
+    <script>
+        CKEDITOR.replace('BlogsEng');
+    </script>
 }
