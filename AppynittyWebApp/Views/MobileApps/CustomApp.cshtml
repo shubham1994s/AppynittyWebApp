@@ -249,9 +249,9 @@
             padding: 10px;
             border: 2px solid #ddd;
             float: left;
-            font-size: 1.2em;
+            font-size: 1em;
             position: fixed;
-            top: 50%;
+            top: 58%;
             left: 50%;
             z-index: 99999;
             border-radius: 3px 3px 3px 3px;
@@ -285,7 +285,7 @@
 
         form.signin .textbox label {
             display: block;
-            padding-bottom: 7px;
+            padding-bottom: 2px;
         }
 
         form.signin .textbox span {
@@ -346,13 +346,14 @@
             padding-left: 83px;
             text-align: center;
         }
+        label{margin-bottom:0px;padding-bottom:0px;}
     </style>
     <div class="container">
         <div id="content">
             <div class="post">
 
                 <div id="login-box" class="login-popup moz-width">
-                    <a href="#" id="close" class="close cls"><img src="/close_pop.png" class="btn_close" title="Close Window" alt="Close" /></a>
+                    <a href="#" id="close" class="close cls"><img src="/Assets/Images/close_pop.png" class="btn_close" title="Close Window" alt="Close" /></a>
                     <form name="quote" method="post" class="signin" id="form" action="#" onsubmit="return validateForm(event)">
                         <fieldset class="textbox" style="padding:15px;color: black;">
                             <div class="modal-header" style="color: black;">
@@ -418,3 +419,47 @@
     });
 
 </script>*@
+<script>
+    $(document).ready(function () {
+        $('a.login-window').click(function () {
+
+            // Getting the variable's value from a link
+            var loginBox = $(this).attr('href');
+
+            //Fade in the Popup and add close button
+            $(loginBox).fadeIn(300);
+
+            //Set the center alignment padding + border
+            var popMargTop = ($(loginBox).height() + 24) / 2;
+            var popMargLeft = ($(loginBox).width() + 24) / 2;
+
+            $(loginBox).css({
+                'margin-top': -popMargTop,
+                'margin-left': -popMargLeft
+            });
+
+            // Add the mask to body
+            $('body').append('<div id="mask"></div>');
+            $('#mask').fadeIn(300);
+
+            return false;
+        });
+
+
+
+        // When clicking on the button close or the mask layer the popup closed
+        $("#close").click(function () {
+            $(".login-popup").fadeOut();
+            $('#mask').remove();
+            $('.signin')[0].reset();
+            $("div").remove(".validation");
+
+        });
+        /*$('a.close, #mask').live('click', function() {
+          $('#mask , .login-popup').fadeOut(300 , function() {
+            $('#mask').remove();
+        });
+        return false;
+        });*/
+    });
+</script>
