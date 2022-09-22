@@ -5,14 +5,14 @@
     Layout = "_AdminLayout";
 }
 @*<style>
-    input[type=checkbox] {
-        box-sizing: border-box;
-        padding: 0;
-        font-size: 4px;
-        margin-top: -5%;
-        margin-left: -31%;
-    }
-</style>*@
+        input[type=checkbox] {
+            box-sizing: border-box;
+            padding: 0;
+            font-size: 4px;
+            margin-top: -5%;
+            margin-left: -31%;
+        }
+    </style>*@
 <div class="container p-3 my-3 border">
     @*<h1> @ViewBag.PageName</h1>*@
 
@@ -38,7 +38,7 @@
                 <div class="form-group">
                     <label asp-for="NewsEng" class="control-label"></label>
                     @*<input asp-for="NewsEng" class="form-control" />*@
-                    <textarea id="NewsEng" asp-for="NewsEng" class="form-control" rows="10" cols="100"></textarea>
+                    <textarea id="NewsEng" name="NewsEng" asp-for="NewsEng" class="form-control" rows="10" cols="100"></textarea>
                     <span asp-validation-for="NewsEng" class="text-danger"></span>
                 </div>
                 <div class="form-group" style="display:none;">
@@ -51,7 +51,7 @@
                     <label asp-for="IsActive" class="control-label"></label>
                     @*@Html.CheckBox("isActive")*@
                     @*<input id="IsActive" type="checkbox" name="IsActive" value="IsActive" />*@
-                    <input type="checkbox" asp-for="IsActive"/>
+                    <input type="checkbox" asp-for="IsActive" />
                     @*<span asp-validation-for="IsActive" class="text-danger"></span>*@
                 </div>
                 <div class="form-group">
@@ -64,4 +64,9 @@
 </div>
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+
+    <script src="https://cdn.ckeditor.com/4.19.1/standard/ckeditor.js"></script>
+    <script>
+        CKEDITOR.replace('NewsEng');
+    </script>
 }

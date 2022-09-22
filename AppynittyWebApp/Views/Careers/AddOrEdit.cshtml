@@ -4,6 +4,9 @@
     ViewData["Title"] = "Create";
     Layout = "_AdminLayout";
 }
+
+
+
 @*<style>
         input[type=checkbox] {
             box-sizing: border-box;
@@ -75,10 +78,10 @@
                 <div class="form-group">
                     <label asp-for="JobDesc" class="control-label"></label>
                     @*<input asp-for="NewsEng" class="form-control" />*@
-                    <textarea id="JobDesc" asp-for="JobDesc" class="form-control" rows="10" cols="100"></textarea>
+                    <textarea id="JobDesc" name="JobDesc" asp-for="JobDesc" class="form-control" rows="10" cols="100"></textarea>
                     <span asp-validation-for="JobDesc" class="text-danger"></span>
                 </div>
-              
+
                 <div class="form-group">
                     <label asp-for="IsActive" class="control-label"></label>
                     @*@Html.CheckBox("isActive")*@
@@ -94,6 +97,12 @@
         </div>
     </div>
 </div>
+
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+
+    <script src="https://cdn.ckeditor.com/4.19.1/standard/ckeditor.js"></script>
+    <script>
+        CKEDITOR.replace('JobDesc');
+    </script>
 }

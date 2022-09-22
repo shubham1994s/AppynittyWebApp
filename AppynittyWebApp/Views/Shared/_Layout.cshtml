@@ -121,13 +121,12 @@
                                 <!--<div class="appy-search">
                                     <div class="inner-addon right-addon">
                                         <i class="icon ai-search"></i>-->
-                                        <!--<input type="text" class="form-control search" placeholder="Search" />-->
-
-                                        <!--<input type="text" class="form-control search" name="search" id="searchid" placeholder="Search" />
+                                <!--<input type="text" class="form-control search" placeholder="Search" />-->
+                                <!--<input type="text" class="form-control search" name="search" id="searchid" placeholder="Search" />
 
                                         <div id="result"></div>
 
-                                     
+
                                     </div>
                                 </div>-->
                             </div>
@@ -425,22 +424,22 @@
                                                             </div>
                                                         </li>
                                                         <!--  <li class="menu-list s-menu link">
-        <div class="item">
-            <a href="" title=""><div class="name"></div></a>
-            <div class="m-icon"><i class="icon ai-plus-without-circle"></i></div>
-        </div>
-        <div class="c-sub-menu">
-            <ul>
-                                                                                            <li class="menu-list link">
-                        <a href="" title="">
-                        <div class="item">
-                            <div class="name"></div>
-                        </div>
-                        </a>
-                    </li>
-                                                                                    </ul>
-        </div>
-    </li> -->
+                                                            <div class="item">
+                                                                <a href="" title=""><div class="name"></div></a>
+                                                                <div class="m-icon"><i class="icon ai-plus-without-circle"></i></div>
+                                                            </div>
+                                                            <div class="c-sub-menu">
+                                                                <ul>
+                                                                                                                                                <li class="menu-list link">
+                                                                            <a href="" title="">
+                                                                            <div class="item">
+                                                                                <div class="name"></div>
+                                                                            </div>
+                                                                            </a>
+                                                                        </li>
+                                                                                                                                        </ul>
+                                                            </div>
+                                                        </li> -->
                                                         <li class="menu-list s-menu link">
                                                             <div class="item">
                                                                 <a href="/DigitalSolution/LeadGeneration" title="Lead Generation Campaign"><div class="name">LEAD GENERATION</div></a>
@@ -562,7 +561,7 @@
 
                     </ul>
                 </div>
-                <div  class="mx-3 f-box">
+                <div class="mx-3 f-box">
                     <h5 class="text-uppercase text-white">Mobile Apps</h5>
 
 
@@ -576,7 +575,7 @@
 
                     </ul>
                 </div>
-                <div  class="mx-3 f-box">
+                <div class="mx-3 f-box">
                     <h5 class="text-uppercase text-white">Solution</h5>
 
 
@@ -588,7 +587,7 @@
 
                     </ul>
                 </div>
-                <div  class="mx-3 f-box">
+                <div class="mx-3 f-box">
                     <h5 class="text-uppercase text-white">Resources</h5>
 
 
@@ -682,6 +681,30 @@
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
+
+    <!--Whats Up Script-->
+    <!--<script type="text/javascript">
+        (function () {
+            var options = {
+                whatsapp: " +91 9860706979", // WhatsApp number
+                /* call: " +91 8778786964",*/ // Call phone number
+                call_to_action: "Message us", // Call to action
+                button_color: "#008B8B", // Color of button
+                position: "left", // Position may be 'right' or 'left'
+                order: "whatsapp,call", // Order of buttons
+            };
+            var proto = document.location.protocol, host = "getbutton.io", url = proto + "//static." + host;
+            var s = document.createElement('script'); s.type = 'text/javascript'; s.async = true; s.src = url + '/widget-send-button/js/init.js';
+            s.onload = function () { WhWidgetSendButton.init(host, proto, options); };
+            var x = document.getElementsByTagName('script')[0]; x.parentNode.insertBefore(s, x);
+        })();
+    </script>-->
+
+    <!--Chat Script-->
+
+    <!--<script type="text/javascript" id="zsiqchat">var $zoho = $zoho || {}; $zoho.salesiq = $zoho.salesiq || { widgetcode: "6a7405757c17120fd32a6c3bc720a70a245c6b3a1a9888ab36bf76a8910ef998bfc35840a2ff66f6a3ab3f9b7b518b381a2010ab7b6727677d37b27582c0e9c4", values: {}, ready: function () { } }; var d = document; s = d.createElement("script"); s.type = "text/javascript"; s.id = "zsiqscript"; s.defer = true; s.src = "https://salesiq.zoho.com/widget"; t = d.getElementsByTagName("script")[0]; t.parentNode.insertBefore(s, t);</script>-->
+
+
     @await RenderSectionAsync("Scripts", required: false)
 </body>
 </html>
