@@ -25,7 +25,8 @@
                 <dl class="row">
                     <dd class="col-sm-8">
                         <h3 style="text-align:center; margin-bottom: 20px;"> @Html.DisplayFor(model => model.NewsTitle)</h3>
-                        <p style="text-align:justify">@Html.DisplayFor(model => model.NewsEng)</p>
+                        @*<p style="text-align:justify">@Html.DisplayFor(model => model.NewsEng)</p>*@
+                        <p style="text-align:justify">@Html.Raw(Model.NewsEng)</p>
                     </dd>
                     @{
                         var obj = ViewBag.newslist;

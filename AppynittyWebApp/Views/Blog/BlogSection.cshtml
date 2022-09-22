@@ -25,7 +25,8 @@
                 <dl class="row">
                     <dd class="col-sm-8">
                         <h3 style="text-align:center; margin-bottom: 20px;"> @Html.DisplayFor(model => model.BlogsTitle)</h3>
-                        <p style="line-height:2rem;text-align:justify">@Html.DisplayFor(model => model.BlogsEng)</p>
+                        @*<p style="line-height:2rem;text-align:justify">@Html.DisplayFor(model => model.BlogsEng)</p>*@
+                        <p style="line-height:2rem;text-align:justify">@Html.Raw(Model.BlogsEng)</p>
 
                     </dd>
                     @{
