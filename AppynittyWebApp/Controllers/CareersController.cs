@@ -8,6 +8,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Security.Claims;
 using System.Threading.Tasks;
 
 namespace AppynittyWebApp.Controllers
@@ -24,6 +25,8 @@ namespace AppynittyWebApp.Controllers
         }
         public async Task<ActionResult> IndexAsync()
         {
+            var Email = User.FindFirstValue(ClaimTypes.Email);
+            TempData["Email"] = Email;
             var career = await _context.Careers.ToListAsync();
             return View(career);
         }

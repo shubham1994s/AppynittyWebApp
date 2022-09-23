@@ -20,6 +20,7 @@
     }
 </style>
 <body>
+    <input id="Email" type="hidden" value="@TempData["Email"]" />
     <header>
         <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
             <div class="container">
@@ -34,31 +35,31 @@
                             <a class="nav-link text-dark" asp-area="Identity" asp-controller="Account" asp-action="Details">Home</a>
                         </li>
                     </ul>
-                        <div class="navbar-right">
-                            <ul class="navbar-nav flex-grow-1">
-                                <li class="nav-item">
-                                    <p id="UserEmail"></p>
-                                </li>
-                                <li class="nav-item">
-                                    @*<a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>*@
-                                    @{
-                                        if (User.Identity.IsAuthenticated)
-                                        {
-                                            <form class="form-inline" asp-area="Identity" asp-page="/Account/Logout" method="post">
-                                                <button type="submit" class="nav-link btn btn-link text-dark">Log out<i class="fa fa-sign-out"style="margin-left:5px;"></i></button>
-                                            </form>
-                                        }
-                                        else
-                                        {
-                                            <p>You have successfully logged out of the application.</p>
-                                        }
+                    <div class="navbar-right">
+                        <ul class="navbar-nav flex-grow-1">
+                            <li class="nav-item">
+                                <p id="UserEmail"></p>
+                            </li>
+                            <li class="nav-item">
+                                @*<a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>*@
+                                @{
+                                    if (User.Identity.IsAuthenticated)
+                                    {
+                                        <form class="form-inline" asp-area="Identity" asp-page="/Account/Logout" method="post">
+                                            <button type="submit" class="nav-link btn btn-link text-dark">Log out<i class="fa fa-sign-out" style="margin-left:5px;"></i></button>
+                                        </form>
                                     }
-                                </li>
-                            </ul>
-                       
-                            </div>
-                        
-                   
+                                    else
+                                    {
+                                        <p>You have successfully logged out of the application.</p>
+                                    }
+                                }
+                            </li>
+                        </ul>
+
+                    </div>
+
+
                 </div>
             </div>
         </nav>
@@ -78,5 +79,10 @@
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
     @await RenderSectionAsync("Scripts", required: false)
+
+    <script>
+        let html = document.getElementById("Email").value;
+        document.getElementById("UserEmail").innerHTML = html;
+    </script>
 </body>
 </html>
