@@ -672,7 +672,7 @@
         text-align: center;
     }
 </style>
-<div class="container">
+<!--<div class="container">
     <div id="content">
         <div class="post">
 
@@ -720,9 +720,9 @@
 
                         </div>
 
-                        <div class="modal-footer">
+                        <div class="modal-footer">-->
                             <!--<button class="button btn btn-default" type="button" id="close">Cancel</button>-->
-                            <button class="button btn btn-primary" id="btnSave" type="submit">Submit</button>
+                            <!--<button class="button btn btn-primary" id="btnSave" type="submit">Submit</button>
                         </div>
 
                     </fieldset>
@@ -730,7 +730,7 @@
             </div>
         </div>
     </div>
-</div>
+</div>-->
 
 
 
@@ -902,48 +902,48 @@
     }</script>
 
 <script type="text/javascript">
-    $(document).ready(function () {
-        $('a.login-window').click(function () {
+    //$(document).ready(function () {
+    //    $('a.login-window').click(function () {
 
-            // Getting the variable's value from a link
-            var loginBox = $(this).attr('href');
+    //        // Getting the variable's value from a link
+    //        var loginBox = $(this).attr('href');
 
-            //Fade in the Popup and add close button
-            $(loginBox).fadeIn(300);
+    //        //Fade in the Popup and add close button
+    //        $(loginBox).fadeIn(300);
 
-            //Set the center alignment padding + border
-            var popMargTop = ($(loginBox).height() + 24) / 2;
-            var popMargLeft = ($(loginBox).width() + 24) / 2;
+    //        //Set the center alignment padding + border
+    //        var popMargTop = ($(loginBox).height() + 24) / 2;
+    //        var popMargLeft = ($(loginBox).width() + 24) / 2;
 
-            $(loginBox).css({
-                'margin-top': -popMargTop,
-                'margin-left': -popMargLeft
-            });
+    //        $(loginBox).css({
+    //            'margin-top': -popMargTop,
+    //            'margin-left': -popMargLeft
+    //        });
 
-            // Add the mask to body
-            $('body').append('<div id="mask"></div>');
-            $('#mask').fadeIn(300);
+    //        // Add the mask to body
+    //        $('body').append('<div id="mask"></div>');
+    //        $('#mask').fadeIn(300);
 
-            return false;
-        });
+    //        return false;
+    //    });
 
 
 
-        // When clicking on the button close or the mask layer the popup closed
-        $("#close").click(function () {
-            $(".login-popup").fadeOut();
-            $('#mask').remove();
-            $('.signin')[0].reset();
-            $("div").remove(".validation");
+    //    // When clicking on the button close or the mask layer the popup closed
+    //    $("#close").click(function () {
+    //        $(".login-popup").fadeOut();
+    //        $('#mask').remove();
+    //        $('.signin')[0].reset();
+    //        $("div").remove(".validation");
 
-        });
-        /*$('a.close, #mask').live('click', function() {
-          $('#mask , .login-popup').fadeOut(300 , function() {
-            $('#mask').remove();
-        });
-        return false;
-        });*/
-    });
+    //    });
+    //    /*$('a.close, #mask').live('click', function() {
+    //      $('#mask , .login-popup').fadeOut(300 , function() {
+    //        $('#mask').remove();
+    //    });
+    //    return false;
+    //    });*/
+    //});
     function save(e) {
 
         //$('#btnSave').text('saving...'); //change button text

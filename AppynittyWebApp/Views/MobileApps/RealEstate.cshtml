@@ -972,7 +972,7 @@
 
 </section>
 
-
+@*<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>*@
 <script type="text/javascript">
     //import * as data from './Assets/js/data.json';
     //const { name } = data;
@@ -986,80 +986,80 @@
     //    console.log(err);
     //});
     //debugger
-   /* console.log(json);*/
+    /* console.log(json);*/
     $(function () {
 
         function loadSlider() {
-          /*  console.log(json)*/
-          /*  $.post(url, { product: name },*/
-               /* function (data) {*/
-          /*  <img src="~/Assets/Images/realestateappy/splashscreen.png" />*/
+            /*  console.log(json)*/
+            /*  $.post(url, { product: name },*/
+            /* function (data) {*/
+            /*  <img src="~/Assets/Images/realestateappy/splashscreen.png" />*/
             var app = [{ "appId": 0, "name": "Splash Screen", "icon": "icon ai-splashscreen", "image": "https://localhost:44303/Assets/Images/realestateappy/splashscreen.png" }, { "appId": 1, "name": "Home", "icon": "icon ai-demo-home", "image": "https://localhost:44303/Assets/Images/realestateappy/home.png" }, { "appId": 2, "name": "Menu", "icon": "icon ai-demo-menu", "image": "https://localhost:44303/Assets/Images/realestateappy/menu.png" }, { "appId": 3, "name": "About Us", "icon": "icon ai-demo-aboutus", "image": "https://localhost:44303/Assets/Images/realestateappy/aboutus.png" }, { "appId": 4, "name": "Gallery", "icon": "icon ai-demo-gallery", "image": "https://localhost:44303/Assets/Images/realestateappy/gallery.png" }, { "appId": 5, "name": "Location", "icon": "icon ai-demo-location", "image": "https://localhost:44303/Assets/Images/realestateappy/location.png" }, { "appId": 6, "name": "News and Media", "icon": "icon ai-demo-events", "image": "https://localhost:44303/Assets/Images/realestateappy/newsandmedia.png" }, { "appId": 7, "name": "Product Listing", "icon": "icon ai-demo-productlisting", "image": "https://localhost:44303/Assets/Images/realestateappy/floatinginappcall.png" }, { "appId": 8, "name": "Push Notification", "icon": "icon ai-demo-pushnotification", "image": "https://localhost:44303/Assets/Images/realestateappy/pushnotification.png" }, { "appId": 9, "name": "Online Payment Gateway", "icon": "icon ai-demo-onlinepayment", "image": "https://localhost:44303/Assets/Images/realestateappy/onlinepayment.png" }]
-                var count = app.length;
+            var count = app.length;
             var half = Math.round(count / 2);
             console.log(app)
             //debugger
-                function init() {
+            function init() {
 
-                    if ($(document).width() > 590) {
-                        for (i = 0; i < half; i++) {
-                            $(".leftlist").append('<div class="list" id="app' + app[i].appId + '"><div class="c-name">' + app[i].name + '</div><div class="c-icon"><div class="' + app[i].icon + '"></div></div></div>');
-                        }
-                        for (i = half; i < count; i++) {
-                            $(".rightlist").append('<div class="list" id="app' + app[i].appId + '"><div class="c-name">' + app[i].name + '</div><div class="c-icon"><div class="' + app[i].icon + '"></div></div></div>');
-                        }
+                if ($(document).width() > 590) {
+                    for (i = 0; i < half; i++) {
+                        $(".leftlist").append('<div class="list" id="app' + app[i].appId + '"><div class="c-name">' + app[i].name + '</div><div class="c-icon"><div class="' + app[i].icon + '"></div></div></div>');
                     }
-                    else {
-                        for (i = 0; i < count; i++) {
-                            $(".rightlistt").append('<div class="list" id="app' + app[i].appId + '"><div class="c-name">' + app[i].name + '</div><div class="c-icon"><div class="' + app[i].icon + '"></div></div></div>');
-                        }
-                        $('.rightlistt').slick({
-                            dots: false,
-                            arrows: true,
-                            asNavFor: '.sliderExample',
-                        });
+                    for (i = half; i < count; i++) {
+                        $(".rightlist").append('<div class="list" id="app' + app[i].appId + '"><div class="c-name">' + app[i].name + '</div><div class="c-icon"><div class="' + app[i].icon + '"></div></div></div>');
                     }
-
                 }
-                ;
-                init();
-
-
-                $('.sliderExample').slick({
-                    dots: false,
-                    arrows: false,
-                    autoplay: false,
-                    autoplaySpeed: 2000,
-                });
-                for (i = 0; i < count; i++) {
-                    $('.sliderExample').slick('slickAdd', '<div><img src="' + app[i].image + '" class="img img-responsive"></div>');
-                }
-                $('.sliderExample').slick('slickGoTo', 0, false);
-                $(".left-arrow").click(function () {
-                    $('.sliderExample').slick('slickPrev');
-                });
-                $(".right-arrow").click(function () {
-                    $('.sliderExample').slick('slickNext');
-                });
-                $(".list-section .list").each(function (e, q) {
-                    $(q).click(function () {
-                        var l = $(this).prop("id");
-                        l = l.substr(3, l.length);
-                        $('.sliderExample').slick('slickGoTo', l, false);
+                else {
+                    for (i = 0; i < count; i++) {
+                        $(".rightlistt").append('<div class="list" id="app' + app[i].appId + '"><div class="c-name">' + app[i].name + '</div><div class="c-icon"><div class="' + app[i].icon + '"></div></div></div>');
+                    }
+                    $('.rightlistt').slick({
+                        dots: false,
+                        arrows: true,
+                        asNavFor: '.sliderExample',
                     });
-                });
+                }
 
-                $('.sliderExample').on('beforeChange', function (event, slick, currentSlide, nextSlide) {
-                    $("#app" + currentSlide).find('.c-icon').removeClass('active_icon');
-                    $("#app" + nextSlide).find('.c-icon').addClass('active_icon');
+            }
+            ;
+            init();
+
+
+            $('.sliderExample').slick({
+                dots: false,
+                arrows: false,
+                autoplay: false,
+                autoplaySpeed: 2000,
+            });
+            for (i = 0; i < count; i++) {
+                $('.sliderExample').slick('slickAdd', '<div><img src="' + app[i].image + '" class="img img-responsive"></div>');
+            }
+            $('.sliderExample').slick('slickGoTo', 0, false);
+            $(".left-arrow").click(function () {
+                $('.sliderExample').slick('slickPrev');
+            });
+            $(".right-arrow").click(function () {
+                $('.sliderExample').slick('slickNext');
+            });
+            $(".list-section .list").each(function (e, q) {
+                $(q).click(function () {
+                    var l = $(this).prop("id");
+                    l = l.substr(3, l.length);
+                    $('.sliderExample').slick('slickGoTo', l, false);
                 });
-                $(".screen").hover(function () {
-                    $(".screen").addClass("animated pulse");
-                    $('.sliderExample').slick('slickPause');
-                }, function () {
-                    $(".screen").removeClass("animated pulse");
-                    $('.sliderExample').slick('slickPlay');
-                });
+            });
+
+            $('.sliderExample').on('beforeChange', function (event, slick, currentSlide, nextSlide) {
+                $("#app" + currentSlide).find('.c-icon').removeClass('active_icon');
+                $("#app" + nextSlide).find('.c-icon').addClass('active_icon');
+            });
+            $(".screen").hover(function () {
+                $(".screen").addClass("animated pulse");
+                $('.sliderExample').slick('slickPause');
+            }, function () {
+                $(".screen").removeClass("animated pulse");
+                $('.sliderExample').slick('slickPlay');
+            });
 
             /*});*/
         }
@@ -1090,4 +1090,7 @@
 
 
     });
+
+
+   
 </script>
