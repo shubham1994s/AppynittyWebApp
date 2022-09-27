@@ -2,7 +2,7 @@
 @model IEnumerable<AppynittyWebApp.Models.Career>
 
 @{
-    ViewData["Title"] = "Details";
+    ViewData["Title"] = "Careers";
     Layout = "_AdminLayout";
 }
 <style>
@@ -18,7 +18,7 @@
 
 <div style="display: inline-flex;">
     <p style="text-align: left; margin-right: 20px;">
-        <a class="btn btn-outline-danger" asp-area="Identity" asp-controller="Account" asp-action="Details">Back</a>
+        <a class="btn btn-outline-danger" asp-area="Identity" asp-controller="Careers" asp-action="Index">Back</a>
     </p>
     <p style="text-align:right;margin-right:20px;">
         <a class="btn btn-outline-primary" asp-action="AddOrEdit">Create New</a>

@@ -11,9 +11,10 @@
 </head>
 <style>
     #UserEmail {
-        margin-top: 9px;
+        margin-top: 5px;
         margin-bottom: 0px;
         margin-right: 15px;
+        font-weight: 600;
     }
    /* .navbar-right {
         padding-left: 68%;
@@ -34,13 +35,16 @@
         vertical-align: bottom;
         border-bottom: 2px solid #aaadafe0;
     }
+    .nav-item {
+        margin: 0 5px !important;
+    }
 </style>
 <body>
     <input id="Email" type="hidden" value="@TempData["Email"]" />
     <header>
         <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
-            <div class="container">
-                <a class="navbar-brand" asp-area="Identity" asp-controller="Account" asp-action="Details"><img src="/Assets/Images/appynitty-logo.png" class="img img-responsive" style="height: 70px;">&nbsp;</a>
+            @*<div class="container">*@
+                <a class="navbar-brand text-left" asp-area="Identity"asp-controller="Careers" asp-action="Index"><img src="/Assets/Images/appynitty-logo.png" class="img img-responsive" style="height: 70px;">&nbsp;</a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
                         aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -54,12 +58,27 @@
                     <div class="navbar-right">
                         <ul class="navbar-nav flex-grow-1 ml-auto">
                             <li class="nav-item">
-                                <a class="nav-link text-dark" asp-area="Identity" asp-controller="Account" asp-action="Details">Home</a>
+                                <a class="nav-link text-dark" asp-area="Identity" asp-controller="Careers" asp-action="Index">Home</a>
                             </li>
                             <li class="nav-item">
-                                <a  class="nav-link text-dark" asp-controller="News" asp-action="Index" alt="square card">
-                                  News Section
-                                   </a>
+                                <a class="nav-link text-dark" asp-controller="News" asp-action="Index" alt="square card">
+                                    News Section
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-controller="Blog" asp-action="Index" alt="square card">
+                                    Blog Section
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-controller="Careers" asp-action="Index" alt="square card">
+                                    Careers Section
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-controller="ContactUs" asp-action="Index" alt="square card">
+                                    Contact Enquiry
+                                </a>
                             </li>
                             <li class="nav-item">
                                 <p id="UserEmail"></p>
@@ -85,7 +104,7 @@
 
 
                 </div>
-            </div>
+            @*</div>*@
         </nav>
     </header>
     <div class="container">
