@@ -46,8 +46,118 @@
         .hoverable:hover .hover {
             display: inline; /* CHANGE IF FOR BLOCK ELEMENTS */
         }
+
+
+    .video {
+        margin: 30px auto;
+        position: relative;
+        display: block;
+    }
+
+    .video {
+        border-bottom: 5px solid transparent;
+        border-image: linear-gradient(to right, #D04A02 20%, #FFB600 20%, #FFB600 40%, #E0301E 40%, #E0301E 60%, #EB8C00 60%, #EB8C00 80%, #D93954 80%, #D93954 100%);
+        border-image-slice: 1;
+        display: inline-flex;
+        border-radius: 5px;
+        border-bottom-left-radius: 5px;
+        border-bottom-right-radius: 5px;
+        /* border-image-width: 3%;
+        /*  margin-left: 65px;*/
+    }
+        .video:hover {
+            box-shadow: 0px 20px 20px -10px #4e4e4e;
+           /* transition: all 1.3s;
+            transform: scale(1.1);*/
+        }
+
+    section {
+        text-align: center;
+        margin-top: 2.5%;
+    }
+
+    .scroll-arrow {
+        width: 4%;
+        display: inline-block;
+        position: relative;
+        vertical-align: middle;
+        cursor: pointer;
+        padding: 0;
+        margin: 0;
+        opacity: 0.5;
+        font-size: 34px;
+        transition: 0.2s;
+    }
+
+        .scroll-arrow:hover {
+            transition: 0.2s;
+            opacity: 1;
+        }
+
+    #imgList {
+        width: 80%;
+        scroll-behavior: smooth;
+        display: inline-block;
+        position: relative;
+        vertical-align: middle;
+        text-align: center;
+        overflow-x: scroll;
+        overflow-y: hidden;
+        white-space: nowrap;
+        -webkit-overflow-scrolling: touch;
+    }
+
+        ul::-webkit-scrollbar {
+            display: none;
+        }
+
+    .list {
+        list-style: none;
+        display: inline-block;
+        position: relative;
+        vertical-align: middle;
+        width: 20%;
+        margin-left: 1.5%;
+        margin-right: 1.5%;
+        /*   filter: grayscale(100%);*/
+        transition: 0.2s;
+    }
+
+    .list {
+        width: 320px;
+        transition: all 1.2s;
+    }
+
+    .list:hover {
+        /* transition: 0.2s;*/
+        /* filter: grayscale(0);*/
+        transition: all 1.3s;
+        transform: scale(1.1);
+    }
+
+    .prev::before {
+        content: " ";
+        border-left: 2px solid #000;
+        border-bottom: 2px solid #000;
+        width: 20px;
+        height: 20px;
+        transform: rotate(45deg);
+        cursor: pointer;
+        display: block;
+    }
+
+    .next::before {
+        content: " ";
+        border-right: 2px solid #000;
+        border-top: 2px solid #000;
+        width: 20px;
+        height: 20px;
+        transform: rotate(45deg);
+        cursor: pointer;
+        display: block;
+    }
 </style>
-<div class="home-first-section">
+<!--<div class="home-first-section">
     <div class="home-flex-section">
 
         <div class="home-flex right-white">
@@ -64,9 +174,9 @@
 
                             <div class="text ">
                                 <span class="hover">
-                                    <br><br><br> 	We are App Experts across <br>All Verticals…<br>
+                                    <br><br><br> 	We are App Experts across <br>All Verticals…<br>-->
                                     <!-- Creating Apps that Add<br> Real Value to your Business -->
-                                </span>
+                                <!--</span>
                             </div>
                         </a>
                     </div>
@@ -117,46 +227,14 @@
             </div>
         </div>
     </div>
-</div>
+</div>-->
 
 @*Second Part*@
 
-<div class="product-video-section bg-appy">
-    <div class="container">
-        <div class="content">
-            <h2 class="title">Malls Appy  Introduction Video</h2>
-        </div>
-    </div>
-    <div class="container">
-        <div class="video-section">
-            <div class="body">
-                <div class="video-cover">
-                    <a class="fancybox iframe" href="https://www.youtube.com/embed/g5eZW8RKDYA?autoplay=1" allowfullscreen="allowfullscreen">
-                        <div class="video">
-                            <div class="icon ai-play icon-video"></div>
-                        </div>
-                    </a>
-                </div>
-            </div>
-        </div>
-    </div>
+
+<div>
+    <img src="~/Assets/Images/banner1.png"  style="width:100%;"/>
 </div>
-<style type="text/css">
-    #fancybox-content {
-        width: 100% !important;
-        height: 80vh !important;
-    }
-
-    video {
-        width: 100% !important;
-    }
-
-    #fancybox-wrap {
-        width: 100% !important;
-        left: 0 !important;
-        padding-left: 0 !important;
-    }
-</style>
 
 
 <div class="container py-3 mt-3">
@@ -181,12 +259,16 @@
         <div class="p-4 ml-5">
             <div class="appy-text">
 
-                We are a leading Mobile App Development and
-                Digital Marketing Services Company. We
-                provide a wide range of cutting edge digital
-                solutions to start-ups, SMEs as well as MNC and
-                help them grow into smarter businesses of the
-                future!
+                @*We are a leading Mobile App Development and
+        Digital Marketing Services Company. We
+        provide a wide range of cutting edge digital
+        solutions to start-ups, SMEs as well as MNC and
+        help them grow into smarter businesses of the
+        future!*@
+                Appynitty was founded to transform cities into innovative and waste-free environments.
+                We have developed a comprehensive suite of products and services through ICT, IoT, GIS and AI technology that
+                helps cities manage solid waste more efficiently. Our products and services are scalable and customizable,
+                so they can be used in any city, regardless of size or resources.
 
             </div>
             <div class="know-more mt-5">
@@ -282,7 +364,53 @@
     </div>
 </div>
 
+<section>
+    <div class="separator py-4 mx-5 px-5">
+        <div class="line"></div>
+        <h2>
+            Videos
+        </h2>
+        <div class="line"></div>
+    </div>
+
+    <div class="scroll-arrow prev" id="scroll-left">
+
+    </div>
+    <ul id="imgList">
+        <li class="list"> <iframe class="video" width="320" height="235" src="https://www.youtube.com/embed/iyJTeIMttzA" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></li>
+        <li class="list"> <iframe class="video" width="320" height="235" src="https://www.youtube.com/embed/UogvASZ4VLg" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></li>
+        <li class="list"><iframe class="video" width="320" height="235" src="https://www.youtube.com/embed/Vckk-3KQGqo" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></li>
+        <li class="list"> <iframe class="video" width="320" height="235" src="https://www.youtube.com/embed/g5eZW8RKDYA" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></li>
+        <li class="list"> <iframe class="video" width="320" height="235" src="https://www.youtube.com/embed/va2qNMjXH68" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></li>
+        <li class="list"><iframe class="video" width="320" height="235" src="https://www.youtube.com/embed/QZ7xBrIshYU" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></li>
+        <li class="list"><iframe class="video" width="320" height="235" src="https://www.youtube.com/embed/_vetJnUt_7I" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></li>
+        <li class="list"><iframe class="video" width="320" height="235" src="https://www.youtube.com/embed/glDpvh4xbaM" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></li>
+        <li class="list"><iframe class="video" width="320" height="235" src="https://www.youtube.com/embed/tpbZg4d1EwA" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></li>
+
+
+    </ul>
+    <div class="scroll-arrow next" id="scroll-right" onclick="scrollRight()">
+
+    </div>
+</section>
 
 <script src="~/Assets/js/first.js"></script>
 <script src="~/js/slick.js"></script>
 <script src="~/js/jquery.min.js"></script>
+<script>
+
+
+    var imgList = document.getElementById('imgList');
+    var scrollRight = document.getElementById('scroll-right');
+    var scrollLeft = document.getElementById('scroll-left');
+
+    // When a user clicks on the right arrow, the ul will scroll 750px to the right
+    scrollRight.addEventListener('click', (event) => {
+        imgList.scrollBy(1070, 0);
+    });
+
+    // When a user clicks on the left arrow, the ul will scroll 750px to the left
+    scrollLeft.addEventListener('click', (event) => {
+        imgList.scrollBy(-1070, 0);
+    });
+</script>
