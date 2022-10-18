@@ -65,9 +65,10 @@
         /* border-image-width: 3%;
         /*  margin-left: 65px;*/
     }
+
         .video:hover {
             box-shadow: 0px 20px 20px -10px #4e4e4e;
-           /* transition: all 1.3s;
+            /* transition: all 1.3s;
             transform: scale(1.1);*/
         }
 
@@ -107,9 +108,9 @@
         -webkit-overflow-scrolling: touch;
     }
 
-        ul::-webkit-scrollbar {
-            display: none;
-        }
+    ul::-webkit-scrollbar {
+        display: none;
+    }
 
     .list {
         list-style: none;
@@ -128,12 +129,12 @@
         transition: all 1.2s;
     }
 
-    .list:hover {
-        /* transition: 0.2s;*/
-        /* filter: grayscale(0);*/
-        transition: all 1.3s;
-        transform: scale(1.1);
-    }
+        .list:hover {
+            /* transition: 0.2s;*/
+            /* filter: grayscale(0);*/
+            transition: all 1.3s;
+            transform: scale(1.1);
+        }
 
     .prev::before {
         content: " ";
@@ -156,6 +157,77 @@
         cursor: pointer;
         display: block;
     }
+
+    #slider .prev::before {
+        border-left: 2px solid #fff;
+        border-bottom: 2px solid #fff;
+    }
+
+    #slider .next::before {
+        border-right: 2px solid #fff;
+        border-top: 2px solid #fff;
+    }
+
+    #slider {
+        position: relative;
+        overflow: hidden;
+        width: 100%;
+        padding-top: 40.7%;
+        margin: 0 auto;
+        z-index: 0;
+    }
+
+        #slider ul {
+            list-style: none;
+            position: absolute;
+            top: 0;
+            left: 0;
+            margin: 0;
+            height: 100%;
+            padding: 0;
+        }
+
+            #slider ul > li {
+                position: relative;
+                float: left;
+                width: 100%;
+                max-width: 100%;
+                height: 100%;
+                max-height: 100%;
+                text-align: center;
+                text-decoration: none;
+            }
+
+    .control {
+        display: block;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        width: auto;
+        height: auto;
+        padding: 5px;
+        background: #2a2a2a00;
+        text-decoration: none;
+        color: #fff;
+        opacity: 0.8;
+        z-index: 1;
+        cursor: pointer;
+    }
+
+        .control:hover {
+            opacity: 1;
+            transition: all 0.2s ease;
+        }
+
+    .prev {
+        border-radius: 0 14px 14px 0;
+        font-size: 30px;
+    }
+
+    .next {
+        right: 0;
+        border-radius: 14px 0 0 14px;
+    }
 </style>
 <!--<div class="home-first-section">
     <div class="home-flex-section">
@@ -175,8 +247,8 @@
                             <div class="text ">
                                 <span class="hover">
                                     <br><br><br> 	We are App Experts across <br>All Verticals…<br>-->
-                                    <!-- Creating Apps that Add<br> Real Value to your Business -->
-                                <!--</span>
+<!-- Creating Apps that Add<br> Real Value to your Business -->
+<!--</span>
                             </div>
                         </a>
                     </div>
@@ -228,15 +300,50 @@
         </div>
     </div>
 </div>-->
-
 @*Second Part*@
 
 
-<div>
-    <img src="~/Assets/Images/banner1.png"  style="width:100%;"/>
+@*<div>
+        <img src="~/Assets/Images/banner1.png"  style="width:100%;"/>
+    </div>*@
+
+<div id="slider">
+    <a class="control next"></a>
+    <a class="control prev"></a>
+    <ul>
+
+        <li><img src="~/Assets/Images/banner1.png" style="width:100%;" /></li>
+
+        <li><img src="~/Assets/Images/banner2.jpg" style="width:100%;" /></li>
+
+        <li><img src="~/Assets/Images/banner3.jpg" style="width:100%;" /></li>
+    </ul>
 </div>
 
-
+<div class="container mt-4">
+    <div class="separator py-4 mt-3">
+        <div class="line"></div>
+        <h2>
+            Areas
+            Of Activity
+        </h2>
+        <div class="line"></div>
+    </div>
+    <div class="d-flex justify-content-between flex-sm-row flex-column">
+        <div class="mx-3" style="position:relative">
+            <h3 style="position: absolute; top: 17%; left: 35%;font-weight:bolder;color:#fff;">hello</h3>
+            <img src="~/Assets/Images/servicios_urbanos-1.png" />
+        </div>
+        <div class="mx-3" style="position:relative">
+            <h3 style="position: absolute; top: 17%; left: 35%;font-weight:bolder;color:#fff;">hello</h3>
+            <img src="~/Assets/Images/servicios_urbanos-1.png" />
+        </div>
+        <div class="mx-3" style="position:relative">
+            <h3 style="position: absolute; top: 17%; left: 35%;font-weight:bolder;color:#fff;">hello</h3>
+            <img src="~/Assets/Images/servicios_urbanos-1.png" />
+        </div>
+    </div>
+</div>
 <div class="container py-3 mt-3">
     <div class="separator py-4">
         <div class="line"></div>
@@ -260,11 +367,11 @@
             <div class="appy-text">
 
                 @*We are a leading Mobile App Development and
-        Digital Marketing Services Company. We
-        provide a wide range of cutting edge digital
-        solutions to start-ups, SMEs as well as MNC and
-        help them grow into smarter businesses of the
-        future!*@
+                    Digital Marketing Services Company. We
+                    provide a wide range of cutting edge digital
+                    solutions to start-ups, SMEs as well as MNC and
+                    help them grow into smarter businesses of the
+                    future!*@
                 Appynitty was founded to transform cities into innovative and waste-free environments.
                 We have developed a comprehensive suite of products and services through ICT, IoT, GIS and AI technology that
                 helps cities manage solid waste more efficiently. Our products and services are scalable and customizable,
@@ -312,7 +419,6 @@
         </div>
         <div>
             <picture>
-
                 <source media="(max-width: 480px)" srcset="~/Assets/Images/Index/Mobileapps/app_development@768.gif">
                 <source media="(max-width: 991px)" srcset="~/Assets/Images/Index/Mobileapps/app_development@991.gif">
                 <source media="(max-width: 1199px)" srcset="~/Assets/Images/Index/Mobileapps/app_development@1199.gif">
@@ -406,11 +512,78 @@
 
     // When a user clicks on the right arrow, the ul will scroll 750px to the right
     scrollRight.addEventListener('click', (event) => {
-        imgList.scrollBy(1070, 0);
+        if (window.matchMedia("(min-width: 500px)").matches) {
+            console.log("Screen width is at least 500px")
+            imgList.scrollBy(1050, 0);
+        } else {
+            console.log("Screen less than 500px")
+            imgList.scrollBy(330, 0);
+        }
+      /*  imgList.scrollBy(300, 0);*/
     });
 
     // When a user clicks on the left arrow, the ul will scroll 750px to the left
     scrollLeft.addEventListener('click', (event) => {
-        imgList.scrollBy(-1070, 0);
+        imgList.scrollBy(-300, 0);
+    });
+
+
+
+    var sTimerLength = 800;
+    var sTimer = sTimerLength;
+    var slideCount, slideWidth, sliderUlWidth;
+    jQuery(document).ready(function ($) {
+        slideCount = $('#slider ul > li').length;
+        slideWidth = $('#slider').width();
+        sliderUlWidth = slideCount * slideWidth;
+        $('#slider ul > li').css({ width: slideWidth });
+        $('#slider ul').css({ width: sliderUlWidth, marginLeft: - slideWidth });
+        $('#slider ul > li:last-child').prependTo('#slider ul');
+
+        function moveLeft() {
+            $('#slider ul').animate(
+                {
+                    left: + slideWidth
+                }, 400,
+                function () { //bring the last li to the beginning of the ul
+                    $('#slider ul > li:last-child').prependTo('#slider ul');
+                    //reset the ul's 'left' property as empty string
+                    $('#slider ul').css('left', '');
+                });
+            sTimer = sTimerLength;
+        };
+
+        function moveRight() {
+            $('#slider ul').animate(
+                {
+                    left: - slideWidth
+                }, 400,
+                function () { //bring the first li to the end of the ul
+                    $('#slider ul > li:first-child').appendTo('#slider ul');
+                    //reset the ul's 'left' property as empty string
+                    $('#slider ul').css('left', '');
+                });
+            sTimer = sTimerLength;
+        };
+
+        /*============button controls========*/
+        $('.prev').click(function () {
+            moveLeft();
+        });
+        $('.next').click(function () {
+            moveRight();
+        });
+        setInterval(function () {
+            if (--sTimer == 0) {
+                moveRight();
+            }
+        }, 1);
+    });
+    $(window).resize(function () {
+        slideCount = $('#slider ul > li').length;
+        slideWidth = $('#slider').width();
+        sliderUlWidth = slideCount * slideWidth;
+        $('#slider ul > li').css({ width: slideWidth });
+        $('#slider ul').css({ width: sliderUlWidth, marginLeft: - slideWidth });
     });
 </script>
