@@ -361,6 +361,24 @@ img.btn_close {
         opacity: 1;
     }
 
+    /*.navbar-nav > .active:after {
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 2px;*/
+        /* background: #0081ff;*/
+        /*background: #3cbaba;*/
+        /* bottom: -16px;*/
+        /*bottom: -6px;
+        transition: 400ms ease;
+        transform: scaleX(1.5);
+        opacity: 0;
+    }*/
+
+    .navbar-nav > .active:after, .nav-item .dropdown > .active {
+        transform: scaleX(1);
+        opacity: 1;
+    }
 .navbar-toggler {
     padding: 0.1rem 0.45rem;
     cursor: pointer;
@@ -551,7 +569,10 @@ img.btn_close {
         /*  color: #0081ff;*/
         color: #3cbaba;
     }
-
+    .nav-item .dropdown > .active > .nav-link {
+        /*  color: #0081ff;*/
+        color: #3cbaba;
+    }
 .nav-item:hover > .dropdown {
     opacity: 1;
     visibility: visible;
