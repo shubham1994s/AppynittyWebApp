@@ -30,6 +30,24 @@ namespace AppynittyWebApp.Controllers
             //return Redirect("Identity/Account/Login");
             return View();
         }
+        public IActionResult E_Governance()
+        {
+
+            //return Redirect("Identity/Account/Login");
+            return View();
+        }
+        public IActionResult WasteManagement()
+        {
+
+            //return Redirect("Identity/Account/Login");
+            return View();
+        }
+        public IActionResult Urban_Services()
+        {
+
+            //return Redirect("Identity/Account/Login");
+            return View();
+        }
         public IActionResult Privacy()
         {
             return View();
