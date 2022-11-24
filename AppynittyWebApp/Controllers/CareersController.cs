@@ -26,9 +26,16 @@ namespace AppynittyWebApp.Controllers
         public async Task<ActionResult> IndexAsync()
         {
             var Email = User.FindFirstValue(ClaimTypes.Email);
-            TempData["Email"] = Email;
-            var career = await _context.Careers.ToListAsync();
-            return View(career);
+            if(Email != null)
+            {
+                TempData["Email"] = Email;
+                var career = await _context.Careers.ToListAsync();
+                return View(career);
+            }
+            else
+            {
+                return Redirect("/Identity/Account/Login");
+            }
         }
 
         // GET: CareersController/Create
