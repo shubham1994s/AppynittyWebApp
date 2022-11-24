@@ -304,7 +304,8 @@ img.btn_close {
     .navbar .navbar-toggler,
     .navbar .nav-link,
     .navbar .utils-search {
-        color: #525252;
+        /*color: #525252;*/
+        color: #212529;
     }
 
     .navbar .navbar-utils > * {

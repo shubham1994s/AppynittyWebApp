@@ -196,7 +196,8 @@ namespace AppynittyWebApp.Controllers
                 {
                     throw;
                 }
-                return RedirectToAction("CVSection");
+                TempData["value"] = "Saved";
+                return RedirectToAction("OpenPosition");
             }
             return View(model);
         }

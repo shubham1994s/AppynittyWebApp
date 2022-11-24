@@ -6,12 +6,13 @@
     .separator .line {
         height: 2px;
         flex: 1;
-        background-color: #3cbaba;
+        background-color: #0fb2b1
     }
 
     .separator h2 {
         padding: 0 2rem;
-        color: #3cbaba;
+        color: #0fb2b1;
+        font-weight:600 !important;
     }
 
 

@@ -8,7 +8,8 @@
     @*<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" />*@
     <link rel="stylesheet" href="~/css/site.css" />
     <link rel="icon" type="text/css" href="/assets/Images/new_48x48.png">
-    <link href='https://fonts.googleapis.com/css?family=Rajdhani' rel='stylesheet'>
+    @*<link href='https://fonts.googleapis.com/css?family=Rajdhani' rel='stylesheet'>*@
+    <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link href="~/Assets/CSS/header.css" rel="stylesheet" />
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
@@ -27,6 +28,7 @@
             .f-menu a i :hover {
                 color: #fff !important;
             }
+
         ul li {
             list-style: none
         }
@@ -193,7 +195,7 @@
     <header class="demo demo1">
         <nav class="navbar bg-white">
             <div class="navbar-brand">
-                <a href="/Home/index" title="Appynitty Communications"><img src="/Assets/Images/appynitty-logo.png" style="height:70px" /></a>
+                <a href="/Home/Index" title="Appynitty Communications"><img src="/Assets/Images/appynitty-logo.png" style="height:70px" /></a>
             </div>
             <button class="navbar-toggler">
                 <i class="fa fa-bars" aria-hidden="true"></i>
@@ -205,23 +207,26 @@
                     </button>
                 </li>
                 <li class="nav-item">
+                    <a href="/Home/Index" class="nav-link">Home</a>
+                </li>
+                <li class="nav-item">
                     <a href="/Home/AboutUs" class="nav-link">About Us</a>
                 </li>
                 <li class="nav-item" id="a">
                     <a href="#" class="nav-link">Our Services </a>
                     <ul class="dropdown">
                         @*<li class="nav-item">
-                                <a href="#" class="nav-link">Dropdown lavel-1</a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="#" class="nav-link">Dropdown lavel-1</a>
-                            </li>*@
+                    <a href="#" class="nav-link">Dropdown lavel-1</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">Dropdown lavel-1</a>
+                </li>*@
                         <li class="nav-item">
                             <a href="/MobileApps/MobileApp" class="nav-link">Mobile Apps </a>
                             <ul class="dropdown">
                                 @*<li class="nav-item">
-                                        <a href="#" class="nav-link"></a>
-                                    </li>*@
+                            <a href="#" class="nav-link"></a>
+                        </li>*@
                                 <li class="nav-item">
                                     <a href="/MobileApps/CustomApp" class="nav-link">Customised Apps</a>
                                 </li>
@@ -275,19 +280,19 @@
                                     <a href="/DigitalSolution/SalesIntelligence" class="nav-link">Sales Intelligence PaaS</a>
                                 </li>
                                 @*<li class="nav-item">
-                                        <a href="#" class="nav-link">Dropdown lavel-2 </a>
-                                        <ul class="dropdown">
-                                            <li class="nav-item">
-                                                <a href="#" class="nav-link">Dropdown lavel-3</a>
-                                            </li>
-                                            <li class="nav-item">
-                                                <a href="#" class="nav-link">Dropdown lavel-3</a>
-                                            </li>
-                                            <li class="nav-item">
-                                                <a href="#" class="nav-link">Dropdown lavel-3</a>
-                                            </li>
-                                        </ul>
-                                    </li>*@
+                            <a href="#" class="nav-link">Dropdown lavel-2 </a>
+                            <ul class="dropdown">
+                                <li class="nav-item">
+                                    <a href="#" class="nav-link">Dropdown lavel-3</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="#" class="nav-link">Dropdown lavel-3</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="#" class="nav-link">Dropdown lavel-3</a>
+                                </li>
+                            </ul>
+                        </li>*@
                             </ul>
                         </li>
                     </ul>
@@ -305,19 +310,19 @@
                             <a href="/News/NewSection" class="nav-link">News</a>
                         </li>
                         @*<li class="nav-item">
-                                <a href="#" class="nav-link">Dropdown lavel-1 </a>
-                                <ul class="dropdown">
-                                    <li class="nav-item">
-                                        <a href="#" class="nav-link">Dropdown lavel-2</a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a href="#" class="nav-link">Dropdown lavel-2</a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a href="#" class="nav-link">Dropdown lavel-2 </a>
-                                    </li>
-                                </ul>
-                            </li>*@
+                    <a href="#" class="nav-link">Dropdown lavel-1 </a>
+                    <ul class="dropdown">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link">Dropdown lavel-2</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link">Dropdown lavel-2</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link">Dropdown lavel-2 </a>
+                        </li>
+                    </ul>
+                </li>*@
                     </ul>
                 </li>
                 <li class="nav-item">
@@ -508,7 +513,7 @@
                     <h2 class="title text-center" style="color: #3cbaba ">Join the Appyness!</h2>
                     <div class="text-white"> 2016 All rights reserved. <a href="#" class="text-white" title="Appynitty Communications">Appynitty Communications</a></div>
                     <div class="f-term text-center text-white">
-                        <a href="https://www.appynitty.com/terms-and-condition/" title="Terms & Condition" class="text-white">Terms & Condition</a>
+                        <a href="/Careers/TermsAndConditions" title="Terms & Condition" class="text-white">Terms & Condition</a>
                     </div>
                 </div>
 

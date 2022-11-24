@@ -40,6 +40,7 @@
             color: #FFFFFF;
             border: 1px solid #3CBABA;
         }
+
     #drop:hover {
         background: #3CBABA;
         color: #FFFFFF;
@@ -129,10 +130,10 @@
                             <span class="px-2">Not disclosed</span>
                         }
 
-                    <i class="fa-regular fa-location-dot" style="color: #939797;font-weight:unset"></i> <span>@item.JobLocation</span>
+                        <i class="fa-regular fa-location-dot" style="color: #939797;font-weight:unset"></i> <span>@item.JobLocation</span>
                     </div>
                     <div>
-                       @Html.Raw(@item.JobDesc)
+                        @Html.Raw(@item.JobDesc)
                     </div>
                 </div>
             }
@@ -190,8 +191,43 @@
 
 
 @*</div>*@
+<div>
+    <div id="myModal" class="modal fade" role="dialog">
+        <div class="modal-dialog" style="top:35%">
 
+            <!-- Modal content-->
+            <div class="modal-content">
+              
+                    @*<button type="button" class="close" data-dismiss="modal">&times;</button>*@
+                    <h4 class="modal-title text-center">Thank You</h4>
+              
+                    <div class="modal-body">
+                        <p class="text-center">Your Details Uploded Successfully.</p>
+                        <div class="text-center"> <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button></div>
+                    </div>
+                @*<div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>*@
+            </div>
+
+        </div>
+    </div>
+</div>
 <script>
+     $(document).ready(function ()
+{
+    if ('@TempData["value"]' != "" || '@TempData["value"]' != null)
+    {
+        if ('@TempData["value"]' == "Saved")
+        {
+            $("#myModal").modal('show');
+        }
+        else {
+            $("#myModal").modal('hide');
+        }
+    }
+});
+
     $('a').click(function () {
         $('html, body').animate({
             scrollTop: $($(this).attr('href')).offset().top
