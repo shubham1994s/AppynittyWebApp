@@ -46,6 +46,109 @@ transform: rotate(360deg);
 .jssora051.jssora051dn {opacity:.5;}
 .jssora051.jssora051ds {opacity:.3;pointer-events:none;}
 
+
+
+/* hide main hero */
+#banner-1578323856968 {
+  display: none;
+}
+
+/* section below video with the gif*/
+#shopify-section-1576601151839 {
+  position: relative;
+}
+
+/* video container styling */
+.video-container {
+  position: relative;
+  max-height: 800px;
+}
+
+    .video-container .dark-overlay {
+        height: 100%;
+        width: 100%;
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        z-index: 1;
+        /*background: linear-gradient(0deg, rgba(0, 199, 184, 0.625087535) 0%, rgba(29, 0, 186, 0.4262079832) 89%);*/
+        background: linear-gradient(0deg, rgb(0 0 0 / 75%) 0%, rgb(0 0 0 / 64%) 89%);
+        opacity: 0.8;
+    }
+
+.video-container video {
+  height: auto;
+  vertical-align: middle;
+  width: 100%;
+}
+
+.video-container .overlay-desc {
+  position: relative;
+  z-index: 999;
+  max-width: 575px;
+  /*margin: 0 auto;*/
+  background: rgba(0, 0, 0, 0);
+  position: absolute;
+  top: 30%;
+  right: 0;
+  bottom: 0;
+  left: 53%;
+  padding: 1rem;
+  display: flex;
+ /* align-items: center;*/
+  justify-content: flex-start;
+}
+
+.video-container .overlay-desc h1 {
+  color: white;
+  font-size: 3.5rem;
+}
+
+.video-container .overlay-desc p:not(.p-smaller) {
+  color: white;
+  font-size: 1.1rem;
+  line-height: 1.7rem;
+  font-weight: 600;
+}
+
+.video-container .overlay-desc p.p-smaller {
+  color: white;
+  font-size: 13px;
+  line-height: 1;
+  font-weight: 400;
+  max-width: 375px;
+}
+
+.video-container .overlay-desc .action_button {
+  color: white;
+  border-color: white;
+  margin: 10px 0;
+}
+    .word {
+       /* margin: auto;*/
+        color: white;
+        font: 700 normal 2.5em 'tahoma';
+        text-shadow: 5px 2px #222324, 2px 4px #222324, 3px 5px #222324;
+    }
+@*@media only screen and (max-width: 467px) {
+  .video-container .overlay-desc h1 {
+    font-size: 1.5rem !important;
+    line-height: 1.2;
+  }
+
+  .video-container .overlay-desc h1 br {
+    display: none;
+  }
+
+  .video-container .overlay-desc p:not(.p-smaller) {
+    font-size: 0.9rem;
+    line-height: 1;
+  }
+
+  .video-container .overlay-desc .action_button {
+    font-size: 14px;
+  }
+}*@
 </style>
 <!--<div class="home-first-section">
     <div class="home-flex-section">
@@ -139,23 +242,23 @@ transform: rotate(360deg);
 </div>-->
 
 
-<section class="wow fadeIn example no-padding no-transition slider-top">
+<!--<section class="wow fadeIn example no-padding no-transition slider-top">
     <div style="min-height: 50px;">
         <!-- Jssor Slider Begin -->
 
 
-        <div id="slider1_container" style="visibility: hidden; position: relative; margin: 0 auto;
-        top: 0px; left: 0px; width: 1300px; height: 500px; overflow: hidden;">
+        <!--<div id="slider1_container" style="visibility: hidden; position: relative; margin: 0 auto;
+        top: 0px; left: 0px; width: 1300px; height: 500px; overflow: hidden;">-->
             <!-- Loading Screen -->
-            <div data-u="loading" class="jssorl-009-spin" style="position:absolute;top:0px;left:0px;width:100%;height:100%;text-align:center;background-color:rgba(0,0,0,0.7);">
+            <!--<div data-u="loading" class="jssorl-009-spin" style="position:absolute;top:0px;left:0px;width:100%;height:100%;text-align:center;background-color:rgba(0,0,0,0.7);">
                 <img style="margin-top:-19px;position:relative;top:50%;width:38px;height:38px;" src="https://www.jssor.com/theme/svg/loading/static-svg/spin.svg" />
-            </div>
+            </div>-->
 
             <!-- Slides Container -->
-            <div data-u="slides" style="position: absolute; left: 0px; top: 0px; width: 1300px; height: 500px; overflow: hidden;">
-                <div>
+            <!--<div data-u="slides" style="position: absolute; left: 0px; top: 0px; width: 1300px; height: 500px; overflow: hidden;">
+                <div>-->
                     @*<h1>umesh</h1>*@
-                    <img data-u="image" src="~/Assets/Images/screen/Web-Site-Banner-Design1.png" class="slider" style="top:0px!important;" />
+                    <!--<img data-u="image" src="~/Assets/Images/screen/Web-Site-Banner-Design1.png" class="slider" style="top:0px!important;" />
                 </div>
                 <div>
 
@@ -163,17 +266,17 @@ transform: rotate(360deg);
                 </div>
                <div>
             <img data-u="image" src="~/Assets/Images/banner1.png" class="slider" />
-        </div>
+        </div>-->
                 
 
                 @*<div>
             <img data-u="image" src="https://images.pexels.com/photos/350749/pexels-photo-350749.jpeg" class="slider" />
         </div>*@
-            </div>
+            @*</div>-->*@
 
             <!--#region Bullet Navigator Skin Begin -->
             <!-- Help: https://www.jssor.com/development/slider-with-bullet-navigator.html -->
-            <style>
+            <!--<style>
             </style>
             <div data-u="navigator" class="jssorb031" style="position:absolute;bottom:12px;right:12px;" data-autocenter="1" data-scale="0.5" data-scale-bottom="0.75">
                 <div data-u="prototype" class="i" style="width:10px;height:10px;">
@@ -181,11 +284,11 @@ transform: rotate(360deg);
                         <circle class="b" cx="8000" cy="8000" r="5800"></circle>
                     </svg>
                 </div>
-            </div>
+            </div>-->
             <!--#endregion Bullet Navigator Skin End -->
             <!--#region Arrow Navigator Skin Begin -->
             <!-- Help: https://www.jssor.com/development/slider-with-arrow-navigator.html -->
-            <style>
+            <!--<style>
             </style>
             <div data-u="arrowleft" class="jssora051" style="width:55px;height:55px;top:0px;left:25px;" data-autocenter="2" data-scale="0.75" data-scale-left="0.75">
                 <svg viewBox="0 0 16000 16000" style="position:absolute;top:0;left:0;width:100%;height:100%;">
@@ -196,12 +299,192 @@ transform: rotate(360deg);
                 <svg viewBox="0 0 16000 16000" style="position:absolute;top:0;left:0;width:100%;height:100%;">
                     <polyline class="a" points="4960,1920 11040,8000 4960,14080 "></polyline>
                 </svg>
-            </div>
+            </div>-->
             <!--#endregion Arrow Navigator Skin End -->
-        </div>
+        <!--</div>-->
         <!-- Jssor Slider End -->
+    <!--</div>
+</section>-->
+
+<section id="hero-bg-video">
+    <div class="video-container">
+        <div class="dark-overlay"></div>
+        <video autoplay="" loop="" muted="">
+            <source src="~/Assets/VLC2.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <div class="overlay-desc">
+
+            @*<h3 style="font-size:2.75rem;color:#fff">
+           Innovating Technologies & Revolutionizing Waste Management
+        </h3>*@
+
+            <div class="word"></div>
+
+            @*<img src="~/Assets/Images/Untitled-1.png" width="100%" />*@
+            <!--<nav class="navbar bg-white">
+        <div class="navbar-brand">
+            <a href="/Home/Index" title="Appynitty Communications"><img src="/Assets/Images/appynitty-logo.png" style="height:70px" /></a>
+        </div>
+        <button class="navbar-toggler">
+            <i class="fa fa-bars" aria-hidden="true"></i>
+        </button>
+        <ul class="navbar-nav" id="navbar">
+            <li class="nav-close">
+                <button class="btn-nav-close">
+                    <span class="close-btn">+</span>
+                </button>
+            </li>
+            <li class="nav-item">
+                <a href="/Home/Index" class="nav-link">Home</a>
+            </li>
+            <li class="nav-item">
+                <a href="/Home/AboutUs" class="nav-link">About Us</a>
+            </li>
+            <li class="nav-item" id="a">
+                <a href="#" class="nav-link">Our Services </a>
+                <ul class="dropdown">-->
+            @*<li class="nav-item">
+            <a href="#" class="nav-link">Dropdown lavel-1</a>
+        </li>
+        <li class="nav-item">
+            <a href="#" class="nav-link">Dropdown lavel-1</a>
+        </li>*@
+            <!--<li class="nav-item">
+        <a href="/MobileApps/MobileApp" class="nav-link">Mobile Apps </a>
+        <ul class="dropdown">-->
+            @*<li class="nav-item">
+            <a href="#" class="nav-link"></a>
+        </li>*@
+            <!--<li class="nav-item">
+                <a href="/MobileApps/CustomApp" class="nav-link">Customised Apps</a>
+            </li>
+            <li class="nav-item">
+                <a href="#" class="nav-link">Our Apps </a>
+                <ul class="dropdown">
+                    <li class="nav-item">
+                        <a href="/MobileApps/RealEstate" class="nav-link">RealEstate Appy</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="/MobileApps/Malls" class="nav-link">Malls Appy</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="/MobileApps/Restro" class="nav-link">Restro Appy</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="/MobileApps/Stayiinn" class="nav-link">Stayiinn Appy</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="/MobileApps/Beauty" class="nav-link">Beauty Appy</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="/MobileApps/VoterFirst" class="nav-link">Voter First</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="/MobileApps/Wheels" class="nav-link">Wheels Appy</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="/MobileApps/Celeb" class="nav-link">Celeb Appy</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="/MobileApps/Boutique" class="nav-link">Boutique Appy</a>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </li>
+    <li class="nav-item">
+        <a href="#" class="nav-link">Digital Solution </a>
+        <ul class="dropdown">
+            <li class="nav-item">
+                <a href="/DigitalSolution/LeadGeneration" class="nav-link">Lead Generation Campaign</a>
+            </li>
+            <li class="nav-item">
+                <a href="/DigitalSolution/LeadManagement" class="nav-link">Lead Management Services</a>
+            </li>
+            <li class="nav-item">
+                <a href="/DigitalSolution/EmailManagement" class="nav-link">Email Campaign Management</a>
+            </li>
+            <li class="nav-item">
+                <a href="/DigitalSolution/SalesIntelligence" class="nav-link">Sales Intelligence PaaS</a>
+            </li>-->
+            @*<li class="nav-item">
+            <a href="#" class="nav-link">Dropdown lavel-2 </a>
+            <ul class="dropdown">
+                <li class="nav-item">
+                    <a href="#" class="nav-link">Dropdown lavel-3</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">Dropdown lavel-3</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">Dropdown lavel-3</a>
+                </li>
+            </ul>
+        </li>*@
+            <!--</ul>
+            </li>
+        </ul>
+    </li>
+    <li class="nav-item">
+        <a href="/GovermentProject/index" class="nav-link">Goverment Project</a>
+    </li>
+    <li class="nav-item" id="b">
+        <a href="#" class="nav-link">Resources</a>
+        <ul class="dropdown">
+            <li class="nav-item">
+                <a href="/Blog/OurBlog" class="nav-link">Blog</a>
+            </li>
+            <li class="nav-item">
+                <a href="/News/NewSection" class="nav-link">News</a>
+            </li>-->
+            @*<li class="nav-item">
+            <a href="#" class="nav-link">Dropdown lavel-1 </a>
+            <ul class="dropdown">
+                <li class="nav-item">
+                    <a href="#" class="nav-link">Dropdown lavel-2</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">Dropdown lavel-2</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">Dropdown lavel-2 </a>
+                </li>
+            </ul>
+        </li>*@
+            <!--</ul>
+            </li>
+            <li class="nav-item">
+                <a href="/Careers/OpenPosition" class="nav-link">Careers</a>
+            </li>
+        </ul>
+        <div class="navbar-utils" style="display:none">
+            <div class="utils-search">
+                <button class="btn-search"><i class="fa fa-search" aria-hidden="true"></i></button>
+            </div>
+        </div>
+    </nav>-->
+            @*<div class="overlay-desc--wrap">
+            <h1 class="headline">
+                ENJOY LIFE <br>
+                CONFIDENTLY
+            </h1>
+            <p class="subtitle">
+                THE #1 SELLING DETOX TEA IN THE WORLD
+            </p>
+            <p class="p-smaller">
+                Stay fit and energized with Fit Greens! Our latest product is a unique blend of superfoods, antioxidants and
+                probiotics. Try it now!
+            </p>
+            <a href="/products/fit-greens-free-mixer" class="action_button first_button highlight-false">
+                SHOP NOW
+            </a>
+        </div>*@
+        </div>
     </div>
 </section>
+
+
 <div class="container py-2 mt-2">
     <div class="separator py-4">
         <div class="line"></div>
@@ -431,7 +714,52 @@ transform: rotate(360deg);
 <script src="~/js/slick.js"></script>
 <script src="~/js/jquery.min.js"></script>
 <script>
+    var words = [' Innovating Technologies & Revolutionizing Waste Management'],
+        part,
+        i = 0,
+        offset = 0,
+        len = words.length,
+        forwards = true,
+        skip_count = 0,
+        skip_delay = 30,
+        speed = 70;
+    var wordflick = function () {
+        setInterval(function () {
+            if (forwards) {
+                if (offset >= words[i].length) {
+                    ++skip_count;
+                    if (skip_count == skip_delay) {
+                        forwards = false;
+                        skip_count = 0;
+                    }
+                }
+            }
+            else {
+                if (offset == 0) {
+                    forwards = true;
+                    i++;
+                    offset = 0;
+                    if (i >= len) {
+                        i = 0;
+                    }
+                }
+            }
+            part = words[i].substr(0, offset);
+            if (skip_count == 0) {
+                if (forwards) {
+                    offset++;
+                }
+                else {
+                    offset--;
+                }
+            }
+            $('.word').text(part);
+        }, speed);
+    };
 
+    $(document).ready(function () {
+        wordflick();
+    });
 
     var imgList = document.getElementById('imgList');
     var scrollRight = document.getElementById('scroll-right');
