@@ -372,6 +372,35 @@ transform: rotate(360deg);
     //});
 
    
+    var imgList = document.getElementById('imgList');
+    var scrollRight = document.getElementById('scroll-right');
+    var scrollLeft = document.getElementById('scroll-left');
+
+    // When a user clicks on the right arrow, the ul will scroll 750px to the right
+    scrollRight.addEventListener('click', (event) => {
+        if (window.matchMedia("(min-width: 780px)").matches) {
+            /*  console.log("Screen width is at least 500px")*/
+            imgList.scrollBy(1050, 0);
+        } else {
+            /*  console.log("Screen less than 500px")*/
+            imgList.scrollBy(330, 0);
+        }
+        /*  imgList.scrollBy(300, 0);*/
+    });
+
+    // When a user clicks on the left arrow, the ul will scroll 750px to the left
+    scrollLeft.addEventListener('click', (event) => {
+        /* imgList.scrollBy(-300, 0);*/
+        if (window.matchMedia("(min-width: 780px)").matches) {
+            /* console.log("Screen width is at least 500px")*/
+            imgList.scrollBy(-1050, 0);
+        } else {
+            /*  console.log("Screen less than 500px")*/
+            imgList.scrollBy(-330, 0);
+        }
+    });
+
+
 
    
 
