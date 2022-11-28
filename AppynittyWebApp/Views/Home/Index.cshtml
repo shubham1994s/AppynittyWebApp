@@ -313,16 +313,19 @@ transform: rotate(360deg);
 
     var ele = '<span>' + content.split('').join('</span><span>') + '</span>';
 
-
-    $(ele).hide().appendTo('p').each(function (i) {
-        $(this).delay(100 * i).css({
-            display: 'inline',
-            opacity: 0
-        }).animate({
-            opacity: 1
-        }, 100);
-    });
-
+    var myFunc = function () {
+        $(ele).hide().appendTo('p').each(function (i) {
+            $(this).delay(100 * i).css({
+                display: 'inline',
+                opacity: 0
+            }).animate({
+                opacity: 1
+            }, 100);
+        });
+    }
+    window.onload = function () {
+        setTimeout(myFunc, 500);
+    }
 
     //var words = [' Innovating Technologies & Revolutionizing Waste Management'],
     //    part,

@@ -25,11 +25,34 @@
     }
     .light{color:#525252}
     p{text-align:justify;}
+
+
+
 </style>
 
-<div>
+
+ 
+<section id="hero-bg-video">
+    <div class="video-container">
+        <div class="dark-overlay"></div>
+        <video autoplay="" loop="" muted="" width="100%" height="50%">
+            <source src="~/Assets/video3.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <div class="overlay-desc">
+
+            @*<h3 style="font-size:2.75rem;color:#fff">
+                   Innovating Technologies & Revolutionizing Waste Management
+                </h3>*@
+            <h6 style="text-align:unset;color:#fff;font-size:3.7rem;font-weight:600"></h6>
+            @*<div class="word"></div>*@
+
+        </div>
+    </div>
+</section>
+@*<div>
     <img src="~/Assets/Images/Government Image design.jpg" style="width:100%"/>
-</div>
+</div>*@
 <div class="text-section" id="company">
     <div class="container">
         <div class="separator py-4">
@@ -128,3 +151,24 @@
               </div>
     </div>
 </div>
+
+
+<script>
+    var content = 'Goverment Project';
+
+    var ele = '<span>' + content.split('').join('</span><span>') + '</span>';
+
+    var myFunc = function(){
+        $(ele).hide().appendTo('h6').each(function (i) {
+            $(this).delay(100 * i).css({
+                display: 'inline',
+                opacity: 0
+            }).animate({
+                opacity: 1
+            }, 100);
+        });}
+    
+    window.onload = function () {
+        setTimeout(myFunc, 2000);
+    }
+</script>

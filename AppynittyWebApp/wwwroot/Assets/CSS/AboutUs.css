@@ -401,3 +401,112 @@
         margin: 0px;
     }
 }
+
+
+
+
+
+/* video container styling */
+.video-container {
+    position: relative;
+    max-height: 800px;
+}
+
+    .video-container .dark-overlay {
+        height: 100%;
+        width: 100%;
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        z-index: 1;
+        /*background: linear-gradient(0deg, rgba(0, 199, 184, 0.625087535) 0%, rgba(29, 0, 186, 0.4262079832) 89%);*/
+        background: linear-gradient(0deg, rgb(0 0 0 / 75%) 0%, rgb(0 0 0 / 64%) 89%);
+        opacity: 0.8;
+    }
+
+    .video-container video {
+        height: auto;
+        vertical-align: middle;
+        width: 100%;
+    }
+
+    .video-container .overlay-desc {
+        position: relative;
+        z-index: 999;
+        max-width: 575px;
+        /*margin: 0 auto;*/
+        background: rgba(0, 0, 0, 0);
+        position: absolute;
+        top: 30%;
+        right: 0;
+        bottom: 0;
+        left: 58%;
+        padding: 1rem;
+        display: flex;
+        /* align-items: center;*/
+        justify-content: flex-start;
+    }
+
+        .video-container .overlay-desc h1 {
+            color: white;
+            font-size: 3.5rem;
+        }
+
+        .video-container .overlay-desc p:not(.p-smaller) {
+            color: white;
+            /* font-size: 1.1rem;*/
+            line-height: 3.7rem;
+            font-weight: 600;
+        }
+
+        .video-container .overlay-desc p.p-smaller {
+            color: white;
+            font-size: 13px;
+            line-height: 1;
+            font-weight: 400;
+            max-width: 375px;
+        }
+
+        .video-container .overlay-desc .action_button {
+            color: white;
+            border-color: white;
+            margin: 10px 0;
+        }
+
+
+@media only screen and (max-width: 467px) {
+    .video-container .overlay-desc h1 {
+        font-size: 1.5rem !important;
+        line-height: 1.2;
+    }
+
+        .video-container .overlay-desc h1 br {
+            display: none;
+        }
+
+    .video-container .overlay-desc p:not(.p-smaller) {
+        font-size: 1.4rem;
+        line-height: 1.7rem !important;
+    }
+
+    .video-container .overlay-desc .action_button {
+        font-size: 14px;
+    }
+
+    .video-container .overlay-desc {
+        left: 47% !important;
+        top: 22%;
+    }
+}
+
+@media only screen and (max-width: 768px) and (min-width: 500px) {
+    .video-container .overlay-desc p:not(.p-smaller) {
+        line-height: 2.7rem !important;
+        font-size: 32px;
+    }
+
+    .video-container .overlay-desc {
+        left: 50% !important;
+    }
+}
+  
