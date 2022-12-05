@@ -381,7 +381,16 @@
         font-size: 20px;
         text-align: left;
     }
-    
+    #careers {
+        padding-top: 0.5rem !important
+    }
+    .content-head{
+        padding-top:1rem!important;
+        margin-top:1rem!important;
+    }
+    .open-pos {
+        padding-top: 1rem !important
+    }
 }
 @media (max-width: 480px){
     .founder .top {
@@ -400,6 +409,12 @@
     .top .f-name {
         margin: 0px;
     }
+    .heading {
+        padding-top: 0px !important;
+    }
+    .para{font-size:1.3rem !important}
+    .open-pos{padding-top:5px!important}
+    #careers{padding-top:0.5rem!important}
 }
 
 
