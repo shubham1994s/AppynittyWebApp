@@ -415,12 +415,21 @@
     .para{font-size:1.3rem !important}
     .open-pos{padding-top:5px!important}
     #careers{padding-top:0.5rem!important}
+
+    .display-para {
+        
+        font-size: 2.7rem !important;
+     
+    }
 }
 
 
-
-
-
+.display-para {
+    text-align: unset;
+    color: #fff;
+    font-size: 3.7rem;
+    font-weight: 600
+}
 /* video container styling */
 .video-container {
     position: relative;
