@@ -78,7 +78,7 @@
     width: 100%;
 }
 .r-m-a-main .right .section .top-text{
-    text-align: right;    
+    text-align: right !important;    
 }
 .r-m-a-main  .top-text .title,
 .r-m-a-main  .top-text .sub-title{
