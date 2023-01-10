@@ -290,7 +290,7 @@ namespace AppynittyWebApp.Controllers
             return uniqueFileName;
         }
 
-        public async Task<IActionResult> ViewCV(int Id)
+        public IActionResult ViewCV(int Id)
         {
             var Email = User.FindFirstValue(ClaimTypes.Email);
             if (Email != null)
