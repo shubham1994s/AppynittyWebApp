@@ -8,6 +8,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Security.Claims;
 using System.Threading.Tasks;
 
 namespace AppynittyWebApp.Controllers
@@ -25,29 +26,50 @@ namespace AppynittyWebApp.Controllers
         }
         public async Task<ActionResult> Index()
         {
-            var blogs = await _context.Blogs.ToListAsync();
-            return View(blogs);
+            var Email = User.FindFirstValue(ClaimTypes.Email);
+            if (Email != null)
+            {
+                TempData["Email"] = Email;
+                var blogs = await _context.Blogs.ToListAsync();
+                return View(blogs);
+            }
+            else
+            {
+                return Redirect("/Identity/Account/Login");
+            }
+           
         }
 
         // GET: BlogController/Create
         public async Task<ActionResult> AddOrEdit(int? Id)
         {
-            ViewBag.PageName = Id == null ? "Create News" : "Edit News";
-            ViewBag.IsEdit = Id == null ? false : true;
-          
-            if (Id == null)
+            
+
+            var Email = User.FindFirstValue(ClaimTypes.Email);
+            if (Email != null)
             {
-                return View();
+                TempData["Email"] = Email;
+                ViewBag.PageName = Id == null ? "Create News" : "Edit News";
+                ViewBag.IsEdit = Id == null ? false : true;
+
+                if (Id == null)
+                {
+                    return View();
+                }
+                else
+                {
+                    var blogs = await _context.Blogs.FindAsync(Id);
+                    ViewBag.Filename = blogs.FileName;
+                    if (blogs == null)
+                    {
+                        return NotFound();
+                    }
+                    return View(blogs);
+                }
             }
             else
             {
-                var blogs = await _context.Blogs.FindAsync(Id);
-                ViewBag.Filename = blogs.FileName;
-                if (blogs == null)
-                {
-                    return NotFound();
-                }
-                return View(blogs);
+                return Redirect("/Identity/Account/Login");
             }
         }
         // POST: BlogController/Create
@@ -127,16 +149,27 @@ namespace AppynittyWebApp.Controllers
         // GET: BlogController/Details/5
         public async Task<IActionResult> Details(int? Id)
         {
-            if (Id == null)
+            
+
+            var Email = User.FindFirstValue(ClaimTypes.Email);
+            if (Email != null)
             {
-                return NotFound();
+                TempData["Email"] = Email;
+                if (Id == null)
+                {
+                    return NotFound();
+                }
+                var blogs = await _context.Blogs.FirstOrDefaultAsync(m => m.Id == Id);
+                if (blogs == null)
+                {
+                    return NotFound();
+                }
+                return View(blogs);
             }
-            var blogs = await _context.Blogs.FirstOrDefaultAsync(m => m.Id == Id);
-            if (blogs == null)
+            else
             {
-                return NotFound();
+                return Redirect("/Identity/Account/Login");
             }
-            return View(blogs);
         }
 
       
@@ -274,27 +307,37 @@ namespace AppynittyWebApp.Controllers
 
         public IActionResult BlogReply(int Id)
         {
-            BlogReplyVM NewsRplyDetail = new BlogReplyVM();
-            List<BlogRplyDetailsIteam> ListNewsRplyItems = new List<BlogRplyDetailsIteam>();
-           
-            var data = _context.BlogRplies.Where(a=>a.BlogId==Id).ToList();
 
-            if (data != null && data.Count > 0)
+            var Email = User.FindFirstValue(ClaimTypes.Email);
+            if (Email != null)
             {
-                NewsRplyDetail.ListNewsRplyDetails = data.Select(x => new BlogRplyDetailsIteam()
-                {
-                    Blog_Id = x.BlogId,
-                    Date = x.Date,
-                    Name = x.Name,
-                    Email = x.Email,
-                    Mobile_No = x.MobileNo,
-                    Comment = x.Comment,
-                    BlogTitle = _context.Blogs.Where(c=>c.Id==x.BlogId).Select(c=>c.BlogsTitle).FirstOrDefault()
-                })
-               .ToList();
-            }
+                TempData["Email"] = Email;
+                BlogReplyVM NewsRplyDetail = new BlogReplyVM();
+                List<BlogRplyDetailsIteam> ListNewsRplyItems = new List<BlogRplyDetailsIteam>();
 
-            return View(NewsRplyDetail);
+                var data = _context.BlogRplies.Where(a => a.BlogId == Id).ToList();
+
+                if (data != null && data.Count > 0)
+                {
+                    NewsRplyDetail.ListNewsRplyDetails = data.Select(x => new BlogRplyDetailsIteam()
+                    {
+                        Blog_Id = x.BlogId,
+                        Date = x.Date,
+                        Name = x.Name,
+                        Email = x.Email,
+                        Mobile_No = x.MobileNo,
+                        Comment = x.Comment,
+                        BlogTitle = _context.Blogs.Where(c => c.Id == x.BlogId).Select(c => c.BlogsTitle).FirstOrDefault()
+                    })
+                   .ToList();
+                }
+
+                return View(NewsRplyDetail);
+            }
+            else
+            {
+                return Redirect("/Identity/Account/Login");
+            }
         }
 
 

@@ -6,6 +6,7 @@ using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Claims;
 using System.Threading.Tasks;
 
 namespace AppynittyWebApp.Controllers
@@ -21,8 +22,18 @@ namespace AppynittyWebApp.Controllers
         }
         public async Task<ActionResult> IndexAsync()
         {
-            var news = await _context.News.ToListAsync();
-            return View(news);
+            var Email = User.FindFirstValue(ClaimTypes.Email);
+            if (Email != null)
+            {
+                TempData["Email"] = Email;
+                var news = await _context.News.ToListAsync();
+                return View(news);
+            }
+            else
+            {
+                return Redirect("/Identity/Account/Login");
+            }
+           
         }
 
         // GET: NewsController
@@ -35,21 +46,32 @@ namespace AppynittyWebApp.Controllers
         // GET: NewsController/Create
         public async Task<ActionResult> AddOrEdit(int? Id)
         {
-            ViewBag.PageName = Id == null ? "Create News" : "Edit News";
-            ViewBag.IsEdit = Id == null ? false : true;
-            if (Id == null)
+            
+
+            var Email = User.FindFirstValue(ClaimTypes.Email);
+            if (Email != null)
             {
-                return View();
+                TempData["Email"] = Email;
+                ViewBag.PageName = Id == null ? "Create News" : "Edit News";
+                ViewBag.IsEdit = Id == null ? false : true;
+                if (Id == null)
+                {
+                    return View();
+                }
+                else
+                {
+                    var news = await _context.News.FindAsync(Id);
+
+                    if (news == null)
+                    {
+                        return NotFound();
+                    }
+                    return View(news);
+                }
             }
             else
             {
-                var news = await _context.News.FindAsync(Id);
-
-                if (news == null)
-                {
-                    return NotFound();
-                }
-                return View(news);
+                return Redirect("/Identity/Account/Login");
             }
         }
         // POST: NewsController/Create
@@ -104,16 +126,27 @@ namespace AppynittyWebApp.Controllers
         // GET: NewsController/Details/5
         public async Task<IActionResult> Details(int? Id)
         {
-            if (Id == null)
+           
+
+            var Email = User.FindFirstValue(ClaimTypes.Email);
+            if (Email != null)
             {
-                return NotFound();
+                TempData["Email"] = Email;
+                if (Id == null)
+                {
+                    return NotFound();
+                }
+                var news = await _context.News.FirstOrDefaultAsync(m => m.Id == Id);
+                if (news == null)
+                {
+                    return NotFound();
+                }
+                return View(news);
             }
-            var news = await _context.News.FirstOrDefaultAsync(m => m.Id == Id);
-            if (news == null)
+            else
             {
-                return NotFound();
+                return Redirect("/Identity/Account/Login");
             }
-            return View(news);
         }
 
         // GET: NewsController/Create
@@ -241,26 +274,37 @@ namespace AppynittyWebApp.Controllers
 
         public IActionResult NewsReply(int Id)
         {
-            NewsRplyVM NewsRplyDetail = new NewsRplyVM();
-            List<NewsRplyDetailsIteam> ListNewsRplyItems = new List<NewsRplyDetailsIteam>();
-            string StoredProc = "exec NewsReplyDetails " + "@Id = " + Id ;
-            var data = _context.NewsReplyDetails.FromSqlRaw(StoredProc).ToList();
+           
 
-            if (data != null && data.Count > 0)
+            var Email = User.FindFirstValue(ClaimTypes.Email);
+            if (Email != null)
             {
-                NewsRplyDetail.ListNewsRplyDetails = data.Select(x => new NewsRplyDetailsIteam()
+                TempData["Email"] = Email;
+                NewsRplyVM NewsRplyDetail = new NewsRplyVM();
+                List<NewsRplyDetailsIteam> ListNewsRplyItems = new List<NewsRplyDetailsIteam>();
+                string StoredProc = "exec NewsReplyDetails " + "@Id = " + Id;
+                var data = _context.NewsReplyDetails.FromSqlRaw(StoredProc).ToList();
+
+                if (data != null && data.Count > 0)
                 {
-                    News_Id = x.News_Id,
-                    Date = x.Date,
-                    Name = x.Name,
-                    Email = x.Email,
-                    Mobile_No = x.Mobile_No,
-                    Comment = x.Comment,
-                    NewsTitle = x.NewsTitle
-                })
-               .ToList();
-            }
+                    NewsRplyDetail.ListNewsRplyDetails = data.Select(x => new NewsRplyDetailsIteam()
+                    {
+                        News_Id = x.News_Id,
+                        Date = x.Date,
+                        Name = x.Name,
+                        Email = x.Email,
+                        Mobile_No = x.Mobile_No,
+                        Comment = x.Comment,
+                        NewsTitle = x.NewsTitle
+                    })
+                   .ToList();
+                }
                 return View(NewsRplyDetail);
+            }
+            else
+            {
+                return Redirect("/Identity/Account/Login");
+            }
         }
     }
 }

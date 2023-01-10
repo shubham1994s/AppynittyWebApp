@@ -1,5 +1,5 @@
 ﻿
-@model IEnumerable<AppynittyWebApp.Models.Career>
+@model AppynittyWebApp.ViewModels.CarrersDetailsVM
 
 @{
     ViewData["Title"] = "Careers";
@@ -29,10 +29,10 @@
         <thead>
             <tr>
                 <th>
-                    @Html.DisplayNameFor(model => model.Date)
+                   Date
                 </th>
                 <th>
-                    @Html.DisplayNameFor(model => model.JobTitle)
+                    Job Title
                 </th>
                 @*<th>
                         @Html.DisplayNameFor(model => model.NewsEng)
@@ -51,41 +51,35 @@
             </tr>
         </thead>
         <tbody>
-            @foreach (var item in Model)
+            @if (@Model.ListCarrersDetails != null)
             {
-            <tr>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Date)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.JobTitle)
-                </td>
-                @*<td>
-            @Html.DisplayFor(modelItem => item.NewsEng)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.NewsMar)
-        </td>*@
-                <td>
-                    @*<input id="@item.IsActive" type="checkbox" name="Fruit" value="@item.IsActive" />*@
-
-                    @*@(item.IsActive == true ? <span class="">Active</span> : <span class="">InActive</span> )*@
-                    <span @(item.IsActive == true ? "class=success" : "class=danger" )>@(item.IsActive == true ? "Active" : "InActive")</span>
-                </td>
-                <td class="text-center">
-                    <a asp-action="AddOrEdit" class="btn btn-outline-primary" asp-route-Id="@item.Id">Edit</a>
-                </td>
-                <td class="text-center">
-                    <a asp-action="Details" class="btn btn-outline-info" asp-route-Id="@item.Id">Details</a>
-                </td>
-                <td class="text-center">
-                    <a asp-action="ViewCV" class="btn btn-outline-info" asp-route-Id="@item.Id">View</a>
-                </td>
-                @*<td class="text-center">
-                    <a asp-action="Delete" class="btn btn-outline-danger" asp-route-Id="@item.Id">Delete</a>
-                </td>*@
-            </tr>
+                @foreach (var item in @Model.ListCarrersDetails)
+                {
+                    <tr>
+                        <td>@Html.DisplayFor(modelItem => item.Date)</td>
+                        <td>@Html.DisplayFor(modelItem => item.JobTitle)</td>
+                        <td>
+                            <span @(item.IsActive == true ? "class=success" : "class=danger" )>@(item.IsActive == true ? "Active" : "InActive")</span>
+                        </td>
+                        <td class="text-center">
+                            <a asp-action="AddOrEdit" class="btn btn-outline-primary" asp-route-Id="@item.Id">Edit</a>
+                        </td>
+                        <td class="text-center">
+                            <a asp-action="Details" class="btn btn-outline-info" asp-route-Id="@item.Id">Details</a>
+                        </td>
+                        <td class="text-center">
+                            <a asp-action="ViewCV" class="btn btn-outline-info" asp-route-Id="@item.Id">View</a>
+                       
+                            @if(@item.CareersCount > 0)
+                                {
+                                    <span> <b>@item.CareersCount</b> New CV Uploded</span>
+                                }
+                           
+                        </td>
+                    </tr>
+                }
             }
+           
         </tbody>
     </table>
 </div>

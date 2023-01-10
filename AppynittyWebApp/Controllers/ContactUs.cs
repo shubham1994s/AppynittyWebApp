@@ -4,6 +4,7 @@ using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Claims;
 using System.Threading.Tasks;
 
 namespace AppynittyWebApp.Controllers
@@ -19,8 +20,18 @@ namespace AppynittyWebApp.Controllers
 
         public async Task<ActionResult> IndexAsync()
         {
-            var news = await _context.ContactUs.ToListAsync();
-            return View(news);
+            var Email = User.FindFirstValue(ClaimTypes.Email);
+            if (Email != null)
+            {
+                TempData["Email"] = Email;
+                var news = await _context.ContactUs.ToListAsync();
+                return View(news);
+            }
+            else
+            {
+                return Redirect("/Identity/Account/Login");
+            }
+            
         }
 
         public IActionResult Contact()

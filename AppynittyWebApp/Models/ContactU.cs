@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
+using Microsoft.EntityFrameworkCore;
 
 #nullable disable
 
@@ -8,20 +10,16 @@ namespace AppynittyWebApp.Models
 {
     public partial class ContactU
     {
+        [Key]
         public int Id { get; set; }
+        [Column(TypeName = "datetime")]
         public DateTime Date { get; set; }
-        [Required(ErrorMessage = "Please Enter Name")]
         public string Name { get; set; }
-        [Required(ErrorMessage = "Please Enter Email")]
         public string Email { get; set; }
-        [Required(ErrorMessage = "Please Enter Mobile Number")]
+        [Column("Mobile_No")]
         public string MobileNo { get; set; }
-        [Required(ErrorMessage = "Please Enter Country")]
         public string Country { get; set; }
-        [Required(ErrorMessage = "Please Enter City")]
         public string City { get; set; }
-        [Required(ErrorMessage = "Please Enter your Business")]
         public string Business { get; set; }
-
     }
 }
