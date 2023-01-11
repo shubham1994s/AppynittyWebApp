@@ -517,7 +517,7 @@ img.btn_close {
 
 /* Dropdown CSS */
 .nav-item .dropdown {
-    width: 175px;
+    width: 165px;
     display: block;
     position: absolute;
    /* top: 35px;*/
@@ -563,7 +563,7 @@ img.btn_close {
     }
 
     .nav-item .dropdown .nav-item:not(:last-child) {
-        margin-bottom: 5px;
+        margin-bottom: 1px;
     }
 
     .nav-item .dropdown > .nav-item:hover > .nav-link {
@@ -637,7 +637,7 @@ img.btn_close {
     }
 
     .navbar-nav {
-        flex: 2;
+        flex: 3;
         justify-content: center;
     }
 

@@ -27,22 +27,34 @@
         font-weight: 400;
     }
     .table td, .table th {
-        padding: 0.75rem;
-        vertical-align: top;
+        padding: 0.3rem;
+        vertical-align: middle;
         border-top: 1px solid #aaadafe0;
+        font-size: 14px;
+        text-align: center;
+        line-height: 20px;
     }
     .table thead th {
         vertical-align: bottom;
         border-bottom: 2px solid #aaadafe0;
     }
+    .table tr,.table tbody {
+        border: 1px solid #b4b7b8;
+    }
     .nav-item {
         margin: 0 5px !important;
+    }
+    .btn {
+        padding: 1px 0.75rem !important;
+    }
+    h1 {
+        font-size: 1.8rem !important;
     }
 </style>
 <body>
     <input id="Email" type="hidden" value="@TempData["Email"]" />
     <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light  border-bottom box-shadow mb-3" style="background-color: #c5f1f1 !important;">
             @*<div class="container">*@
                 <a class="navbar-brand text-left" asp-area="Identity"asp-controller="Careers" asp-action="Index"><img src="/Assets/Images/appynitty-logo.png" class="img img-responsive" style="height: 70px;">&nbsp;</a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"

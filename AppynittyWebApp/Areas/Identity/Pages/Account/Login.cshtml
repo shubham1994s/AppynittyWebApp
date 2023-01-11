@@ -92,16 +92,17 @@
     body {
         margin: 0;
         padding: 0;
-        background-color: #17a2b8;
+        /* background-color: #17a2b8;*/
+        background-color: #8989897a;
         height: 100vh;
     }
 
     #login .container #login-row #login-column #login-box {
-        margin-top: 120px;
+        margin-top: 40px;
         max-width: 600px;
         height: 100%;
         border: 1px solid #9C9C9C;
-        background-color: #EAEAEA;
+        background-color: #0a617485;
     }
 
         #login .container #login-row #login-column #login-box #login-form {
@@ -111,43 +112,77 @@
             #login .container #login-row #login-column #login-box #login-form #register-link {
                 margin-top: -85px;
             }
+    video {
+        width: 100% !important;
+        height: 100% !important;
+        object-fit: fill;
+    }
+    #login {
+        height: 100vh;
+        width: 100vw;
+       /* background: rgba(0, 0, 0, 0.8);*/
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 1;
+    }
+    .sub {
+        transition: all 0.3s;
+        padding: 6px 30px;
+    }
+        .sub:hover {
+            padding: 6px 60px;
+        }
+        .sub:focus {
+            outline: none;
+        }
 </style>
 <body>
+    <video autoplay loop muted>
+       
+            <source src="~/Assets/pexels-crazy.mp4" type="video/mp4" />
+      
+       
+    </video>
     <div id="login">
-        <h3 class="text-center text-white pt-5">Login form</h3>
+        @*<img src="~/Assets/Images/Appynitty_White.png" class="text-center" />*@
+        @*<div class="text-center pt-4"><img src="~/Assets/Images/appynitty-logo.png" /></div>*@
+        <div class="text-center pt-5"><img src="~/Assets/Images/Logo_Appynitty_Dropsadow.png" style="width:245px;" /></div>
+        @*<div class="text-center pt-5"><img src="~/Assets/Images/Logo_Appynitty_Back.png" style="width:245px;" /></div>*@
+    <h3 class="text-center pt-3" style="color: #1b2d39 !important">Welcome To Website CMS</h3>
         <div class="container">
             <div id="login-row" class="row justify-content-center align-items-center">
                 <div id="login-column" class="col-md-6">
-                    <div id="login-box" class="col-md-12">
+                    <div id="login-box" class="col-md-12" style="border-radius: 15px;">
                         <form id="login-form" class="form" action="" method="post">
-                            <h3 class="text-center text-info">Login</h3>
+                            <h3 class="text-center text-white">LogIn</h3>
                             <div asp-validation-summary="All" class="text-danger"></div>
                             <div class="form-group">
-                                <label for="username" class="text-info">Username:</label><br>
+                                <label for="username" class="text-white">Username:</label><br>
                                 <input type="text" asp-for="Input.Email" id="username" class="form-control">
                             </div>
                             <div class="form-group">
-                                <label for="password" class="text-info">Password:</label><br>
+                                <label for="password" class="text-white">Password:</label><br>
                                 <input type="password" asp-for="Input.Password" id="password" class="form-control">
                             </div>
                             <div class="form-group">
-                                <label for="remember-me" class="text-info">
-                                    <span>
+                                <label for="remember-me" class="text-white">
+                                    <span style="font-size:14px;">
                                         <input id="remember-me" type="checkbox" asp-for="Input.RememberMe" />
                                         @Html.DisplayNameFor(m => m.Input.RememberMe)
                                     </span>
                                 </label><br>
-                                <input type="submit" name="submit" class="btn btn-info btn-md" value="submit">
+                                <div class="text-center"> <input type="submit" name="Submit" class="btn btn-info btn-md sub" value="Submit" style="border-radius: 15px; background-color: #2dcbcb!important"></div>
                             </div>
                             <div class="form-group">
                                 <div id="register-link" class="text-right">
-                                    <a asp-page="./Register" asp-route-returnUrl="@Model.ReturnUrl" class="text-info">Register here</a>
+                                    <a asp-page="./Register" asp-route-returnUrl="@Model.ReturnUrl" class="text-white" style="font-size:14px;">Register here</a>
                                     <br />
-                                    <a class="text-info" asp-page="./ForgotPassword">Forgot your password?</a>
+                                    <a class="text-white" asp-page="./ForgotPassword" style="font-size:14px;">Forgot your password?</a>
                                 </div>
-                               
+
                             </div>
-                              
+
 
                         </form>
                     </div>

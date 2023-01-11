@@ -15,7 +15,9 @@
     }
 </style>
 <h1 style="text-align:center;">Applied Employee List</h1>
-
+<div class="form-group">
+    <a class="btn btn-danger" asp-action="Index">Back</a>
+</div>
 
 <div class="table-responsive">
     <table class="table">
@@ -53,33 +55,33 @@
             {
                 @foreach (var item in @Model.ListAppEmpCVDetails)
                 {
-            <tr>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Date)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Name)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.JobTitle)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Email)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Mobile_No)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Current_Location)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Tot_Exp)
-                </td>
-                @*<td>
-                    @Html.DisplayFor(modelItem => item.Filename)
-                </td>*@
-                <td>@Html.ActionLink("Download", "DownloadFile", new { fileName = item.Filename })</td>
-            </tr>
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Date)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Name)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.JobTitle)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Email)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Mobile_No)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Current_Location)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Tot_Exp)
+                        </td>
+                        @*<td>
+                                @Html.DisplayFor(modelItem => item.Filename)
+                            </td>*@
+                        <td>@Html.ActionLink("Download", "DownloadFile", new { fileName = item.Filename })</td>
+                    </tr>
                 }
             }
             else
@@ -95,7 +97,5 @@
 
         </tbody>
     </table>
-    <div class="form-group">
-        <a class="btn btn-danger" asp-action="Index">Back</a>
-    </div>
+
 </div>

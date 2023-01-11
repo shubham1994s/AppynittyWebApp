@@ -14,7 +14,7 @@
         color: green !important;
     }
 </style>
-<h1 style="text-align:center;">Job List</h1>
+<h1 style="text-align: center; font-size: 1.8rem;">Job List</h1>
 
 <div style="display: inline-flex;">
     <p style="text-align: left; margin-right: 20px;">
@@ -27,7 +27,7 @@
 <div class="table-responsive">
     <table class="table">
         <thead>
-            <tr>
+            <tr style="border: 1px solid #b4b7b8;">
                 <th>
                    Date
                 </th>
@@ -50,33 +50,42 @@
                 @*<th>Delete Action</th>*@
             </tr>
         </thead>
-        <tbody>
+        <tbody style="border: 1px solid #b4b7b8;">
             @if (@Model.ListCarrersDetails != null)
             {
                 @foreach (var item in @Model.ListCarrersDetails)
                 {
-                    <tr>
-                        <td>@Html.DisplayFor(modelItem => item.Date)</td>
-                        <td>@Html.DisplayFor(modelItem => item.JobTitle)</td>
-                        <td>
-                            <span @(item.IsActive == true ? "class=success" : "class=danger" )>@(item.IsActive == true ? "Active" : "InActive")</span>
-                        </td>
-                        <td class="text-center">
-                            <a asp-action="AddOrEdit" class="btn btn-outline-primary" asp-route-Id="@item.Id">Edit</a>
-                        </td>
-                        <td class="text-center">
-                            <a asp-action="Details" class="btn btn-outline-info" asp-route-Id="@item.Id">Details</a>
-                        </td>
-                        <td class="text-center">
-                            <a asp-action="ViewCV" class="btn btn-outline-info" asp-route-Id="@item.Id">View</a>
-                       
-                            @if(@item.CareersCount > 0)
-                                {
-                                    <span> <b>@item.CareersCount</b> New CV Uploded</span>
-                                }
-                           
-                        </td>
-                    </tr>
+            <tr>
+                <td>@Html.DisplayFor(modelItem => item.Date)</td>
+                <td>@Html.DisplayFor(modelItem => item.JobTitle)</td>
+                <td>
+                    <span @(item.IsActive == true ? "class=success" : "class=danger" )>@(item.IsActive == true ? "Active" : "InActive")</span>
+                </td>
+                <td class="text-center">
+                    <a asp-action="AddOrEdit" class="btn btn-outline-primary" asp-route-Id="@item.Id">Edit</a>
+                </td>
+                <td class="text-center">
+                    <a asp-action="Details" class="btn btn-outline-info" asp-route-Id="@item.Id">Details</a>
+                </td>
+                <td class="text-center">
+                    <a asp-action="ViewCV" class="btn btn-outline-info" asp-route-Id="@item.Id">View</a>
+
+                    @*@if (@item.CareersCount > 0)
+                    {
+                        <span> <b>@item.CareersCount</b> New CV Uploded</span>
+                    }*@
+
+                </td>
+                <td class="text-center">
+                   
+
+                    @if (@item.CareersCount > 0)
+                    {
+                        <span style="background: green; border-radius: 50%; padding: 4px 9px; color: #fff;"> <b>@item.CareersCount</b></span>
+                    }
+
+                </td>
+            </tr>
                 }
             }
            
