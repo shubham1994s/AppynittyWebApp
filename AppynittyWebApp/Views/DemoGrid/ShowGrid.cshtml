@@ -1,7 +1,7 @@
 ﻿@{
     Layout = "_AdminLayout";
 }
-<script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+@*<script src="https://code.jquery.com/jquery-3.5.1.js"></script>*@
 <link href="//cdn.datatables.net/1.11.5/css/jquery.dataTables.min.css" rel="stylesheet" />
 <style>
     .danger {
@@ -12,15 +12,6 @@
         color: green !important;
     }
 </style>
-<h1 style="text-align: center; font-size: 1.8rem;">Job List</h1>
-<div style="display: inline-flex;">
-    <p style="text-align: left; margin-right: 20px;">
-        <a class="btn btn-outline-danger" asp-area="Identity" asp-controller="Careers" asp-action="Index">Back</a>
-    </p>
-    <p style="text-align:right;margin-right:20px;">
-        <a class="btn btn-outline-primary" asp-action="AddOrEdit">Create New</a>
-    </p>
-</div>
 <div class="container">
     <br />
     <div style="width:90%; margin:0 auto;">
@@ -46,40 +37,25 @@
             debugger;
             $('#example').DataTable({
                 ajax: {
-                    url: "Careers/LoadCarrersData",
+                    url: "LoadData",
                     type: "POST",
                 },
                 processing: true,
                 serverSide: true,
                 filter: true,
                 columns: [
-
-                   /* { data: "date", name: "Date" },*/
-                    {
-                        "data": "date",
-                        "render": function (data) {
-                            var date = new Date(data);
-                            var month = date.getMonth() + 1;
-                            var hours = date.getHours();
-                            var minutes = date.getMinutes();
-                            var ampm = hours >= 12 ? 'pm' : 'am';
-                            hours = hours % 12;
-                            hours = hours ? hours : 12; // the hour '0' should be '12'
-                            minutes = minutes < 10 ? '0' + minutes : minutes;
-
-                            return date.getDate() + "/" + (month.toString().length > 1 ? month : "0" + month) + "/" + date.getFullYear() + "  " + hours + ':' + minutes + ' ' + ampm;
-                        }
-                    },
+                   
+                    { data: "date", name: "Date"},
                     { data: "jobTitle", name: "JobTitle"},
                    /* { data: "isActive", name: "IsActive" },*/
                     {
                         render: function (data, type, full, meta) {
                             if (full["isActive"] == true) {
-                                return '<span class="success">Active</span>';
+                                return "Active";
                             }
                             else {
 
-                                return '<span class="danger">InActive</span>';
+                                return "InActive";
                             }
                         }
                     },

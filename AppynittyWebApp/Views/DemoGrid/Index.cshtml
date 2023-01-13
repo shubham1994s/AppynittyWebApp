@@ -1,0 +1,28 @@
+﻿<link href="//cdn.datatables.net/1.11.5/css/jquery.dataTables.min.css" rel="stylesheet" />
+
+<div class="container">
+    <div class="table-responsive">
+        <table id="myTable" class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>Date</th>
+                    <th>Job Title</th>
+                    <th>Status</th>
+                    <th>Edit</th>
+                    <th>Details</th>
+                    <th>View Reply</th>
+                </tr>
+            </thead>
+        </table>
+    </div>
+</div>
+
+@section Scripts{
+    <script src="//cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('#myTable').DataTable()
+        
+            });
+    </script>
+}

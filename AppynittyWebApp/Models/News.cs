@@ -12,7 +12,7 @@ namespace AppynittyWebApp.Models
     {
         [Key]
         public int Id { get; set; }
-        [Column(TypeName = "datetime")]
+       
         public DateTime NewsDate { get; set; }
         [StringLength(500)]
         public string NewsTitle { get; set; }
