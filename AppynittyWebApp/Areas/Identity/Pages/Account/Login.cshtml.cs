@@ -89,7 +89,7 @@ namespace AppynittyWebApp.Areas.Identity.Pages.Account
                     _logger.LogInformation("User logged in.");
                   //  var _Session = HttpContext.Session.GetString(Input.Email);
                     TempData["SessionID"] = HttpContext.Session.GetString(Input.Email);
-                    return LocalRedirect("/Careers");
+                    return LocalRedirect("/Careers?area=Identity");
                 }
                 if (result.RequiresTwoFactor)
                 {
