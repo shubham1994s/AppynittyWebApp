@@ -39,31 +39,32 @@ namespace AppynittyWebApp.Controllers
             string constring = Configuration.GetConnectionString("AppynittyWebAppContextConnection").ToString();
             con = new SqlConnection(constring);
         }
-        public ActionResult Index()
+        public IActionResult Index()
         {
             var Email = User.FindFirstValue(ClaimTypes.Email);
             if(Email != null)
             {
                 TempData["Email"] = Email;
 
-                CarrersDetailsVM CVDetail = new CarrersDetailsVM();
-                List<CarrersDetailsIteam> ListAppEmpCVItems = new List<CarrersDetailsIteam>();
-                string StoredProc = "exec CarrersDetails ";
-                var data = _context.CarrersDetails.FromSqlRaw(StoredProc).ToList();
+                //CarrersDetailsVM CVDetail = new CarrersDetailsVM();
+                //List<CarrersDetailsIteam> ListAppEmpCVItems = new List<CarrersDetailsIteam>();
+                //string StoredProc = "exec CarrersDetails ";
+                //var data = _context.CarrersDetails.FromSqlRaw(StoredProc).ToList();
 
-                if (data != null && data.Count > 0)
-                {
-                    CVDetail.ListCarrersDetails = data.Select(x => new CarrersDetailsIteam()
-                    {
-                        Id = x.Id,
-                        Date = x.Date,
-                        JobTitle = x.JobTitle,
-                        IsActive = x.IsActive,
-                        CareersCount = x.CareersCount
-                    })
-                   .ToList();
-                }
-                return View(CVDetail);
+                //if (data != null && data.Count > 0)
+                //{
+                //    CVDetail.ListCarrersDetails = data.Select(x => new CarrersDetailsIteam()
+                //    {
+                //        Id = x.Id,
+                //        Date = x.Date,
+                //        JobTitle = x.JobTitle,
+                //        IsActive = x.IsActive,
+                //        CareersCount = x.CareersCount
+                //    })
+                //   .ToList();
+                //}
+
+                return View();
 
 
                 //var career = await _context.Careers.ToListAsync();
@@ -75,6 +76,66 @@ namespace AppynittyWebApp.Controllers
             }
         }
 
+
+        [HttpPost]
+        public IActionResult LoadCarrersData()
+        {
+            try
+            {
+                var draw = HttpContext.Request.Form["draw"].FirstOrDefault();
+
+                // Skip number of Rows count  
+                var start = Request.Form["start"].FirstOrDefault();
+
+                // Paging Length 10,20  
+                var length = Request.Form["length"].FirstOrDefault();
+
+                // Sort Column Name  
+                var sortColumn = Request.Form["columns[" + Request.Form["order[0][column]"].FirstOrDefault() + "][name]"].FirstOrDefault();
+
+                // Sort Column Direction (asc, desc)  
+                var sortColumnDirection = Request.Form["order[0][dir]"].FirstOrDefault();
+
+                // Search Value from (Search box)  
+                var searchValue = Request.Form["search[value]"].FirstOrDefault();
+
+                //Paging Size (10, 20, 50,100)  
+                int pageSize = length != null ? Convert.ToInt32(length) : 0;
+
+                int skip = start != null ? Convert.ToInt32(start) : 0;
+
+                int recordsTotal = 0;
+
+                string StoredProc = "exec CarrersDetails ";
+                // getting all Customer data  
+                var customerData = (from tempcustomer in _context.CarrersDetails.FromSqlRaw(StoredProc).ToList()
+                                    select tempcustomer);
+                //Sorting  
+                //if (!(string.IsNullOrEmpty(sortColumn) && string.IsNullOrEmpty(sortColumnDirection)))
+                //{
+                //    customerData = customerData.OrderBy(sortColumn + " " + sortColumnDirection);
+
+                //}
+                //Search  
+                if (!string.IsNullOrEmpty(searchValue))
+                {
+                    customerData = customerData.Where(m => m.JobTitle.ToLower().Contains(searchValue.ToLower()));
+                }
+
+                //total number of rows counts   
+                recordsTotal = customerData.Count();
+                //Paging   
+                var data = customerData.Skip(skip).Take(pageSize).ToList();
+                //Returning Json Data  
+                return Json(new { draw = draw, recordsFiltered = recordsTotal, recordsTotal = recordsTotal, data = data });
+
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+
+        }
         // GET: CareersController/Create
         public async Task<ActionResult> AddOrEdit(int? Id)
         {
@@ -296,21 +357,11 @@ namespace AppynittyWebApp.Controllers
             if (Email != null)
             {
                 TempData["Email"] = Email;
-                AppliedEmpVM AppEmpCVDetail = new AppliedEmpVM();
-                List<AppEmpCVDetailsIteam> ListAppEmpCVItems = new List<AppEmpCVDetailsIteam>();
-                string StoredProc = "exec AppEmpCVDetails " + "@Id = " + Id;
-                var data = _context.AppEmpCVDetails.FromSqlRaw(StoredProc).ToList();
-
-                //AppliedEmp career = await _context.AppliedEmps.FindAsync(Id);
-                
-
-                //if (career != null)
-                //{
-                //    career.ViewStatus = true;
-                //    _context.Update(career);
-
-                //    await _context.SaveChangesAsync();
-                //}
+                TempData["CvId"] = Id;
+                //AppliedEmpVM AppEmpCVDetail = new AppliedEmpVM();
+                //List<AppEmpCVDetailsIteam> ListAppEmpCVItems = new List<AppEmpCVDetailsIteam>();
+                //string StoredProc = "exec AppEmpCVDetails " + "@Id = " + Id;
+                //var data = _context.AppEmpCVDetails.FromSqlRaw(StoredProc).ToList();
 
                 connection();
                 string query = "UPDATE Applied_Emp SET View_Status = '" + true + "' WHERE Careers_Id = " + Id + " And View_Status = 0";
@@ -320,24 +371,24 @@ namespace AppynittyWebApp.Controllers
                 con.Close();
 
 
-                if (data != null && data.Count > 0)
-                {
-                    AppEmpCVDetail.ListAppEmpCVDetails = data.Select(x => new AppEmpCVDetailsIteam()
-                    {
-                        Careers_Id = x.Careers_Id,
-                        Date = x.Date,
-                        Name = x.Name,
-                        Email = x.Email,
-                        Mobile_No = x.Mobile_No,
-                        Current_Location = x.Current_Location,
-                        Tot_Exp = x.Tot_Exp,
-                        Filename = x.Filename,
-                        TAC = x.TAC,
-                        JobTitle = x.JobTitle
-                    })
-                   .ToList();
-                }
-                return View(AppEmpCVDetail);
+                //if (data != null && data.Count > 0)
+                //{
+                //    AppEmpCVDetail.ListAppEmpCVDetails = data.Select(x => new AppEmpCVDetailsIteam()
+                //    {
+                //        Careers_Id = x.Careers_Id,
+                //        Date = x.Date,
+                //        Name = x.Name,
+                //        Email = x.Email,
+                //        Mobile_No = x.Mobile_No,
+                //        Current_Location = x.Current_Location,
+                //        Tot_Exp = x.Tot_Exp,
+                //        Filename = x.Filename,
+                //        TAC = x.TAC,
+                //        JobTitle = x.JobTitle
+                //    })
+                //   .ToList();
+                //}
+                return View();
             }
             else
             {
@@ -345,6 +396,70 @@ namespace AppynittyWebApp.Controllers
             }
         }
 
+        [HttpPost]
+        public IActionResult LoadViewCVData(int Id)
+        {
+            try
+            {
+                var draw = HttpContext.Request.Form["draw"].FirstOrDefault();
+
+                // Skip number of Rows count  
+                var start = Request.Form["start"].FirstOrDefault();
+
+                // Paging Length 10,20  
+                var length = Request.Form["length"].FirstOrDefault();
+
+                // Sort Column Name  
+                var sortColumn = Request.Form["columns[" + Request.Form["order[0][column]"].FirstOrDefault() + "][name]"].FirstOrDefault();
+
+                // Sort Column Direction (asc, desc)  
+                var sortColumnDirection = Request.Form["order[0][dir]"].FirstOrDefault();
+
+                // Search Value from (Search box)  
+                var searchValue = Request.Form["search[value]"].FirstOrDefault();
+
+                //Paging Size (10, 20, 50,100)  
+                int pageSize = length != null ? Convert.ToInt32(length) : 0;
+
+                int skip = start != null ? Convert.ToInt32(start) : 0;
+
+                int recordsTotal = 0;
+
+                string StoredProc = "exec AppEmpCVDetails " + "@Id = " + Id;
+                // getting all Customer data  
+                var ViewCVData = (from tempviewcv in _context.AppEmpCVDetails.FromSqlRaw(StoredProc).ToList()
+                                     select tempviewcv);
+                //Sorting  
+                //if (!(string.IsNullOrEmpty(sortColumn) && string.IsNullOrEmpty(sortColumnDirection)))
+                //{
+                //    customerData = customerData.OrderBy(sortColumn + " " + sortColumnDirection);
+
+                //}
+                //Search  
+                if (!string.IsNullOrEmpty(searchValue))
+                {
+                    ViewCVData = ViewCVData.Where(m => m.Name.ToLower().Contains(searchValue.ToLower())
+                                                        || m.Email.ToLower().Contains(searchValue.ToLower())
+                                                        || m.Mobile_No.ToLower().Contains(searchValue.ToLower())
+                                                        || m.Current_Location.ToLower().Contains(searchValue.ToLower())
+                                                        || m.Tot_Exp.ToLower().Contains(searchValue.ToLower())
+                                                        || m.JobTitle.ToLower().Contains(searchValue.ToLower()));
+                }
+
+                //total number of rows counts   
+                recordsTotal = ViewCVData.Count();
+                //Paging   
+                var data = ViewCVData.Skip(skip).Take(pageSize).ToList();
+                //Returning Json Data  
+                return Json(new { draw = draw, recordsFiltered = recordsTotal, recordsTotal = recordsTotal, data = data });
+
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+
+        }
         public FileResult DownloadFile(string fileName)
         {
             //Build the File Path.

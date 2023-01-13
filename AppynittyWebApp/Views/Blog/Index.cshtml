@@ -1,10 +1,12 @@
 ﻿
-@model IEnumerable<AppynittyWebApp.Models.Blog>
+@*@model IEnumerable<AppynittyWebApp.Models.Blog>*@
 
 @{
     ViewData["Title"] = "Details";
     Layout = "_AdminLayout";
 }
+<script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+<link href="//cdn.datatables.net/1.11.5/css/jquery.dataTables.min.css" rel="stylesheet" />
 <style>
     .danger {
         color: red !important;
@@ -24,59 +26,108 @@
         <a class="btn btn-outline-primary" asp-action="AddOrEdit">Create New</a>
     </p>
 </div>
-<div class="table-responsive">
-    <table class="table">
-        <thead>
-            <tr>
-                <th>
-                    @Html.DisplayNameFor(model => model.BlogsDate)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.BlogsTitle)
-                </th>
-                <th>
-                    Status
-                </th>
-                <th>Blog Image</th>
-                <th>Edit Action</th>
-                <th>Details Action</th>
-                <th>View Reply</th>
-                @*<th>Delete Action</th>*@
-            </tr>
-        </thead>
-        <tbody>
-            @foreach (var item in Model)
-            {
-            <tr>
-                <td>
-                    @Html.DisplayFor(modelItem => item.BlogsDate)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.BlogsTitle)
-                </td>
-                <td>
-                    <span @(item.IsActive == true ? "class=success" : "class=danger" )>@(item.IsActive == true ? "Active" : "InActive")</span>
-                </td>
-                <td>
-                    <img src="~/BlogImages/@item.FileName"
-                         class="rounded-circle"
-                         height="40" width="40"
-                         asp-append-version="true" />
-                </td>
-                <td class="text-center">
-                    <a asp-action="AddOrEdit" class="btn btn-outline-primary" asp-route-Id="@item.Id">Edit</a>
-                </td>
-                <td class="text-center">
-                    <a asp-action="Details" class="btn btn-outline-info" asp-route-Id="@item.Id">Details</a>
-                </td>
-                <td class="text-center">
-                    <a asp-action="BlogReply" class="btn btn-outline-info" asp-route-Id="@item.Id">View</a>
-                </td>
-                @*<td class="text-center">
-                    <a asp-action="Delete" class="btn btn-outline-danger" asp-route-Id="@item.Id">Delete</a>
-                </td>*@
-            </tr>
-            }
-        </tbody>
-    </table>
+
+<div class="container">
+    <br />
+    <div style="width:90%; margin:0 auto;">
+        <table id="example" class="table table-striped table-bordered dt-responsive nowrap" width="100%" cellspacing="0">
+            <thead>
+                <tr>
+                    <th>Date</th>
+                    <th>Blog Title</th>
+                    <th>Status</th>
+                    <th>Blog Image</th>
+                    <th>Edit</th>
+                    <th>Details</th>
+                    <th>View Reply</th>
+                </tr>
+            </thead>
+        </table>
+    </div>
 </div>
+
+
+@section Scripts{
+    <script src="//cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            debugger;
+            $('#example').DataTable({
+                ajax: {
+                    url: "Blog/LoadBlogData",
+                    type: "POST",
+                },
+                processing: true,
+                serverSide: true,
+                filter: true,
+                columns: [
+
+                    /*{ data: "newsDate", name: "NewsDate", type:"Datetime" },*/
+                    {
+                        "data": "blogsDate",
+                        "render": function (data) {
+                            var date = new Date(data);
+                            var month = date.getMonth() + 1;
+                            var hours = date.getHours();
+                            var minutes = date.getMinutes();
+                            var ampm = hours >= 12 ? 'pm' : 'am';
+                            hours = hours % 12;
+                            hours = hours ? hours : 12; // the hour '0' should be '12'
+                            minutes = minutes < 10 ? '0' + minutes : minutes;
+
+                            return date.getDate() + "/" + (month.toString().length > 1 ? month : "0" + month) + "/" + date.getFullYear() + "  " + hours + ':' + minutes + ' ' + ampm;
+                        }
+                    },
+                    { data: "blogsTitle", name: "BlogsTitle" },
+                    /* { data: "isActive", name: "IsActive" },*/
+                    {
+                        render: function (data, type, full, meta) {
+                            if (full["isActive"] == true) {
+                                return '<span class="success">Active</span>';
+                            }
+                            else {
+
+                                return '<span class="danger">InActive</span>';
+                            }
+                        }
+                    },
+                    {
+                        "data": "fileName",
+                        "render": function (data, type, full, meta) {
+                            if (full["fileName"] != null) {
+                                return "<div style='cursor:pointer;display:inline-flex;'><img alt='Photo Not Found'  src='BlogImages/" + data +"' style='height:35px;width:35px;cursor:pointer;margin-left:0px;'></img></div>";
+                            }
+                            else {
+
+                                return "<span>Image Not Available</span>";
+                            }
+                        }
+                    },
+                 
+                    {
+                        render: function (data, type, full, meta) { return '<a class="btn btn-outline-primary" onclick="AddOrEdit(' + full["id"] + ')" >Edit</a>'; }, "width": "10%"
+                    },
+                    {
+                        render: function (data, type, full, meta) { return '<a class="btn btn-outline-primary" onclick="Details(' + full["id"] + ')" >Details</a>'; }, "width": "10%"
+                    },
+                    {
+                        render: function (data, type, full, meta) { return '<a class="btn btn-outline-primary" onclick="BlogReply(' + full["id"] + ')" >View</a>'; }, "width": "10%"
+                    },
+                ]
+            })
+
+        });
+
+
+        function AddOrEdit(id) {
+            window.location.href = "/Blog/AddOrEdit?Id=" + id;
+        };
+        function Details(id) {
+            window.location.href = "/Blog/Details?Id=" + id;
+        };
+        function BlogReply(id) {
+            window.location.href = "/Blog/BlogReply?Id=" + id;
+        };
+    </script>
+}
+

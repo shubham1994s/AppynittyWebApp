@@ -26,8 +26,8 @@ namespace AppynittyWebApp.Controllers
             if (Email != null)
             {
                 TempData["Email"] = Email;
-                var news = await _context.News.ToListAsync();
-                return View(news);
+               // var news = await _context.News.ToListAsync();
+                return View();
             }
             else
             {
@@ -36,11 +36,63 @@ namespace AppynittyWebApp.Controllers
            
         }
 
-        // GET: NewsController
-        //public ActionResult Index()
-        //{
-        //    return View();
-        //}
+        [HttpPost]
+        public IActionResult LoadNewsData()
+        {
+            try
+            {
+                var draw = HttpContext.Request.Form["draw"].FirstOrDefault();
+
+                // Skip number of Rows count  
+                var start = Request.Form["start"].FirstOrDefault();
+
+                // Paging Length 10,20  
+                var length = Request.Form["length"].FirstOrDefault();
+
+                // Sort Column Name  
+                var sortColumn = Request.Form["columns[" + Request.Form["order[0][column]"].FirstOrDefault() + "][name]"].FirstOrDefault();
+
+                // Sort Column Direction (asc, desc)  
+                var sortColumnDirection = Request.Form["order[0][dir]"].FirstOrDefault();
+
+                // Search Value from (Search box)  
+                var searchValue = Request.Form["search[value]"].FirstOrDefault();
+
+                //Paging Size (10, 20, 50,100)  
+                int pageSize = length != null ? Convert.ToInt32(length) : 0;
+
+                int skip = start != null ? Convert.ToInt32(start) : 0;
+
+                int recordsTotal = 0;
+
+               
+                // getting all Customer data  
+                var newsData = (from tempnews in _context.News.ToList() select tempnews);
+                //Sorting  
+                //if (!(string.IsNullOrEmpty(sortColumn) && string.IsNullOrEmpty(sortColumnDirection)))
+                //{
+                //    customerData = customerData.OrderBy(sortColumn + " " + sortColumnDirection);
+
+                //}
+                //Search  
+                if (!string.IsNullOrEmpty(searchValue))
+                {
+                    newsData = newsData.Where(m => m.NewsTitle.ToLower().Contains(searchValue.ToLower()));
+                }
+
+                //total number of rows counts   
+                recordsTotal = newsData.Count();
+                //Paging   
+                var data = newsData.Skip(skip).Take(pageSize).ToList();
+                //Returning Json Data  
+                return Json(new { draw = draw, recordsFiltered = recordsTotal, recordsTotal = recordsTotal, data = data });
+
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
 
 
         // GET: NewsController/Create
@@ -280,31 +332,112 @@ namespace AppynittyWebApp.Controllers
             if (Email != null)
             {
                 TempData["Email"] = Email;
-                NewsRplyVM NewsRplyDetail = new NewsRplyVM();
-                List<NewsRplyDetailsIteam> ListNewsRplyItems = new List<NewsRplyDetailsIteam>();
-                string StoredProc = "exec NewsReplyDetails " + "@Id = " + Id;
-                var data = _context.NewsReplyDetails.FromSqlRaw(StoredProc).ToList();
+                TempData["NewsId"] = Id;
+                //NewsRplyVM NewsRplyDetail = new NewsRplyVM();
+                //List<NewsRplyDetailsIteam> ListNewsRplyItems = new List<NewsRplyDetailsIteam>();
+                //string StoredProc = "exec NewsReplyDetails " + "@Id = " + Id;
+                //var data = _context.NewsReplyDetails.FromSqlRaw(StoredProc).ToList();
 
-                if (data != null && data.Count > 0)
-                {
-                    NewsRplyDetail.ListNewsRplyDetails = data.Select(x => new NewsRplyDetailsIteam()
-                    {
-                        News_Id = x.News_Id,
-                        Date = x.Date,
-                        Name = x.Name,
-                        Email = x.Email,
-                        Mobile_No = x.Mobile_No,
-                        Comment = x.Comment,
-                        NewsTitle = x.NewsTitle
-                    })
-                   .ToList();
-                }
-                return View(NewsRplyDetail);
+                //if (data != null && data.Count > 0)
+                //{
+                //    NewsRplyDetail.ListNewsRplyDetails = data.Select(x => new NewsRplyDetailsIteam()
+                //    {
+                //        News_Id = x.News_Id,
+                //        Date = x.Date,
+                //        Name = x.Name,
+                //        Email = x.Email,
+                //        Mobile_No = x.Mobile_No,
+                //        Comment = x.Comment,
+                //        NewsTitle = x.NewsTitle
+                //    })
+                //   .ToList();
+                //}
+                return View();
             }
             else
             {
                 return Redirect("/Identity/Account/Login");
             }
+        }
+
+        [HttpPost]
+        public IActionResult LoadNewsReplyData(int Id)
+        {
+            try
+            {
+                var draw = HttpContext.Request.Form["draw"].FirstOrDefault();
+
+                // Skip number of Rows count  
+                var start = Request.Form["start"].FirstOrDefault();
+
+                // Paging Length 10,20  
+                var length = Request.Form["length"].FirstOrDefault();
+
+                // Sort Column Name  
+                var sortColumn = Request.Form["columns[" + Request.Form["order[0][column]"].FirstOrDefault() + "][name]"].FirstOrDefault();
+
+                // Sort Column Direction (asc, desc)  
+                var sortColumnDirection = Request.Form["order[0][dir]"].FirstOrDefault();
+
+                // Search Value from (Search box)  
+                var searchValue = Request.Form["search[value]"].FirstOrDefault();
+
+                //Paging Size (10, 20, 50,100)  
+                int pageSize = length != null ? Convert.ToInt32(length) : 0;
+
+                int skip = start != null ? Convert.ToInt32(start) : 0;
+
+                int recordsTotal = 0;
+
+                string StoredProc = "exec NewsReplyDetails " + "@Id = " + Id;
+                // getting all Customer data  
+                var newsreplyData = (from tempnewsreply in _context.NewsReplyDetails.FromSqlRaw(StoredProc).ToList()
+                                    select tempnewsreply);
+
+                //NewsRplyVM NewsRplyDetail = new NewsRplyVM();
+
+                //if (newsreplyData != null)
+                //{
+                //    NewsRplyDetail.ListNewsRplyDetails = newsreplyData.Select(x => new NewsRplyDetailsIteam()
+                //    {
+                //        News_Id = x.News_Id,
+                //        Date = x.Date,
+                //        Name = x.Name,
+                //        Email = x.Email,
+                //        Mobile_No = x.Mobile_No,
+                //        Comment = x.Comment,
+                //        NewsTitle = x.NewsTitle
+                //    })
+                //   .ToList();
+                //}
+                //Sorting  
+                //if (!(string.IsNullOrEmpty(sortColumn) && string.IsNullOrEmpty(sortColumnDirection)))
+                //{
+                //    customerData = customerData.OrderBy(sortColumn + " " + sortColumnDirection);
+
+                //}
+                //Search  
+                if (!string.IsNullOrEmpty(searchValue))
+                {
+                    newsreplyData = newsreplyData.Where(m => m.Name.ToLower().Contains(searchValue.ToLower()) 
+                                                        || m.Email.ToLower().Contains(searchValue.ToLower())
+                                                        || m.Comment.ToLower().Contains(searchValue.ToLower())
+                                                        || m.NewsTitle.ToLower().Contains(searchValue.ToLower()));
+                }
+
+                //total number of rows counts   
+                recordsTotal = newsreplyData.Count();
+                //Paging   
+                var data = newsreplyData.Skip(skip).Take(pageSize).ToList();
+                //Returning Json Data  
+                return Json(new { draw = draw, recordsFiltered = recordsTotal, recordsTotal = recordsTotal, data = data });
+
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+
         }
     }
 }

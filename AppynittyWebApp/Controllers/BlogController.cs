@@ -24,14 +24,14 @@ namespace AppynittyWebApp.Controllers
             _context = context;
             webHostEnvironment = hostEnvironment;
         }
-        public async Task<ActionResult> Index()
+        public  IActionResult Index()
         {
             var Email = User.FindFirstValue(ClaimTypes.Email);
             if (Email != null)
             {
                 TempData["Email"] = Email;
-                var blogs = await _context.Blogs.ToListAsync();
-                return View(blogs);
+                //var blogs = await _context.Blogs.ToListAsync();
+                return View();
             }
             else
             {
@@ -40,6 +40,63 @@ namespace AppynittyWebApp.Controllers
            
         }
 
+        [HttpPost]
+        public IActionResult LoadBlogData()
+        {
+            try
+            {
+                var draw = HttpContext.Request.Form["draw"].FirstOrDefault();
+
+                // Skip number of Rows count  
+                var start = Request.Form["start"].FirstOrDefault();
+
+                // Paging Length 10,20  
+                var length = Request.Form["length"].FirstOrDefault();
+
+                // Sort Column Name  
+                var sortColumn = Request.Form["columns[" + Request.Form["order[0][column]"].FirstOrDefault() + "][name]"].FirstOrDefault();
+
+                // Sort Column Direction (asc, desc)  
+                var sortColumnDirection = Request.Form["order[0][dir]"].FirstOrDefault();
+
+                // Search Value from (Search box)  
+                var searchValue = Request.Form["search[value]"].FirstOrDefault();
+
+                //Paging Size (10, 20, 50,100)  
+                int pageSize = length != null ? Convert.ToInt32(length) : 0;
+
+                int skip = start != null ? Convert.ToInt32(start) : 0;
+
+                int recordsTotal = 0;
+
+
+                // getting all Customer data  
+                var blogsData = (from tempblogs in _context.Blogs.ToList() select tempblogs);
+                //Sorting  
+                //if (!(string.IsNullOrEmpty(sortColumn) && string.IsNullOrEmpty(sortColumnDirection)))
+                //{
+                //    customerData = customerData.OrderBy(sortColumn + " " + sortColumnDirection);
+
+                //}
+                //Search  
+                if (!string.IsNullOrEmpty(searchValue))
+                {
+                    blogsData = blogsData.Where(m => m.BlogsTitle.ToLower().Contains(searchValue.ToLower()));
+                }
+
+                //total number of rows counts   
+                recordsTotal = blogsData.Count();
+                //Paging   
+                var data = blogsData.Skip(skip).Take(pageSize).ToList();
+                //Returning Json Data  
+                return Json(new { draw = draw, recordsFiltered = recordsTotal, recordsTotal = recordsTotal, data = data });
+
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
         // GET: BlogController/Create
         public async Task<ActionResult> AddOrEdit(int? Id)
         {
@@ -312,27 +369,28 @@ namespace AppynittyWebApp.Controllers
             if (Email != null)
             {
                 TempData["Email"] = Email;
-                BlogReplyVM NewsRplyDetail = new BlogReplyVM();
-                List<BlogRplyDetailsIteam> ListNewsRplyItems = new List<BlogRplyDetailsIteam>();
+                TempData["BlogId"] = Id;
+                //BlogReplyVM NewsRplyDetail = new BlogReplyVM();
+                //List<BlogRplyDetailsIteam> ListNewsRplyItems = new List<BlogRplyDetailsIteam>();
 
-                var data = _context.BlogRplies.Where(a => a.BlogId == Id).ToList();
+                //var data = _context.BlogRplies.Where(a => a.BlogId == Id).ToList();
 
-                if (data != null && data.Count > 0)
-                {
-                    NewsRplyDetail.ListNewsRplyDetails = data.Select(x => new BlogRplyDetailsIteam()
-                    {
-                        Blog_Id = x.BlogId,
-                        Date = x.Date,
-                        Name = x.Name,
-                        Email = x.Email,
-                        Mobile_No = x.MobileNo,
-                        Comment = x.Comment,
-                        BlogTitle = _context.Blogs.Where(c => c.Id == x.BlogId).Select(c => c.BlogsTitle).FirstOrDefault()
-                    })
-                   .ToList();
-                }
+                //if (data != null && data.Count > 0)
+                //{
+                //    NewsRplyDetail.ListNewsRplyDetails = data.Select(x => new BlogRplyDetailsIteam()
+                //    {
+                //        Blog_Id = x.BlogId,
+                //        Date = x.Date,
+                //        Name = x.Name,
+                //        Email = x.Email,
+                //        Mobile_No = x.MobileNo,
+                //        Comment = x.Comment,
+                //        BlogTitle = _context.Blogs.Where(c => c.Id == x.BlogId).Select(c => c.BlogsTitle).FirstOrDefault()
+                //    })
+                //   .ToList();
+                //}
 
-                return View(NewsRplyDetail);
+                return View();
             }
             else
             {
@@ -340,6 +398,69 @@ namespace AppynittyWebApp.Controllers
             }
         }
 
+        [HttpPost]
+        public IActionResult LoadBlogReplyData(int Id)
+        {
+            try
+            {
+                var draw = HttpContext.Request.Form["draw"].FirstOrDefault();
 
+                // Skip number of Rows count  
+                var start = Request.Form["start"].FirstOrDefault();
+
+                // Paging Length 10,20  
+                var length = Request.Form["length"].FirstOrDefault();
+
+                // Sort Column Name  
+                var sortColumn = Request.Form["columns[" + Request.Form["order[0][column]"].FirstOrDefault() + "][name]"].FirstOrDefault();
+
+                // Sort Column Direction (asc, desc)  
+                var sortColumnDirection = Request.Form["order[0][dir]"].FirstOrDefault();
+
+                // Search Value from (Search box)  
+                var searchValue = Request.Form["search[value]"].FirstOrDefault();
+
+                //Paging Size (10, 20, 50,100)  
+                int pageSize = length != null ? Convert.ToInt32(length) : 0;
+
+                int skip = start != null ? Convert.ToInt32(start) : 0;
+
+                int recordsTotal = 0;
+
+                string StoredProc = "exec BlogReplyDetails " + "@Id = " + Id;
+                // getting all Customer data  
+                var blogreplyData = (from tempblogsreply in _context.BlogReplyDetails.FromSqlRaw(StoredProc).ToList()
+                                     select tempblogsreply);
+
+
+                //Sorting  
+                //if (!(string.IsNullOrEmpty(sortColumn) && string.IsNullOrEmpty(sortColumnDirection)))
+                //{
+                //    customerData = customerData.OrderBy(sortColumn + " " + sortColumnDirection);
+
+                //}
+                //Search  
+                if (!string.IsNullOrEmpty(searchValue))
+                {
+                    blogreplyData = blogreplyData.Where(m => m.Name.ToLower().Contains(searchValue.ToLower())
+                                                        || m.Email.ToLower().Contains(searchValue.ToLower())
+                                                        || m.Comment.ToLower().Contains(searchValue.ToLower())
+                                                        || m.BlogTitle.ToLower().Contains(searchValue.ToLower()));
+                }
+
+                //total number of rows counts   
+                recordsTotal = blogreplyData.Count();
+                //Paging   
+                var data = blogreplyData.Skip(skip).Take(pageSize).ToList();
+                //Returning Json Data  
+                return Json(new { draw = draw, recordsFiltered = recordsTotal, recordsTotal = recordsTotal, data = data });
+
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+
+        }
     }
 }

@@ -1,4 +1,6 @@
-﻿<!DOCTYPE html>
+﻿
+@model AppynittyWebApp.Areas.Identity.Pages.Account.LoginModel
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8" />
@@ -16,16 +18,18 @@
         margin-right: 15px;
         font-weight: 600;
     }
-   /* .navbar-right {
+    /* .navbar-right {
         padding-left: 68%;
     }*/
     a.text-dark:hover {
         color: #343a40 !important
     }
+
     ul li a {
         font-size: 16px;
         font-weight: 400;
     }
+
     .table td, .table th {
         padding: 0.3rem;
         vertical-align: middle;
@@ -34,19 +38,24 @@
         text-align: center;
         line-height: 20px;
     }
+
     .table thead th {
         vertical-align: bottom;
         border-bottom: 2px solid #aaadafe0;
     }
-    .table tr,.table tbody {
+
+    .table tr, .table tbody {
         border: 1px solid #b4b7b8;
     }
+
     .nav-item {
         margin: 0 5px !important;
     }
+
     .btn {
         padding: 1px 0.75rem !important;
     }
+
     h1 {
         font-size: 1.8rem !important;
     }
@@ -92,12 +101,12 @@
                                 Contact Enquiry
                             </a>
                         </li>
-                        <li class="nav-item">
-                            <p id="UserEmail"></p>
-                        </li>
-                        <li class="nav-item">
+                        @*<li class="nav-item">
+                                <p id="UserEmail"></p>
+                            </li>*@
+                        <!--<li class="nav-item">-->
                             @*<a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>*@
-                            @{
+                            @*@{
                                 if (User.Identity.IsAuthenticated)
                                 {
                                     <form class="form-inline" asp-area="Identity" asp-page="/Account/Logout" method="post">
@@ -108,7 +117,33 @@
                                 {
                                     <p>You have successfully logged out of the application.</p>
                                 }
-                            }
+                            }*@
+                        <!--</li>-->
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <img src="https://s3.eu-central-1.amazonaws.com/bootstrapbaymisc/blog/24_days_bootstrap/fox.jpg" width="40" height="40" class="rounded-circle">
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink" style="margin-left: -60%;">
+                                <a class="dropdown-item" href="#"><p id="UserEmail"></p></a>
+                                <a class="dropdown-item" asp-area="Identity" asp-page="/Account/Register">
+                                    Register here
+                                    @*<a asp-page="./Register" asp-route-returnUrl="@Model.ReturnUrl" class="text-white" style="font-size:14px;">Register here</a>*@
+                                </a>
+                                <a class="dropdown-item" href="#">
+                                    @{
+                                        if (User.Identity.IsAuthenticated)
+                                        {
+                                            <form class="form-inline" asp-area="Identity" asp-page="/Account/Logout" method="post">
+                                                <button type="submit" class="nav-link btn btn-link text-dark">Log out<i class="fa fa-sign-out" style="margin-left:5px;"></i></button>
+                                            </form>
+                                        }
+                                        else
+                                        {
+                                            <p>You have successfully logged out of the application.</p>
+                                        }
+                                    }
+                                </a>
+                            </div>
                         </li>
                     </ul>
 
@@ -130,7 +165,7 @@
             &copy; 2022 - AppynittyWebApp - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
         </div>
     </footer>
-    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    @*<script src="~/lib/jquery/dist/jquery.min.js"></script>*@
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
     @await RenderSectionAsync("Scripts", required: false)
@@ -150,9 +185,9 @@
                     window.location.pathname.indexOf($(this).find('a').attr('href')) > -1);
 
             });
-          
+
             if (window.location.search === '?area=Identity') {
-               // alert('true')
+                // alert('true')
                 $('#a').addClass("active");
                 $('#b').removeClass("active");
             } else { $('#a').removeClass("active"); }
