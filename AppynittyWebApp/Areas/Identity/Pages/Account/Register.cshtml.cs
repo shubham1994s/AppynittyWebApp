@@ -14,6 +14,8 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.WebUtilities;
 using Microsoft.Extensions.Logging;
+using System.Security.Claims;
+using Microsoft.AspNetCore.Http;
 
 namespace AppynittyWebApp.Areas.Identity.Pages.Account
 {
@@ -80,6 +82,12 @@ namespace AppynittyWebApp.Areas.Identity.Pages.Account
 
         public async Task OnGetAsync(string returnUrl = null)
         {
+            var Email = User.FindFirstValue(ClaimTypes.Email);
+              if (Email == null)
+            {
+                //return Redirect("/Identity/Account/Login");
+                Response.Redirect("/Identity/Account/Login");
+            }
             ReturnUrl = returnUrl;
             ExternalLogins = (await _signInManager.GetExternalAuthenticationSchemesAsync()).ToList();
         }
