@@ -123,11 +123,11 @@
                         </span>
                         @if (@item.MinSalary != null)
                         {
-                            <span class="px-2">Salary :- ₹ @item.MinSalary - @item.MaxSalary</span>
+                    <span class="px-2"><img src="~/Assets/Images/indian-rupee_lar.png" style="width:20px" /> :- ₹ @item.MinSalary Rs- ₹ @item.MaxSalary</span>
                         }
                         else
                         {
-                            <span class="px-2">Salary :- Not disclosed</span>
+                            <span class="px-2"><img src="~/Assets/Images/indian-rupee_lar.png" style="width:20px" /> :- Not disclosed</span>
                         }
 
                         <i class="fa-regular fa-location-dot" style="color: #939797;font-weight:unset"></i> <span>@item.JobLocation</span>
