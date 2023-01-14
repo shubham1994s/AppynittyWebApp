@@ -610,7 +610,7 @@ img.btn_close {
         }
 
         .nav-close .btn-nav-close:hover, .nav-close .btn-nav-close:focus {
-            background: #363636;
+            background: #ff00001c;
             color: #fff;
         }
 
