@@ -61,13 +61,20 @@ namespace AppynittyWebApp
             }
             app.UseHttpsRedirection();
 
-            StaticFileOptions staticFileOptions = new StaticFileOptions
+            //StaticFileOptions staticFileOptions = new StaticFileOptions
+            //{
+            //    FileProvider = new PhysicalFileProvider(Path.Combine(env.ContentRootPath, "UploadedFiles")),
+            //    RequestPath = "/UploadedFiles"
+            //};
+            FileServerOptions fileServerOptions = new FileServerOptions
             {
-                FileProvider = new PhysicalFileProvider(Path.Combine(env.ContentRootPath, "UploadedFiles")),
-                RequestPath = "/UploadedFiles"
+                FileProvider = new PhysicalFileProvider(
+                    Path.Combine(env.ContentRootPath, "UploadedFiles")
+                    ), RequestPath = "/UploadedFiles"
+
             };
 
-            app.UseStaticFiles(staticFileOptions);
+            app.UseFileServer(fileServerOptions);
             app.UseStaticFiles();
 
             app.UseRouting();
