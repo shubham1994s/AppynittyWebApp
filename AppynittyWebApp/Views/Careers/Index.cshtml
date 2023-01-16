@@ -113,7 +113,8 @@
                     },
                     {
                         render: function (data, type, full, meta)
-                        { return '<a class="btn btn-outline-primary" onclick="ViewCV(' + full["id"] + ')" >View</a> <span>' + full["careersCount"] +'</span>'; }, "width": "10%"
+                        {
+                            return '<a class="btn btn-outline-primary mr-4" onclick="ViewCV(' + full["id"] + ')" >View</a> <span style="padding: 3px 8px; background: green;color: white;border-radius:50%;">' + full["careersCount"] +'</span>'; }, "width": "10%"
                     },
                 ]
             })

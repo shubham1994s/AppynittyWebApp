@@ -55,12 +55,17 @@
         margin: 0 5px !important;
     }
 
+    #logout {
+        padding: 1px 0rem !important;
+    }
     .btn {
         padding: 1px 0.75rem !important;
     }
-
     h1 {
         font-size: 1.8rem !important;
+    }
+    .dropdown-item {
+        padding: 0.25rem 0rem 0rem 3rem !important;
     }
 </style>
 <body>
@@ -81,25 +86,25 @@
                 </li>
                
                                 <li class="nav-item" id="a">
-                                    <a class="nav-link text-dark" asp-area="Identity" asp-controller="Careers" asp-action="Index">Home</a>
+                                    <a class="nav-link text-dark" asp-area="Identity" asp-controller="Careers" asp-action="Index" style="margin-top: 10%;">Home</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link text-dark" asp-controller="News" asp-action="Index" alt="square card">
+                                    <a class="nav-link text-dark" asp-controller="News" asp-action="Index" alt="square card" style="margin-top: 6%;">
                                         News Section
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link text-dark" asp-controller="Blog" asp-action="Index" alt="square card">
+                                    <a class="nav-link text-dark" asp-controller="Blog" asp-action="Index" alt="square card" style="margin-top: 6%;">
                                         Blog Section
                                     </a>
                                 </li>
                                 <li class="nav-item" id="b">
-                                    <a class="nav-link text-dark" asp-controller="Careers" asp-action="Index" alt="square card">
+                                    <a class="nav-link text-dark" asp-controller="Careers" asp-action="Index" alt="square card" style="margin-top: 6%;">
                                         Careers Section
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link text-dark" asp-controller="ContactUs" asp-action="Index" alt="square card">
+                                    <a class="nav-link text-dark" asp-controller="ContactUs" asp-action="Index" alt="square card" style="margin-top: 6%;">
                                         Contact Enquiry
                                     </a>
                                 </li>
@@ -136,7 +141,7 @@
                                                 if (User.Identity.IsAuthenticated)
                                                 {
                                                     <form class="form-inline" asp-area="Identity" asp-page="/Account/Logout" method="post">
-                                                        <button type="submit" class="nav-link btn btn-link text-dark">Log out<i class="fa fa-sign-out" style="margin-left:5px;"></i></button>
+                                                        <button type="submit" class="nav-link btn btn-link text-dark" id="logout">Log out<i class="fa fa-sign-out" style="margin-left:5px;"></i></button>
                                                     </form>
                                                 }
                                                 else
