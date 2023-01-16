@@ -111,10 +111,20 @@
                     {
                         render: function (data, type, full, meta) { return '<a class="btn btn-outline-primary" onclick="Details(' + full["id"] + ')" >Details</a>'; }, "width": "10%"
                     },
+                    //{
+                    //    render: function (data, type, full, meta)
+                    //    {
+                    //        return '<a class="btn btn-outline-primary mr-4" onclick="ViewCV(' + full["id"] + ')" >View</a> <span style = "padding: 3px 8px; background: green;color: white;border-radius:50%;" > ' + full["careersCount"] + '</span > '; }, "width": "10%"
+                    //},
                     {
-                        render: function (data, type, full, meta)
-                        {
-                            return '<a class="btn btn-outline-primary mr-4" onclick="ViewCV(' + full["id"] + ')" >View</a> <span style="padding: 3px 8px; background: green;color: white;border-radius:50%;">' + full["careersCount"] +'</span>'; }, "width": "10%"
+                        render: function (data, type, full, meta) {
+                            if (full["careersCount"] > 0) {
+                                return '<a class="btn btn-outline-primary mr-4" onclick="ViewCV(' + full["id"] + ')" >View</a> <span style = "padding: 3px 8px; background: green;color: white;border-radius:50%;" > ' + full["careersCount"] + '</span > ';
+                            
+                            } else {
+                                return '<a class="btn btn-outline-primary mr-4" onclick="ViewCV(' + full["id"] + ')" >View</a>';
+                            }
+                        }, "width": "10%"
                     },
                 ]
             })
