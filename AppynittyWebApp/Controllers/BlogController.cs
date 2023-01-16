@@ -187,8 +187,8 @@ namespace AppynittyWebApp.Controllers
 
             if (model.FileName != null)
             {
-                string uploadsFolder = Path.Combine(webHostEnvironment.WebRootPath, "BlogImages");
-
+                //string uploadsFolder = Path.Combine(webHostEnvironment.WebRootPath, "BlogImages");
+                string uploadsFolder = Path.Combine("UploadedFiles", "Blogs");
                 //var guid = Guid.NewGuid().ToString().Split('-');
                 //uniqueFileName = DateTime.Now.ToString("MMddyyyymmss") + "_" + guid + ".jpg";
 

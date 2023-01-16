@@ -335,7 +335,7 @@ namespace AppynittyWebApp.Controllers
 
             if (model.FileName != null)
             {
-                string uploadsFolder = Path.Combine(webHostEnvironment.WebRootPath, "UploadedCV");
+                string uploadsFolder = Path.Combine("UploadedFiles", "CV");
 
                 //var guid = Guid.NewGuid().ToString().Split('-');
                 //uniqueFileName = DateTime.Now.ToString("MMddyyyymmss") + "_" + guid + ".jpg";
