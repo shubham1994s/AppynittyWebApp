@@ -134,13 +134,14 @@ namespace AppynittyWebApp.Controllers
                     _context.Add(Contact);
 
                     await _context.SaveChangesAsync();
-                    TempData["data"] = "Success";
+                    TempData["value"] = "Saved";
                 }
                 catch (DbUpdateConcurrencyException)
                 {
                     throw;
                 }
                 //return RedirectToAction(nameof(Contact));
+                
                 return RedirectToAction("Contact", "ContactUs", "form");
             }
             return View(model);
