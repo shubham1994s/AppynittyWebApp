@@ -100,7 +100,7 @@
                     { data: "current_Location", name: "Current_Location" },
                     { data: "tot_Exp", name: "Tot_Exp" },
                     {
-                        render: function (data, type, full, meta) { return '<a href="' + full["filename"] + '" download>Download</a>'; }
+                        render: function (data, type, full, meta) { return '<a href="/UploadedFiles/CV/' + full["filename"] + '" download>Download</a>'; }
                     },
                 ]
             })

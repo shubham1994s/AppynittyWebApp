@@ -17,6 +17,8 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Folder Include="UploadedFiles\CV\" />
+    <Folder Include="UploadedFiles\Blogs\" />
     <Folder Include="Views\AboutUs\" />
     <Folder Include="wwwroot\Assets\Images\" />
     <Folder Include="wwwroot\BlogImages\" />

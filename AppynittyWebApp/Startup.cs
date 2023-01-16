@@ -10,7 +10,8 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-
+using Microsoft.Extensions.FileProviders;
+using System.IO;
 namespace AppynittyWebApp
 {
     public class Startup
@@ -59,6 +60,14 @@ namespace AppynittyWebApp
                 app.UseHsts();
             }
             app.UseHttpsRedirection();
+
+            StaticFileOptions staticFileOptions = new StaticFileOptions
+            {
+                FileProvider = new PhysicalFileProvider(Path.Combine(env.ContentRootPath, "UploadedFiles")),
+                RequestPath = "/UploadedFiles"
+            };
+
+            app.UseStaticFiles(staticFileOptions);
             app.UseStaticFiles();
 
             app.UseRouting();
@@ -72,6 +81,9 @@ namespace AppynittyWebApp
                     pattern: "{controller=Home}/{action=Index}/{id?}");
                 endpoints.MapRazorPages();
             });
+
+        
+
         }
     }
 }
