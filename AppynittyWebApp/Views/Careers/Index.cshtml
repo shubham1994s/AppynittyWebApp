@@ -119,7 +119,7 @@
                     {
                         render: function (data, type, full, meta) {
                             if (full["careersCount"] > 0) {
-                                return '<a class="btn btn-outline-primary mr-4" onclick="ViewCV(' + full["id"] + ')" >View</a> <span style = "padding: 3px 8px; background: green;color: white;border-radius:50%;" > ' + full["careersCount"] + '</span > ';
+                                return '<a class="btn btn-outline-primary" style="margin-right:0px;" onclick="ViewCV(' + full["id"] + ')" >View</a> <span style = "padding: 3px 8px; background: green;color: white;border-radius:50%;margin-right: 0px;" > ' + full["careersCount"] + '</span > ';
                             
                             } else {
                                 return '<a class="btn btn-outline-primary mr-4" onclick="ViewCV(' + full["id"] + ')" >View</a>';
