@@ -200,17 +200,17 @@
     }
         });
 
-    $(document).ready(function () {
-        //called when key is pressed in textbox
-        $("#form_MobileNo").keypress(function (e) {
-            //if the letter is not digit then display error and don't type anything
-            if (e.which != 8 && e.which != 0 && (e.which < 48 || e.which > 57)) {
-                //display error message
-                $("#errmsg").html("Numbers Only").show().fadeOut("slow");
-                return false;
-            }
-        });
-    });
+    //$(document).ready(function () {
+    //    //called when key is pressed in textbox
+    //    $("#form_MobileNo").keypress(function (e) {
+    //        //if the letter is not digit then display error and don't type anything
+    //        if (e.which != 8 && e.which != 0 && (e.which < 48 || e.which > 57)) {
+    //            //display error message
+    //            $("#errmsg").html("Numbers Only").show().fadeOut("slow");
+    //            return false;
+    //        }
+    //    });
+    //});
 
 
 
@@ -293,14 +293,23 @@
 	for (var input in form_data){
         var element = $("#form_" + form_data[input]['name']);
         console.log(element)
+        var e = $(".rounded");
+        var b = element.hasClass("valid");
         var valid = element.hasClass("valid");
-       
-        $("#form input[name='__RequestVerificationToken']").remove();
+        if (!b) { $("#form input[name='__RequestVerificationToken']").removeClass('valid'); $("#form input[name='__RequestVerificationToken']").removeAttr('id'); }
+        else { $("#form input[name='__RequestVerificationToken']").addClass('valid'); $("#form input[name='__RequestVerificationToken']").attr('id', 'form___RequestVerificationToken'); }
+       /* $("#form input[name='__RequestVerificationToken']").remove();*/
         var error_element = $("span", element.parent());
         console.log(valid)
         if (!valid) { error_element.removeClass("error").addClass("error_show"); error_free = false; console.log('umesh') }
         else { error_element.removeClass("error_show").addClass("error");  }
-        }
+
+
+
+
+    }
+
+
         console.log(error_free)
         if (!error_free){
         event.preventDefault();
