@@ -96,7 +96,7 @@ namespace AppynittyWebApp.Controllers
                 //return RedirectToAction(nameof(Contact));
                 return RedirectToAction("CustomApp", "MobileApps");
             }
-            return View(model);
+            return RedirectToAction("CustomApp", "MobileApps", "form");
             //return RedirectToAction("Contact", "ContactUs", "form");
         }
     }

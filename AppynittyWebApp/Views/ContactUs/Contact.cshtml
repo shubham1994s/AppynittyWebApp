@@ -23,6 +23,17 @@
         position: absolute;
         display: none;
     }
+
+    .error {
+        display: none;
+        margin-left: 10px;
+    }
+
+    .error_show {
+        color: Crimson;
+        margin-left: 10px;
+        font-family: "Helvetica";
+    }
 </style>
 <section class="contact-main">
     <div class="contact-section">
@@ -76,38 +87,38 @@
                 <div class="form-section">
                     <div class="f-g-s">
                         <div class="form-group">
-                            <input class="form-control rounded" id="Name" name="Name" placeholder="Name" type="text">
-                            <span asp-validation-for="Name" class="text-danger"></span>
+                            <input  class="form-control rounded" id="form_name" name="name" placeholder="Name" type="text">
+                            <span class="text-danger error"> This field is required</span>
                         </div>
                     </div>
                     <div class="f-g-s">
                         <div class="form-group">
-                            <input class="form-control rounded" id="Email" name="Email" placeholder="Email Id" type="email">
-                            <span asp-validation-for="Email" class="text-danger"></span>
+                            <input  class="form-control rounded" id="form_Email" name="Email" placeholder="Email Id" type="email">
+                            <span class="text-danger error">A valid email address is required</span>
                         </div>
                     </div>
                     <div class="f-g-s">
                         <div class="form-group">
-                            <input class="form-control rounded" id="MobileNo" name="MobileNo" placeholder="Phone" type="tel">
-                            <span asp-validation-for="MobileNo" class="text-danger"></span>
+                            <input class="form-control rounded" id="form_MobileNo" name="MobileNo" placeholder="Phone" type="tel" maxlength="10">
+                            <span class="text-danger error" id="errmsg">Phone Number is required</span>
                         </div>
                     </div>
                     <div class="f-g-s">
                         <div class="form-group">
-                            <input class="form-control rounded" name="Country" placeholder="Country" type="text">
-                            <span asp-validation-for="Country" class="text-danger"></span>
+                            <input class="form-control rounded"  id="form_Country" name="Country" placeholder="Country" type="text">
+                            <span  class="text-danger error">This field is required</span>
                         </div>
                     </div>
                     <div class="f-g-s">
                         <div class="form-group">
-                            <input class="form-control rounded" name="City" placeholder="City" type="text">
-                            <span asp-validation-for="City" class="text-danger"></span>
+                            <input class="form-control rounded" id="form_City" name="City" placeholder="City" type="text">
+                            <span class="text-danger error">This field is required</span>
                         </div>
                     </div>
                     <div class="f-g-s">
                         <div class="form-group">
-                            <input class="form-control rounded" name="Business" placeholder="Business" type="text">
-                            <span asp-validation-for="Business" class="text-danger"></span>
+                            <input class="form-control rounded" id="form_Business" name="Business" placeholder="Business" type="text">
+                            <span class="text-danger error">This field is required</span>
                         </div>
                     </div>
                 </div>
@@ -115,7 +126,7 @@
             <div class="container">
                 <div class="c-f-b">
                     @*<button class="appy-btn">Let's Get in Touch</button>*@
-                    <input class="appy-btn" type="submit" value="Let's Get in Touch" />
+                    <input class="appy-btn sub-b" type="submit" value="Let's Get in Touch" />
                 </div>
             </div>
         </form>
@@ -187,6 +198,117 @@
             $("#myModal").modal('hide');
         }
     }
+        });
+
+    $(document).ready(function () {
+        //called when key is pressed in textbox
+        $("#form_MobileNo").keypress(function (e) {
+            //if the letter is not digit then display error and don't type anything
+            if (e.which != 8 && e.which != 0 && (e.which < 48 || e.which > 57)) {
+                //display error message
+                $("#errmsg").html("Numbers Only").show().fadeOut("slow");
+                return false;
+            }
+        });
+    });
+
+
+
+//    $(document).ready(function() {
+//	//jQuery code goes here
+//});
+
+//$('#contact_name').on('input', function() {
+//});
+
+// Name can't be blank
+    $('#form_name').on('input', function() {
+	var input=$(this);
+	var is_name=input.val();
+        if (is_name) {
+            input.removeClass("invalid").addClass("valid");
+            //$("#form input[name='__RequestVerificationToken']").addClass('valid');
+            //$("#form input[name='__RequestVerificationToken']").attr('id','form___RequestVerificationToken');
+        }
+	else{input.removeClass("valid").addClass("invalid");}
+});
+
+// Email must be an email
+    $('#form_Email').on('input', function() {
+	var input=$(this);
+    var re = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+	var is_email=re.test(input.val());
+	if(is_email){input.removeClass("invalid").addClass("valid");}
+	else{input.removeClass("valid").addClass("invalid");}
+});
+
+
+    //mobile
+    $('#form_MobileNo').keyup(function (event) {
+        var input = $(this);
+        var message = $(this).val();
+        console.log(message);
+        if (message) { input.removeClass("invalid").addClass("valid"); }
+        else { input.removeClass("valid").addClass("invalid"); }
+    });
+
+
+//Country
+    $('#form_Country').keyup(function(event) {
+	var input=$(this);
+	var message=$(this).val();
+	console.log(message);
+	if(message){input.removeClass("invalid").addClass("valid");}
+	else{input.removeClass("valid").addClass("invalid");}
+});
+    //city
+    $('#form_City').keyup(function (event) {
+        var input = $(this);
+        var message = $(this).val();
+        console.log(message);
+        if (message) { input.removeClass("invalid").addClass("valid"); }
+        else { input.removeClass("valid").addClass("invalid"); }
+    });
+    //Bussness
+    $('#form_Business').keyup(function (event) {
+        var input = $(this);
+        var message = $(this).val();
+        console.log(message);
+        if (message) { input.removeClass("invalid").addClass("valid"); }
+        else { input.removeClass("valid").addClass("invalid"); }
+    });
+   
+//$("#contact_submit button").click(function(event){
+//});
+
+// After Form Submitted Validation
+    $(".sub-b").click(function (event) {
+       // console.log('clicl')
+        //$("#form input[name='__RequestVerificationToken']").addClass('valid');
+        //$("#form input[name='__RequestVerificationToken']").attr('id','form___RequestVerificationToken');
+       // debugger
+        
+        var form_data = $("#form").serializeArray();
+	var error_free=true;
+	for (var input in form_data){
+        var element = $("#form_" + form_data[input]['name']);
+        console.log(element)
+        var valid = element.hasClass("valid");
+       
+        $("#form input[name='__RequestVerificationToken']").remove();
+        var error_element = $("span", element.parent());
+        console.log(valid)
+        if (!valid) { error_element.removeClass("error").addClass("error_show"); error_free = false; console.log('umesh') }
+        else { error_element.removeClass("error_show").addClass("error");  }
+        }
+        console.log(error_free)
+        if (!error_free){
+        event.preventDefault();
+        //alert('not submit')
+	}
+	else{
+		//alert('No errors: Form will be submitted');
+	}
 });
 </script>
 }

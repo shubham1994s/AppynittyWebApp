@@ -31,6 +31,16 @@
     .fade:not(.show) {
         opacity: 1;
     }
+    .error {
+        display: none;
+        margin-left: 10px;
+    }
+
+    .error_show {
+        color: Crimson;
+        margin-left: 10px;
+        font-family: "Helvetica";
+    }
 </style>
 <section class="c-m-a-main">
 
@@ -384,17 +394,17 @@
                                 <div class="form-group">
                                     <label for="dummyText" class="control-label col-xs-4">*Name</label>
                                     <div class="input-group col-xs-7">
-                                        <input type="hidden" name="appname" value="customized-mobile-app" id="appname" class="form-control" />
+                                        @*<input type="hidden" name="appname" value="customized-mobile-app" id="appname" class="form-control" />*@
                                         @*<input type="text" name="name" id="name" class="form-control" />*@
-                                        <input class="form-control" id="Name" name="Name" placeholder="Name" type="text">
-                                        <span asp-validation-for="Name" class="text-danger"></span>
+                                        <input class="form-control" id="form_Name" name="Name" placeholder="Name" type="text">
+                                        <span class="text-danger">UMESH</span>
                                     </div>
                                 </div>
                                 <div class="form-group">
                                     <label for="dummyText" class="control-label col-xs-4">*Email</label>
                                     <div class="input-group col-xs-7">
                                         @*<input type="email" name="email" id="email" class="form-control" />*@
-                                        <input class="form-control" id="Email" name="Email" placeholder="Email Id" type="email">
+                                        <input class="form-control" id="form_Email" name="Email" placeholder="Email Id" type="email">
                                         <span asp-validation-for="Email" class="text-danger"></span>
                                     </div>
                                 </div>
@@ -402,7 +412,7 @@
                                     <label for="dummyText" class="control-label col-xs-4">*Mobile No</label>
                                     <div class="input-group col-xs-7">
                                         @*<input type="text" name="mob" id="mob" class="form-control" />*@
-                                        <input class="form-control rounded" id="MobileNo" name="MobileNo" placeholder="Phone" type="tel">
+                                        <input class="form-control rounded" id="form_MobileNo" name="MobileNo" placeholder="Phone" type="tel">
                                         <span asp-validation-for="MobileNo" class="text-danger"></span>
                                     </div>
                                 </div>
@@ -410,7 +420,7 @@
                                     <label for="dummyText" class="control-label col-xs-4">Country Name</label>
                                     <div class="input-group col-xs-7">
                                         @*<input type="text" name="location" id="location" class="form-control" />*@
-                                        <input class="form-control" name="Country" placeholder="Country" type="text">
+                                        <input class="form-control" name="form_Country" placeholder="Country" type="text">
                                         <span asp-validation-for="Country" class="text-danger"></span>
                                     </div>
                                 </div>
@@ -418,7 +428,7 @@
                                     <label for="dummyText" class="control-label col-xs-4">City Name</label>
                                     <div class="input-group col-xs-7">
                                         @*<input type="text" name="company" id="company" class="form-control" />*@
-                                        <input class="form-control" name="City" placeholder="City" type="text">
+                                        <input class="form-control" name="form_City" placeholder="City" type="text">
                                         <span asp-validation-for="City" class="text-danger"></span>
                                     </div>
                                 </div>
@@ -426,7 +436,7 @@
                                     <label for="dummyText" class="control-label col-xs-4">Business Name</label>
                                     <div class="input-group col-xs-7">
                                         @*<input type="text" name="company" id="company" class="form-control" />*@
-                                        <input class="form-control" name="Business" placeholder="Business" type="text">
+                                        <input class="form-control" name="form_Business" placeholder="Business" type="text">
                                         <span asp-validation-for="Business" class="text-danger"></span>
                                     </div>
                                 </div>
@@ -435,7 +445,7 @@
 
                             <div class="modal-footer">
                                 <!--<button class="button btn btn-default" type="button" id="close">Cancel</button>-->
-                                <button class="button btn btn-primary" id="btnSave" type="submit">Submit</button>
+                                <button class="button btn btn-primary sub-b" id="btnSave" type="submit">Submit</button>
                             </div>
 
                         </fieldset>
@@ -539,4 +549,121 @@
         return false;
         });*/
     });
+
+
+
+    /*VALIDATION FORM*/
+
+
+    $(document).ready(function () {
+        //called when key is pressed in textbox
+        $("#form_MobileNo").keypress(function (e) {
+            //if the letter is not digit then display error and don't type anything
+            if (e.which != 8 && e.which != 0 && (e.which < 48 || e.which > 57)) {
+                //display error message
+                $("#errmsg").html("Numbers Only").show().fadeOut("slow");
+                return false;
+            }
+        });
+    });
+
+
+
+    //    $(document).ready(function() {
+    //	//jQuery code goes here
+    //});
+
+    //$('#contact_name').on('input', function() {
+    //});
+
+    // Name can't be blank
+    $('#form_name').on('input', function () {
+        var input = $(this);
+        var is_name = input.val();
+        if (is_name) {
+            input.removeClass("invalid").addClass("valid");
+            //$("#form input[name='__RequestVerificationToken']").addClass('valid');
+            //$("#form input[name='__RequestVerificationToken']").attr('id','form___RequestVerificationToken');
+        }
+        else { input.removeClass("valid").addClass("invalid"); }
+    });
+
+    // Email must be an email
+    $('#form_Email').on('input', function () {
+        var input = $(this);
+        var re = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+        var is_email = re.test(input.val());
+        if (is_email) { input.removeClass("invalid").addClass("valid"); }
+        else { input.removeClass("valid").addClass("invalid"); }
+    });
+
+
+    //mobile
+    $('#form_MobileNo').keyup(function (event) {
+        var input = $(this);
+        var message = $(this).val();
+        console.log(message);
+        if (message) { input.removeClass("invalid").addClass("valid"); }
+        else { input.removeClass("valid").addClass("invalid"); }
+    });
+
+
+    //Country
+    $('#form_Country').keyup(function (event) {
+        var input = $(this);
+        var message = $(this).val();
+        console.log(message);
+        if (message) { input.removeClass("invalid").addClass("valid"); }
+        else { input.removeClass("valid").addClass("invalid"); }
+    });
+    //city
+    $('#form_City').keyup(function (event) {
+        var input = $(this);
+        var message = $(this).val();
+        console.log(message);
+        if (message) { input.removeClass("invalid").addClass("valid"); }
+        else { input.removeClass("valid").addClass("invalid"); }
+    });
+    //Bussness
+    $('#form_Business').keyup(function (event) {
+        var input = $(this);
+        var message = $(this).val();
+        console.log(message);
+        if (message) { input.removeClass("invalid").addClass("valid"); }
+        else { input.removeClass("valid").addClass("invalid"); }
+    });
+
+    //$("#contact_submit button").click(function(event){
+    //});
+
+    // After Form Submitted Validation
+    $(".sub-b").click(function (event) {
+         console.log('clicl')
+        //$("#form input[name='__RequestVerificationToken']").addClass('valid');
+        //$("#form input[name='__RequestVerificationToken']").attr('id','form___RequestVerificationToken');
+        // debugger
+
+        var form_data = $("#form").serializeArray();
+        var error_free = true;
+        for (var input in form_data) {
+            var element = $("#form_" + form_data[input]['name']);
+            console.log(element)
+            var valid = element.hasClass("valid");
+
+            $("#form input[name='__RequestVerificationToken']").remove();
+            var error_element = $("span", element.parent());
+            console.log(valid)
+            if (!valid) { error_element.removeClass("error").addClass("error_show"); error_free = false; console.log('umesh') }
+            else { error_element.removeClass("error_show").addClass("error"); }
+        }
+        console.log(error_free)
+        if (!error_free) {
+            event.preventDefault();
+            //alert('not submit')
+        }
+        else {
+            //alert('No errors: Form will be submitted');
+        }
+    });
+
 </script>
