@@ -5,7 +5,7 @@
 @*<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>*@
 @*<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>*@
 @*<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" />*@
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.14.0/jquery.validate.min.js"></script>
+
 @*<script src="https://code.jquery.com/jquery-1.9.1.js"></script>*@
 <link href="~/Assets/CSS/CustomApp.css" rel="stylesheet" />
 <link href="~/Assets/CSS/Icon.css" rel="stylesheet" />
@@ -217,7 +217,7 @@
                     and maximize sales revenues!
                 </p>
 
-                <p class="text"><a class="appy-btn login-window" href="#login-box">Lets Connect !</a></p>
+                <p class="text"><a class="appy-btn login-window" href="/ContactUs/Contact">Lets Connect !</a></p>
             </div>
         </div>
     </div>
@@ -399,8 +399,8 @@
                                     <div class="input-group col-xs-7">
                                         @*<input type="hidden" name="appname" value="customized-mobile-app" id="appname" class="form-control" />*@
                                         @*<input type="text" name="name" id="name" class="form-control" />*@
-                                        <input class="form-control" id="form_Name" name="Name" placeholder="Name" type="text">
-                                        <span class="text-danger error">UMESH</span>
+                                        <input class="form-control" id="form_Namef" name="Namef" placeholder="Name" type="text">
+                                        <span class="text-danger error">error</span>
                                     </div>
                                 </div>
                                 <div class="form-group">
@@ -560,116 +560,121 @@
 
     /*VALIDATION FORM*/
 
-
-    $(document).ready(function () {
-        //called when key is pressed in textbox
-        $("#form_MobileNo").keypress(function (e) {
-            //if the letter is not digit then display error and don't type anything
-            if (e.which != 8 && e.which != 0 && (e.which < 48 || e.which > 57)) {
-                //display error message
-                $("#errmsg").html("Numbers Only").show().fadeOut("slow");
-                return false;
-            }
+        $(document).ready(function () {
+            //called when key is pressed in textbox
+            $("#form_MobileNo").keypress(function (e) {
+                //if the letter is not digit then display error and don't type anything
+                if (e.which != 8 && e.which != 0 && (e.which < 48 || e.which > 57)) {
+                    //display error message
+                    $("#errmsg").html("Numbers Only").show().fadeOut("slow");
+                    return false;
+                }
+            });
         });
-    });
 
 
 
-    //    $(document).ready(function() {
-    //	//jQuery code goes here
-    //});
+        //    $(document).ready(function() {
+        //	//jQuery code goes here
+        //});
 
-    //$('#contact_name').on('input', function() {
-    //});
+        //$('#contact_name').on('input', function() {
+        //});
 
-    // Name can't be blank
-    $('#form_name').on('input', function () {
-        var input = $(this);
-        var is_name = input.val();
-        if (is_name) {
-            input.removeClass("invalid").addClass("valid");
+        // Name can't be blank
+        $('#form_Namef').keyup(function (event) {
+            var input = $(this);
+            var message = $(this).val();
+            console.log(message);
+            if (message) { input.removeClass("invalid").addClass("valid"); }
+            else { input.removeClass("valid").addClass("invalid"); }
+        });
+
+        // Email must be an email
+        $('#form_Email').on('input', function () {
+            var input = $(this);
+            var re = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+            var is_email = re.test(input.val());
+            if (is_email) { input.removeClass("invalid").addClass("valid"); }
+            else { input.removeClass("valid").addClass("invalid"); }
+        });
+
+
+        //mobile
+        $('#form_MobileNo').keyup(function (event) {
+            var input = $(this);
+            var message = $(this).val();
+            console.log(message);
+            if (message) { input.removeClass("invalid").addClass("valid"); }
+            else { input.removeClass("valid").addClass("invalid"); }
+        });
+
+
+        //Country
+        $('#form_Country').keyup(function (event) {
+            var input = $(this);
+            var message = $(this).val();
+            console.log(message);
+            if (message) { input.removeClass("invalid").addClass("valid"); }
+            else { input.removeClass("valid").addClass("invalid"); }
+        });
+        //city
+        $('#form_City').keyup(function (event) {
+            var input = $(this);
+            var message = $(this).val();
+            console.log(message);
+            if (message) { input.removeClass("invalid").addClass("valid"); }
+            else { input.removeClass("valid").addClass("invalid"); }
+        });
+        //Bussness
+        $('#form_Business').keyup(function (event) {
+            var input = $(this);
+            var message = $(this).val();
+            console.log(message);
+            if (message) { input.removeClass("invalid").addClass("valid"); }
+            else { input.removeClass("valid").addClass("invalid"); }
+        });
+
+        //$("#contact_submit button").click(function(event){
+        //});
+
+        // After Form Submitted Validation
+        $(".sub-b").click(function (event) {
+            // console.log('clicl')
             //$("#form input[name='__RequestVerificationToken']").addClass('valid');
             //$("#form input[name='__RequestVerificationToken']").attr('id','form___RequestVerificationToken');
-        }
-        else { input.removeClass("valid").addClass("invalid"); }
-    });
+            // debugger
 
-    // Email must be an email
-    $('#form_Email').on('input', function () {
-        var input = $(this);
-        var re = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
-        var is_email = re.test(input.val());
-        if (is_email) { input.removeClass("invalid").addClass("valid"); }
-        else { input.removeClass("valid").addClass("invalid"); }
-    });
-
-
-    //mobile
-    $('#form_MobileNo').keyup(function (event) {
-        var input = $(this);
-        var message = $(this).val();
-        console.log(message);
-        if (message) { input.removeClass("invalid").addClass("valid"); }
-        else { input.removeClass("valid").addClass("invalid"); }
-    });
+            var form_data = $("#form").serializeArray();
+            var error_free = true;
+            for (var input in form_data) {
+                var element = $("#form_" + form_data[input]['name']);
+                console.log(element)
+                var e = $(".rounded");
+                var b = element.hasClass("valid");
+                var valid = element.hasClass("valid");
+                if (!b) { $("#form input[name='__RequestVerificationToken']").removeClass('valid'); $("#form input[name='__RequestVerificationToken']").removeAttr('id'); }
+                else { $("#form input[name='__RequestVerificationToken']").addClass('valid'); $("#form input[name='__RequestVerificationToken']").attr('id', 'form___RequestVerificationToken'); }
+                /* $("#form input[name='__RequestVerificationToken']").remove();*/
+                var error_element = $("span", element.parent());
+                console.log(valid)
+                if (!valid) { error_element.removeClass("error").addClass("error_show"); error_free = false; console.log('umesh') }
+                else { error_element.removeClass("error_show").addClass("error"); }
 
 
-    //Country
-    $('#form_Country').keyup(function (event) {
-        var input = $(this);
-        var message = $(this).val();
-        console.log(message);
-        if (message) { input.removeClass("invalid").addClass("valid"); }
-        else { input.removeClass("valid").addClass("invalid"); }
-    });
-    //city
-    $('#form_City').keyup(function (event) {
-        var input = $(this);
-        var message = $(this).val();
-        console.log(message);
-        if (message) { input.removeClass("invalid").addClass("valid"); }
-        else { input.removeClass("valid").addClass("invalid"); }
-    });
-    //Bussness
-    $('#form_Business').keyup(function (event) {
-        var input = $(this);
-        var message = $(this).val();
-        console.log(message);
-        if (message) { input.removeClass("invalid").addClass("valid"); }
-        else { input.removeClass("valid").addClass("invalid"); }
-    });
 
-    //$("#contact_submit button").click(function(event){
-    //});
 
-    // After Form Submitted Validation
-    $(".sub-b").click(function (event) {
-         console.log('clicl')
-        //$("#form input[name='__RequestVerificationToken']").addClass('valid');
-        //$("#form input[name='__RequestVerificationToken']").attr('id','form___RequestVerificationToken');
-        // debugger
+            }
 
-        var form_data = $("#form").serializeArray();
-        var error_free = true;
-        for (var input in form_data) {
-            var element = $("#form_" + form_data[input]['name']);
-            console.log(element)
-            var valid = element.hasClass("valid");
 
-            $("#form input[name='__RequestVerificationToken']").remove();
-            var error_element = $("span", element.parent());
-            console.log(valid)
-            if (!valid) { error_element.removeClass("error").addClass("error_show"); error_free = false; console.log('umesh') }
-            else { error_element.removeClass("error_show").addClass("error"); }
-        }
-        console.log(error_free)
-        if (!error_free) {
-            event.preventDefault();
-            //alert('not submit')
-        }
-        else {
-            //alert('No errors: Form will be submitted');
-        }
-    });
+            console.log(error_free)
+            if (!error_free) {
+                event.preventDefault();
+                //alert('not submit')
+            }
+            else {
+                //alert('No errors: Form will be submitted');
+            }
+        });
    
     </script>}

@@ -100,7 +100,8 @@
                     <div class="f-g-s">
                         <div class="form-group">
                             <input class="form-control rounded" id="form_MobileNo" name="MobileNo" placeholder="Phone" type="tel" maxlength="10">
-                            <span class="text-danger error" id="errmsg">Phone Number is required</span>
+                            <span class="text-danger error">Please Enter 10 Digit Phone Number</span>
+                            <span class="text-danger" id="errmsg"></span>
                         </div>
                     </div>
                     <div class="f-g-s">
@@ -200,17 +201,18 @@
     }
         });
 
-    //$(document).ready(function () {
-    //    //called when key is pressed in textbox
-    //    $("#form_MobileNo").keypress(function (e) {
-    //        //if the letter is not digit then display error and don't type anything
-    //        if (e.which != 8 && e.which != 0 && (e.which < 48 || e.which > 57)) {
-    //            //display error message
-    //            $("#errmsg").html("Numbers Only").show().fadeOut("slow");
-    //            return false;
-    //        }
-    //    });
-    //});
+    $(document).ready(function () {
+        //called when key is pressed in textbox
+        $("#form_MobileNo").keypress(function (e) {
+            //if the letter is not digit then display error and don't type anything
+            if (e.which != 8 && e.which != 0 && (e.which < 48 || e.which > 57)) {
+                //display error message
+                $("#errmsg").html("Numbers Only").show().fadeOut("slow");
+                return false;
+                $("#errmsg").html("");
+            }
+        });
+    });
 
 
 
@@ -244,15 +246,24 @@
 
 
     //mobile
-    $('#form_MobileNo').keyup(function (event) {
+    //$('#form_MobileNo').keyup(function (event) {
+    //    var input = $(this);
+    //    var message = $(this).val();
+    //    console.log(message);
+    //    if (message) { input.removeClass("invalid").addClass("valid"); }
+    //    else { input.removeClass("valid").addClass("invalid"); }
+    //});
+
+    $('#form_MobileNo').on('input', function () {
         var input = $(this);
-        var message = $(this).val();
-        console.log(message);
-        if (message) { input.removeClass("invalid").addClass("valid"); }
-        else { input.removeClass("valid").addClass("invalid"); }
+        var mobnum = input.val();
+        if (mobnum.length==10) {
+            input.removeClass("invalid").addClass("valid");
+            //$("#form input[name='__RequestVerificationToken']").addClass('valid');
+            //$("#form input[name='__RequestVerificationToken']").attr('id','form___RequestVerificationToken');$("#errmsg").text("Your text here");
+        }
+        else { input.removeClass("valid").addClass("invalid");  }
     });
-
-
 //Country
     $('#form_Country').keyup(function(event) {
 	var input=$(this);

@@ -951,3 +951,139 @@
 }
 @media (max-width:767px){.moz-width{width: 407px;} }
 @media (max-width:640px){.moz-width{width: 100%;} }
+
+
+.appy-btn-new {
+    font-size: 25px;
+    color: #FFFFFF;
+    background: #4B55C4;
+    height: 42px;
+    margin-top: 79px !important;
+    padding: 4px 15px;
+    margin: 0 auto;
+}
+
+.ma-main .m-6-flex {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    height: 230px;
+    background: #1B2D39;
+    /* padding-bottom: 50px;
+        padding-top: 50px;*/
+}
+
+.ma-main .half {
+    width: 100%;
+    -webkit-box-flex: 1;
+    -webkit-flex: 1;
+    -ms-flex: 1;
+    flex: 1;
+}
+
+.m-6-flex .left {
+    text-align: right;
+    padding-right: 50px;
+}
+
+.ma-main .left {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: end;
+    -webkit-justify-content: flex-end;
+    -ms-flex-pack: end;
+    justify-content: flex-end;
+}
+
+.m-6-flex .section {
+    margin-top: -198px;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    max-width: 705px;
+    width: 100%;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    /* align-items: center; */
+}
+
+.m-6-flex .left {
+    text-align: right;
+    padding-right: 50px;
+}
+
+    .m-6-flex .left .title {
+        font-size: 45px;
+        line-height: 125%;
+        color: #FFFFFF;
+    }
+
+.ma-main .half {
+    width: 100%;
+    -webkit-box-flex: 1;
+    -webkit-flex: 1;
+    -ms-flex: 1;
+    flex: 1;
+}
+
+.m-6-flex .right {
+    height: 100%;
+}
+
+.m-6-flex .right {
+    padding-left: 50px;
+}
+
+.ma-main .right {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: start;
+    -webkit-justify-content: flex-start;
+    -ms-flex-pack: start;
+    justify-content: flex-start;
+}
+
+.m-6-flex .right .appy-btn {
+    font-size: 25px;
+    line-height: 125%;
+    color: #FFFFFF;
+}
+
+.ma-main .appy-btn, .bg-appy {
+    background: #4B55C4;
+}
+
+.appy-btn {
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+    border: none;
+    display: inline-block;
+    outline: 0;
+    padding: 10px 25px !important;
+    overflow: hidden;
+    text-decoration: none !important;
+    text-align: center;
+    cursor: pointer;
+    white-space: nowrap;
+}
+
+.get-quote {
+    text-align: center !important;
+    width: 100%;
+    color: #fff;
+    margin-top: 53px;
+    font-size: 30px;
+}
+
