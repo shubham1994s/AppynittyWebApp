@@ -251,7 +251,7 @@ ul::-webkit-scrollbar {
         left: 0px;
         z-index: 1;
         /*background: linear-gradient(0deg, rgba(0, 199, 184, 0.625087535) 0%, rgba(29, 0, 186, 0.4262079832) 89%);*/
-        background: linear-gradient(0deg, rgb(0 0 0 / 75%) 0%, rgb(0 0 0 / 64%) 89%);
+       background: linear-gradient(0deg, rgb(0 0 0 / 75%) 0%, rgb(0 0 0 / 64%) 89%);
         opacity: 0.8;
     }
 
