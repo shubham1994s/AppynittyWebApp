@@ -26,7 +26,11 @@
                     <dd class="col-sm-8">
                         <h3 style="text-align:center; margin-bottom: 20px;"> @Html.DisplayFor(model => model.NewsTitle)</h3>
                         @*<p style="text-align:justify">@Html.DisplayFor(model => model.NewsEng)</p>*@
-                        <p style="text-align:justify">@Html.Raw(Model.NewsEng)</p>
+                        @if (Model.NewsEng != null)
+                        {
+                            <p style="text-align:justify">@Html.Raw(Model.NewsEng)</p>
+                        }
+                        <p style="text-align:justify"></p>
                     </dd>
                     @{
                         var obj = ViewBag.newslist;
@@ -35,18 +39,22 @@
                         <h4 style="text-align:center">Other News</h4>
                         <hr />
                         <ul style="padding: 10px; margin-left: 20px;">
-                            @foreach (var item in obj)
+                            @if (obj != null)
                             {
+                                @foreach (var item in obj)
+                                {
 
 
-                                <li class="newttl mb-3">
-                                    <a asp-action="NewSection" asp-route-id="@item.Id" class="h6 ">@item.NewsTitle</a>
+                                    <li class="newttl mb-3">
+                                        <a asp-action="NewSection" asp-route-id="@item.Id" class="h6 ">@item.NewsTitle</a>
 
-                                </li>
+                                    </li>
 
 
 
+                                }
                             }
+
                         </ul>
                     </dd>
                 </dl>

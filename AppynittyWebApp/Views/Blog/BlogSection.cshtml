@@ -26,7 +26,11 @@
                     <dd class="col-sm-8">
                         <h3 style="text-align:center; margin-bottom: 20px;"> @Html.DisplayFor(model => model.BlogsTitle)</h3>
                         @*<p style="line-height:2rem;text-align:justify">@Html.DisplayFor(model => model.BlogsEng)</p>*@
-                        <p style="line-height:2rem;text-align:justify">@Html.Raw(Model.BlogsEng)</p>
+                        @if (Model.BlogsEng != null)
+                        {
+                            <p style="line-height:2rem;text-align:justify">@Html.Raw(Model.BlogsEng)</p>
+                        }
+                        <p style="line-height:2rem;text-align:justify"></p>
 
                     </dd>
                     @{
@@ -36,21 +40,25 @@
                         <h4 style="margin-bottom: 20px; text-align: center;">Trending</h4>
                         <hr/>
                         <ul style="padding: 10px; margin-left: 20px;">
-                            @foreach (var item in obj)
+                            @if (obj != null)
                             {
+                                @foreach (var item in obj)
+                                {
 
 
-                                <li class="newttl mb-3">
+                                    <li class="newttl mb-3">
 
-                                    <a asp-action="BlogSection" asp-route-id="@item.Id" class="h6 ">@item.BlogsTitle</a>
+                                        <a asp-action="BlogSection" asp-route-id="@item.Id" class="h6 ">@item.BlogsTitle</a>
 
-                                </li>
+                                    </li>
 
-                                <span id="getfilename" style="display:none;">@Html.DisplayFor(model => model.BFileName)</span>
+                                    <span id="getfilename" style="display:none;">@Html.DisplayFor(model => model.BFileName)</span>
 
 
 
+                                }
                             }
+
                         </ul>
                     </dd>
                 </dl>
@@ -58,7 +66,7 @@
                 {
                     <dl class="row">
                         <span id="getfilename" style="display:none;">@Html.DisplayFor(model => model.BFileName)</span>
-                        <img id="image" src="~/BlogImages/model.FileName"
+                        <img id="image" src="/UploadedFiles/Blogs/model.FileName"
                              class="r-box"
                              height="500" width="500"
                              asp-append-version="true" />
@@ -67,49 +75,53 @@
                 <h4>More Related Article</h4>
 
                 <div class="product-blog">
-                    @foreach (var item in obj)
+                    @if (obj != null)
                     {
-                        <div class="blog-box">
-                            <div class="blog">
-                                <div class="top-section">
-                                    <div class="top">
-                                        <div class="img-box">
-                                            <div class="blog-image">
-                                                <!-- <img src="http://placehold.it/80x80" class="img img-circle">-->
-                                            </div>
-                                        </div>
-                                        <div class="name-box">
-                                            <div class="name">
-                                                <a asp-action="BlogSection" asp-route-id="@item.Id" style="color:#fff">@item.BlogsTitle</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="bottom-section">
-                                    <div class="bottom">
-                                        <div class="read-more">
-                                            <div class="text"><a asp-action="BlogSection" asp-route-id="@item.Id">Read Article</a></div>
-                                        </div>
-                                        <div class="share">
-                                            <div class="share-section">
-                                                <div class="blog-social animated">
-                                                    <div class="fb icon ai-facebook"></div>
-                                                    <div class="tw icon ai-twitter"></div>
-                                                    <div class="ln icon ai-linkedin"></div>
-                                                    <div class="gp icon ai-google-plus"></div>
-                                                    <div class="yt icon ai-youtube"></div>
+                        @foreach (var item in obj)
+                        {
+                            <div class="blog-box">
+                                <div class="blog">
+                                    <div class="top-section">
+                                        <div class="top">
+                                            <div class="img-box">
+                                                <div class="blog-image">
+                                                    <!-- <img src="http://placehold.it/80x80" class="img img-circle">-->
                                                 </div>
-                                                <div class="blog-social-share ">
-                                                    <div class="icon ai-share animated zoomIn"></div>
+                                            </div>
+                                            <div class="name-box">
+                                                <div class="name">
+                                                    <a asp-action="BlogSection" asp-route-id="@item.Id" style="color:#fff">@item.BlogsTitle</a>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
+                                    <div class="bottom-section">
+                                        <div class="bottom">
+                                            <div class="read-more">
+                                                <div class="text"><a asp-action="BlogSection" asp-route-id="@item.Id">Read Article</a></div>
+                                            </div>
+                                            <div class="share">
+                                                <div class="share-section">
+                                                    <div class="blog-social animated">
+                                                        <div class="fb icon ai-facebook"></div>
+                                                        <div class="tw icon ai-twitter"></div>
+                                                        <div class="ln icon ai-linkedin"></div>
+                                                        <div class="gp icon ai-google-plus"></div>
+                                                        <div class="yt icon ai-youtube"></div>
+                                                    </div>
+                                                    <div class="blog-social-share ">
+                                                        <div class="icon ai-share animated zoomIn"></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
 
+                                    </div>
                                 </div>
                             </div>
-                        </div>
+                        }
                     }
+
                 </div>
                 <div class="contact-form-section">
                     <div class="container">
@@ -169,7 +181,7 @@
             debugger;
             var filename = document.getElementById("getfilename").innerHTML;
 
-            document.getElementById("image").src = "/BlogImages/" + filename;
+            document.getElementById("image").src = "/UploadedFiles/Blogs/" + filename;
         });
     </script>
 }

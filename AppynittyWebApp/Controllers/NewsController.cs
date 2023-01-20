@@ -275,7 +275,7 @@ namespace AppynittyWebApp.Controllers
 
             if (news == null)
             {
-                return NotFound();
+                return View(model);
             }
             int Ids = Convert.ToInt32(Id);
             if(Ids != 0)

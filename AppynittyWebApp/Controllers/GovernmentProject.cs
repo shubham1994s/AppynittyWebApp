@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace AppynittyWebApp.Controllers
 {
-    public class GovermentProject : Controller
+    public class GovernmentProject : Controller
     {
         public IActionResult Index()
         {
