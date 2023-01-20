@@ -2,20 +2,22 @@
 @{
     ViewData["Title"] = "Wheels";
 }
-<link rel="stylesheet" type="text/css" href="https://www.appynitty.com/assets/libs/fancybox/jquery.fancybox-1.3.4.css" />
-<link rel="stylesheet" type="text/css" href="https://www.appynitty.com/assets/libs/animate/animate.min.css" />
-<link rel="stylesheet" type="text/css" href="https://www.appynitty.com/assets/libs/slick/css/slick-theme.css" />
-<link rel="stylesheet" type="text/css" href="https://www.appynitty.com/assets/libs/slick/css/slick.css" />
+<link rel="stylesheet" type="text/css" href="~/css/jquery.fancybox-1.3.4.css" />
+<link rel="stylesheet" type="text/css" href="~/css/animate.min.css" />
+<link rel="stylesheet" type="text/css" href="~/css/slick-theme.css" />
+<link rel="stylesheet" type="text/css" href="~/css/slick.css" />
 <link href="~/Assets/CSS/Product.css" rel="stylesheet" />
-<link rel="stylesheet" type="text/css" href="https://www.appynitty.com/assets/css/client.css" />
+<link rel="stylesheet" type="text/css" href="~/Assets/CSS/client.css" />
 
 <link href="~/Assets/CSS/Icon.css" rel="stylesheet" />
-<script type="text/javascript" src="https://www.appynitty.com/assets/libs/jquery/1.7.2/jquery.min.js"></script>
-<script type="text/javascript" src="https://www.appynitty.com/assets/libs/fancybox/jquery.fancybox-1.3.4.pack.js"></script>
-<script type="text/javascript" src="https://www.appynitty.com/assets/realestateappy/js/realestateappy.js"></script>
-<script type="text/javascript" src="https://www.appynitty.com/assets/libs/jquery/1.9.1/jquery.min.js"></script>
-<script type="text/javascript" src="https://www.appynitty.com/assets/libs/slick/js/slick.js"></script>
-<script type="text/javascript" src="https://www.appynitty.com/assets/js/client.js"></script>
+@*<script src="~/lib/jquery/dist/jquery.min.js"></script>*@
+<script type="text/javascript" src="~/js/1.7.2/jquery.min.js"></script>
+<script type="text/javascript" src="~/js/jquery.fancybox-1.3.4.pack.js"></script>
+<script type="text/javascript" src="~/js/realestateappy.js"></script>
+<script type="text/javascript" src="~/js/1.9.1/jquery.min.js"></script>
+<script type="text/javascript" src="~/js/slick.js"></script>
+<script type="text/javascript" src="~/js/site.js"></script>
+<script type="text/javascript" src="~/Assets/js/client.js"></script>
 
 <style>
 
@@ -90,7 +92,7 @@
             <div class="left">
                 <div class="section">
                     <div class="product-logo">
-                        <a href="mobile-app-automobile-dealers.html" title="Wheels Appy">
+                        <a href="/MobileApps/Wheels" title="Wheels Appy">
                             <img class="img img-responsive" src="/Assets/Images/wheelsappy/wheelsappy_logo.png" alt="Wheels Appy" />
                         </a>
                     </div>
@@ -542,229 +544,223 @@
         </div>
     </div> -->
     <!--  Testimonial Section -->
+    <!--<link rel="stylesheet" type="text/css" href="../../maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+        <div class="clients-box">
+            <div class="half bg-appy">
+                <div class="left-section">
+                    <div class="client">
+                        <div class="top">
+                            <div class="title">Client's <span class="l-b"><br></span>Review</div>
+                        </div>
+                        <div class="body">
+                            <style>
+    * {box-sizing:border-box}
+
+    /*.mySlides {display:none}*/
+
+    /* Slideshow container */
+    .slideshow-container {
+      max-width: 1000px;
+      position: relative;
+      margin: auto;
+    }
+
+    .client-item .des {
+        color: #FFFFFF;
+        font-size: 23px;
+        padding-right:25px;
+      text-align: justify;
+    }
+    /* Next & previous buttons
+    .prev, .next {
+      cursor: pointer;
+      position: absolute;
+      top: 50%;
+      width: auto;
+      padding: 16px;
+      margin-top: -22px;
+      color: white;
+      font-weight: bold;
+      font-size: 18px;
+      transition: 0.6s ease;
+      border-radius: 0 3px 3px 0;
+    }*/
 
 
 
 
-    <link rel="stylesheet" type="text/css" href="../../maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 
-    <div class="clients-box">
-        <div class="half bg-appy">
-            <div class="left-section">
-                <div class="client">
-                    <div class="top">
-                        <div class="title">Client's <span class="l-b"><br></span>Review</div>
+    /* The dots/bullets/indicators */
+    .dot {
+      cursor:pointer;
+      height: 13px;
+      width: 13px;
+      margin: 0 2px;
+      background-color: #bbb;
+      border-radius: 50%;
+
+      transition: background-color 0.6s ease;
+    }
+
+    .active, .dot:hover {
+      /*background-color: #717171;*/
+    }
+
+    /* Fading animation */
+    .fade {
+      -webkit-animation-name: fade;
+      -webkit-animation-duration: 1.5s;
+      animation-name: fade;
+      animation-duration: 1.5s;
+    }-->
+    @*@-webkit-keyframes fade {
+          from {opacity: .4}
+          to {opacity: 1}
+        }*@
+
+    @*@keyframes fade {
+          from {opacity: .4}
+          to {opacity: 1}
+        }
+
+        /* On smaller screens, decrease text size */
+        @media only screen and (max-width: 300px) {
+          .prev, .next,.text {font-size: 11px}
+        }*@
+    <!--</style>
+
+
+    <div class="slideshow-container">
+
+
+        <div class="mySlides">
+            <div class="numbertext">
+                <div class="client-item">
+                    <div class="des">
+                        “Our mobile app has become a one stop platform for our clients. They can see all the available models in HD images, take test drive appointments, choose specific features and also book a bike with just a couple of taps on their mobile.Additionally with integration of one tap call connectivity to all of our showrooms and high quality and seamless user interface of both our android and iOS mobile apps, our customer service and loyalty standards have been at an all-time high.”
                     </div>
-                    <div class="body">
-                        <style>
-* {box-sizing:border-box}
+                    <div class="client-info">
+                        <div class="photo">
+                            <img src="/Assets/Images/client-images/Sanjeev.jpg" class="img img-circle">
+                        </div>
+                        <div class="name-role">
+                            <div class="name">Sanjeev Sharma,</div>
+                            <div class="role">Branch Manager Yamaha Bikers Point, Jamshedpur</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
 
-/*.mySlides {display:none}*/
+        <div style="text-align:center">-->
+    <!-- <span class="dot" onclick="currentSlide(1)"></span> -->
+    <!--<span class="dot" onclick="currentSlide(2)"></span>-->
+    <!-- <span class="dot" onclick="currentSlide(3)"></span>  -->
+    <!--</div>
 
-/* Slideshow container */
-.slideshow-container {
-  max-width: 1000px;
-  position: relative;
-  margin: auto;
-}
-
-.client-item .des {
-    color: #FFFFFF;
-    font-size: 23px;
-    padding-right:25px;
-  text-align: justify;
-}
-/* Next & previous buttons
-.prev, .next {
-  cursor: pointer;
-  position: absolute;
-  top: 50%;
-  width: auto;
-  padding: 16px;
-  margin-top: -22px;
-  color: white;
-  font-weight: bold;
-  font-size: 18px;
-  transition: 0.6s ease;
-  border-radius: 0 3px 3px 0;
-}*/
-
-
-
-
-
-/* The dots/bullets/indicators */
-.dot {
-  cursor:pointer;
-  height: 13px;
-  width: 13px;
-  margin: 0 2px;
-  background-color: #bbb;
-  border-radius: 50%;
-
-  transition: background-color 0.6s ease;
-}
-
-.active, .dot:hover {
-  /*background-color: #717171;*/
-}
-
-/* Fading animation */
-.fade {
-  -webkit-animation-name: fade;
-  -webkit-animation-duration: 1.5s;
-  animation-name: fade;
-  animation-duration: 1.5s;
-}
-
-@*@-webkit-keyframes fade {
-  from {opacity: .4}
-  to {opacity: 1}
-}*@
-
-@*@keyframes fade {
-  from {opacity: .4}
-  to {opacity: 1}
-}
-
-/* On smaller screens, decrease text size */
-@media only screen and (max-width: 300px) {
-  .prev, .next,.text {font-size: 11px}
-}*@
-                        </style>
-
-
-                        <div class="slideshow-container">
-
-
-                            <div class="mySlides">
-                                <div class="numbertext">
-                                    <div class="client-item">
-                                        <div class="des">
-                                            “Our mobile app has become a one stop platform for our clients. They can see all the available models in HD images, take test drive appointments, choose specific features and also book a bike with just a couple of taps on their mobile.Additionally with integration of one tap call connectivity to all of our showrooms and high quality and seamless user interface of both our android and iOS mobile apps, our customer service and loyalty standards have been at an all-time high.”
-                                        </div>
-                                        <div class="client-info">
-                                            <div class="photo">
-                                                <img src="/Assets/Images/client-images/Sanjeev.jpg" class="img img-circle">
-                                            </div>
-                                            <div class="name-role">
-                                                <div class="name">Sanjeev Sharma,</div>
-                                                <div class="role">Branch Manager Yamaha Bikers Point, Jamshedpur</div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
+                        <div class="biderectioanlArrow">
+                            <link rel="stylesheet" href="../../cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+                            <div class="arrows">
+                                <button class="prev" onclick="plusSlides(-1)" style="color: white;">
+                                    <i class="fa fa-angle-left" style="font-size: 20px;"></i>
+                                </button>
                             </div>
 
-                            <div style="text-align:center">
-                                <!-- <span class="dot" onclick="currentSlide(1)"></span> -->
-                                <span class="dot" onclick="currentSlide(2)"></span>
-                                <!-- <span class="dot" onclick="currentSlide(3)"></span>  -->
-                            </div>
-
-                            <div class="biderectioanlArrow">
-                                <link rel="stylesheet" href="../../cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-                                <div class="arrows">
-                                    <button class="prev" onclick="plusSlides(-1)" style="color: white;">
-                                        <i class="fa fa-angle-left" style="font-size: 20px;"></i>
-                                    </button>
-                                </div>
-
-                            </div>
-                            <div class="biderectioanlArrowA">
-                                <div class="arrowsA">
-                                    <button class="next" onclick="plusSlides(1)" style="color: white;">
-                                        <i class="fa fa-angle-right" style="font-size: 20px;"></i>
-                                    </button>
-                                </div>
-
+                        </div>
+                        <div class="biderectioanlArrowA">
+                            <div class="arrowsA">
+                                <button class="next" onclick="plusSlides(1)" style="color: white;">
+                                    <i class="fa fa-angle-right" style="font-size: 20px;"></i>
+                                </button>
                             </div>
 
                         </div>
 
-
-                        <script>
-    var slideIndex = 1;
-                            showSlides(slideIndex);
-
-                            function plusSlides(n) {
-                                showSlides(slideIndex += n);
-                            }
-
-                            function currentSlide(n) {
-                                showSlides(slideIndex = n);
-                            }
-
-                            function showSlides(n) {
-                                var i;
-                                var slides = document.getElementsByClassName("mySlides");
-                                var dots = document.getElementsByClassName("dot");
-                                if (n > slides.length) { slideIndex = 1 }
-                                if (n < 1) { slideIndex = slides.length }
-                                for (i = 0; i < slides.length; i++) {
-                                    slides[i].style.display = "none";
-                                }
-                                for (i = 0; i < dots.length; i++) {
-                                    dots[i].className = dots[i].className.replace(" active", "");
-                                }
-                                slides[slideIndex - 1].style.display = "block";
-                                dots[slideIndex - 1].className += " active";
-                            }</script>
                     </div>
 
+
+                    <script>
+                        var slideIndex = 1;
+                        showSlides(slideIndex);
+
+                        function plusSlides(n) {
+                            showSlides(slideIndex += n);
+                        }
+
+                        function currentSlide(n) {
+                            showSlides(slideIndex = n);
+                        }
+
+                        function showSlides(n) {
+                            var i;
+                            var slides = document.getElementsByClassName("mySlides");
+                            var dots = document.getElementsByClassName("dot");
+                            if (n > slides.length) { slideIndex = 1 }
+                            if (n < 1) { slideIndex = slides.length }
+                            for (i = 0; i < slides.length; i++) {
+                                slides[i].style.display = "none";
+                            }
+                            for (i = 0; i < dots.length; i++) {
+                                dots[i].className = dots[i].className.replace(" active", "");
+                            }
+                            slides[slideIndex - 1].style.display = "block";
+                            dots[slideIndex - 1].className += " active";
+                        }</script>
                 </div>
+
             </div>
         </div>
-        <!--arrow-->
+    </div>-->
+    <!--arrow-->
+    <!--<style>
+        .biderectioanlArrow {
+            position: relative !important;
+            /*top: -32px;*/
+            left: 242px;
+            margin: 0 auto;
+        }
 
-        <style>
-            .biderectioanlArrow {
-                position: relative !important;
-                /*top: -32px;*/
-                left: 242px;
-                margin: 0 auto;
-            }
+        .biderectioanlArrowA {
+            position: relative !important;
+            top: -40px;
+            left: 305px;
+            margin: 0 auto;
+        }
 
-            .biderectioanlArrowA {
-                position: relative !important;
-                top: -40px;
-                left: 305px;
-                margin: 0 auto;
-            }
+        .arrows button {
+            padding: 10px;
+            background-color: #966854;
+            color: white;
+            border: none;
+        }
 
-            .arrows button {
-                padding: 10px;
-                background-color: #966854;
-                color: white;
-                border: none;
-            }
+        .arrowsA button {
+            padding: 10px;
+            background-color: #966854;
+            color: white;
+            border: none;
+        }
 
-            .arrowsA button {
-                padding: 10px;
-                background-color: #966854;
-                color: white;
-                border: none;
-            }
+        .w49 {
+            width: 49%;
+        }
 
-            .w49 {
-                width: 49%;
-            }
+        .w45 {
+            width: 45%;
+        }
 
-            .w45 {
-                width: 45%;
-            }
+        .dwn-link {
+            display: flex;
+            width: 49%;
+        }
 
-            .dwn-link {
-                display: flex;
-                width: 49%;
-            }
-
-            .marg0-auto {
-                margin: 0 auto;
-            }
-        </style>
-        <!--arrow-->
-        <div class="half">
+        .marg0-auto {
+            margin: 0 auto;
+        }
+    </style>-->
+    <!--arrow-->
+    <!--<div class="half">
             <div class="right-section">
                 <div class="review">
                     <div class="top">
@@ -831,13 +827,7 @@
             </div>
         </div>
     </div>
-    </div>
-
-
-
-
-
-
+    </div>-->
     <!-- End Testimonials  -->
 
 
@@ -910,11 +900,6 @@
 
 </section>
 <!--modal-->
-
-
-
-
-
 <!-- <script src="http://code.jquery.com/jquery-1.4.4.min.js" type="text/javascript"></script> -->
 <!--for thank you image fadein-->
 <!--modal UU-->
@@ -931,10 +916,11 @@
             /*  $.post(url, { product: name },*/
             /* function (data) {*/
             /*  <img src="~/Assets/Images/realestateappy/splashscreen.png" />*/
-            var app = [{ "appId": 0, "name": "Splash Screen", "icon": "icon ai-splashscreen", "image": "https://localhost:44303/Assets/Images/wheelsappy/splashscreen.png" }, { "appId": 1, "name": "Home", "icon": "icon ai-demo-home", "image": "https://localhost:44303/Assets/Images/wheelsappy/home.png" }, { "appId": 2, "name": "Menu", "icon": "icon ai-demo-menu", "image": "https://localhost:44303/Assets/Images/wheelsappy/menu.png" }, { "appId": 3, "name": "About Us", "icon": "icon ai-demo-aboutus", "image": "https://localhost:44303/Assets/Images/wheelsappy/aboutus.png" }, { "appId": 4, "name": "Gallery", "icon": "icon ai-demo-gallery", "image": "https://localhost:44303/Assets/Images/wheelsappy/gallery.png" }, { "appId": 5, "name": "Location", "icon": "icon ai-demo-location", "image": "https://localhost:44303/Assets/Images/wheelsappy/location.png" }, { "appId": 6, "name": "Press Release", "icon": "icon ai-demo-pressrealese", "image": "https://localhost:44303/Assets/Images/wheelsappy/pressrealese.png" }, { "appId": 7, "name": "Offers", "icon": "icon ai-demo-productlisting", "image": "https://localhost:44303/Assets/Images/wheelsappy/productlisting.png" }, { "appId": 8, "name": "Push Notification", "icon": "icon ai-demo-pushnotification", "image": "https://localhost:44303/Assets/Images/wheelsappy/pushnotification.png" }, { "appId": 9, "name": "Online Payment Gateway", "icon": "icon ai-demo-onlinepayment", "image": "https://localhost:44303/Assets/Images/wheelsappy/onlinepayment.png" }]
+            var url = window.location.origin;
+            var app = [{ "appId": 0, "name": "Splash Screen", "icon": "icon ai-splashscreen", "image": "" + url + "/Assets/Images/wheelsappy/splashscreen.png" }, { "appId": 1, "name": "Home", "icon": "icon ai-demo-home", "image": "" + url + "/Assets/Images/wheelsappy/home.png" }, { "appId": 2, "name": "Menu", "icon": "icon ai-demo-menu", "image": "" + url + "/Assets/Images/wheelsappy/menu.png" }, { "appId": 3, "name": "About Us", "icon": "icon ai-demo-aboutus", "image": "" + url + "/Assets/Images/wheelsappy/aboutus.png" }, { "appId": 4, "name": "Gallery", "icon": "icon ai-demo-gallery", "image": "" + url + "/Assets/Images/wheelsappy/gallery.png" }, { "appId": 5, "name": "Location", "icon": "icon ai-demo-location", "image": "" + url + "/Assets/Images/wheelsappy/location.png" }, { "appId": 6, "name": "Press Release", "icon": "icon ai-demo-pressrealese", "image": "" + url + "/Assets/Images/wheelsappy/pressrealese.png" }, { "appId": 7, "name": "Offers", "icon": "icon ai-demo-productlisting", "image": "" + url + "/Assets/Images/wheelsappy/productlisting.png" }, { "appId": 8, "name": "Push Notification", "icon": "icon ai-demo-pushnotification", "image": "" + url + "/Assets/Images/wheelsappy/pushnotification.png" }, { "appId": 9, "name": "Online Payment Gateway", "icon": "icon ai-demo-onlinepayment", "image": "" + url +"/Assets/Images/wheelsappy/onlinepayment.png" }]
             var count = app.length;
             var half = Math.round(count / 2);
-            console.log(app)
+            //console.log(app)
             debugger
             function init() {
 
@@ -1232,6 +1218,6 @@
         }
         window.open(n, "", "height=600, width=600, menubar=no, toolbar=no, resizable=yes, scrollbars=yes");
     }
-  
+
 
 </script>

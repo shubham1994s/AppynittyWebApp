@@ -1,0 +1,315 @@
+/*************************************Start Clients Class******************************************/
+
+.clients-box{
+    display: flex;
+}
+.clients-box .half{
+    width: 50%;
+    flex:1;    
+}
+.clients-box .bg-appy{
+    background: #3CBABA;
+}
+
+.clients-box .left-section,
+.clients-box .right-section{
+    display: flex; 
+    padding-top: 65px;
+    padding-bottom: 65px;
+}
+.clients-box .left-section{    
+    justify-content: flex-end;  
+    /*padding-left: 287px;*/  
+}
+.clients-box .right-section{    
+    justify-content: flex-start;    
+}
+
+.clients-box .review,
+.clients-box .client{
+     display: flex;  
+     max-width: 685px;     
+     width: 100%;
+     flex-direction:column;     
+     justify-content: center;  
+}
+.clients-box .top .title{
+    color: #FFFFFF;
+    font-size: 55px;
+    margin-bottom: 40px;
+    line-height: 125%;
+}
+.apple img{padding-right: 8px;}
+.android img{padding-left: 8px;}
+.clients-box .client-list .slick-dots li button:before{
+    color:#FFFFFF;
+
+}
+.clients-box .apps-list .slick-dots li button:before{
+    color:#1B2D39;
+}
+.clients-box .slick-dots li button:before,
+.clients-box .slick-dots li.slick-active button:before{
+    font-family: "appynitty" !important;    
+    opacity: .75;
+}
+.clients-box .slick-dots li button:before{
+    content: "\51";
+}
+.clients-box  .slick-dots li.slick-active button:before{
+    content: "\50";
+}
+.apps-list div,
+.client-list div{
+    outline: none;
+}
+.clients-box .client-section{
+    padding-right: 100px;
+}
+.clients-box .client-section .des{
+    color: #FFFFFF;
+    font-size: 25px;
+    line-height: 150%;
+}
+
+.clients-box .client-info{
+    display: flex;
+    align-items:center;
+    margin-top: 50px;
+}
+.clients-box .client .img-circle{
+    border-radius: 80%;
+}
+.clients-box .client {
+    padding-left: 30px;
+}
+.clients-box .client .name-role{
+    padding-left: 15px;
+}
+.clients-box .client .name{
+    color: #FFFFFF;
+    font-size: 25px;
+}
+.clients-box .client .role{
+    color: #FFFFFF;
+    font-size: 20px;
+}
+
+
+
+
+
+
+.clients-box .review .top .title{
+    color: #1B2D39;    
+}
+.clients-box .review .top{
+    padding-left: 100px;
+}
+.clients-box .review-section{
+    padding-left: 100px;
+}
+.clients-box .apps{
+     display: flex;    
+}
+.clients-box .screen,
+.clients-box .users{
+    margin: 0 10px;
+}
+.clients-box .users{
+    display: flex;
+    flex-direction:column;
+    justify-content:space-around;
+}
+.clients-box .download-link{
+    display:flex;
+    justify-content:center;
+    align-content:center;
+}
+.clients-box .android,
+.clients-box .apple{
+    width: 50%;
+    flex:1;      
+}
+.clients-box .img{
+    margin:0 auto;
+    display: block;
+    max-width: 100%;
+   /* padding-right: 16px;*/
+}
+
+.clients-box .message-list{
+    display: flex;
+    flex-direction:column;
+}
+.clients-box .users .title,
+.clients-box .message-list .message{
+    padding: 15px 0;
+}
+.clients-box .message .name,
+.clients-box .users .title{   
+    font-weight: 600;    
+}
+.clients-box .message .name,
+.clients-box .message .msg{
+    font-size: 20px;       
+}
+.clients-box .users .title{
+    font-size: 25px;      
+}
+@media(min-width:1920px) {
+  .biderectioanlArrowA {
+    position: relative !important;
+    top: -32px;
+    left: 355px !important;
+    margin: 0 auto;
+} 
+
+.biderectioanlArrow {
+    position: relative !important;
+    /*top: -73px;*/
+    left: 294px !important;
+    margin: 0 auto;
+}
+
+}
+
+@media(max-width:1400px) {
+    .clients-box .review, .clients-box .client {
+        max-width: 585px;        
+    }
+    .clients-box .review .top,
+    .clients-box .review-section {
+        padding-left: 50px;
+    }
+    .clients-box .client-section {
+        padding-right: 50px;
+    }
+    .clients-box .top .title {        
+        font-size: 50px;
+    }
+    .clients-box .client-section .des {     
+        font-size: 23px;
+    }
+    .clients-box .users .title {
+        font-size: 20px;
+    }
+    .clients-box .message .name, .clients-box .message .msg {
+        font-size: 16px;
+    }
+    .clients-box .android, .clients-box .apple {
+        margin: 0 5px;
+    }
+    
+}
+@media(max-width:1199px) {
+    .clients-box .review, .clients-box .client {        
+        width: 95%;
+    }
+    .clients-box .top .title {
+        font-size: 45px;
+    }
+   
+    
+}
+@media(max-width:1024px) {
+  .clients-box .client-info {
+    display: flex;
+    align-items: center;
+    margin-top: 50px;
+    margin-left: 20px;
+}  
+
+}
+@media(max-width:991px) {
+    .clients-box .review .top,
+    .clients-box .review-section {
+        padding-left: 20px;
+    }
+    .clients-box .client-section {
+        padding-right: 20px;
+    }
+    
+    .clients-box .top .title {        
+        margin-bottom: 30px;
+    }
+    .clients-box .screen, .clients-box .users {
+         margin: 0; 
+    }
+}
+@media(max-width:768px) {
+    .clients-box {     
+        flex-direction: column;
+    }
+    .clients-box .half {
+        width: 100%;
+    }
+    .clients-box .review, .clients-box .client {
+        max-width: 100%;
+        width: 100%;
+    }
+    .clients-box .apps {     
+        justify-content: space-between;
+    }
+    .clients-box .android, .clients-box .apple {
+        margin: 0 10px;
+    }
+    .clients-box .left-section,
+    .clients-box .right-section{     
+        padding-top: 50px;
+        padding-bottom: 50px;
+    }
+    .clients-box .client-section,        
+    .clients-box .client .top, 
+    .clients-box .review .top, 
+    .clients-box .review-section {
+        padding:0 15px;
+        
+    }
+    .clients-box .top .title {
+        font-size: 40px;
+    }
+    .clients-box .client-section .des {
+        font-size: 20px;
+    }
+    .clients-box .client .name {        
+        font-size: 22px;
+    }
+    .clients-box .client .role {        
+        font-size: 18px;
+    }
+    .clients-box .top .title {
+        margin-bottom: 20px;
+    }
+    .clients-box .top .title .l-b{
+        display: none;
+    }
+
+}
+@media(max-width:560px) {
+    .clients-box .apps {     
+        flex-direction: column-reverse;
+    }
+    .clients-box .users .title{
+        padding: 10px 0;
+    } .clients-box .message-list .message {
+        padding: 0;
+        padding-bottom: 10px;
+    }
+    .clients-box .message-list {
+        padding-bottom: 10px;
+    }
+    
+    .biderectioanlArrow{
+        left: -50px !important;
+        width: 0;
+    }
+    .biderectioanlArrowA{
+        left: 0 !important;
+        width: 0;
+    }
+
+   
+}
+
+/*************************************End Clients Class******************************************/
