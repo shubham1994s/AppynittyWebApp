@@ -10,7 +10,7 @@
     .newttl {
         list-style-type: none;
     }
-    ul li {
+    #jd ul li {
         list-style-type: disc !important;
     }
     body {
@@ -48,15 +48,7 @@
         color: #FFFFFF;
         border: 1px solid #3CBABA;
     }
-    ul li::marker {
-        color: black;
-        unicode-bidi: isolate;
-        font-variant-numeric: tabular-nums;
-        text-transform: none;
-        text-indent: 0px !important;
-        text-align: start !important;
-        text-align-last: start !important;
-    }
+
 </style>
 @*<img src="~/Assets/Images/doors-1767563.jpg" />*@
 
@@ -161,7 +153,7 @@
 
                         <i class="fa-regular fa-location-dot" style="color: #939797;font-weight:unset"></i> <span>@item.JobLocation</span>
                     </div>
-                    <div>
+                    <div id="jd">
                         @Html.Raw(@item.JobDesc)
                     </div>
                 </div>
