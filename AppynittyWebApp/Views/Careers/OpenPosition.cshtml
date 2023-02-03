@@ -10,7 +10,9 @@
     .newttl {
         list-style-type: none;
     }
-
+    ul li {
+        list-style-type: disc !important;
+    }
     body {
         background: #e6e6e6;
     }
@@ -45,6 +47,15 @@
         background: #3CBABA;
         color: #FFFFFF;
         border: 1px solid #3CBABA;
+    }
+    ul li::marker {
+        color: black;
+        unicode-bidi: isolate;
+        font-variant-numeric: tabular-nums;
+        text-transform: none;
+        text-indent: 0px !important;
+        text-align: start !important;
+        text-align-last: start !important;
     }
 </style>
 @*<img src="~/Assets/Images/doors-1767563.jpg" />*@
@@ -119,11 +130,29 @@
                         <span class="px-2">
 
 
-                            <i class="fa-regular fa-briefcase" style="color: #939797;font-weight:unset"></i> @item.MinExp - @item.MaxExp Yrs
+                            <i class="fa-regular fa-briefcase" style="color: #939797;font-weight:unset"></i>
+                            @item.MinExp  
+                            @if (@item.MaxExp == null)
+                            { 
+                                <span>+</span>
+                                    }
+                            else {
+                                <span>- @item.MaxExp</span> 
+                            } Yrs
                         </span>
                         @if (@item.MinSalary != null)
                         {
-                    <span class="px-2"><img src="~/Assets/Images/indian-rupee_lar.png" style="width:20px" /> :- ₹ @item.MinSalary Rs- ₹ @item.MaxSalary</span>
+                            <span class="px-2"><img src="~/Assets/Images/indian-rupee_lar.png" style="width:20px" /> :- ₹ @item.MinSalary Rs 
+                        @if(@item.MaxSalary == null)
+                            {
+                            <span>+</span>
+                        }
+                        else
+                        {
+                            <span>- ₹ @item.MaxSalary</span> 
+
+                            }
+                        </span>
                         }
                         else
                         {
